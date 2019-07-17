@@ -10,11 +10,6 @@ StepSequencerEngine::~StepSequencerEngine()
 {
 }
 
-StepSequencerEngine* JUCE_CALLTYPE createPluginFilter()
-{
-	return new StepSequencerEngine();
-}
-
 AudioProcessorEditor* StepSequencerEngine::createEditor()
 {
 	return new StepSequencerEditor(*this);
