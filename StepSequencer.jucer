@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="lbU5Kt" name="StepSequencer" projectType="audioplug" jucerVersion="5.4.3"
-              pluginFormats="buildVST3" pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
+              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn"
+              pluginFormats="buildVST3">
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
-      <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common"/>
+      <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
+        <FILE id="kgZvjI" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
+        <FILE id="Lab7LK" name="ButtonNormal.png" compile="0" resource="1"
+              file="Source/ButtonNormal.png"/>
+        <FILE id="ZhXv9H" name="ButtonOn.png" compile="0" resource="1" file="Source/ButtonOn.png"/>
+        <FILE id="RQGoaD" name="ButtonOnDown.png" compile="0" resource="1"
+              file="Source/ButtonOnDown.png"/>
+        <FILE id="rJGXKv" name="ButtonOnOver.png" compile="0" resource="1"
+              file="Source/ButtonOnOver.png"/>
+        <FILE id="MgH79M" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
+        <FILE id="lHblQh" name="darkerMetal.png" compile="0" resource="1" file="Source/darkerMetal.png"/>
+        <FILE id="D34Kbk" name="MetalPlate.png" compile="0" resource="1" file="Source/MetalPlate.png"/>
+        <FILE id="ExuCPp" name="SmoothPlate.png" compile="0" resource="1" file="Source/SmoothPlate.png"/>
+      </GROUP>
+      <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
+        <FILE id="a3ExJZ" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
+      </GROUP>
       <GROUP id="{2BCEC8F9-9953-6817-A649-D5BE53F16626}" name="Engine">
         <FILE id="BRPJkN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
         <GROUP id="{070789FF-61D0-D9DE-C61E-7976CE89F5DF}" name="Core"/>
@@ -14,6 +31,16 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{54E38C19-FB76-FE16-523F-F87945D0D3FF}" name="Controllers">
+          <FILE id="hs4eGK" name="StepButtonsController.cpp" compile="1" resource="0"
+                file="Source/StepButtonsController.cpp"/>
+          <FILE id="StqNO3" name="StepButtonsController.h" compile="0" resource="0"
+                file="Source/StepButtonsController.h"/>
+        </GROUP>
+        <GROUP id="{80AF34FD-4F24-F1D4-876E-021A89AB6112}" name="Buttons">
+          <FILE id="sj3YOI" name="StepButton.cpp" compile="1" resource="0" file="Source/StepButton.cpp"/>
+          <FILE id="KMN9Um" name="StepButton.h" compile="0" resource="0" file="Source/StepButton.h"/>
+        </GROUP>
         <GROUP id="{F2073612-86B4-F15F-AE71-CCEA1BA00680}" name="LookAndFeel"/>
         <FILE id="yWC3LF" name="StepSequencerEditor.cpp" compile="1" resource="0"
               file="Source/StepSequencerEditor.cpp"/>
