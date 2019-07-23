@@ -23,6 +23,16 @@ namespace  ParameterNames
 
 namespace ComponentSizes
 {
+	static int windowHeight{ 500 };
+	static int windowWidth{ 1140 };
+
 	static int StepButtonHeight{ 65 };
 	static int StepButtonWidth{ 65 };
+
+	static int UnderStepButtonPanelHeight{ 50 };
+}
+
+namespace ProjectColours
+{
+	static Colour backGround = Colour(200, 201, 187);
 }

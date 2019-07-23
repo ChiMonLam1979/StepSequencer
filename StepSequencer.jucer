@@ -5,6 +5,7 @@
               pluginFormats="buildVST3">
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
+      <FILE id="wmzfu1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
         <FILE id="kgZvjI" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
         <FILE id="Lab7LK" name="ButtonNormal.png" compile="0" resource="1"
@@ -16,6 +17,8 @@
               file="Source/ButtonOnOver.png"/>
         <FILE id="MgH79M" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
         <FILE id="lHblQh" name="darkerMetal.png" compile="0" resource="1" file="Source/darkerMetal.png"/>
+        <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
+        <FILE id="hw2j3B" name="LEDOn.png" compile="0" resource="1" file="Source/LEDOn.png"/>
         <FILE id="D34Kbk" name="MetalPlate.png" compile="0" resource="1" file="Source/MetalPlate.png"/>
         <FILE id="ExuCPp" name="SmoothPlate.png" compile="0" resource="1" file="Source/SmoothPlate.png"/>
       </GROUP>
@@ -31,6 +34,9 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{A26856D1-6B78-FA63-0A04-778AD4843476}" name="PanelComponents">
+          <FILE id="Ku7HLH" name="BlankPanel.h" compile="0" resource="0" file="Source/BlankPanel.h"/>
+        </GROUP>
         <GROUP id="{54E38C19-FB76-FE16-523F-F87945D0D3FF}" name="Controllers">
           <FILE id="hs4eGK" name="StepButtonsController.cpp" compile="1" resource="0"
                 file="Source/StepButtonsController.cpp"/>

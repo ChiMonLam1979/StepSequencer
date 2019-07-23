@@ -3,6 +3,7 @@
 #include "StepSequencerEngine.h"
 #include "StepButton.h"
 #include "StepButtonsController.h"
+#include "BlankPanel.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -30,11 +31,14 @@ public:
 	std::unique_ptr<StepButton> stepButtonFifteen;
 	std::unique_ptr<StepButton> stepButtonSixteen;
 
-	//std::unique_ptr<Drawable> backPlate;
+	std::unique_ptr<BlankPanel> underStepButtonsPanel;
+
+	std::unique_ptr<Drawable> backPlate;
 
 	StepButtonsController stepButtonsController;
 
 	static FlexItem makeButtonBoxItem(Component& component);
+	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
 
 private:
 
