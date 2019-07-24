@@ -3,93 +3,73 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	stepButtonOne = std::make_unique<StepButton>(ParameterNames::StepButtonOneName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonTwo = std::make_unique<StepButton>(ParameterNames::StepButtonTwoName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonThree = std::make_unique<StepButton>(ParameterNames::StepButtonThreeName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonFour = std::make_unique<StepButton>(ParameterNames::StepButtonFourName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonFive = std::make_unique<StepButton>(ParameterNames::StepButtonFiveName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonSix = std::make_unique<StepButton>(ParameterNames::StepButtonSixName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonSeven = std::make_unique<StepButton>(ParameterNames::StepButtonSevenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonEight = std::make_unique<StepButton>(ParameterNames::StepButtonEightName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonNine = std::make_unique<StepButton>(ParameterNames::StepButtonNineName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonTen = std::make_unique<StepButton>(ParameterNames::StepButtonTenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonEleven = std::make_unique<StepButton>(ParameterNames::StepButtonElevenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonTwelve = std::make_unique<StepButton>(ParameterNames::StepButtonTwelveName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonThirteen = std::make_unique<StepButton>(ParameterNames::StepButtonThirteenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonFourteen = std::make_unique<StepButton>(ParameterNames::StepButtonFourteenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonFifteen = std::make_unique<StepButton>(ParameterNames::StepButtonFifteenName, DrawableButton::ButtonStyle::ImageFitted);
-	stepButtonSixteen = std::make_unique<StepButton>(ParameterNames::StepButtonSixteenName, DrawableButton::ButtonStyle::ImageFitted);
+	stepButtons = std::make_unique<OwnedArray<StepButton>>();
+	playPositionLedsOffArray = std::make_unique<OwnedArray<Drawable>>();
+	playPositionLedsOnArray = std::make_unique<OwnedArray<Drawable>>();
 
-	underStepButtonsPanel = std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonPanelHeight);
+	for(auto i = 0; i < 16; i++)
+	{
+		stepButtons->add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
+		playPositionLedsOffArray->add(Drawable::createFromImageData(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize));
+		playPositionLedsOnArray->add(Drawable::createFromImageData(BinaryData::LEDOn_png, BinaryData::LEDOn_pngSize));
+	}
+
+	underStepButtonsPanel = std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
+
 	backPlate = Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 
-	auto stepController = stepButtonsController;
-
-	stepButtonOne->onClick = [stepController, this] { stepController.StepClicked(stepButtonOne->getName()); };
-	stepButtonTwo->onClick = [stepController, this] { stepController.StepClicked(stepButtonTwo->getName()); };
-	stepButtonThree->onClick = [stepController, this] { stepController.StepClicked(stepButtonThree->getName()); };
-	stepButtonFour->onClick = [stepController, this] { stepController.StepClicked(stepButtonFour->getName()); };
-	stepButtonFive->onClick = [stepController, this] { stepController.StepClicked(stepButtonFive->getName()); };
-	stepButtonSix->onClick = [stepController, this] { stepController.StepClicked(stepButtonSix->getName()); };
-	stepButtonSeven->onClick = [stepController, this] { stepController.StepClicked(stepButtonSeven->getName()); };
-	stepButtonEight->onClick = [stepController, this] { stepController.StepClicked(stepButtonEight->getName()); };
-	stepButtonNine->onClick = [stepController, this] { stepController.StepClicked(stepButtonNine->getName()); };
-	stepButtonTen->onClick = [stepController, this] { stepController.StepClicked(stepButtonTen->getName()); };
-	stepButtonEleven->onClick = [stepController, this] { stepController.StepClicked(stepButtonEleven->getName()); };
-	stepButtonTwelve->onClick = [stepController, this] { stepController.StepClicked(stepButtonTwelve->getName()); };
-	stepButtonThirteen->onClick = [stepController, this] { stepController.StepClicked(stepButtonThirteen->getName()); };
-	stepButtonFourteen->onClick = [stepController, this] { stepController.StepClicked(stepButtonFourteen->getName()); };
-	stepButtonFifteen->onClick = [stepController, this] { stepController.StepClicked(stepButtonFifteen->getName()); };
-	stepButtonSixteen->onClick = [stepController, this] { stepController.StepClicked(stepButtonSixteen->getName()); };
-
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
-
-	addAndMakeVisible(stepButtonOne.get());
-	addAndMakeVisible(stepButtonTwo.get());
-	addAndMakeVisible(stepButtonThree.get());
-	addAndMakeVisible(stepButtonFour.get());
-	addAndMakeVisible(stepButtonFive.get());
-	addAndMakeVisible(stepButtonSix.get());
-	addAndMakeVisible(stepButtonSeven.get());
-	addAndMakeVisible(stepButtonEight.get());
-	addAndMakeVisible(stepButtonNine.get());
-	addAndMakeVisible(stepButtonTen.get());
-	addAndMakeVisible(stepButtonEleven.get());
-	addAndMakeVisible(stepButtonTwelve.get());
-	addAndMakeVisible(stepButtonThirteen.get());
-	addAndMakeVisible(stepButtonFourteen.get());
-	addAndMakeVisible(stepButtonFifteen.get());
-	addAndMakeVisible(stepButtonSixteen.get());
-
-	addAndMakeVisible(underStepButtonsPanel.get());
-	addAndMakeVisible(backPlate.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
 {
+	playPositionLedsOffArray = nullptr;
 }
 
 void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
+	addAndMakeVisible(underStepButtonsPanel.get());
+	addAndMakeVisible(backPlate.get());
 
-	//g.fillAll(ProjectColours::backGround);
-	stepButtonOne->toFront(false);
-	stepButtonTwo->toFront(false);
-	stepButtonThree->toFront(false);
-	stepButtonFour->toFront(false);
-	stepButtonFive->toFront(false);
-	stepButtonSix->toFront(false);
-	stepButtonSeven->toFront(false);
-	stepButtonEight->toFront(false);
-	stepButtonNine->toFront(false);
-	stepButtonTen->toFront(false);
-	stepButtonEleven->toFront(false);
-	stepButtonTwelve->toFront(false);
-	stepButtonThirteen->toFront(false);
-	stepButtonFourteen->toFront(false);
-	stepButtonFifteen->toFront(false);
-	stepButtonSixteen->toFront(false);
+	auto stepController = stepButtonsController;
+
+	for (auto& stepButton : *stepButtons)
+	{
+		stepButton->onClick = [stepController, stepButton] { stepController.StepClicked(stepButton->getName()); };
+		addAndMakeVisible(stepButton);
+		stepButton->toFront(false);
+	}
+
+	auto leftEdgeToFirstLed = 98;
+	auto pixelsBetweenLeds = 65;
+	auto yPosOfLeds = 450;
+	auto ledBounds = Rectangle<int>{ leftEdgeToFirstLed, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
+
+	auto ledShouldFlash = true;
+
+	if(ledShouldFlash)
+	{
+		for (auto& led : *playPositionLedsOnArray)
+		{
+			addAndMakeVisible(led);
+			led->setBounds(ledBounds);
+			led->drawAt(g, 0, 0, 1);
+			led->toFront(false);
+			ledBounds.setX(ledBounds.getX() + pixelsBetweenLeds);
+		}
+	}
+	else
+	{
+		for (auto& led : *playPositionLedsOffArray)
+		{
+			addAndMakeVisible(led);
+			led->setBounds(ledBounds);
+			led->drawAt(g, 0, 0, 1);
+			led->toFront(false);
+			ledBounds.setX(ledBounds.getX() + pixelsBetweenLeds);
+		}
+	}
 }
 
 void StepSequencerEditor::resized()
@@ -99,24 +79,11 @@ void StepSequencerEditor::resized()
 	FlexBox buttonBox;
 	buttonBox.justifyContent = FlexBox::JustifyContent::center;
 	buttonBox.alignContent = FlexBox::AlignContent::flexEnd;
-	buttonBox.items.addArray({ 
-								makeButtonBoxItem(*stepButtonOne),
-								makeButtonBoxItem(*stepButtonTwo),
-								makeButtonBoxItem(*stepButtonThree),
-								makeButtonBoxItem(*stepButtonFour),
-								makeButtonBoxItem(*stepButtonFive),
-								makeButtonBoxItem(*stepButtonSix),
-								makeButtonBoxItem(*stepButtonSeven),
-								makeButtonBoxItem(*stepButtonEight),
-								makeButtonBoxItem(*stepButtonNine),
-								makeButtonBoxItem(*stepButtonTen),
-								makeButtonBoxItem(*stepButtonEleven),
-								makeButtonBoxItem(*stepButtonTwelve),
-								makeButtonBoxItem(*stepButtonThirteen),
-								makeButtonBoxItem(*stepButtonFourteen),
-								makeButtonBoxItem(*stepButtonFifteen),
-								makeButtonBoxItem(*stepButtonSixteen),
-	});
+
+	for(auto& stepButton : *stepButtons)
+	{
+		buttonBox.items.add(makeButtonBoxItem(*stepButton));
+	}
 
 	FlexItem underStepButtonsPanelItem = makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
 	underStepButtonsPanelItem.alignSelf = FlexItem::AlignSelf::center;
@@ -126,7 +93,7 @@ void StepSequencerEditor::resized()
 	main.items.addArray({
 								FlexItem(buttonBox).withFlex(1),
 								FlexItem(underStepButtonsPanelItem)
-		});
+	});
 
 	main.performLayout(window);
 }
@@ -134,15 +101,15 @@ void StepSequencerEditor::resized()
 FlexItem StepSequencerEditor::makeButtonBoxItem(Component& component)
 {
 	return FlexItem(component)
-	.withMinHeight(ComponentSizes::StepButtonHeight)
-	.withMinWidth(ComponentSizes::StepButtonWidth)
-	.withMaxHeight(ComponentSizes::StepButtonHeight)
-	.withMaxWidth(ComponentSizes::StepButtonWidth);
+		.withMinHeight(ComponentSizes::StepButtonHeight)
+		.withMinWidth(ComponentSizes::StepButtonWidth)
+		.withMaxHeight(ComponentSizes::StepButtonHeight)
+		.withMaxWidth(ComponentSizes::StepButtonWidth);
 }
 
 FlexItem StepSequencerEditor::makeUnderStepButtonsPanelItem(Component& component)
 {
 	return FlexItem(component)
-		.withMinHeight(ComponentSizes::UnderStepButtonPanelHeight)
-		.withMaxHeight(ComponentSizes::UnderStepButtonPanelHeight);
+		.withMinHeight(ComponentSizes::UnderStepButtonsPanelHeight)
+		.withMaxHeight(ComponentSizes::UnderStepButtonsPanelHeight);
 }

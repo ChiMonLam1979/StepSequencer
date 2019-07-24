@@ -12,30 +12,16 @@ public:
     ~StepSequencerEditor();
 
     void paint (Graphics&) override;
-    void resized() override;
-
-	std::unique_ptr<StepButton> stepButtonOne;
-	std::unique_ptr<StepButton> stepButtonTwo;
-	std::unique_ptr<StepButton> stepButtonThree;
-	std::unique_ptr<StepButton> stepButtonFour;
-	std::unique_ptr<StepButton> stepButtonFive;
-	std::unique_ptr<StepButton> stepButtonSix;
-	std::unique_ptr<StepButton> stepButtonSeven;
-	std::unique_ptr<StepButton> stepButtonEight;
-	std::unique_ptr<StepButton> stepButtonNine;
-	std::unique_ptr<StepButton> stepButtonTen;
-	std::unique_ptr<StepButton> stepButtonEleven;
-	std::unique_ptr<StepButton> stepButtonTwelve;
-	std::unique_ptr<StepButton> stepButtonThirteen;
-	std::unique_ptr<StepButton> stepButtonFourteen;
-	std::unique_ptr<StepButton> stepButtonFifteen;
-	std::unique_ptr<StepButton> stepButtonSixteen;
+	void resized() override;
 
 	std::unique_ptr<BlankPanel> underStepButtonsPanel;
-
 	std::unique_ptr<Drawable> backPlate;
 
 	StepButtonsController stepButtonsController;
+
+	std::unique_ptr<OwnedArray<StepButton>> stepButtons;
+	std::unique_ptr<OwnedArray<Drawable>> playPositionLedsOffArray;
+	std::unique_ptr<OwnedArray<Drawable>> playPositionLedsOnArray;
 
 	static FlexItem makeButtonBoxItem(Component& component);
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
