@@ -4,6 +4,7 @@
 #include "StepButton.h"
 #include "StepButtonsController.h"
 #include "BlankPanel.h"
+#include "PlayPositionLeds.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -20,15 +21,12 @@ public:
 	StepButtonsController stepButtonsController;
 
 	std::unique_ptr<OwnedArray<StepButton>> stepButtons;
-	std::unique_ptr<OwnedArray<Drawable>>	playPositionLedsOffArray;
-	std::unique_ptr<Drawable>				playPositionLedOn;
+	std::unique_ptr<PlayPositionLeds> playPositionLeds;
 
 	static FlexItem makeButtonBoxItem(Component& component);
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
 
 private:
-
-	void paintLed(Graphics& g, Drawable* led, Rectangle<int> bounds);
 
     StepSequencerEngine& processor;
 
