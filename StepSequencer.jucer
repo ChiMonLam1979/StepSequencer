@@ -6,7 +6,7 @@
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
-        <FILE id="vqaFvs" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
+        <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
         <FILE id="kgZvjI" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
         <FILE id="Lab7LK" name="ButtonNormal.png" compile="0" resource="1"
               file="Source/ButtonNormal.png"/>
@@ -19,8 +19,6 @@
         <FILE id="lHblQh" name="darkerMetal.png" compile="0" resource="1" file="Source/darkerMetal.png"/>
         <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
         <FILE id="j7C4Uz" name="LEDOn.png" compile="0" resource="1" file="Source/LEDOn.png"/>
-        <FILE id="D34Kbk" name="MetalPlate.png" compile="0" resource="1" file="Source/MetalPlate.png"/>
-        <FILE id="ExuCPp" name="SmoothPlate.png" compile="0" resource="1" file="Source/SmoothPlate.png"/>
       </GROUP>
       <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
         <FILE id="a3ExJZ" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>

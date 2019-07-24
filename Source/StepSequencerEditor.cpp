@@ -3,15 +3,15 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	stepButtons = std::make_unique<OwnedArray<StepButton>>();
-	playPositionLedsOffArray = std::make_unique<OwnedArray<Drawable>>();
-	playPositionLedsOnArray = std::make_unique<OwnedArray<Drawable>>();
+	stepButtons					= std::make_unique<OwnedArray<StepButton>>();
+	playPositionLedsOffArray	= std::make_unique<OwnedArray<Drawable>>();
+	playPositionLedsOnArray		= std::make_unique<OwnedArray<Drawable>>();
 
 	for(auto i = 0; i < 16; i++)
 	{
-		stepButtons->add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
-		playPositionLedsOffArray->add(Drawable::createFromImageData(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize));
-		playPositionLedsOnArray->add(Drawable::createFromImageData(BinaryData::LEDOn_png, BinaryData::LEDOn_pngSize));
+		stepButtons					->add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
+		playPositionLedsOffArray	->add(Drawable::createFromImageData(BinaryData::LEDOff_png,	BinaryData::LEDOff_pngSize));
+		playPositionLedsOnArray		->add(Drawable::createFromImageData(BinaryData::LEDOn_png,	BinaryData::LEDOn_pngSize));
 	}
 
 	underStepButtonsPanel = std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
@@ -29,8 +29,9 @@ StepSequencerEditor::~StepSequencerEditor()
 void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
-	addAndMakeVisible(underStepButtonsPanel.get());
 	addAndMakeVisible(backPlate.get());
+
+	addAndMakeVisible(underStepButtonsPanel.get());
 
 	auto stepController = stepButtonsController;
 
@@ -41,52 +42,54 @@ void StepSequencerEditor::paint (Graphics& g)
 		stepButton->toFront(false);
 	}
 
-	auto leftEdgeToFirstLed = 98;
-	auto pixelsBetweenLeds = 65;
-	auto yPosOfLeds = 450;
-	auto ledBounds = Rectangle<int>{ leftEdgeToFirstLed, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
-
-	auto ledShouldFlash = true;
+	auto firstLedXPos		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
+	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
+	auto yPosOfLeds			= ComponentPositions::YPositionOfLEDs;
+	auto ledBounds			= Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
+	auto ledShouldFlash		= true;
 
 	if(ledShouldFlash)
 	{
-		for (auto& led : *playPositionLedsOnArray)
+		for (auto led : *playPositionLedsOnArray)
 		{
-			addAndMakeVisible(led);
-			led->setBounds(ledBounds);
-			led->drawAt(g, 0, 0, 1);
-			led->toFront(false);
-			ledBounds.setX(ledBounds.getX() + pixelsBetweenLeds);
+			paintLed(g, led, ledBounds);
+			ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 		}
 	}
 	else
 	{
-		for (auto& led : *playPositionLedsOffArray)
+		for (auto led : *playPositionLedsOffArray)
 		{
-			addAndMakeVisible(led);
-			led->setBounds(ledBounds);
-			led->drawAt(g, 0, 0, 1);
-			led->toFront(false);
-			ledBounds.setX(ledBounds.getX() + pixelsBetweenLeds);
+			paintLed(g, led, ledBounds);
+			ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 		}
 	}
 }
+
+void StepSequencerEditor::paintLed(Graphics& g, Drawable* led, Rectangle<int> bounds)
+{
+	addAndMakeVisible(led);
+	led->setBounds(bounds);
+	led->drawAt(g, 0, 0, 1);
+	led->toFront(false);
+}
+
 
 void StepSequencerEditor::resized()
 {
 	auto window = getLocalBounds();
 
 	FlexBox buttonBox;
-	buttonBox.justifyContent = FlexBox::JustifyContent::center;
-	buttonBox.alignContent = FlexBox::AlignContent::flexEnd;
+	buttonBox.justifyContent	= FlexBox::JustifyContent::center;
+	buttonBox.alignContent		= FlexBox::AlignContent::flexEnd;
 
 	for(auto& stepButton : *stepButtons)
 	{
 		buttonBox.items.add(makeButtonBoxItem(*stepButton));
 	}
 
-	FlexItem underStepButtonsPanelItem = makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
-	underStepButtonsPanelItem.alignSelf = FlexItem::AlignSelf::center;
+	FlexItem underStepButtonsPanelItem	= makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
+	underStepButtonsPanelItem.alignSelf	= FlexItem::AlignSelf::center;
 
 	FlexBox main;
 	main.flexDirection = FlexBox::Direction::column;

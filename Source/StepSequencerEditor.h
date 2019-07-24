@@ -15,7 +15,7 @@ public:
 	void resized() override;
 
 	std::unique_ptr<BlankPanel> underStepButtonsPanel;
-	std::unique_ptr<Drawable> backPlate;
+	std::unique_ptr<Drawable>	backPlate;
 
 	StepButtonsController stepButtonsController;
 
@@ -27,6 +27,8 @@ public:
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
 
 private:
+
+	void paintLed(Graphics& g, Drawable* led, Rectangle<int> bounds);
 
     StepSequencerEngine& processor;
 

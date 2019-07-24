@@ -54,6 +54,13 @@ namespace ComponentSizes
 	static int LEDWidth						{ 17 };
 }
 
+namespace ComponentPositions
+{
+	static int PixelsFromLeftEdgeToFirstLED	{ 98 };
+	static int NumberOfPixelsBetweenLEDs	{ 65 };
+	static int YPositionOfLEDs				{ 450 };
+}
+
 namespace ProjectColours
 {
 	static Colour backGround = Colour(200, 201, 187);
