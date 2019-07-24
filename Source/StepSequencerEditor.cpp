@@ -5,13 +5,14 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	stepButtons					= std::make_unique<OwnedArray<StepButton>>();
 	playPositionLedsOffArray	= std::make_unique<OwnedArray<Drawable>>();
-	playPositionLedsOnArray		= std::make_unique<OwnedArray<Drawable>>();
+	playPositionLedOn			= Drawable::createFromImageData(BinaryData::LEDOn_png, BinaryData::LEDOn_pngSize);
+	//playPositionLedsOnArray		= std::make_unique<OwnedArray<Drawable>>();
 
 	for(auto i = 0; i < 16; i++)
 	{
 		stepButtons					->add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
 		playPositionLedsOffArray	->add(Drawable::createFromImageData(BinaryData::LEDOff_png,	BinaryData::LEDOff_pngSize));
-		playPositionLedsOnArray		->add(Drawable::createFromImageData(BinaryData::LEDOn_png,	BinaryData::LEDOn_pngSize));
+		//playPositionLedsOnArray		->add(Drawable::createFromImageData(BinaryData::LEDOn_png,	BinaryData::LEDOn_pngSize));
 	}
 
 	underStepButtonsPanel = std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
@@ -47,22 +48,23 @@ void StepSequencerEditor::paint (Graphics& g)
 	auto yPosOfLeds			= ComponentPositions::YPositionOfLEDs;
 	auto ledBounds			= Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
 	auto ledShouldFlash		= true;
+	auto indexOfFlashingLed = 13;
 
-	if(ledShouldFlash)
+	for(auto i = 0; i < 16; i++)
 	{
-		for (auto led : *playPositionLedsOnArray)
+		auto leds = playPositionLedsOffArray.get();
+		auto led = leds->getUnchecked(i);
+
+		if(i == indexOfFlashingLed && ledShouldFlash)
+		{
+			paintLed(g, playPositionLedOn.get(), ledBounds);
+		}
+		else
 		{
 			paintLed(g, led, ledBounds);
-			ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 		}
-	}
-	else
-	{
-		for (auto led : *playPositionLedsOffArray)
-		{
-			paintLed(g, led, ledBounds);
-			ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
-		}
+
+		ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 	}
 }
 
@@ -73,7 +75,6 @@ void StepSequencerEditor::paintLed(Graphics& g, Drawable* led, Rectangle<int> bo
 	led->drawAt(g, 0, 0, 1);
 	led->toFront(false);
 }
-
 
 void StepSequencerEditor::resized()
 {

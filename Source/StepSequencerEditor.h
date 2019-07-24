@@ -20,8 +20,8 @@ public:
 	StepButtonsController stepButtonsController;
 
 	std::unique_ptr<OwnedArray<StepButton>> stepButtons;
-	std::unique_ptr<OwnedArray<Drawable>> playPositionLedsOffArray;
-	std::unique_ptr<OwnedArray<Drawable>> playPositionLedsOnArray;
+	std::unique_ptr<OwnedArray<Drawable>>	playPositionLedsOffArray;
+	std::unique_ptr<Drawable>				playPositionLedOn;
 
 	static FlexItem makeButtonBoxItem(Component& component);
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
