@@ -42,10 +42,8 @@
           <FILE id="Ku7HLH" name="BlankPanel.h" compile="0" resource="0" file="Source/BlankPanel.h"/>
         </GROUP>
         <GROUP id="{54E38C19-FB76-FE16-523F-F87945D0D3FF}" name="Controllers">
-          <FILE id="hs4eGK" name="StepButtonsController.cpp" compile="1" resource="0"
-                file="Source/StepButtonsController.cpp"/>
-          <FILE id="StqNO3" name="StepButtonsController.h" compile="0" resource="0"
-                file="Source/StepButtonsController.h"/>
+          <FILE id="hs4eGK" name="StepButtons.cpp" compile="1" resource="0" file="Source/StepButtons.cpp"/>
+          <FILE id="StqNO3" name="StepButtons.h" compile="0" resource="0" file="Source/StepButtons.h"/>
         </GROUP>
         <GROUP id="{80AF34FD-4F24-F1D4-876E-021A89AB6112}" name="Buttons">
           <FILE id="sj3YOI" name="StepButton.cpp" compile="1" resource="0" file="Source/StepButton.cpp"/>

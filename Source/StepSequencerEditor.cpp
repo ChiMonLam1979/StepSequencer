@@ -3,18 +3,10 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	stepButtons					= std::make_unique<OwnedArray<StepButton>>();
-
-	playPositionLeds = std::make_unique<PlayPositionLeds>();
-
-	for(auto i = 0; i < 16; i++)
-	{
-		stepButtons					->add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
-	}
-
-	underStepButtonsPanel = std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
-
-	backPlate = Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
+	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
+	stepButtons				= std::make_unique<StepButtons>();
+	playPositionLeds		= std::make_unique<PlayPositionLeds>();
+	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 }
@@ -27,21 +19,9 @@ void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
 	addAndMakeVisible(backPlate.get());
-
+	stepButtons->MakeVisible(*this);
+	playPositionLeds->MakeVisibleAndPaint(g, *this);
 	addAndMakeVisible(underStepButtonsPanel.get());
-
-	auto stepController = stepButtonsController;
-
-	for (auto& stepButton : *stepButtons)
-	{
-		stepButton->onClick = [stepController, stepButton] { stepController.StepClicked(stepButton->getName()); };
-		addAndMakeVisible(stepButton);
-		stepButton->toFront(false);
-	}
-
-	addAndMakeVisible(playPositionLeds.get());
-	playPositionLeds->setBounds(getLocalBounds());
-	playPositionLeds->paintLeds(g);
 }
 
 void StepSequencerEditor::resized()
@@ -52,7 +32,7 @@ void StepSequencerEditor::resized()
 	buttonBox.justifyContent	= FlexBox::JustifyContent::center;
 	buttonBox.alignContent		= FlexBox::AlignContent::flexEnd;
 
-	for(auto& stepButton : *stepButtons)
+	for (auto& stepButton : stepButtons->stepButtons)
 	{
 		buttonBox.items.add(makeButtonBoxItem(*stepButton));
 	}

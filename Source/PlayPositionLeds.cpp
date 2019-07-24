@@ -15,7 +15,7 @@ PlayPositionLeds::~PlayPositionLeds()
 {
 }
 
-void PlayPositionLeds::paintLeds(Graphics& g)
+void PlayPositionLeds::MakeVisibleAndPaint(Graphics& g, Component& component)
 {
 	auto firstLedXPos		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
 	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
@@ -23,27 +23,29 @@ void PlayPositionLeds::paintLeds(Graphics& g)
 	auto ledBounds			= Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
 	auto ledShouldFlash		= true;
 	auto indexOfFlashingLed = 12;
+	auto ledOn				= playPositionLedOn.get();
 
 	for (auto i = 0; i < 16; i++)
 	{
-		auto led = playPositionLedsOffArray.getUnchecked(i);
-
 		if (i == indexOfFlashingLed && ledShouldFlash)
 		{
-			paintLed(g, playPositionLedOn.get(), ledBounds);
+			component.addAndMakeVisible(ledOn);
+			PaintLed(g, ledOn, ledBounds);
 		}
 		else
 		{
-			paintLed(g, led, ledBounds);
+			auto led = playPositionLedsOffArray.getUnchecked(i);
+
+			component.addAndMakeVisible(led);
+			PaintLed(g, led, ledBounds);
 		}
 
 		ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 	}
 }
 
-void PlayPositionLeds::paintLed(Graphics& g, Drawable* led, Rectangle<int> bounds)
+void PlayPositionLeds::PaintLed(Graphics& g, Drawable* led, Rectangle<int> bounds)
 {
-	addAndMakeVisible(led);
 	led->setBounds(bounds);
 	led->drawAt(g, 0, 0, 1);
 	led->toFront(false);

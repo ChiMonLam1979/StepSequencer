@@ -1,8 +1,7 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "StepSequencerEngine.h"
-#include "StepButton.h"
-#include "StepButtonsController.h"
+#include "StepButtons.h"
 #include "BlankPanel.h"
 #include "PlayPositionLeds.h"
 
@@ -15,13 +14,10 @@ public:
     void paint (Graphics&) override;
 	void resized() override;
 
-	std::unique_ptr<BlankPanel> underStepButtonsPanel;
-	std::unique_ptr<Drawable>	backPlate;
-
-	StepButtonsController stepButtonsController;
-
-	std::unique_ptr<OwnedArray<StepButton>> stepButtons;
-	std::unique_ptr<PlayPositionLeds> playPositionLeds;
+	std::unique_ptr<Drawable>			backPlate;
+	std::unique_ptr<StepButtons>		stepButtons;
+	std::unique_ptr<PlayPositionLeds>	playPositionLeds;
+	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
 	static FlexItem makeButtonBoxItem(Component& component);
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
