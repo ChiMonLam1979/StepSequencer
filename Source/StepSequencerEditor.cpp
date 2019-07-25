@@ -12,9 +12,11 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
-	addAndMakeVisible(backPlate.get());
+	addAndMakeVisible(backPlate.get(), 0);
 	stepButtons->MakeVisible(*this);
+
 	playPositionLeds->MakeVisible(*this);
+
 	addAndMakeVisible(underStepButtonsPanel.get());
 }
 

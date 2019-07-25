@@ -11,9 +11,9 @@ public:
 
 	void MakeVisible(Component& component);
 
-	//void Paint(Graphics& g);
-
 	void paint(Graphics& g) override;
+
+	void resized() override;
 
 	void SetFlashingLedVisibility();
 
