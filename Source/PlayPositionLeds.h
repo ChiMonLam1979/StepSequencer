@@ -1,18 +1,28 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "StepSequencerEngine.h"
 
 class PlayPositionLeds
 {
 public:
 
-	PlayPositionLeds();
+	PlayPositionLeds(StepSequencerEngine& processor);
 	~PlayPositionLeds();
 
 	void MakeVisible(Component& component);
+
 	void Paint(Graphics& g);
 
+	void SetFlashingLedVisibility();
+
 	OwnedArray<Drawable>		playPositionLedsOffArray;
-	std::unique_ptr<Drawable>	playPositionLedOn;
+	OwnedArray<Drawable>		playPositionLedsOnArray;
+
+	bool shouldFlash	{ false };
+	int	 lastLedIndex	{ 0 };
+	int	 ledIndex		{ 0 };
+
+	StepSequencerEngine& processor;
 
 private:
 

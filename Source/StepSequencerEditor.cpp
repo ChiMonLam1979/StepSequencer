@@ -5,8 +5,10 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepButtons				= std::make_unique<StepButtons>();
-	playPositionLeds		= std::make_unique<PlayPositionLeds>();
+	playPositionLeds		= std::make_unique<PlayPositionLeds>(p);
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
+
+	ledTimer = std::make_unique<LedTimer>(*playPositionLeds);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 

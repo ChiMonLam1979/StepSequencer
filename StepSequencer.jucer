@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="lbU5Kt" name="StepSequencer" projectType="audioplug" jucerVersion="5.4.3"
-              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn"
-              pluginFormats="buildVST3">
+              pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
@@ -32,6 +31,10 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="UI Timers">
+          <FILE id="gQpodm" name="LedTimer.cpp" compile="1" resource="0" file="Source/LedTimer.cpp"/>
+          <FILE id="PB3xbN" name="LedTimer.h" compile="0" resource="0" file="Source/LedTimer.h"/>
+        </GROUP>
         <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
           <FILE id="axQHEO" name="PlayPositionLeds.cpp" compile="1" resource="0"
                 file="Source/PlayPositionLeds.cpp"/>

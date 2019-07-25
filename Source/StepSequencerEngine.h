@@ -31,6 +31,9 @@ public:
 	void getStateInformation(MemoryBlock& destData) override {};
 	void setStateInformation(const void* data, int sizeInBytes) override {};
 
+	std::atomic<bool>	shouldFlash			{ false };
+	std::atomic<int>	playPositionIndex	{ 0 };
+
 private:
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
