@@ -18,6 +18,8 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 	{
 		addAndMakeVisible(png);
 	}
+
+	setInterceptsMouseClicks(false, true);
 }
 
 TransportLEDs::~TransportLEDs()

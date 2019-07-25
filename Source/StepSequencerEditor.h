@@ -3,7 +3,6 @@
 #include "StepSequencerEngine.h"
 #include "StepButtons.h"
 #include "BlankPanel.h"
-#include "PlayPositionLeds.h"
 #include "LedTimer.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
