@@ -30,17 +30,17 @@ void PlayPositionLeds::MakeVisible(Component& component)
 	}
 }
 
-void PlayPositionLeds::Paint(Graphics& g)
+void PlayPositionLeds::paint(Graphics& g)
 {
-	auto firstLedXPos		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
-	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
-	auto yPosOfLeds			= ComponentPositions::YPositionOfLEDs;
-	auto ledBounds			= Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
+	auto firstLedXPos = ComponentPositions::PixelsFromLeftEdgeToFirstLED;
+	auto spaceBetweenLeds = ComponentPositions::NumberOfPixelsBetweenLEDs;
+	auto yPosOfLeds = ComponentPositions::YPositionOfLEDs;
+	auto ledBounds = Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
 
 	for (auto i = 0; i < 16; i++)
 	{
-		auto led	= playPositionLedsOffArray.getUnchecked(i);
-		auto ledOn	= playPositionLedsOnArray.getUnchecked(i);
+		auto led = playPositionLedsOffArray.getUnchecked(i);
+		auto ledOn = playPositionLedsOnArray.getUnchecked(i);
 
 		PaintLed(g, led, ledBounds);
 		PaintLed(g, ledOn, ledBounds);
@@ -48,6 +48,25 @@ void PlayPositionLeds::Paint(Graphics& g)
 		ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
 	}
 }
+
+//void PlayPositionLeds::Paint(Graphics& g)
+//{
+//	auto firstLedXPos		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
+//	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
+//	auto yPosOfLeds			= ComponentPositions::YPositionOfLEDs;
+//	auto ledBounds			= Rectangle<int>{ firstLedXPos, yPosOfLeds, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
+//
+//	for (auto i = 0; i < 16; i++)
+//	{
+//		auto led	= playPositionLedsOffArray.getUnchecked(i);
+//		auto ledOn	= playPositionLedsOnArray.getUnchecked(i);
+//
+//		PaintLed(g, led, ledBounds);
+//		PaintLed(g, ledOn, ledBounds);
+//
+//		ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
+//	}
+//}
 
 void PlayPositionLeds::PaintLed(Graphics& g, Drawable* led, Rectangle<int> bounds)
 {

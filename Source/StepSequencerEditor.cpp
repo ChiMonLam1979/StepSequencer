@@ -25,7 +25,7 @@ StepSequencerEditor::~StepSequencerEditor()
 void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
-	playPositionLeds->Paint(g);
+	playPositionLeds->paint(g);
 }
 
 void StepSequencerEditor::resized()
