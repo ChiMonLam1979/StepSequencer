@@ -9,6 +9,11 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
+
+	addAndMakeVisible(backPlate.get());
+	stepButtons->MakeVisible(*this);
+	playPositionLeds->MakeVisible(*this);
+	addAndMakeVisible(underStepButtonsPanel.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -18,10 +23,7 @@ StepSequencerEditor::~StepSequencerEditor()
 void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
-	addAndMakeVisible(backPlate.get());
-	stepButtons->MakeVisible(*this);
-	playPositionLeds->MakeVisibleAndPaint(g, *this);
-	addAndMakeVisible(underStepButtonsPanel.get());
+	playPositionLeds->Paint(g);
 }
 
 void StepSequencerEditor::resized()

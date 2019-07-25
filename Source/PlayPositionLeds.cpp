@@ -15,7 +15,20 @@ PlayPositionLeds::~PlayPositionLeds()
 {
 }
 
-void PlayPositionLeds::MakeVisibleAndPaint(Graphics& g, Component& component)
+void PlayPositionLeds::MakeVisible(Component& component)
+{
+	for(auto& led : playPositionLedsOffArray)
+	{
+		component.addAndMakeVisible(led);
+		led->toFront(false);
+	}
+
+	component.addAndMakeVisible(playPositionLedOn.get());
+	playPositionLedOn.get()->toFront(false);
+}
+
+
+void PlayPositionLeds::Paint(Graphics& g)
 {
 	auto firstLedXPos		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
 	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
@@ -29,15 +42,17 @@ void PlayPositionLeds::MakeVisibleAndPaint(Graphics& g, Component& component)
 	{
 		if (i == indexOfFlashingLed && ledShouldFlash)
 		{
-			component.addAndMakeVisible(ledOn);
 			PaintLed(g, ledOn, ledBounds);
 		}
 		else
 		{
 			auto led = playPositionLedsOffArray.getUnchecked(i);
 
-			component.addAndMakeVisible(led);
 			PaintLed(g, led, ledBounds);
+		}
+		if(!ledShouldFlash)
+		{
+			ledOn->toBack();
 		}
 
 		ledBounds.setX(ledBounds.getX() + spaceBetweenLeds);
@@ -48,5 +63,4 @@ void PlayPositionLeds::PaintLed(Graphics& g, Drawable* led, Rectangle<int> bound
 {
 	led->setBounds(bounds);
 	led->drawAt(g, 0, 0, 1);
-	led->toFront(false);
 }

@@ -10,7 +10,6 @@ public:
 	~StepButtons();
 
 	void StepClicked(const String& stepButtonName) const;
-
 	void MakeVisible(Component& component);
 
 	OwnedArray<StepButton> stepButtons;

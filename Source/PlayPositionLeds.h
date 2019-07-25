@@ -8,7 +8,8 @@ public:
 	PlayPositionLeds();
 	~PlayPositionLeds();
 
-	void MakeVisibleAndPaint(Graphics& g, Component& component);
+	void MakeVisible(Component& component);
+	void Paint(Graphics& g);
 
 	OwnedArray<Drawable>		playPositionLedsOffArray;
 	std::unique_ptr<Drawable>	playPositionLedOn;
