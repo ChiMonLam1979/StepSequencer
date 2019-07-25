@@ -5,18 +5,16 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepButtons				= std::make_unique<StepButtons>();
-	playPositionLeds		= std::make_unique<PlayPositionLeds>(p);
+	transportLEDs			= std::make_unique<TransportLEDs>(p);
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
-	ledTimer = std::make_unique<LedTimer>(*playPositionLeds);
+	ledTimer = std::make_unique<LedTimer>(*transportLEDs);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
 	addAndMakeVisible(backPlate.get(), 0);
 	stepButtons->MakeVisible(*this);
-
-	playPositionLeds->MakeVisible(*this);
-
+	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(underStepButtonsPanel.get());
 }
 
@@ -27,11 +25,12 @@ StepSequencerEditor::~StepSequencerEditor()
 void StepSequencerEditor::paint (Graphics& g)
 {
 	backPlate->drawWithin(g, getLocalBounds().toFloat(), RectanglePlacement(64), 1.0f);
-	playPositionLeds->paint(g);
 }
 
 void StepSequencerEditor::resized()
 {
+	transportLEDs->setBounds(getLocalBounds());
+
 	auto window = getLocalBounds();
 
 	FlexBox buttonBox;

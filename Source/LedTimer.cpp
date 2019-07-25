@@ -1,6 +1,6 @@
 #include "LedTimer.h"
 
-LedTimer::LedTimer(PlayPositionLeds& playPositionLeds) : playPositionLeds(playPositionLeds)
+LedTimer::LedTimer(TransportLEDs& transportLEDs) : transportLEDs(transportLEDs)
 {
 	this->startTimerHz(60);
 }
@@ -11,5 +11,5 @@ LedTimer::~LedTimer()
 
 void LedTimer::timerCallback()
 {
-	playPositionLeds.SetFlashingLedVisibility();
+	transportLEDs.UpdateFlashingLED();
 }

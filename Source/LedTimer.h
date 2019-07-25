@@ -1,18 +1,17 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "PlayPositionLeds.h"
+#include "TransportLEDs.h"
 
 class LedTimer : public Timer
 {
 public:
 
-	LedTimer(PlayPositionLeds& playPositionLeds);
+	LedTimer(TransportLEDs& transportLEDs);
 	~LedTimer();
 
 	void timerCallback() override;
 
-	PlayPositionLeds& playPositionLeds;
-
+	TransportLEDs& transportLEDs;
 
 private:
 
