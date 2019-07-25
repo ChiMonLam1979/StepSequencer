@@ -1,6 +1,7 @@
 #include "LedTimer.h"
+#include "Parameters.h"
 
-LedTimer::LedTimer(TransportLEDs& transportLEDs) : transportLEDs(transportLEDs)
+LedTimer::LedTimer(TransportLEDs& leds) : leds(leds)
 {
 	this->startTimerHz(60);
 }
@@ -11,5 +12,5 @@ LedTimer::~LedTimer()
 
 void LedTimer::timerCallback()
 {
-	transportLEDs.UpdateFlashingLED();
+	leds.UpdateFlashingLED();
 }

@@ -31,19 +31,13 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
-        <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Images">
-          <FILE id="rPQWqn" name="PNG.cpp" compile="1" resource="0" file="Source/PNG.cpp"/>
-          <FILE id="y6zCdE" name="PNG.h" compile="0" resource="0" file="Source/PNG.h"/>
-        </GROUP>
         <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="UI Timers">
           <FILE id="gQpodm" name="LedTimer.cpp" compile="1" resource="0" file="Source/LedTimer.cpp"/>
           <FILE id="PB3xbN" name="LedTimer.h" compile="0" resource="0" file="Source/LedTimer.h"/>
         </GROUP>
         <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
-          <FILE id="axQHEO" name="PlayPositionLeds.cpp" compile="1" resource="0"
-                file="Source/PlayPositionLeds.cpp"/>
-          <FILE id="u44dEI" name="PlayPositionLeds.h" compile="0" resource="0"
-                file="Source/PlayPositionLeds.h"/>
+          <FILE id="aj6Jd7" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
+          <FILE id="XIh7DF" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>
           <FILE id="PnNs1B" name="TransportLEDs.cpp" compile="1" resource="0"
                 file="Source/TransportLEDs.cpp"/>
           <FILE id="r71fHL" name="TransportLEDs.h" compile="0" resource="0" file="Source/TransportLEDs.h"/>

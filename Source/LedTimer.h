@@ -6,12 +6,12 @@ class LedTimer : public Timer
 {
 public:
 
-	LedTimer(TransportLEDs& transportLEDs);
+	LedTimer(TransportLEDs& leds);
 	~LedTimer();
 
 	void timerCallback() override;
 
-	TransportLEDs& transportLEDs;
+	TransportLEDs& leds;
 
 private:
 

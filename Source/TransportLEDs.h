@@ -1,7 +1,7 @@
  #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "PNG.h"
 #include "StepSequencerEngine.h"
+#include "LED.h"
 
 
 class TransportLEDs : public Component
@@ -11,8 +11,7 @@ public:
 	TransportLEDs(StepSequencerEngine& processor);
 	~TransportLEDs();
 
-	OwnedArray<PNG> onLeds;
-	OwnedArray<PNG> offLeds;
+	OwnedArray<LED> leds;
 
 	void resized() override;
 

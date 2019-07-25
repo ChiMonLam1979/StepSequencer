@@ -5,18 +5,12 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		onLeds .add(new PNG(ImageCache::getFromMemory(BinaryData::LEDOn_png, BinaryData::LEDOn_pngSize)));
-		offLeds.add(new PNG(ImageCache::getFromMemory(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize)));
+		leds.add(new LED);
 	}
 
-	for(auto png : onLeds)
+	for(auto led : leds)
 	{
-		addAndMakeVisible(png);
-	}
-
-	for(auto png : offLeds)
-	{
-		addAndMakeVisible(png);
+		addAndMakeVisible(led);
 	}
 
 	setInterceptsMouseClicks(false, true);
@@ -35,11 +29,7 @@ void TransportLEDs::resized()
 
 	for (auto i = 0; i < 16; i++)
 	{
-		auto led	= onLeds[i];
-		auto ledOn	= offLeds[i];
-
-		led	 ->setBounds(bounds);
-		ledOn->setBounds(bounds);
+		leds[i]->setBounds(bounds);
 
 		bounds.setX(bounds.getX() + spaceBetweenLeds);
 	}
@@ -50,33 +40,22 @@ void TransportLEDs::UpdateFlashingLED()
 	shouldFlash = processor.shouldFlash.load();
 	index		= processor.playPositionIndex.load();
 
-	if (shouldFlash)
+	if(shouldFlash)
 	{
-		auto ledToFlash			= onLeds[index];
-		auto lastFlashingLed	= onLeds[lastIndex];
-		auto OffledToShow		= offLeds[lastIndex];
-		auto OffledToHide		= offLeds[index];
-
-		if (lastIndex != index)
-		{
-			lastFlashingLed->setVisible(false);
-			OffledToShow->setVisible(true);
-			lastIndex = index;
-		}
-
-		OffledToHide->setVisible(false);
-		ledToFlash->setVisible(true);
+		leds[index]->toggle(true);
 	}
-	else
-	{
-		for (auto& led : offLeds)
-		{
-			led->setVisible(true);
-		}
 
-		for (auto& led : onLeds)
+	if(lastIndex != index)
+	{
+		leds[lastIndex]->toggle(false);
+		lastIndex = index;
+	}
+
+	if(!shouldFlash)
+	{
+		for (auto led : leds)
 		{
-			led->setVisible(false);
+		led->toggle(false);
 		}
 	}
 }
