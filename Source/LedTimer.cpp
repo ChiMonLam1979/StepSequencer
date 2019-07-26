@@ -3,7 +3,7 @@
 
 LedTimer::LedTimer(TransportLEDs& leds) : leds(leds)
 {
-	this->startTimerHz(60);
+	this->startTimerHz(30);
 }
 
 LedTimer::~LedTimer()
