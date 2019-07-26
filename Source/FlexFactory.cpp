@@ -13,6 +13,15 @@ namespace FlexItemFactory
 			.withMaxWidth(ComponentSizes::StepButtonWidth);
 	}
 
+	FlexItem makeEncoderBoxItem(Component& component)
+	{
+		return FlexItem(component)
+			.withMinHeight(ComponentSizes::StepEncoderHeight)
+			.withMinWidth(ComponentSizes::StepEncoderWidth)
+			.withMaxHeight(ComponentSizes::StepEncoderHeight)
+			.withMaxWidth(ComponentSizes::StepEncoderWidth);
+	}
+
 	FlexItem makeUnderStepButtonsPanelItem(Component& component)
 	{
 		return FlexItem(component)
@@ -29,6 +38,14 @@ namespace  FlexBoxFactory
 		FlexBox box;
 		box.justifyContent	= FlexBox::JustifyContent::center;
 		box.alignContent	= FlexBox::AlignContent::flexEnd;
+		return box;
+	}
+
+	FlexBox maketEncodersBox()
+	{
+		FlexBox box;
+		box.justifyContent = FlexBox::JustifyContent::center;
+		box.alignContent = FlexBox::AlignContent::flexEnd;
 		return box;
 	}
 

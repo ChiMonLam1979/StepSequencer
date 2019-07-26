@@ -10,10 +10,11 @@ StepButton::StepButton(const String& name, ButtonStyle style) : DrawableButton(n
 	auto buttonDownOn	= Drawable::createFromImageData(BinaryData::ButtonOnDown_png,	BinaryData::ButtonOnDown_pngSize);
 	auto buttonOverOn	= Drawable::createFromImageData(BinaryData::ButtonOnOver_png,	BinaryData::ButtonOnOver_pngSize);
 
-	this->setSize(ComponentSizes::StepButtonWidth, ComponentSizes::StepButtonHeight);
-	this->setImages(buttonNormal.get(), buttonOver.get(), buttonDown.get(), nullptr, buttonOn.get(), buttonOverOn.get(), buttonDownOn.get());
-	this->setColour(DrawableButton::backgroundOnColourId, Colour());
-	this->setClickingTogglesState(true);
+	setSize(ComponentSizes::StepButtonWidth, ComponentSizes::StepButtonHeight);
+	setImages(buttonNormal.get(), buttonOver.get(), buttonDown.get(), nullptr, buttonOn.get(), buttonOverOn.get(), buttonDownOn.get());
+	setColour(DrawableButton::backgroundOnColourId, Colour());
+	setClickingTogglesState(true);
+	setOpaque(true);
 }
 
 StepButton::~StepButton()

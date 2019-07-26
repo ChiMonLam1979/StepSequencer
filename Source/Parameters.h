@@ -39,6 +39,43 @@ namespace  ParameterNames
 		StepButtonFifteenName,
 		StepButtonSixteenName,
 	};
+
+	static String StepEncoderOneName		{ "Step Encoder One"		};
+	static String StepEncoderTwoName		{ "Step Encoder Two"		};
+	static String StepEncoderThreeName		{ "Step Encoder Three"		};
+	static String StepEncoderFourName		{ "Step Encoder Four"		};
+	static String StepEncoderFiveName		{ "Step Encoder Five"		};
+	static String StepEncoderSixName		{ "Step Encoder Six"		};
+	static String StepEncoderSevenName		{ "Step Encoder Seven"		};
+	static String StepEncoderEightName		{ "Step Encoder Eight"		};
+	static String StepEncoderNineName		{ "Step Encoder Nine"		};
+	static String StepEncoderTenName		{ "Step Encoder Ten"		};
+	static String StepEncoderElevenName		{ "Step Encoder Eleven"		};
+	static String StepEncoderTwelveName		{ "Step Encoder Twelve"		};
+	static String StepEncoderThirteenName	{ "Step Encoder Thirteen"	};
+	static String StepEncoderFourteenName	{ "Step Encoder Fourteen"	};
+	static String StepEncoderFifteenName	{ "Step Encoder Fifteen"	};
+	static String StepEncoderSixteenName	{ "Step Encoder Sixteen"	};
+
+	const StringArray StepEncoderNames
+	{
+		StepEncoderOneName,
+		StepEncoderTwoName,
+		StepEncoderThreeName,
+		StepEncoderFourName,
+		StepEncoderFiveName,
+		StepEncoderSixName,
+		StepEncoderSevenName,
+		StepEncoderEightName,
+		StepEncoderNineName,
+		StepEncoderTenName,
+		StepEncoderElevenName,
+		StepEncoderTwelveName,
+		StepEncoderThirteenName,
+		StepEncoderFourteenName,
+		StepEncoderFifteenName,
+		StepEncoderSixteenName
+	};
 }
 
 namespace ComponentSizes
@@ -48,6 +85,9 @@ namespace ComponentSizes
 
 	static int StepButtonHeight				{ 65 };
 	static int StepButtonWidth				{ 65 };
+
+	static int StepEncoderHeight			{ 65 };
+	static int StepEncoderWidth				{ 65 };
 
 	static int UnderStepButtonsPanelHeight	{ 50 };
 	static int LEDHeight					{ 17 };

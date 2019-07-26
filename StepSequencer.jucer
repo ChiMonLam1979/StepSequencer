@@ -16,6 +16,7 @@
               file="Source/ButtonOnOver.png"/>
         <FILE id="MgH79M" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
         <FILE id="lHblQh" name="darkerMetal.png" compile="0" resource="1" file="Source/darkerMetal.png"/>
+        <FILE id="MziUlQ" name="Encoder.png" compile="0" resource="1" file="Source/Encoder.png"/>
         <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
         <FILE id="j7C4Uz" name="LEDOn.png" compile="0" resource="1" file="Source/LEDOn.png"/>
       </GROUP>
@@ -31,6 +32,13 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
+          <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
+          <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
+          <FILE id="bOfcEN" name="StepEncoders.cpp" compile="1" resource="0"
+                file="Source/StepEncoders.cpp"/>
+          <FILE id="cMSKAr" name="StepEncoders.h" compile="0" resource="0" file="Source/StepEncoders.h"/>
+        </GROUP>
         <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="Flex">
           <FILE id="bYhoey" name="FlexFactory.cpp" compile="1" resource="0" file="Source/FlexFactory.cpp"/>
           <FILE id="OCSLKv" name="FlexFactory.h" compile="0" resource="0" file="Source/FlexFactory.h"/>

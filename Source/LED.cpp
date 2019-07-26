@@ -2,6 +2,7 @@
 
 LED::LED()
 {
+	setOpaque(true);
 }
 
 LED::~LED()
