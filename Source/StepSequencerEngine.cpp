@@ -29,14 +29,6 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 
 	playHead->getCurrentPosition(positionInfo);
 
-	if (positionInfo.isPlaying)
-	{
-		shouldFlash.store(true);
-		playPositionIndex.store(std::fmod(positionInfo.ppqPosition * 4, 16));
-	}
-	else
-	{
-		shouldFlash.store(false);
-		playPositionIndex.store(0);
-	}
+	shouldFlash.store(true);
+	playPositionIndex.store(std::fmod(positionInfo.ppqPosition * 4, 16));
 }

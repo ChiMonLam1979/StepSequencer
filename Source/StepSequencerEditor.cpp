@@ -8,8 +8,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	transportLEDs			= std::make_unique<TransportLEDs>(p);
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
-	ledTimer = std::make_unique<LedTimer>(*transportLEDs);
-
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
 	addAndMakeVisible(backPlate.get());

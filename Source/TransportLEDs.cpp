@@ -14,6 +14,8 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 	}
 
 	setInterceptsMouseClicks(false, true);
+
+	startTimerHz(30);
 }
 
 TransportLEDs::~TransportLEDs()
@@ -35,7 +37,7 @@ void TransportLEDs::resized()
 	}
 }
 
-void TransportLEDs::UpdateFlashingLED()
+void TransportLEDs::timerCallback()
 {
 	shouldFlash = processor.shouldFlash.load();
 	index		= processor.playPositionIndex.load();

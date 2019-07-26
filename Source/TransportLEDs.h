@@ -3,8 +3,7 @@
 #include "StepSequencerEngine.h"
 #include "LED.h"
 
-
-class TransportLEDs : public Component
+class TransportLEDs : public Component, public Timer
 {
 public:
 
@@ -15,7 +14,7 @@ public:
 
 	void resized() override;
 
-	void UpdateFlashingLED();
+	void timerCallback() override;
 
 	bool shouldFlash{ false };
 	int	 lastIndex	{ 0 };

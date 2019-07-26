@@ -3,7 +3,7 @@
 #include "StepSequencerEngine.h"
 #include "StepButtons.h"
 #include "BlankPanel.h"
-#include "LedTimer.h"
+#include "TransportLEDs.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -18,7 +18,6 @@ public:
 	std::unique_ptr<StepButtons>		stepButtons;
 	std::unique_ptr<TransportLEDs>		transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
-	std::unique_ptr<LedTimer>			ledTimer;
 
 	static FlexItem makeButtonBoxItem(Component& component);
 	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
