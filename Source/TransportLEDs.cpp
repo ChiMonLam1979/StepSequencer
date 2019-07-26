@@ -15,7 +15,8 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 
 	setInterceptsMouseClicks(false, true);
 
-	startTimerHz(30);
+	startTimerHz(15);
+	setOpaque(true);
 }
 
 TransportLEDs::~TransportLEDs()
@@ -24,10 +25,9 @@ TransportLEDs::~TransportLEDs()
 
 void TransportLEDs::resized()
 {
-	auto firstXPosition		= ComponentPositions::PixelsFromLeftEdgeToFirstLED;
-	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenLEDs;
-	auto yPosition			= ComponentPositions::YPositionOfLEDs;
-	auto bounds				= Rectangle<int>{ firstXPosition, yPosition, ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
+	auto localBounds = getLocalBounds();
+	auto spaceBetweenLeds = ComponentPositions::NumberOfPixelsBetweenLEDs;
+	auto bounds = Rectangle<int>{ localBounds.getX(), localBounds.getY(), ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
 
 	for (auto i = 0; i < 16; i++)
 	{

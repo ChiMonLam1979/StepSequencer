@@ -61,6 +61,17 @@ namespace ComponentPositions
 	static int YPositionOfLEDs				{ 450 };
 }
 
+namespace ComponentBounds
+{
+	static Rectangle<int> TransportLEDStripBounds
+	{
+		ComponentPositions::PixelsFromLeftEdgeToFirstLED,
+		ComponentPositions::YPositionOfLEDs,
+		ComponentSizes::windowWidth,
+		ComponentSizes::LEDHeight
+	};
+}
+
 namespace ProjectColours
 {
 	static Colour backGround = Colour(200, 201, 187);

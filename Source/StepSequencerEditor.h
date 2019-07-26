@@ -19,9 +19,6 @@ public:
 	std::unique_ptr<TransportLEDs>		transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
-	static FlexItem makeButtonBoxItem(Component& component);
-	static FlexItem makeUnderStepButtonsPanelItem(Component& component);
-
 private:
 
     StepSequencerEngine& processor;

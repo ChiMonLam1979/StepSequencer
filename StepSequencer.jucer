@@ -31,6 +31,10 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="Flex">
+          <FILE id="bYhoey" name="FlexFactory.cpp" compile="1" resource="0" file="Source/FlexFactory.cpp"/>
+          <FILE id="OCSLKv" name="FlexFactory.h" compile="0" resource="0" file="Source/FlexFactory.h"/>
+        </GROUP>
         <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
           <FILE id="aj6Jd7" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
           <FILE id="XIh7DF" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>

@@ -1,5 +1,6 @@
 #include "StepSequencerEditor.h"
 #include "Parameters.h"
+#include "FlexFactory.h"
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
@@ -27,44 +28,24 @@ void StepSequencerEditor::paint (Graphics& g)
 
 void StepSequencerEditor::resized()
 {
-	transportLEDs->setBounds(getLocalBounds());
+	transportLEDs->setBounds(ComponentBounds::TransportLEDStripBounds);
 
 	auto window = getLocalBounds();
 
-	FlexBox buttonBox;
-	buttonBox.justifyContent	= FlexBox::JustifyContent::center;
-	buttonBox.alignContent		= FlexBox::AlignContent::flexEnd;
+	FlexBox buttonBox = FlexBoxFactory::makeStepButtonsBox();
 
 	for (auto& stepButton : stepButtons->stepButtons)
 	{
-		buttonBox.items.add(makeButtonBoxItem(*stepButton));
+		buttonBox.items.add(FlexItemFactory::makeButtonBoxItem(*stepButton));
 	}
 
-	FlexItem underStepButtonsPanelItem	= makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
-	underStepButtonsPanelItem.alignSelf	= FlexItem::AlignSelf::center;
+	FlexItem underStepButtonsPanelItem	= FlexItemFactory::makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
 
-	FlexBox main;
-	main.flexDirection = FlexBox::Direction::column;
+	FlexBox main = FlexBoxFactory::makeMasterBox();
 	main.items.addArray({
 								FlexItem(buttonBox).withFlex(1),
 								FlexItem(underStepButtonsPanelItem)
 	});
 
 	main.performLayout(window);
-}
-
-FlexItem StepSequencerEditor::makeButtonBoxItem(Component& component)
-{
-	return FlexItem(component)
-		.withMinHeight(ComponentSizes::StepButtonHeight)
-		.withMinWidth(ComponentSizes::StepButtonWidth)
-		.withMaxHeight(ComponentSizes::StepButtonHeight)
-		.withMaxWidth(ComponentSizes::StepButtonWidth);
-}
-
-FlexItem StepSequencerEditor::makeUnderStepButtonsPanelItem(Component& component)
-{
-	return FlexItem(component)
-		.withMinHeight(ComponentSizes::UnderStepButtonsPanelHeight)
-		.withMaxHeight(ComponentSizes::UnderStepButtonsPanelHeight);
 }
