@@ -81,7 +81,7 @@ namespace  ParameterNames
 namespace ComponentSizes
 {
 	static int windowHeight					{ 500 };
-	static int windowWidth					{ 1200 };
+	static int windowWidth					{ 1260 };
 
 	static int StepButtonHeight				{ 65 };
 	static int StepButtonWidth				{ 65 };
@@ -96,7 +96,7 @@ namespace ComponentSizes
 
 namespace ComponentPositions
 {
-	static int PixelsFromLeftEdgeToFirstLED	{ 128 };
+	static int PixelsFromLeftEdgeToFirstLED	{ 158 };
 	static int NumberOfPixelsBetweenLEDs	{ 65 };
 	static int YPositionOfLEDs				{ 450 };
 }
