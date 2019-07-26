@@ -23,7 +23,6 @@ void StepButtons::MakeVisible(Component& component)
 	for (auto& stepButton : stepButtons)
 	{
 		component.addAndMakeVisible(stepButton);
-		stepButton->toFront(false);
 	}
 }
 

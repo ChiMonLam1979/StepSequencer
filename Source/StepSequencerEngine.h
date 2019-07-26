@@ -33,6 +33,8 @@ public:
 
 	std::atomic<bool>	shouldFlash			{ false };
 	std::atomic<int>	playPositionIndex	{ 0 };
+	std::atomic<bool>	isLooping			{ false };
+	std::atomic<int>	loopEndPPQ			{ 0 };
 
 private:
 
