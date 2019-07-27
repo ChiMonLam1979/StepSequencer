@@ -9,8 +9,6 @@ public:
 	StepEncoders();
 	~StepEncoders();
 
-	//void resized() override;
-
 	OwnedArray<Encoder> encoders;
 
 private:

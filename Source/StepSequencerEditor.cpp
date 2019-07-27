@@ -5,9 +5,7 @@
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
-
 	stepEncoders			= std::make_unique<StepEncoders>();
-
 	stepButtons				= std::make_unique<StepButtons>();
 	transportLEDs			= std::make_unique<TransportLEDs>(p);
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);

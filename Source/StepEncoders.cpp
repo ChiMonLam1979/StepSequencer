@@ -21,8 +21,3 @@ StepEncoders::~StepEncoders()
 {
 	
 }
-
-//void StepEncoders::resized()
-//{
-//	
-//}
