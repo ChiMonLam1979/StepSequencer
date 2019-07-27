@@ -7,7 +7,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepEncoders			= std::make_unique<StepEncoders>();
 	stepButtons				= std::make_unique<StepButtons>();
-	transportLEDs			= std::make_unique<TransportLEDs>(p);
+	transportLEDs			= std::make_unique<ChaseLEDs>(p);
 	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
@@ -30,7 +30,7 @@ void StepSequencerEditor::paint (Graphics& g)
 
 void StepSequencerEditor::resized()
 {
-	transportLEDs->setBounds(ComponentBounds::TransportLEDStripBounds);
+	transportLEDs->setBounds(ComponentBounds::ChaseLEDStripBounds);
 	stepEncoders->setBounds(getLocalBounds());
 
 	auto window = getLocalBounds();

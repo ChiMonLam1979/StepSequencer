@@ -1,16 +1,16 @@
  #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "StepSequencerEngine.h"
-#include "LED.h"
+#include "ChaseLED.h"
 
-class TransportLEDs : public Component, public Timer
+class ChaseLEDs : public Component, public Timer
 {
 public:
 
-	TransportLEDs(StepSequencerEngine& processor);
-	~TransportLEDs();
+	ChaseLEDs(StepSequencerEngine& processor);
+	~ChaseLEDs();
 
-	OwnedArray<LED> leds;
+	OwnedArray<ChaseLED> leds;
 
 	void resized() override;
 

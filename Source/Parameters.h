@@ -96,17 +96,21 @@ namespace ComponentSizes
 
 namespace ComponentPositions
 {
-	static int PixelsFromLeftEdgeToFirstLED	{ 158 };
-	static int NumberOfPixelsBetweenLEDs	{ 65 };
-	static int YPositionOfLEDs				{ 450 };
+	static int PixelsFromLeftEdgeToFirstChaseLED	{ 158 };
+	static int NumberOfPixelsBetweenChaseLEDs		{ 65 };
+	static int YPositionOfChaseLEDs					{ 450 };
+
+	static int PixelsFromLeftEdgeToFirstEncoderLED	{ 112 };
+	static int NumberOfPixelsBetweenEncoderLEDs		{ 65 };
+	static int YPositionOfEncoderLEDs				{ 370 };
 }
 
 namespace ComponentBounds
 {
-	static Rectangle<int> TransportLEDStripBounds
+	static Rectangle<int> ChaseLEDStripBounds
 	{
-		ComponentPositions::PixelsFromLeftEdgeToFirstLED,
-		ComponentPositions::YPositionOfLEDs,
+		ComponentPositions::PixelsFromLeftEdgeToFirstChaseLED,
+		ComponentPositions::YPositionOfChaseLEDs,
 		ComponentSizes::windowWidth,
 		ComponentSizes::LEDHeight
 	};

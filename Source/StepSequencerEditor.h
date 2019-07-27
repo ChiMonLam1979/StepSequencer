@@ -3,8 +3,8 @@
 #include "StepSequencerEngine.h"
 #include "StepButtons.h"
 #include "BlankPanel.h"
-#include "TransportLEDs.h"
 #include "StepEncoders.h"
+#include "ChaseLEDs.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -18,7 +18,7 @@ public:
 	std::unique_ptr<Drawable>			backPlate;
 	std::unique_ptr<StepEncoders>		stepEncoders;
 	std::unique_ptr<StepButtons>		stepButtons;
-	std::unique_ptr<TransportLEDs>		transportLEDs;
+	std::unique_ptr<ChaseLEDs>			transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
 private:

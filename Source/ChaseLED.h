@@ -1,12 +1,12 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class LED : public Component
+class ChaseLED : public Component
 {
 public:
 
-	LED();
-	~LED();
+	ChaseLED();
+	~ChaseLED();
 
 	void paint(Graphics& g) override;
 

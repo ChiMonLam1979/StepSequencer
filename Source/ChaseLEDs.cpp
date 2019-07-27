@@ -1,11 +1,12 @@
-#include "TransportLEDs.h"
 #include "Parameters.h"
+#include "StepSequencerEngine.h"
+#include "ChaseLEDs.h"
 
-TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(processor)
+ChaseLEDs::ChaseLEDs(StepSequencerEngine& processor) : processor(processor)
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		leds.add(new LED);
+		leds.add(new ChaseLED);
 	}
 
 	for(auto led : leds)
@@ -18,14 +19,14 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 	startTimerHz(15);
 }
 
-TransportLEDs::~TransportLEDs()
+ChaseLEDs::~ChaseLEDs()
 {
 }
 
-void TransportLEDs::resized()
+void ChaseLEDs::resized()
 {
 	auto localBounds = getLocalBounds();
-	auto spaceBetweenLeds = ComponentPositions::NumberOfPixelsBetweenLEDs;
+	auto spaceBetweenLeds = ComponentPositions::NumberOfPixelsBetweenChaseLEDs;
 	auto bounds = Rectangle<int>{ localBounds.getX(), localBounds.getY(), ComponentSizes::LEDWidth, ComponentSizes::LEDHeight };
 
 	for (auto i = 0; i < 16; i++)
@@ -36,7 +37,7 @@ void TransportLEDs::resized()
 	}
 }
 
-void TransportLEDs::timerCallback()
+void ChaseLEDs::timerCallback()
 {
 	shouldFlash = processor.shouldFlash.load();
 	index		= processor.playPositionIndex.load();
