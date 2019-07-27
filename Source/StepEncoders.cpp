@@ -14,7 +14,6 @@ StepEncoders::StepEncoders()
 	}
 
 	setInterceptsMouseClicks(false, true);
-
 }
 
 StepEncoders::~StepEncoders()

@@ -16,9 +16,7 @@ public:
 	void resized() override;
 
 	std::unique_ptr<Drawable>			backPlate;
-
 	std::unique_ptr<StepEncoders>		stepEncoders;
-
 	std::unique_ptr<StepButtons>		stepButtons;
 	std::unique_ptr<TransportLEDs>		transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;

@@ -14,7 +14,6 @@ StepButton::StepButton(const String& name, ButtonStyle style) : DrawableButton(n
 	setImages(buttonNormal.get(), buttonOver.get(), buttonDown.get(), nullptr, buttonOn.get(), buttonOverOn.get(), buttonDownOn.get());
 	setColour(DrawableButton::backgroundOnColourId, Colour());
 	setClickingTogglesState(true);
-	setOpaque(true);
 }
 
 StepButton::~StepButton()

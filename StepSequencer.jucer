@@ -4,6 +4,9 @@
               pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
+      <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
+        <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
+      </GROUP>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
         <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
         <FILE id="kgZvjI" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
@@ -15,9 +18,6 @@
         <FILE id="rJGXKv" name="ButtonOnOver.png" compile="0" resource="1"
               file="Source/ButtonOnOver.png"/>
         <FILE id="MgH79M" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
-        <FILE id="lHblQh" name="darkerMetal.png" compile="0" resource="1" file="Source/darkerMetal.png"/>
-        <FILE id="MziUlQ" name="Encoder.png" compile="0" resource="1" file="Source/Encoder.png"/>
-        <FILE id="SsCRcF" name="EncoderBody.png" compile="0" resource="1" file="Source/EncoderBody.png"/>
         <FILE id="ub1afL" name="EncoderThumb.png" compile="0" resource="1"
               file="Source/EncoderThumb.png"/>
         <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>

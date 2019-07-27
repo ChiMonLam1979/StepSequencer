@@ -16,7 +16,6 @@ TransportLEDs::TransportLEDs(StepSequencerEngine& processor) : processor(process
 	setInterceptsMouseClicks(false, true);
 
 	startTimerHz(15);
-	setOpaque(true);
 }
 
 TransportLEDs::~TransportLEDs()

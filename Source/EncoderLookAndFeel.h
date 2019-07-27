@@ -13,5 +13,6 @@ public:
 private:
 
 	Image thumbImage{ ImageCache::getFromMemory(BinaryData::EncoderThumb_png, BinaryData::EncoderThumb_pngSize) };
-	Image encoderBodyImage{ ImageCache::getFromMemory(BinaryData::EncoderBody_png, BinaryData::EncoderBody_pngSize) };
+	std::unique_ptr<XmlElement> encoderBodySvg;
+	std::unique_ptr<Drawable> drawableEncoderBody;
 };
