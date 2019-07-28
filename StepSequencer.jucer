@@ -29,7 +29,10 @@
       </GROUP>
       <GROUP id="{2BCEC8F9-9953-6817-A649-D5BE53F16626}" name="Engine">
         <FILE id="BRPJkN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-        <GROUP id="{070789FF-61D0-D9DE-C61E-7976CE89F5DF}" name="Core"/>
+        <GROUP id="{070789FF-61D0-D9DE-C61E-7976CE89F5DF}" name="Core">
+          <FILE id="k8RO7A" name="MidiData.cpp" compile="1" resource="0" file="Source/MidiData.cpp"/>
+          <FILE id="vSlWsD" name="MidiData.h" compile="0" resource="0" file="Source/MidiData.h"/>
+        </GROUP>
         <FILE id="cJzOG2" name="StepSequencerEngine.h" compile="0" resource="0"
               file="Source/StepSequencerEngine.h"/>
         <FILE id="L4T5NW" name="StepSequencerEngine.cpp" compile="1" resource="0"

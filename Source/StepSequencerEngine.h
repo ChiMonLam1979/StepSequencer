@@ -1,5 +1,6 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "MidiData.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -35,6 +36,12 @@ public:
 	std::atomic<int>	playPositionIndex	{ 0 };
 
 private:
+
+	double rate	{ 0 };
+	int samplesSinceNoteOn{ 0 };
+	int lastNoteValue{ -1 };
+	int currentNote{ 0 };
+	MidiData midiData;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };
