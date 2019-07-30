@@ -41,6 +41,7 @@ private:
 	int samplesSinceNoteOn{ 0 };
 	int lastNoteValue{ -1 };
 	int currentNote{ 0 };
+
 	MidiData midiData;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)

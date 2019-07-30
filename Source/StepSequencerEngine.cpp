@@ -34,6 +34,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	playHead->getCurrentPosition(positionInfo);
 
 	shouldFlash.store(true);
+
 	playPositionIndex.store(std::fmod(positionInfo.ppqPosition * 4, 16));
 
 	auto bpm = positionInfo.bpm;															// bpm is quarterNotesPerMinute
@@ -50,9 +51,10 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 
 	//work out which notes will occur in the buffer
 	const double ppqBegin = positionInfo.ppqPosition * noteDivisionFactor;
-	const double ppqEnd = ppqBegin + (numSamples / samplesPerNoteDivision);
+	const auto ppqEnd = ppqBegin + (numSamples / samplesPerNoteDivision);
 	const int ippqBegin = std::ceil(ppqBegin);
-	const int ippqEnd = std::floor(ppqEnd);
+
+	int ippqEnd = positionInfo.isLooping ? ((int)std::floor(ppqEnd) % (4 * (int)noteDivisionFactor)) : (int)std::floor(ppqEnd);
 
 	midiData.notes[0]	= 34;
 	midiData.notes[1]	= 34;
@@ -91,9 +93,12 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
 	{
+		samplesSinceNoteOn = (samplesSinceNoteOn + numSamples);	// update elapsed time since note-off 
+
 		if (samplesSinceNoteOn >= noteLength && lastNoteValue > 0)	// check if last note was a note-on. if true we need to add a note off inside this buffer
 		{
 			auto offsetForNoteOff = jmin((numSamples - (samplesSinceNoteOn - noteLength)), numSamples - 1);
+
 			midiMessages.addEvent(MidiMessage::noteOff(1, lastNoteValue), offsetForNoteOff);
 			lastNoteValue = -1;
 		}
@@ -110,6 +115,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 				auto velocity = midiData.velocity[currentNote];
 
 				currentNote = (currentNote + 1) % midiData.notes.size();  // advance to next note in collection
+
 				midiMessages.addEvent(MidiMessage::noteOn(1, lastNoteValue, velocity), offset); // add last note to buffer at sample pos = offset
 
 				samplesSinceNoteOn = numSamples - offset;
@@ -118,11 +124,14 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 			if (samplesSinceNoteOn >= noteLength)		// check if note-off should occur within this buffer
 			{
 				auto OffsetForNoteOff = jmin((offset + noteLength), numSamples - 1);
+
 				midiMessages.addEvent(MidiMessage::noteOff(1, lastNoteValue), OffsetForNoteOff);
 				lastNoteValue = -1;		// set flag that last note was a note-off
 			}
 		}
+	}
 
-		samplesSinceNoteOn = (samplesSinceNoteOn + numSamples);	// update elapsed time since note-off 
+	if(!positionInfo.isPlaying)
+	{
 	}
 }
