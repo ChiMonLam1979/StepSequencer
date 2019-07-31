@@ -57,9 +57,6 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	const auto ppqEnd = ppqBegin + (numSamples / samplesPerNoteDivision);
 	const int ippqBegin = std::ceil(maths::precisionRound(ppqBegin, 0.001));
 	int ippqEnd = std::floor(ppqEnd);
-
-	//const int ippqBegin = std::abs(ppqBegin) < 0.0005 ? 0 : std::ceil(ppqBegin);
-
 	ippqEnd = positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
 	midiData.notes[0]	= 34;
@@ -99,7 +96,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
 	{
-		samplesSinceNoteOn = (samplesSinceNoteOn + numSamples);	// update elapsed time since note-off 
+		samplesSinceNoteOn = (samplesSinceNoteOn + numSamples);	// update elapsed time since note-off of last buffer
 
 		if (samplesSinceNoteOn >= noteLength && lastNoteValue > 0)	// check if last note was a note-on. if true we need to add a note off inside this buffer
 		{
@@ -112,11 +109,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 		// for each note transition in the buffer...
 		for (int i = ippqBegin; i <= ippqEnd; ++i)
 		{
-			//work out the exact sample where the note occurs
-			//const int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
-
-			 int offset = std::ceil(samplesPerNoteDivision * (i - ppqBegin));
-
+			 int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
 
 			if (midiData.notes.size() > 0) // if there are notes in 'notes' coolection
 			{
