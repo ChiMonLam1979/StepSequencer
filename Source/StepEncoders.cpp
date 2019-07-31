@@ -12,6 +12,7 @@ StepEncoders::StepEncoders()
 	for(auto encoder: encoders)
 	{
 		addAndMakeVisible(encoder);
+		encoder->onValueChange = [this, encoder] { encoderValueChanged(encoder->getName()); };
 	}
 
 	for(auto led : encoderLeds)
@@ -43,4 +44,9 @@ void StepEncoders::resized()
 
 		bounds.setX(bounds.getX() + spaceBetweenLeds);
 	}
+}
+
+void StepEncoders::encoderValueChanged(const String& encoderName) const
+{
+	
 }

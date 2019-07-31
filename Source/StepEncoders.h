@@ -18,4 +18,5 @@ public:
 
 private:
 
+	void encoderValueChanged(const String& encoderName) const;
 };

@@ -1,6 +1,85 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 
+namespace IDs
+{
+	static String TreeStateID			{ "treeState" };
+
+	static String StepButtonOneID		{ "Step Button One"			};
+	static String StepButtonTwoID		{ "Step Button Two"			};
+	static String StepButtonThreeID		{ "Step Button Three"		};
+	static String StepButtonFourID		{ "Step Button Four"		};
+	static String StepButtonFiveID		{ "Step Button Five"		};
+	static String StepButtonSixID		{ "Step Button Six"			};
+	static String StepButtonSevenID		{ "Step Button Seven"		};
+	static String StepButtonEightID		{ "Step Button Eight"		};
+	static String StepButtonNineID		{ "Step Button Nine"		};
+	static String StepButtonTenID		{ "Step Button Ten"			};
+	static String StepButtonElevenID	{ "Step Button Eleven"		};
+	static String StepButtonTwelveID	{ "Step Button Twelve"		};
+	static String StepButtonThirteenID	{ "Step Button Thirteen"	};
+	static String StepButtonFourteenID	{ "Step Button Fourteen"	};
+	static String StepButtonFifteenID	{ "Step Button Fifteen"		};
+	static String StepButtonSixteenID	{ "Step Button Sixteen"		};
+
+	const StringArray StepButtonIDs
+	{
+		StepButtonOneID,
+		StepButtonTwoID,
+		StepButtonThreeID,
+		StepButtonFourID,
+		StepButtonFiveID,
+		StepButtonSixID,
+		StepButtonSevenID,
+		StepButtonEightID,
+		StepButtonNineID,
+		StepButtonTenID,
+		StepButtonElevenID,
+		StepButtonTwelveID,
+		StepButtonThirteenID,
+		StepButtonFourteenID,
+		StepButtonFifteenID,
+		StepButtonSixteenID,
+	};
+
+	static String StepEncoderOneeID		{ "Step Encoder One"		};
+	static String StepEncoderTwoID		{ "Step Encoder Two"		};
+	static String StepEncoderThreeID	{ "Step Encoder Three"		};
+	static String StepEncoderFourID		{ "Step Encoder Four"		};
+	static String StepEncoderFiveID		{ "Step Encoder Five"		};
+	static String StepEncoderSixID		{ "Step Encoder Six"		};
+	static String StepEncoderSevenID	{ "Step Encoder Seven"		};
+	static String StepEncoderEightID	{ "Step Encoder Eight"		};
+	static String StepEncoderNineID		{ "Step Encoder Nine"		};
+	static String StepEncoderTenID		{ "Step Encoder Ten"		};
+	static String StepEncoderElevenID	{ "Step Encoder Eleven"		};
+	static String StepEncoderTwelveID	{ "Step Encoder Twelve"		};
+	static String StepEncoderThirteenID	{ "Step Encoder Thirteen"	};
+	static String StepEncoderFourteenID	{ "Step Encoder Fourteen"	};
+	static String StepEncoderFifteenID	{ "Step Encoder Fifteen"	};
+	static String StepEncoderSixteenID	{ "Step Encoder Sixteen"	};
+
+	const StringArray StepEncoderIDs
+	{
+		StepEncoderOneeID,
+		StepEncoderTwoID,
+		StepEncoderThreeID,
+		StepEncoderFourID,
+		StepEncoderFiveID,
+		StepEncoderSixID,
+		StepEncoderSevenID,
+		StepEncoderEightID,
+		StepEncoderNineID,
+		StepEncoderTenID,
+		StepEncoderElevenID,
+		StepEncoderTwelveID,
+		StepEncoderThirteenID,
+		StepEncoderFourteenID,
+		StepEncoderFifteenID,
+		StepEncoderSixteenID
+	};
+}
+
 namespace  ParameterNames
 {
 	static String StepButtonOneName		{ "Step Button One"			};

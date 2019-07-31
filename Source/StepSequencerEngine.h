@@ -1,6 +1,7 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "MidiData.h"
+#include "MidiTrack.h"
+#include "NoteHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -32,6 +33,10 @@ public:
 	void getStateInformation(MemoryBlock& destData) override {};
 	void setStateInformation(const void* data, int sizeInBytes) override {};
 
+	AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+
+	AudioProcessorValueTreeState treeState;
+
 	std::atomic<bool>	shouldFlash			{ false };
 	std::atomic<int>	playPositionIndex	{ 0 };
 
@@ -42,7 +47,8 @@ private:
 	int lastNoteValue{ -1 };
 	int currentNoteIndex{ 0 };
 
-	MidiData midiData;
+	MidiTrack midiTrack{16, 1};
+	NoteHandler noteHandler;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

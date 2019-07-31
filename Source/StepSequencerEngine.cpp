@@ -2,9 +2,35 @@
 #include "StepSequencerEngine.h"
 #include "StepSequencerEditor.h"
 #include "Extensions.h"
+#include "Parameters.h"
 
-StepSequencerEngine::StepSequencerEngine() : AudioProcessor (BusesProperties().withInput("Input",  AudioChannelSet::stereo(), true))
+StepSequencerEngine::StepSequencerEngine() : AudioProcessor (BusesProperties().withInput("Input",  AudioChannelSet::stereo(), true)),
+treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 {
+	treeState.state = ValueTree(IDs::TreeStateID);
+
+	for(auto& ID: IDs::StepEncoderIDs)
+	{
+		treeState.addParameterListener(ID, &noteHandler);
+	}
+}
+
+AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()
+{
+	std::vector<std::unique_ptr<RangedAudioParameter>> parameters;
+
+	for(auto i = 0; i < 16; i++)
+	{
+		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::StepEncoderIDs[i], ParameterNames::StepEncoderNames[i], 0, 127, 0);
+
+		parameters.push_back(std::move(stepEncoderParameter));
+
+		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], false);
+
+		parameters.push_back(std::move(stepButtonParameter));
+	}
+
+	return { parameters.begin(), parameters.end() };
 }
 
 StepSequencerEngine::~StepSequencerEngine()
@@ -59,39 +85,39 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	int ippqEnd = std::floor(ppqEnd);
 	ippqEnd = positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
-	midiData.notes[0]	= 34;
-	midiData.notes[1]	= 34;
-	midiData.notes[2]	= 34;
-	midiData.notes[3]	= 36;
-	midiData.notes[4]	= 37;
-	midiData.notes[5]	= 34;
-	midiData.notes[6]	= 41;
-	midiData.notes[7]	= 34;
-	midiData.notes[8]	= 37;
-	midiData.notes[9]	= 34;
-	midiData.notes[10]	= 34;
-	midiData.notes[11]	= 34;
-	midiData.notes[12]	= 41;
-	midiData.notes[13]	= 34;
-	midiData.notes[14]	= 34;
-	midiData.notes[15]	= 34;
+	midiTrack.notes[0]	= 34;
+	midiTrack.notes[1]	= 34;
+	midiTrack.notes[2]	= 34;
+	midiTrack.notes[3]	= 36;
+	midiTrack.notes[4]	= 37;
+	midiTrack.notes[5]	= 34;
+	midiTrack.notes[6]	= 41;
+	midiTrack.notes[7]	= 34;
+	midiTrack.notes[8]	= 37;
+	midiTrack.notes[9]	= 34;
+	midiTrack.notes[10]	= 34;
+	midiTrack.notes[11]	= 34;
+	midiTrack.notes[12]	= 41;
+	midiTrack.notes[13]	= 34;
+	midiTrack.notes[14]	= 34;
+	midiTrack.notes[15]	= 34;
 	
-	midiData.velocity[0] = 34;
-	midiData.velocity[1] = 34;
-	midiData.velocity[2] = 0;
-	midiData.velocity[3] = 34;
-	midiData.velocity[4] = 34;
-	midiData.velocity[5] = 0;
-	midiData.velocity[6] = 34;
-	midiData.velocity[7] = 0;
-	midiData.velocity[8] = 34;
-	midiData.velocity[9] = 0;
-	midiData.velocity[10] = 0;
-	midiData.velocity[11] = 0;
-	midiData.velocity[12] = 34;
-	midiData.velocity[13] = 0;
-	midiData.velocity[14] = 0;
-	midiData.velocity[15] = 0;
+	midiTrack.velocity[0] = 34;
+	midiTrack.velocity[1] = 34;
+	midiTrack.velocity[2] = 0;
+	midiTrack.velocity[3] = 34;
+	midiTrack.velocity[4] = 34;
+	midiTrack.velocity[5] = 0;
+	midiTrack.velocity[6] = 34;
+	midiTrack.velocity[7] = 0;
+	midiTrack.velocity[8] = 34;
+	midiTrack.velocity[9] = 0;
+	midiTrack.velocity[10] = 0;
+	midiTrack.velocity[11] = 0;
+	midiTrack.velocity[12] = 34;
+	midiTrack.velocity[13] = 0;
+	midiTrack.velocity[14] = 0;
+	midiTrack.velocity[15] = 0;
 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
@@ -111,14 +137,14 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 		{
 			 int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
 
-			if (midiData.notes.size() > 0) // if there are notes in 'notes' coolection
+			if (!midiTrack.notes.empty()) // if there are notes in 'notes' coolection
 			{
-				index = std::fmod(i, midiData.notes.size());
+				index = std::fmod(i, midiTrack.notes.size());
 
-				lastNoteValue = midiData.notes[index];  // set flag that last note was a note-on
-				auto velocity = midiData.velocity[index];
+				lastNoteValue = midiTrack.notes[index];  // set flag that last note was a note-on
+				auto velocity = midiTrack.velocity[index];
 
-				currentNoteIndex = (currentNoteIndex + 1) % midiData.notes.size();  // advance to next note in collection
+				currentNoteIndex = (currentNoteIndex + 1) % midiTrack.notes.size();  // advance to next note in collection
 
 				midiMessages.addEvent(MidiMessage::noteOn(1, lastNoteValue, velocity), offset); // add last note to buffer at sample pos = offset
 

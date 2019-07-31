@@ -21,6 +21,8 @@ public:
 	std::unique_ptr<ChaseLEDs>			transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
+	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
+
 private:
 
     StepSequencerEngine& processor;
