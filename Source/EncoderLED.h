@@ -9,13 +9,12 @@ public:
 	~EncoderLED();
 	
 	void paint(Graphics& g) override;
+	void toggle(bool useOn);
 
 	bool useOnImage{ false };
 
-	void toggle(bool useOn);
-
 private:
 
-	Image OnImage{ ImageCache::getFromMemory(BinaryData::LEDOnGreen_png, BinaryData::LEDOnGreen_pngSize) };
-	Image OffImage{ ImageCache::getFromMemory(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize) };
+	Image OnImage	{ ImageCache::getFromMemory(BinaryData::LEDOnGreen_png, BinaryData::LEDOnGreen_pngSize) };
+	Image OffImage	{ ImageCache::getFromMemory(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize) };
 };

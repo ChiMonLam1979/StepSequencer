@@ -9,10 +9,9 @@ public:
 	~ChaseLED();
 
 	void paint(Graphics& g) override;
+	void toggle(bool useOn);
 
 	bool useOnImage{ false };
-
-	void toggle(bool useOn);
 
 private:
 
