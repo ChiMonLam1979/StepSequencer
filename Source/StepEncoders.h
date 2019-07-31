@@ -9,10 +9,10 @@ public:
 	StepEncoders();
 	~StepEncoders();
 
-	EncoderLookAndFeel encoderLookAndFeel;
+	EncoderLookAndFeel		encoderLookAndFeel;
 
-	OwnedArray<Encoder> encoders;
-	OwnedArray<EncoderLED> encoderLeds;
+	OwnedArray<Encoder>		encoders;
+	OwnedArray<EncoderLED>	encoderLeds;
 
 	void resized() override;
 

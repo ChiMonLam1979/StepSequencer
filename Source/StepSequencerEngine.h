@@ -42,13 +42,13 @@ public:
 
 private:
 
-	double rate	{ 0 };
-	int samplesSinceNoteOn{ 0 };
-	int lastNoteValue{ -1 };
-	int currentNoteIndex{ 0 };
+	double	rate				{ 0	};
+	int		samplesSinceNoteOn	{ 0	};
+	int		currentNoteIndex	{ 0	};
+	int		lastNoteValue		{ -1 };
 
-	MidiTrack midiTrack{16, 1};
-	NoteHandler noteHandler;
+	MidiTrack	midiTrack		{16, 1};
+	NoteHandler	noteHandler;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

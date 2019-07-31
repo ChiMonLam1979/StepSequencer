@@ -61,30 +61,31 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 
 
 	// set led index - delay is added because UI is not in sync - just reaper?
-	auto delay = 1;
-	auto pos = std::floor((positionInfo.ppqPosition * 4 ) - delay);
-	auto index = maths::mod(pos, 16);
+	auto delay	= 1;
+	auto pos	= std::floor((positionInfo.ppqPosition * 4 ) - delay);
+	auto index	= maths::mod(pos, 16);
 	playPositionIndex.store(index);
 
-	auto bpm = positionInfo.bpm;															// bpm is quarterNotesPerMinute
-	auto bps = bpm / 60;																	// bps is quarterNotesPerSecond
-	auto samplesPerBeat = rate / bps;														// number of samples per beat/quarternote is samples per sec / beats per second
+	auto bpm			= positionInfo.bpm;													// bpm is quarterNotesPerMinute
+	auto bps			= bpm / 60;															// bps is quarterNotesPerSecond
+	auto samplesPerBeat	= rate / bps;														// number of samples per beat/quarternote is samples per sec / beats per second
 
-	auto noteDivisionFactor = 4.0f;
-	auto lengthFactor = 0.8f;
+	auto noteDivisionFactor	= 4.0f;
+	auto lengthFactor		= 0.8f;
 
-	auto samplesPerNoteDivision = samplesPerBeat / noteDivisionFactor;						// set note division
-	auto noteLength = static_cast<int> (std::ceil(samplesPerNoteDivision * lengthFactor));	// set note length
+	auto samplesPerNoteDivision	= samplesPerBeat / noteDivisionFactor;									// set note division
+	auto noteLength				= static_cast<int> (std::ceil(samplesPerNoteDivision * lengthFactor));	// set note length
 
 	auto numSamples = buffer.getNumSamples();	// number of samples in each buffer
 
 	//work out which notes will occur in the buffer
-	const double ppqBegin = positionInfo.ppqPosition * noteDivisionFactor;
-	const auto ppqEnd = ppqBegin + (numSamples / samplesPerNoteDivision);
-	const int ippqBegin = std::ceil(maths::precisionRound(ppqBegin, 0.001));
-	int ippqEnd = std::floor(ppqEnd);
-	ippqEnd = positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
+	const double	ppqBegin	= positionInfo.ppqPosition * noteDivisionFactor;
+	const auto		ppqEnd		= ppqBegin + (numSamples / samplesPerNoteDivision);
+	const int		ippqBegin	= std::ceil(maths::precisionRound(ppqBegin, 0.001));
+	int				ippqEnd		= std::floor(ppqEnd);
+					ippqEnd		= positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
+	//dummy data for testing
 	midiTrack.notes[0]	= 34;
 	midiTrack.notes[1]	= 34;
 	midiTrack.notes[2]	= 34;
@@ -102,22 +103,22 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	midiTrack.notes[14]	= 34;
 	midiTrack.notes[15]	= 34;
 	
-	midiTrack.velocity[0] = 34;
-	midiTrack.velocity[1] = 34;
-	midiTrack.velocity[2] = 0;
-	midiTrack.velocity[3] = 34;
-	midiTrack.velocity[4] = 34;
-	midiTrack.velocity[5] = 0;
-	midiTrack.velocity[6] = 34;
-	midiTrack.velocity[7] = 0;
-	midiTrack.velocity[8] = 34;
-	midiTrack.velocity[9] = 0;
-	midiTrack.velocity[10] = 0;
-	midiTrack.velocity[11] = 0;
-	midiTrack.velocity[12] = 34;
-	midiTrack.velocity[13] = 0;
-	midiTrack.velocity[14] = 0;
-	midiTrack.velocity[15] = 0;
+	midiTrack.velocity[0]	= 34;
+	midiTrack.velocity[1]	= 34;
+	midiTrack.velocity[2]	= 0;
+	midiTrack.velocity[3]	= 34;
+	midiTrack.velocity[4]	= 34;
+	midiTrack.velocity[5]	= 0;
+	midiTrack.velocity[6]	= 34;
+	midiTrack.velocity[7]	= 0;
+	midiTrack.velocity[8]	= 34;
+	midiTrack.velocity[9]	= 0;
+	midiTrack.velocity[10]	= 0;
+	midiTrack.velocity[11]	= 0;
+	midiTrack.velocity[12]	= 34;
+	midiTrack.velocity[13]	= 0;
+	midiTrack.velocity[14]	= 0;
+	midiTrack.velocity[15]	= 0;
 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
@@ -137,14 +138,14 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 		{
 			 int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
 
-			if (!midiTrack.notes.empty()) // if there are notes in 'notes' coolection
+			if (!midiTrack.notes.empty()) // if there are notes in the track
 			{
 				index = std::fmod(i, midiTrack.notes.size());
 
 				lastNoteValue = midiTrack.notes[index];  // set flag that last note was a note-on
 				auto velocity = midiTrack.velocity[index];
 
-				currentNoteIndex = (currentNoteIndex + 1) % midiTrack.notes.size();  // advance to next note in collection
+				currentNoteIndex = (currentNoteIndex + 1) % midiTrack.notes.size();  // advance to next note in track
 
 				midiMessages.addEvent(MidiMessage::noteOn(1, lastNoteValue, velocity), offset); // add last note to buffer at sample pos = offset
 
@@ -163,5 +164,9 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 
 	if(!positionInfo.isPlaying)
 	{
+		//remove the hacky delay
+		auto pos	= std::floor((positionInfo.ppqPosition * 4));
+		auto index	= maths::mod(pos, 16);
+		playPositionIndex.store(index);
 	}
 }
