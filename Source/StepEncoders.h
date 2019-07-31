@@ -9,6 +9,8 @@ public:
 	StepEncoders();
 	~StepEncoders();
 
+	EncoderLookAndFeel encoderLookAndFeel;
+
 	OwnedArray<Encoder> encoders;
 	OwnedArray<EncoderLED> encoderLeds;
 

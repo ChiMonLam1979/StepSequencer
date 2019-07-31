@@ -40,7 +40,7 @@ private:
 	double rate	{ 0 };
 	int samplesSinceNoteOn{ 0 };
 	int lastNoteValue{ -1 };
-	int currentNote{ 0 };
+	int currentNoteIndex{ 0 };
 
 	MidiData midiData;
 
