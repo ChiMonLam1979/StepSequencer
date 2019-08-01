@@ -69,7 +69,7 @@ void StepSequencerEditor::resized()
 	FlexBox main = FlexBoxFactory::makeMasterBox();
 	main.items.addArray({
 								FlexItem(toggleButtonItem),
-								FlexItem(encoderBox).withFlex(1),
+								FlexItem(encoderBox).withFlex(0.83),
 								FlexItem(buttonBox).withFlex(0.18),
 								FlexItem(underStepButtonsPanelItem)
 	});
