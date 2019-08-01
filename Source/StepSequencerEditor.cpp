@@ -13,7 +13,9 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	for(auto i = 0; i < 16; i++)
 	{
 		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::StepEncoderIDs[i], *stepEncoders->encoders[i]));
+		stepButtonAttachments .add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
 	}
+
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 

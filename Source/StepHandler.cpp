@@ -1,11 +1,16 @@
-/*
-  ==============================================================================
-
-    StepHandler.cpp
-    Created: 31 Jul 2019 8:35:44pm
-    Author:  cmnl
-
-  ==============================================================================
-*/
-
 #include "StepHandler.h"
+
+StepHandler::StepHandler()
+{
+	
+}
+
+StepHandler::~StepHandler()
+{
+	
+}
+
+void StepHandler::parameterChanged(const String& parameterID, float newValue)
+{
+	
+}

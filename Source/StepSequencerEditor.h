@@ -22,6 +22,7 @@ public:
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
 
 private:
 

@@ -13,6 +13,11 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 	{
 		treeState.addParameterListener(ID, &noteHandler);
 	}
+
+	for(auto& ID: IDs::StepButtonIDs)
+	{
+		treeState.addParameterListener(ID, &stepHandler);
+	}
 }
 
 AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()

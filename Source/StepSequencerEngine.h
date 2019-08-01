@@ -2,6 +2,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MidiTrack.h"
 #include "NoteHandler.h"
+#include "StepHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -49,6 +50,7 @@ private:
 
 	MidiTrack	midiTrack		{16, 1};
 	NoteHandler	noteHandler;
+	StepHandler stepHandler;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };
