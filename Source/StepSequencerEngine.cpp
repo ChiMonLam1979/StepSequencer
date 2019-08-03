@@ -9,7 +9,7 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 {
 	treeState.state = ValueTree(IDs::TreeStateID);
 
-	for(auto& ID: IDs::StepEncoderIDs)
+	for(auto& ID: IDs::PitchEncoderIDs)
 	{
 		treeState.addParameterListener(ID, &noteHandler);
 	}
@@ -23,6 +23,8 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 	{
 		treeState.addParameterListener(ID, &velocityHandler);
 	}
+
+	treeState.addParameterListener(IDs::StepChoicesID, &stepChoicesHandler);
 }
 
 AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()
@@ -31,7 +33,7 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 	for(auto i = 0; i < 16; i++)
 	{
-		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::StepEncoderIDs[i], ParameterNames::StepEncoderNames[i], 0, 127, 0);
+		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, 0);
 
 		parameters.push_back(std::move(stepEncoderParameter));
 
@@ -43,6 +45,10 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 		parameters.push_back(std::move(velocityEncoderParameter));
 	}
+
+	auto stepChoicesParameter = std::make_unique<AudioParameterChoice>(IDs::StepChoicesID, ParameterNames::StepChoicesName, ParameterChoices::StepChoices, 0);
+
+	parameters.push_back(std::move(stepChoicesParameter));
 
 	return { parameters.begin(), parameters.end() };
 }

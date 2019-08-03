@@ -4,6 +4,7 @@
 #include "NoteHandler.h"
 #include "StepHandler.h"
 #include "VelocityHandler.h"
+#include "StepChoicesHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -51,9 +52,10 @@ private:
 
 	MidiTrack	midiTrack		{16, 1};
 
-	NoteHandler		noteHandler;
-	StepHandler		stepHandler;
-	VelocityHandler velocityHandler;
+	NoteHandler			noteHandler;
+	StepHandler			stepHandler;
+	VelocityHandler		velocityHandler;
+	StepChoicesHandler	stepChoicesHandler;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

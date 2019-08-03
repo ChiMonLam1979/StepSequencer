@@ -5,6 +5,7 @@
 #include "BlankPanel.h"
 #include "StepEncoders.h"
 #include "ChaseLEDs.h"
+#include "StepChoicesAttachment.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -21,15 +22,10 @@ public:
 	std::unique_ptr<ChaseLEDs>			transportLEDs;
 	std::unique_ptr<BlankPanel>			underStepButtonsPanel;
 
-	StepButton toggleButton {"toggleButton", DrawableButton::ButtonStyle::ImageFitted};
-	bool encodersAttachedToPitch { false };
-
-	void ToggleEncoderAttachment();
-	void AttachEncodersToVelocity();
-	void AttachEncodersToPitch();
-
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
+
+	std::unique_ptr<StepChoicesAttachment> stepChoicesAttachment;
 
 private:
 

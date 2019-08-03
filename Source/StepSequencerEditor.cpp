@@ -12,14 +12,13 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 
 	for(auto i = 0; i < 16; i++)
 	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::StepEncoderIDs[i], *stepEncoders->encoders[i]));
-
-		encodersAttachedToPitch = true;
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::PitchEncoderIDs[i], *stepEncoders->encoders[i]));
 
 		stepButtonAttachments .add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
 	}
 
-	toggleButton.onClick = [this] { ToggleEncoderAttachment(); };
+	stepChoicesAttachment = std::make_unique<StepChoicesAttachment>( stepEncoderAttachments, stepEncoders, processor.treeState, IDs::StepChoicesID);
+
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
@@ -28,8 +27,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	stepButtons->MakeVisible(*this);
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(underStepButtonsPanel.get());
-
-	addAndMakeVisible(toggleButton);
+	addAndMakeVisible(stepChoicesAttachment.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -48,7 +46,9 @@ void StepSequencerEditor::resized()
 
 	auto window = getLocalBounds();
 
-	FlexItem toggleButtonItem = FlexItemFactory::makeButtonBoxItem(toggleButton);
+	FlexBox stepChoicesButtonsBox = FlexBoxFactory::maketEncodersBox();
+
+	stepChoicesButtonsBox.items.add(FlexItemFactory::makeButtonBoxItem(*stepChoicesAttachment));
 
 	FlexBox encoderBox = FlexBoxFactory::maketEncodersBox();
 
@@ -68,40 +68,11 @@ void StepSequencerEditor::resized()
 
 	FlexBox main = FlexBoxFactory::makeMasterBox();
 	main.items.addArray({
-								FlexItem(toggleButtonItem),
-								FlexItem(encoderBox).withFlex(0.83),
+								FlexItem(stepChoicesButtonsBox).withFlex(0.2),
+								FlexItem(encoderBox).withFlex(0.80),
 								FlexItem(buttonBox).withFlex(0.18),
 								FlexItem(underStepButtonsPanelItem)
 	});
 
 	main.performLayout(window);
-}
-
-void StepSequencerEditor::ToggleEncoderAttachment()
-{
-	encodersAttachedToPitch ? AttachEncodersToVelocity() : AttachEncodersToPitch();
-}
-
-void StepSequencerEditor::AttachEncodersToPitch()
-{
-	stepEncoderAttachments.clear();
-
-	for (auto i = 0; i < 16; i++)
-	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::StepEncoderIDs[i], *stepEncoders->encoders[i]));
-	}
-
-	encodersAttachedToPitch = true;
-}
-
-void StepSequencerEditor::AttachEncodersToVelocity()
-{
-	stepEncoderAttachments.clear();
-
-	for (auto i = 0; i < 16; i++)
-	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::VelocityEncoderIDs[i], *stepEncoders->encoders[i]));
-	}
-
-	encodersAttachedToPitch = false;
 }

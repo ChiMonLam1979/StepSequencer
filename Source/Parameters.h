@@ -5,6 +5,8 @@ namespace IDs
 {
 	static String TreeStateID			{ "treeState" };
 
+	static String StepChoicesID			{ "Step Choices " };
+
 	static String StepButtonOneID		{ "Step Button One"			};
 	static String StepButtonTwoID		{ "Step Button Two"			};
 	static String StepButtonThreeID		{ "Step Button Three"		};
@@ -42,41 +44,41 @@ namespace IDs
 		StepButtonSixteenID,
 	};
 
-	static String StepEncoderOneID		{ "Step Encoder One"		};
-	static String StepEncoderTwoID		{ "Step Encoder Two"		};
-	static String StepEncoderThreeID	{ "Step Encoder Three"		};
-	static String StepEncoderFourID		{ "Step Encoder Four"		};
-	static String StepEncoderFiveID		{ "Step Encoder Five"		};
-	static String StepEncoderSixID		{ "Step Encoder Six"		};
-	static String StepEncoderSevenID	{ "Step Encoder Seven"		};
-	static String StepEncoderEightID	{ "Step Encoder Eight"		};
-	static String StepEncoderNineID		{ "Step Encoder Nine"		};
-	static String StepEncoderTenID		{ "Step Encoder Ten"		};
-	static String StepEncoderElevenID	{ "Step Encoder Eleven"		};
-	static String StepEncoderTwelveID	{ "Step Encoder Twelve"		};
-	static String StepEncoderThirteenID	{ "Step Encoder Thirteen"	};
-	static String StepEncoderFourteenID	{ "Step Encoder Fourteen"	};
-	static String StepEncoderFifteenID	{ "Step Encoder Fifteen"	};
-	static String StepEncoderSixteenID	{ "Step Encoder Sixteen"	};
+	static String PitchEncoderOneID		{ "Step Encoder One"		};
+	static String PitchEncoderTwoID		{ "Step Encoder Two"		};
+	static String PitchEncoderThreeID	{ "Step Encoder Three"		};
+	static String PitchEncoderFourID		{ "Step Encoder Four"		};
+	static String PitchEncoderFiveID		{ "Step Encoder Five"		};
+	static String PitchEncoderSixID		{ "Step Encoder Six"		};
+	static String PitchEncoderSevenID	{ "Step Encoder Seven"		};
+	static String PitchEncoderEightID	{ "Step Encoder Eight"		};
+	static String PitchEncoderNineID		{ "Step Encoder Nine"		};
+	static String PitchEncoderTenID		{ "Step Encoder Ten"		};
+	static String PitchEncoderElevenID	{ "Step Encoder Eleven"		};
+	static String PitchEncoderTwelveID	{ "Step Encoder Twelve"		};
+	static String PitchEncoderThirteenID	{ "Step Encoder Thirteen"	};
+	static String PitchEncoderFourteenID	{ "Step Encoder Fourteen"	};
+	static String PitchEncoderFifteenID	{ "Step Encoder Fifteen"	};
+	static String PitchEncoderSixteenID	{ "Step Encoder Sixteen"	};
 
-	const StringArray StepEncoderIDs
+	const StringArray PitchEncoderIDs
 	{
-		StepEncoderOneID,
-		StepEncoderTwoID,
-		StepEncoderThreeID,
-		StepEncoderFourID,
-		StepEncoderFiveID,
-		StepEncoderSixID,
-		StepEncoderSevenID,
-		StepEncoderEightID,
-		StepEncoderNineID,
-		StepEncoderTenID,
-		StepEncoderElevenID,
-		StepEncoderTwelveID,
-		StepEncoderThirteenID,
-		StepEncoderFourteenID,
-		StepEncoderFifteenID,
-		StepEncoderSixteenID
+		PitchEncoderOneID,
+		PitchEncoderTwoID,
+		PitchEncoderThreeID,
+		PitchEncoderFourID,
+		PitchEncoderFiveID,
+		PitchEncoderSixID,
+		PitchEncoderSevenID,
+		PitchEncoderEightID,
+		PitchEncoderNineID,
+		PitchEncoderTenID,
+		PitchEncoderElevenID,
+		PitchEncoderTwelveID,
+		PitchEncoderThirteenID,
+		PitchEncoderFourteenID,
+		PitchEncoderFifteenID,
+		PitchEncoderSixteenID
 	};
 
 	static String VelocityEncoderOneID		{ "Velocity Encoder One"		};
@@ -119,6 +121,8 @@ namespace IDs
 
 namespace  ParameterNames
 {
+	static String StepChoicesName		{ "Step Choices Name" };
+
 	static String StepButtonOneName		{ "Step Button 	One Name"		};
 	static String StepButtonTwoName		{ "Step Button 	Two Name"		};
 	static String StepButtonThreeName	{ "Step Button 	Three Name"		};
@@ -156,22 +160,22 @@ namespace  ParameterNames
 		StepButtonSixteenName,
 	};
 
-	static String StepEncoderOneName		{ "Step Encoder  One Name"		};
-	static String StepEncoderTwoName		{ "Step Encoder  Two Name"		};
-	static String StepEncoderThreeName		{ "Step Encoder  Three Name"	};
-	static String StepEncoderFourName		{ "Step Encoder  Four Name"		};
-	static String StepEncoderFiveName		{ "Step Encoder  Five Name"		};
-	static String StepEncoderSixName		{ "Step Encoder  Six Name"		};
-	static String StepEncoderSevenName		{ "Step Encoder  Seven Name"	};
-	static String StepEncoderEightName		{ "Step Encoder  Eight Name"	};
-	static String StepEncoderNineName		{ "Step Encoder  Nine Name"		};
-	static String StepEncoderTenName		{ "Step Encoder  Ten Name"		};
-	static String StepEncoderElevenName		{ "Step Encoder  Eleven Name"	};
-	static String StepEncoderTwelveName		{ "Step Encoder  Twelve Name"	};
-	static String StepEncoderThirteenName	{ "Step Encoder  Thirteen Name"	};
-	static String StepEncoderFourteenName	{ "Step Encoder  Fourteen Name"	};
-	static String StepEncoderFifteenName	{ "Step Encoder  Fifteen Name"	};
-	static String StepEncoderSixteenName	{ "Step Encoder  Sixteen Name"	};
+	static String StepEncoderOneName{ "Step Encoder  One Name" };
+	static String StepEncoderTwoName{ "Step Encoder  Two Name" };
+	static String StepEncoderThreeName{ "Step Encoder  Three Name" };
+	static String StepEncoderFourName{ "Step Encoder  Four Name" };
+	static String StepEncoderFiveName{ "Step Encoder  Five Name" };
+	static String StepEncoderSixName{ "Step Encoder  Six Name" };
+	static String StepEncoderSevenName{ "Step Encoder  Seven Name" };
+	static String StepEncoderEightName{ "Step Encoder  Eight Name" };
+	static String StepEncoderNineName{ "Step Encoder  Nine Name" };
+	static String StepEncoderTenName{ "Step Encoder  Ten Name" };
+	static String StepEncoderElevenName{ "Step Encoder  Eleven Name" };
+	static String StepEncoderTwelveName{ "Step Encoder  Twelve Name" };
+	static String StepEncoderThirteenName{ "Step Encoder  Thirteen Name" };
+	static String StepEncoderFourteenName{ "Step Encoder  Fourteen Name" };
+	static String StepEncoderFifteenName{ "Step Encoder  Fifteen Name" };
+	static String StepEncoderSixteenName{ "Step Encoder  Sixteen Name" };
 
 	const StringArray StepEncoderNames
 	{
@@ -191,6 +195,43 @@ namespace  ParameterNames
 		StepEncoderFourteenName,
 		StepEncoderFifteenName,
 		StepEncoderSixteenName
+	};
+
+	static String PitchEncoderOneName		{ "Step Encoder  One Name"		};
+	static String PitchEncoderTwoName		{ "Step Encoder  Two Name"		};
+	static String PitchEncoderThreeName		{ "Step Encoder  Three Name"	};
+	static String PitchEncoderFourName		{ "Step Encoder  Four Name"		};
+	static String PitchEncoderFiveName		{ "Step Encoder  Five Name"		};
+	static String PitchEncoderSixName		{ "Step Encoder  Six Name"		};
+	static String PitchEncoderSevenName		{ "Step Encoder  Seven Name"	};
+	static String PitchEncoderEightName		{ "Step Encoder  Eight Name"	};
+	static String PitchEncoderNineName		{ "Step Encoder  Nine Name"		};
+	static String PitchEncoderTenName		{ "Step Encoder  Ten Name"		};
+	static String PitchEncoderElevenName		{ "Step Encoder  Eleven Name"	};
+	static String PitchEncoderTwelveName		{ "Step Encoder  Twelve Name"	};
+	static String PitchEncoderThirteenName	{ "Step Encoder  Thirteen Name"	};
+	static String PitchEncoderFourteenName	{ "Step Encoder  Fourteen Name"	};
+	static String PitchEncoderFifteenName	{ "Step Encoder  Fifteen Name"	};
+	static String PitchEncoderSixteenName	{ "Step Encoder  Sixteen Name"	};
+
+	const StringArray PitchEncoderNames
+	{
+		PitchEncoderOneName,
+		PitchEncoderTwoName,
+		PitchEncoderThreeName,
+		PitchEncoderFourName,
+		PitchEncoderFiveName,
+		PitchEncoderSixName,
+		PitchEncoderSevenName,
+		PitchEncoderEightName,
+		PitchEncoderNineName,
+		PitchEncoderTenName,
+		PitchEncoderElevenName,
+		PitchEncoderTwelveName,
+		PitchEncoderThirteenName,
+		PitchEncoderFourteenName,
+		PitchEncoderFifteenName,
+		PitchEncoderSixteenName
 	};
 
 	static String VelocityEncoderOneName		{ "Velocity Encoder One Name"		};
@@ -228,6 +269,18 @@ namespace  ParameterNames
 		VelocityEncoderFourteenName,
 		VelocityEncoderFifteenName,
 		VelocityEncoderSixteenName
+	};
+}
+
+namespace ParameterChoices
+{
+	static String Pitch{ "Pitch" };
+	static String Velocity{ "Velocity" };
+
+	const StringArray StepChoices
+	{
+		Pitch,
+		Velocity
 	};
 }
 

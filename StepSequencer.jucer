@@ -33,6 +33,10 @@
         <GROUP id="{1B06F047-A275-D2B3-1A7E-CD29B6D18F4F}" name="ParameterHandlers">
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
+          <FILE id="xnPJfp" name="StepChoicesHandler.cpp" compile="1" resource="0"
+                file="Source/StepChoicesHandler.cpp"/>
+          <FILE id="zPNbgQ" name="StepChoicesHandler.h" compile="0" resource="0"
+                file="Source/StepChoicesHandler.h"/>
           <FILE id="kDqbyq" name="StepHandler.cpp" compile="1" resource="0" file="Source/StepHandler.cpp"/>
           <FILE id="qRrmmC" name="StepHandler.h" compile="0" resource="0" file="Source/StepHandler.h"/>
           <FILE id="GKdn2S" name="VelocityHandler.cpp" compile="1" resource="0"
@@ -51,6 +55,12 @@
               file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
+          <FILE id="FHA8Ct" name="StepChoicesAttachment.cpp" compile="1" resource="0"
+                file="Source/StepChoicesAttachment.cpp"/>
+          <FILE id="dRqmfE" name="StepChoicesAttachment.h" compile="0" resource="0"
+                file="Source/StepChoicesAttachment.h"/>
+        </GROUP>
         <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
           <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
           <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
