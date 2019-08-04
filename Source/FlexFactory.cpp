@@ -4,6 +4,24 @@
 
 namespace FlexItemFactory
 {
+	FlexItem makeBlankSidePanelItem(Component& component)
+	{
+		return FlexItem(component)
+			.withMinHeight	(ComponentSizes::StepButtonHeight)
+			.withMinWidth	(ComponentSizes::blankSidePanelWidth)
+			.withMaxHeight	(ComponentSizes::StepButtonHeight)
+			.withMaxWidth	(ComponentSizes::blankSidePanelWidth);
+	}
+
+	FlexItem makeStepChoicesButtonsBoxItem(Component& component, int numberOfChoices)
+	{
+		return FlexItem(component)
+			.withMinHeight	(ComponentSizes::StepButtonHeight)
+			.withMinWidth	(ComponentSizes::StepButtonWidth * numberOfChoices)
+			.withMaxHeight	(ComponentSizes::StepButtonHeight)
+			.withMaxWidth	(ComponentSizes::StepButtonWidth * numberOfChoices);
+	}
+
 	FlexItem makeButtonBoxItem(Component& component)
 	{
 		return FlexItem(component)
@@ -33,6 +51,14 @@ namespace FlexItemFactory
 
 namespace  FlexBoxFactory
 {
+	FlexBox makeStepChoicesButtonsBox()
+	{
+		FlexBox box;
+		box.justifyContent = FlexBox::JustifyContent::flexStart;
+		box.alignContent = FlexBox::AlignContent::flexEnd;
+		return box;
+	}
+
 	FlexBox makeStepButtonsBox()
 	{
 		FlexBox box;
