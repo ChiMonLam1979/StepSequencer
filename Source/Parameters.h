@@ -349,14 +349,14 @@ namespace  ParameterNames
 namespace ParameterChoices
 {
 	static String Pitch		{ "Pitch"		};
+	static String NoteLength{ "Note Length" };
 	static String Velocity	{ "Velocity"	};
-	static String NoteLength{ "Note Length"	};
 
 	const StringArray StepChoices
 	{
 		Pitch,
-		Velocity,
-		NoteLength
+		NoteLength,
+		Velocity
 	};
 }
 

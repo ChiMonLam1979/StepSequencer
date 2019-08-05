@@ -22,8 +22,8 @@ public:
 	void resized() override;
 	void parameterChanged(const String& parameterID, float newValue) override;
 	void StepChoicesAttachment::AttachEncodersToPitch();
-	void StepChoicesAttachment::AttachEncodersToVelocity();
 	void StepChoicesAttachment::AttachEncodersToNoteLength();
+	void StepChoicesAttachment::AttachEncodersToVelocity();
 
 private:
 

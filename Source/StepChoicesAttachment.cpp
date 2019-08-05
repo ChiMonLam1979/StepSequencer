@@ -64,14 +64,14 @@ void StepChoicesAttachment::parameterChanged(const String& parameterID, float ne
 		AttachEncodersToPitch();
 	}
 
+	if (choice == ParameterChoices::NoteLength)
+	{
+		AttachEncodersToNoteLength();
+	}
+
 	if(choice == ParameterChoices::Velocity)
 	{
 		AttachEncodersToVelocity();
-	}
-
-	if(choice == ParameterChoices::NoteLength)
-	{
-		AttachEncodersToNoteLength();
 	}
 }
 
@@ -85,16 +85,6 @@ void StepChoicesAttachment::AttachEncodersToPitch()
 	}
 }
 
-void StepChoicesAttachment::AttachEncodersToVelocity()
-{
-	stepEncoderAttachments.clear();
-
-	for (auto i = 0; i < 16; i++)
-	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::VelocityEncoderIDs[i], *stepEncoders->encoders[i]));
-	}
-}
-
 void StepChoicesAttachment::AttachEncodersToNoteLength()
 {
 	stepEncoderAttachments.clear();
@@ -102,5 +92,15 @@ void StepChoicesAttachment::AttachEncodersToNoteLength()
 	for (auto i = 0; i < 16; i++)
 	{
 		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::NoteLengthEncoderIDs[i], *stepEncoders->encoders[i]));
+	}
+}
+
+void StepChoicesAttachment::AttachEncodersToVelocity()
+{
+	stepEncoderAttachments.clear();
+
+	for (auto i = 0; i < 16; i++)
+	{
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::VelocityEncoderIDs[i], *stepEncoders->encoders[i]));
 	}
 }

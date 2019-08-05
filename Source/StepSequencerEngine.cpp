@@ -19,14 +19,14 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 		treeState.addParameterListener(ID, &stepHandler);
 	}
 
+	for (auto& ID : IDs::NoteLengthEncoderIDs)
+	{
+		treeState.addParameterListener(ID, &noteLengthHandler);
+	}
+
 	for(auto& ID: IDs::VelocityEncoderIDs)
 	{
 		treeState.addParameterListener(ID, &velocityHandler);
-	}
-
-	for(auto& ID: IDs::NoteLengthEncoderIDs)
-	{
-		treeState.addParameterListener(ID, &noteLengthHandler);
 	}
 
 	treeState.addParameterListener(IDs::StepChoicesID, &stepChoicesHandler);
@@ -46,13 +46,13 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 		parameters.push_back(std::move(stepButtonParameter));
 
-		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, 0);
-
-		parameters.push_back(std::move(velocityEncoderParameter));
-
 		auto noteLengthEncoderParameter = std::make_unique<AudioParameterFloat>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0.0f, 1.0f, 0.5f);
 
 		parameters.push_back(std::move(noteLengthEncoderParameter));
+
+		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, 0);
+
+		parameters.push_back(std::move(velocityEncoderParameter));
 	}
 
 	auto stepChoicesParameter = std::make_unique<AudioParameterChoice>(IDs::StepChoicesID, ParameterNames::StepChoicesName, ParameterChoices::StepChoices, 0);
