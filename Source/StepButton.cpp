@@ -6,9 +6,9 @@ StepButton::StepButton(const String& name, ButtonStyle style, bool isRadioButton
 	buttonNormalSvg			= XmlDocument::parse(BinaryData::ButtonNormal_svg);
 	buttonOverSvg			= XmlDocument::parse(BinaryData::ButtonOver_svg);
 	buttonDownSvg			= XmlDocument::parse(BinaryData::ButtonDown_svg);
-	buttonOnSvg				= XmlDocument::parse(BinaryData::ButtonOn_svg);
-	buttonOnDownSvg			= XmlDocument::parse(BinaryData::ButtonOnDown_svg);
-	buttonOnOverSvg			= XmlDocument::parse(BinaryData::ButtonOnOver_svg);
+	buttonOnSvg				= XmlDocument::parse(isRadioButton ? BinaryData::ButtonOnRed_svg : BinaryData::ButtonOn_svg);
+	buttonOnDownSvg			= XmlDocument::parse(isRadioButton ? BinaryData::ButtonOnDownRed_svg : BinaryData::ButtonOnDown_svg);
+	buttonOnOverSvg			= XmlDocument::parse(isRadioButton ? BinaryData::ButtonOnOverRed_svg : BinaryData::ButtonOnOver_svg);
 
 	drawableButtonNormal	= Drawable::createFromSVG(*buttonNormalSvg);
 	drawableButtonOver		= Drawable::createFromSVG(*buttonOverSvg);
@@ -24,7 +24,7 @@ StepButton::StepButton(const String& name, ButtonStyle style, bool isRadioButton
 		drawableButtonOver.get(),
 		drawableButtonDown.get(),
 		nullptr,
-		drawableButtonOn.get(),
+	    drawableButtonOn.get(),
 		drawableButtonOnOver.get(),
 		drawableButtonOnDown.get()
 	);

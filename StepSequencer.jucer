@@ -11,8 +11,13 @@
         <FILE id="uhKeAK" name="ButtonOn.svg" compile="0" resource="1" file="Source/ButtonOn.svg"/>
         <FILE id="KpkS4u" name="ButtonOnDown.svg" compile="0" resource="1"
               file="Source/ButtonOnDown.svg"/>
+        <FILE id="NphgQv" name="ButtonOnDownRed.svg" compile="0" resource="1"
+              file="Source/ButtonOnDownRed.svg"/>
         <FILE id="hKw4YO" name="ButtonOnOver.svg" compile="0" resource="1"
               file="Source/ButtonOnOver.svg"/>
+        <FILE id="kxEizl" name="ButtonOnOverRed.svg" compile="0" resource="1"
+              file="Source/ButtonOnOverRed.svg"/>
+        <FILE id="EVDcUw" name="ButtonOnRed.svg" compile="0" resource="1" file="Source/ButtonOnRed.svg"/>
         <FILE id="JPgBRY" name="ButtonOver.svg" compile="0" resource="1" file="Source/ButtonOver.svg"/>
         <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
       </GROUP>
