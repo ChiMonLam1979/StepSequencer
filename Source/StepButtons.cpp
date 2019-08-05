@@ -5,7 +5,7 @@ StepButtons::StepButtons()
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		stepButtons.add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted));
+		stepButtons.add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted, false));
 	}
 
 	for (auto& stepButton : stepButtons)

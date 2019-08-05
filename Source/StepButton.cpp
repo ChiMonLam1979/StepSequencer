@@ -1,17 +1,34 @@
 #include "StepButton.h"
 #include "Parameters.h"
 
-StepButton::StepButton(const String& name, ButtonStyle style) : DrawableButton(name, style)
+StepButton::StepButton(const String& name, ButtonStyle style, bool isRadioButton) : DrawableButton(name, style)
 {
-	auto buttonNormal	= Drawable::createFromImageData(BinaryData::ButtonNormal_png,	BinaryData::ButtonNormal_pngSize);
-	auto buttonOver		= Drawable::createFromImageData(BinaryData::ButtonOver_png,		BinaryData::ButtonOver_pngSize);
-	auto buttonDown		= Drawable::createFromImageData(BinaryData::ButtonDown_png,		BinaryData::ButtonDown_pngSize);
-	auto buttonOn		= Drawable::createFromImageData(BinaryData::ButtonOn_png,		BinaryData::ButtonOn_pngSize);
-	auto buttonDownOn	= Drawable::createFromImageData(BinaryData::ButtonOnDown_png,	BinaryData::ButtonOnDown_pngSize);
-	auto buttonOverOn	= Drawable::createFromImageData(BinaryData::ButtonOnOver_png,	BinaryData::ButtonOnOver_pngSize);
+	buttonNormalSvg			= XmlDocument::parse(BinaryData::ButtonNormal_svg);
+	buttonOverSvg			= XmlDocument::parse(BinaryData::ButtonOver_svg);
+	buttonDownSvg			= XmlDocument::parse(BinaryData::ButtonDown_svg);
+	buttonOnSvg				= XmlDocument::parse(BinaryData::ButtonOn_svg);
+	buttonOnDownSvg			= XmlDocument::parse(BinaryData::ButtonOnDown_svg);
+	buttonOnOverSvg			= XmlDocument::parse(BinaryData::ButtonOnOver_svg);
+
+	drawableButtonNormal	= Drawable::createFromSVG(*buttonNormalSvg);
+	drawableButtonOver		= Drawable::createFromSVG(*buttonOverSvg);
+	drawableButtonDown		= Drawable::createFromSVG(*buttonDownSvg);
+	drawableButtonOn		= Drawable::createFromSVG(*buttonOnSvg);
+	drawableButtonOnDown	= Drawable::createFromSVG(*buttonOnDownSvg);
+	drawableButtonOnOver	= Drawable::createFromSVG(*buttonOnOverSvg);
 
 	setSize(ComponentSizes::StepButtonWidth, ComponentSizes::StepButtonHeight);
-	setImages(buttonNormal.get(), buttonOver.get(), buttonDown.get(), nullptr, buttonOn.get(), buttonOverOn.get(), buttonDownOn.get());
+	setImages
+	(
+		drawableButtonNormal.get(),
+		drawableButtonOver.get(),
+		drawableButtonDown.get(),
+		nullptr,
+		drawableButtonOn.get(),
+		drawableButtonOnOver.get(),
+		drawableButtonOnDown.get()
+	);
+
 	setColour(DrawableButton::backgroundOnColourId, Colour());
 	setClickingTogglesState(true);
 }

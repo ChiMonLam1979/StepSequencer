@@ -5,6 +5,7 @@
 #include "StepHandler.h"
 #include "VelocityHandler.h"
 #include "StepChoicesHandler.h"
+#include "NoteLengthHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -56,6 +57,7 @@ private:
 	StepHandler			stepHandler;
 	VelocityHandler		velocityHandler;
 	StepChoicesHandler	stepChoicesHandler;
+	NoteLengthHandler	noteLengthHandler;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

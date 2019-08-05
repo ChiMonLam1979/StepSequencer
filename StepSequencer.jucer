@@ -5,6 +5,15 @@
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
       <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
+        <FILE id="sMyy3M" name="ButtonDown.svg" compile="0" resource="1" file="Source/ButtonDown.svg"/>
+        <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
+              file="Source/ButtonNormal.svg"/>
+        <FILE id="uhKeAK" name="ButtonOn.svg" compile="0" resource="1" file="Source/ButtonOn.svg"/>
+        <FILE id="KpkS4u" name="ButtonOnDown.svg" compile="0" resource="1"
+              file="Source/ButtonOnDown.svg"/>
+        <FILE id="hKw4YO" name="ButtonOnOver.svg" compile="0" resource="1"
+              file="Source/ButtonOnOver.svg"/>
+        <FILE id="JPgBRY" name="ButtonOver.svg" compile="0" resource="1" file="Source/ButtonOver.svg"/>
         <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
       </GROUP>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
@@ -33,6 +42,10 @@
         <GROUP id="{1B06F047-A275-D2B3-1A7E-CD29B6D18F4F}" name="ParameterHandlers">
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
+          <FILE id="E0hhrs" name="NoteLengthHandler.cpp" compile="1" resource="0"
+                file="Source/NoteLengthHandler.cpp"/>
+          <FILE id="qDE6mW" name="NoteLengthHandler.h" compile="0" resource="0"
+                file="Source/NoteLengthHandler.h"/>
           <FILE id="xnPJfp" name="StepChoicesHandler.cpp" compile="1" resource="0"
                 file="Source/StepChoicesHandler.cpp"/>
           <FILE id="zPNbgQ" name="StepChoicesHandler.h" compile="0" resource="0"
@@ -144,7 +157,7 @@
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
-    <WINDOWS/>
+    <WINDOWS buildEnabled="0" windowsTargetPlatformVersion="10.0.17763.0"/>
   </LIVE_SETTINGS>
   <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
 </JUCERPROJECT>

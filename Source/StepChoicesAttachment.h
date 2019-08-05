@@ -23,6 +23,7 @@ public:
 	void parameterChanged(const String& parameterID, float newValue) override;
 	void StepChoicesAttachment::AttachEncodersToPitch();
 	void StepChoicesAttachment::AttachEncodersToVelocity();
+	void StepChoicesAttachment::AttachEncodersToNoteLength();
 
 private:
 

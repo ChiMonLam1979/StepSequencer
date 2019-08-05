@@ -17,7 +17,7 @@ StepChoicesAttachment::StepChoicesAttachment
 
 	for(auto& choice: parameter->choices)
 	{
-		buttons.add(new StepButton(choice, DrawableButton::ButtonStyle::ImageFitted));
+		buttons.add(new StepButton(choice, DrawableButton::ButtonStyle::ImageFitted, true));
 	}
 
 	for(auto& button : buttons)
@@ -68,6 +68,11 @@ void StepChoicesAttachment::parameterChanged(const String& parameterID, float ne
 	{
 		AttachEncodersToVelocity();
 	}
+
+	if(choice == ParameterChoices::NoteLength)
+	{
+		AttachEncodersToNoteLength();
+	}
 }
 
 void StepChoicesAttachment::AttachEncodersToPitch()
@@ -87,5 +92,15 @@ void StepChoicesAttachment::AttachEncodersToVelocity()
 	for (auto i = 0; i < 16; i++)
 	{
 		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::VelocityEncoderIDs[i], *stepEncoders->encoders[i]));
+	}
+}
+
+void StepChoicesAttachment::AttachEncodersToNoteLength()
+{
+	stepEncoderAttachments.clear();
+
+	for (auto i = 0; i < 16; i++)
+	{
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::NoteLengthEncoderIDs[i], *stepEncoders->encoders[i]));
 	}
 }

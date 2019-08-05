@@ -20,7 +20,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 
 	stepChoicesAttachment = std::make_unique<StepChoicesAttachment>( stepEncoderAttachments, stepEncoders, processor.treeState, IDs::StepChoicesID);
 
-
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
 	addAndMakeVisible(backPlate.get());
@@ -52,7 +51,7 @@ void StepSequencerEditor::resized()
 
 	stepChoicesButtonsBox.items.addArray({ 
 											FlexItemFactory::makeBlankSidePanelItem(*blankSidePanel),
-											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepChoicesAttachment, 2)
+											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepChoicesAttachment, 3)
 	});
 
 	FlexBox encoderBox = FlexBoxFactory::maketEncodersBox();
