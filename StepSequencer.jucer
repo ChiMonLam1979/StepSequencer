@@ -18,15 +18,6 @@
       </GROUP>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
         <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
-        <FILE id="kgZvjI" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
-        <FILE id="Lab7LK" name="ButtonNormal.png" compile="0" resource="1"
-              file="Source/ButtonNormal.png"/>
-        <FILE id="ZhXv9H" name="ButtonOn.png" compile="0" resource="1" file="Source/ButtonOn.png"/>
-        <FILE id="RQGoaD" name="ButtonOnDown.png" compile="0" resource="1"
-              file="Source/ButtonOnDown.png"/>
-        <FILE id="rJGXKv" name="ButtonOnOver.png" compile="0" resource="1"
-              file="Source/ButtonOnOver.png"/>
-        <FILE id="MgH79M" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
         <FILE id="ub1afL" name="EncoderThumb.png" compile="0" resource="1"
               file="Source/EncoderThumb.png"/>
         <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
