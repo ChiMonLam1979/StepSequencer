@@ -1,12 +1,12 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class MidiTrack
+class Pattern
 {
 public:
 
-	MidiTrack(int trackLength, int channekl);
-	~MidiTrack();
+	Pattern(int trackLength, int channekl);
+	~Pattern();
 
 	int					trackLength;
 	int					channel;

@@ -1,6 +1,7 @@
-#include "MidiTrack.h"
 
-MidiTrack::MidiTrack(int trackLength, int channel) : trackLength(trackLength), channel(channel)
+#include "Pattern.h"
+
+Pattern::Pattern(int trackLength, int channel) : trackLength(trackLength), channel(channel)
 {
 	notes.reserve(trackLength);
 	velocity.reserve(trackLength);
@@ -9,6 +10,6 @@ MidiTrack::MidiTrack(int trackLength, int channel) : trackLength(trackLength), c
 	velocity = std::vector<uint8>(trackLength);
 }
 
-MidiTrack::~MidiTrack()
+Pattern::~Pattern()
 {
 }

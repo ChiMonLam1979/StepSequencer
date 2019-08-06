@@ -1,11 +1,11 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "MidiTrack.h"
 #include "NoteHandler.h"
 #include "StepHandler.h"
 #include "VelocityHandler.h"
 #include "StepChoicesHandler.h"
 #include "NoteLengthHandler.h"
+#include "Pattern.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -51,7 +51,7 @@ private:
 	int		currentNoteIndex	{ 0	};
 	int		lastNoteValue		{ -1 };
 
-	MidiTrack	midiTrack		{16, 1};
+	Pattern	pattern				{16, 1};
 
 	NoteHandler			noteHandler;
 	StepHandler			stepHandler;

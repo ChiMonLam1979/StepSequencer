@@ -115,39 +115,39 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 					ippqEnd		= positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
 	//dummy data for testing
-	midiTrack.notes[0]	= 34;
-	midiTrack.notes[1]	= 34;
-	midiTrack.notes[2]	= 34;
-	midiTrack.notes[3]	= 36;
-	midiTrack.notes[4]	= 37;
-	midiTrack.notes[5]	= 34;
-	midiTrack.notes[6]	= 41;
-	midiTrack.notes[7]	= 34;
-	midiTrack.notes[8]	= 37;
-	midiTrack.notes[9]	= 34;
-	midiTrack.notes[10]	= 34;
-	midiTrack.notes[11]	= 34;
-	midiTrack.notes[12]	= 41;
-	midiTrack.notes[13]	= 34;
-	midiTrack.notes[14]	= 34;
-	midiTrack.notes[15]	= 34;
+	pattern.notes[0]	= 34;
+	pattern.notes[1]	= 34;
+	pattern.notes[2]	= 34;
+	pattern.notes[3]	= 36;
+	pattern.notes[4]	= 37;
+	pattern.notes[5]	= 34;
+	pattern.notes[6]	= 41;
+	pattern.notes[7]	= 34;
+	pattern.notes[8]	= 37;
+	pattern.notes[9]	= 34;
+	pattern.notes[10]	= 34;
+	pattern.notes[11]	= 34;
+	pattern.notes[12]	= 41;
+	pattern.notes[13]	= 34;
+	pattern.notes[14]	= 34;
+	pattern.notes[15]	= 34;
 	
-	midiTrack.velocity[0]	= 34;
-	midiTrack.velocity[1]	= 34;
-	midiTrack.velocity[2]	= 0;
-	midiTrack.velocity[3]	= 34;
-	midiTrack.velocity[4]	= 34;
-	midiTrack.velocity[5]	= 0;
-	midiTrack.velocity[6]	= 34;
-	midiTrack.velocity[7]	= 0;
-	midiTrack.velocity[8]	= 34;
-	midiTrack.velocity[9]	= 0;
-	midiTrack.velocity[10]	= 0;
-	midiTrack.velocity[11]	= 0;
-	midiTrack.velocity[12]	= 34;
-	midiTrack.velocity[13]	= 0;
-	midiTrack.velocity[14]	= 0;
-	midiTrack.velocity[15]	= 0;
+	pattern.velocity[0]	= 34;
+	pattern.velocity[1]	= 34;
+	pattern.velocity[2]	= 0;
+	pattern.velocity[3]	= 34;
+	pattern.velocity[4]	= 34;
+	pattern.velocity[5]	= 0;
+	pattern.velocity[6]	= 34;
+	pattern.velocity[7]	= 0;
+	pattern.velocity[8]	= 34;
+	pattern.velocity[9]	= 0;
+	pattern.velocity[10]	= 0;
+	pattern.velocity[11]	= 0;
+	pattern.velocity[12]	= 34;
+	pattern.velocity[13]	= 0;
+	pattern.velocity[14]	= 0;
+	pattern.velocity[15]	= 0;
 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
@@ -167,14 +167,14 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 		{
 			 int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
 
-			if (!midiTrack.notes.empty()) // if there are notes in the track
+			if (!pattern.notes.empty()) // if there are notes in the track
 			{
-				index = std::fmod(i, midiTrack.notes.size());
+				index = std::fmod(i, pattern.notes.size());
 
-				lastNoteValue = midiTrack.notes[index];  // set flag that last note was a note-on
-				auto velocity = midiTrack.velocity[index];
+				lastNoteValue = pattern.notes[index];  // set flag that last note was a note-on
+				auto velocity = pattern.velocity[index];
 
-				currentNoteIndex = (currentNoteIndex + 1) % midiTrack.notes.size();  // advance to next note in track
+				currentNoteIndex = (currentNoteIndex + 1) % pattern.notes.size();  // advance to next note in track
 
 				midiMessages.addEvent(MidiMessage::noteOn(1, lastNoteValue, velocity), offset); // add last note to buffer at sample pos = offset
 

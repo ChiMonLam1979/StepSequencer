@@ -35,6 +35,16 @@
         <FILE id="a3ExJZ" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
       </GROUP>
       <GROUP id="{2BCEC8F9-9953-6817-A649-D5BE53F16626}" name="Engine">
+        <GROUP id="{6685447A-091A-16F8-16EF-3FC12F292FD8}" name="Models">
+          <FILE id="vSlWsD" name="Pattern.h" compile="0" resource="0" file="Source/Pattern.h"/>
+          <FILE id="k8RO7A" name="Pattern.cpp" compile="1" resource="0" file="Source/Pattern.cpp"/>
+        </GROUP>
+        <GROUP id="{D4828A3B-80C4-4619-F98C-84374D5F5AD6}" name="Services">
+          <FILE id="bJYrhN" name="PatternService.cpp" compile="1" resource="0"
+                file="Source/PatternService.cpp"/>
+          <FILE id="NK6lYh" name="PatternService.h" compile="0" resource="0"
+                file="Source/PatternService.h"/>
+        </GROUP>
         <GROUP id="{1B06F047-A275-D2B3-1A7E-CD29B6D18F4F}" name="ParameterHandlers">
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
@@ -55,13 +65,11 @@
         </GROUP>
         <FILE id="BRPJkN" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
         <GROUP id="{070789FF-61D0-D9DE-C61E-7976CE89F5DF}" name="Core">
-          <FILE id="k8RO7A" name="MidiTrack.cpp" compile="1" resource="0" file="Source/MidiTrack.cpp"/>
-          <FILE id="vSlWsD" name="MidiTrack.h" compile="0" resource="0" file="Source/MidiTrack.h"/>
+          <FILE id="L4T5NW" name="StepSequencerEngine.cpp" compile="1" resource="0"
+                file="Source/StepSequencerEngine.cpp"/>
+          <FILE id="cJzOG2" name="StepSequencerEngine.h" compile="0" resource="0"
+                file="Source/StepSequencerEngine.h"/>
         </GROUP>
-        <FILE id="cJzOG2" name="StepSequencerEngine.h" compile="0" resource="0"
-              file="Source/StepSequencerEngine.h"/>
-        <FILE id="L4T5NW" name="StepSequencerEngine.cpp" compile="1" resource="0"
-              file="Source/StepSequencerEngine.cpp"/>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
