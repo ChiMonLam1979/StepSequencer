@@ -8,8 +8,10 @@ public:
 	NoteLengthHandler();
 	~NoteLengthHandler();
 
-	void parameterChanged(const String& parameterID, float newValue) override;
+	std::vector<int> noteLengths;
 
 private:
+
+	void parameterChanged(const String& parameterID, float newValue) override;
 
 };

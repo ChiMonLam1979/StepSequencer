@@ -1,6 +1,7 @@
 #include "StepSequencerEditor.h"
-#include "Parameters.h"
+#include "ParameterIds.h"
 #include "FlexFactory.h"
+#include "ComponentDimensions.h"
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {

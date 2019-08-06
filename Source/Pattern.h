@@ -11,7 +11,8 @@ public:
 	int					trackLength;
 	int					channel;
 	std::vector<int>	notes;
-	std::vector<uint8>	velocity;
+	std::vector<int>    noteLengths;
+	std::vector<uint8>	velocities;
 
 private:
 

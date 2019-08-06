@@ -1,5 +1,6 @@
 #include "StepChoicesAttachment.h"
-#include "Parameters.h"
+#include "ParameterIds.h"
+#include "ParameterChoices.h"
 
 StepChoicesAttachment::StepChoicesAttachment
 (

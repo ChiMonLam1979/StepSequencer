@@ -1,5 +1,6 @@
-#include "Parameters.h"
 #include "StepEncoders.h"
+#include "ComponentDimensions.h"
+#include "ParameterNames.h"
 
 StepEncoders::StepEncoders()
 {

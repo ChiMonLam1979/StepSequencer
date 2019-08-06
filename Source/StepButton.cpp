@@ -1,5 +1,5 @@
 #include "StepButton.h"
-#include "Parameters.h"
+#include "ComponentDimensions.h"
 
 StepButton::StepButton(const String& name, ButtonStyle style, bool isRadioButton) : DrawableButton(name, style)
 {

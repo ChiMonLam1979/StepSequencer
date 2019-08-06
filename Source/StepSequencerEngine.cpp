@@ -2,7 +2,9 @@
 #include "StepSequencerEngine.h"
 #include "StepSequencerEditor.h"
 #include "Extensions.h"
-#include "Parameters.h"
+#include "ParameterIds.h"
+#include "ParameterNames.h"
+#include "ParameterChoices.h"
 
 StepSequencerEngine::StepSequencerEngine() : AudioProcessor (BusesProperties().withInput("Input",  AudioChannelSet::stereo(), true)),
 treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
@@ -132,22 +134,22 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	pattern.notes[14]	= 34;
 	pattern.notes[15]	= 34;
 	
-	pattern.velocity[0]	= 34;
-	pattern.velocity[1]	= 34;
-	pattern.velocity[2]	= 0;
-	pattern.velocity[3]	= 34;
-	pattern.velocity[4]	= 34;
-	pattern.velocity[5]	= 0;
-	pattern.velocity[6]	= 34;
-	pattern.velocity[7]	= 0;
-	pattern.velocity[8]	= 34;
-	pattern.velocity[9]	= 0;
-	pattern.velocity[10]	= 0;
-	pattern.velocity[11]	= 0;
-	pattern.velocity[12]	= 34;
-	pattern.velocity[13]	= 0;
-	pattern.velocity[14]	= 0;
-	pattern.velocity[15]	= 0;
+	pattern.velocities[0]	= 34;
+	pattern.velocities[1]	= 34;
+	pattern.velocities[2]	= 0;
+	pattern.velocities[3]	= 34;
+	pattern.velocities[4]	= 34;
+	pattern.velocities[5]	= 0;
+	pattern.velocities[6]	= 34;
+	pattern.velocities[7]	= 0;
+	pattern.velocities[8]	= 34;
+	pattern.velocities[9]	= 0;
+	pattern.velocities[10]	= 0;
+	pattern.velocities[11]	= 0;
+	pattern.velocities[12]	= 34;
+	pattern.velocities[13]	= 0;
+	pattern.velocities[14]	= 0;
+	pattern.velocities[15]	= 0;
 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)
@@ -172,7 +174,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 				index = std::fmod(i, pattern.notes.size());
 
 				lastNoteValue = pattern.notes[index];  // set flag that last note was a note-on
-				auto velocity = pattern.velocity[index];
+				auto velocity = pattern.velocities[index];
 
 				currentNoteIndex = (currentNoteIndex + 1) % pattern.notes.size();  // advance to next note in track
 

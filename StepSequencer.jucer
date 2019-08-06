@@ -30,9 +30,19 @@
         <FILE id="OEyK9k" name="LEDOnGreen.png" compile="0" resource="1" file="Source/LEDOnGreen.png"/>
       </GROUP>
       <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
+        <FILE id="c0DPHT" name="ComponentDimensions.h" compile="0" resource="0"
+              file="Source/ComponentDimensions.h"/>
         <FILE id="VeheWL" name="Extensions.cpp" compile="1" resource="0" file="Source/Extensions.cpp"/>
         <FILE id="Kq9j7f" name="Extensions.h" compile="0" resource="0" file="Source/Extensions.h"/>
-        <FILE id="a3ExJZ" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
+        <FILE id="lNvVHf" name="ParameterChoices.h" compile="0" resource="0"
+              file="Source/ParameterChoices.h"/>
+        <FILE id="pK32FE" name="ParameterDictionary.h" compile="0" resource="0"
+              file="Source/ParameterDictionary.h"/>
+        <FILE id="a3ExJZ" name="ParameterIds.h" compile="0" resource="0" file="Source/ParameterIds.h"/>
+        <FILE id="OGBpDi" name="ParameterNames.h" compile="0" resource="0"
+              file="Source/ParameterNames.h"/>
+        <FILE id="MfaFYw" name="ProjectColours.h" compile="0" resource="0"
+              file="Source/ProjectColours.h"/>
       </GROUP>
       <GROUP id="{2BCEC8F9-9953-6817-A649-D5BE53F16626}" name="Engine">
         <GROUP id="{6685447A-091A-16F8-16EF-3FC12F292FD8}" name="Models">
