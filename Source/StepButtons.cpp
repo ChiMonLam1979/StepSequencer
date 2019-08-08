@@ -1,5 +1,5 @@
-#include "Parameters.h"
 #include "StepButtons.h"
+#include "ParameterNames.h"
 
 StepButtons::StepButtons()
 {

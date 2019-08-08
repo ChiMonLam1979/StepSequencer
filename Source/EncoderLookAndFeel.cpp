@@ -1,6 +1,6 @@
 #pragma once
 #include "EncoderLookAndFeel.h"
-#include "Parameters.h"
+#include "ComponentDimensions.h"
 
 EncoderLookAndFeel::EncoderLookAndFeel()
 {

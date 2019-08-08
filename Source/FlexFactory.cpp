@@ -1,5 +1,5 @@
 #include "FlexFactory.h"
-#include "Parameters.h"
+#include "ComponentDimensions.h"
 
 
 namespace FlexItemFactory
