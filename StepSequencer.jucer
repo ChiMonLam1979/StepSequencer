@@ -82,6 +82,12 @@
         </GROUP>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{493F81B9-17D0-2625-A063-FEDC8D110C18}" name="Drawables">
+          <FILE id="fOmdXe" name="DrawablesCache.cpp" compile="1" resource="0"
+                file="Source/DrawablesCache.cpp"/>
+          <FILE id="XyzILZ" name="DrawablesCache.h" compile="0" resource="0"
+                file="Source/DrawablesCache.h"/>
+        </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
           <FILE id="FHA8Ct" name="StepChoicesAttachment.cpp" compile="1" resource="0"
                 file="Source/StepChoicesAttachment.cpp"/>

@@ -6,6 +6,7 @@
 #include "StepEncoders.h"
 #include "ChaseLEDs.h"
 #include "StepChoicesAttachment.h"
+#include "DrawablesCache.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -14,7 +15,9 @@ public:
     ~StepSequencerEditor();
 
     void paint (Graphics&) override;
-	void resized() override;
+	void resized() override;\
+
+	SharedResourcePointer<DrawablesCache>	svgCache;
 
 	std::unique_ptr<Drawable>			backPlate;
 	std::unique_ptr<BlankPanel>			blankSidePanel;
@@ -26,7 +29,7 @@ public:
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
 
-	std::unique_ptr<StepChoicesAttachment> stepChoicesAttachment;
+	std::unique_ptr<StepChoicesAttachment>	stepChoicesAttachment;
 
 private:
 

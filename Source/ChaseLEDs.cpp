@@ -1,6 +1,6 @@
-#include "Parameters.h"
 #include "StepSequencerEngine.h"
 #include "ChaseLEDs.h"
+#include "ComponentDimensions.h"
 
 ChaseLEDs::ChaseLEDs(StepSequencerEngine& processor) : processor(processor)
 {
