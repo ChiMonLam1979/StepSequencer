@@ -32,6 +32,7 @@
       <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
         <FILE id="c0DPHT" name="ComponentDimensions.h" compile="0" resource="0"
               file="Source/ComponentDimensions.h"/>
+        <FILE id="Ngw3gm" name="Enums.h" compile="0" resource="0" file="Source/Enums.h"/>
         <FILE id="VeheWL" name="Extensions.cpp" compile="1" resource="0" file="Source/Extensions.cpp"/>
         <FILE id="Kq9j7f" name="Extensions.h" compile="0" resource="0" file="Source/Extensions.h"/>
         <FILE id="lNvVHf" name="ParameterChoices.h" compile="0" resource="0"
