@@ -47,20 +47,22 @@ public:
 
 private:
 
-	double	rate				{ 0	};
-	int		samplesSinceNoteOn	{ 0	};
-	int		currentNoteIndex	{ 0	};
-	int		lastNoteValue		{ -1 };
+	double	rate					{ 0	};
+	int		samplesSinceNoteOn		{ 0	};
+	int		currentNoteIndex		{ 0	};
+	int		lastNoteValue			{ -1 };
+	double	samplesPerNoteDivision	{ 0 };
 
 	Pattern	pattern				{16, 1};
 
-	NoteHandler			noteHandler;
-	StepHandler			stepHandler;
-	NoteLengthHandler	noteLengthHandler;
-	VelocityHandler		velocityHandler;
+	NoteHandler			noteHandler			{ pattern.notes };
+	StepHandler			stepHandler			{ pattern.gates };
+	NoteLengthHandler	noteLengthHandler	{ pattern.noteLengths, samplesPerNoteDivision };
+
+	VelocityHandler		velocityHandler		{ pattern.velocities };
 	StepChoicesHandler	stepChoicesHandler;
 
-	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler };
+	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, stepHandler };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

@@ -104,7 +104,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	auto noteDivisionFactor	= 4.0f;
 	auto lengthFactor		= 0.8f;
 
-	auto samplesPerNoteDivision	= samplesPerBeat / noteDivisionFactor;									// set note division
+	samplesPerNoteDivision = samplesPerBeat / noteDivisionFactor;
 	auto noteLength				= static_cast<int> (std::ceil(samplesPerNoteDivision * lengthFactor));	// set note length
 
 	auto numSamples = buffer.getNumSamples();	// number of samples in each buffer
@@ -116,40 +116,8 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	int				ippqEnd		= std::floor(ppqEnd);
 					ippqEnd		= positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
-	//dummy data for testing
-	pattern.notes[0]	= 34;
-	pattern.notes[1]	= 34;
-	pattern.notes[2]	= 34;
-	pattern.notes[3]	= 36;
-	pattern.notes[4]	= 37;
-	pattern.notes[5]	= 34;
-	pattern.notes[6]	= 41;
-	pattern.notes[7]	= 34;
-	pattern.notes[8]	= 37;
-	pattern.notes[9]	= 34;
-	pattern.notes[10]	= 34;
-	pattern.notes[11]	= 34;
-	pattern.notes[12]	= 41;
-	pattern.notes[13]	= 34;
-	pattern.notes[14]	= 34;
-	pattern.notes[15]	= 34;
-	
-	pattern.velocities[0]	= 34;
-	pattern.velocities[1]	= 34;
-	pattern.velocities[2]	= 0;
-	pattern.velocities[3]	= 34;
-	pattern.velocities[4]	= 34;
-	pattern.velocities[5]	= 0;
-	pattern.velocities[6]	= 34;
-	pattern.velocities[7]	= 0;
-	pattern.velocities[8]	= 34;
-	pattern.velocities[9]	= 0;
-	pattern.velocities[10]	= 0;
-	pattern.velocities[11]	= 0;
-	pattern.velocities[12]	= 34;
-	pattern.velocities[13]	= 0;
-	pattern.velocities[14]	= 0;
-	pattern.velocities[15]	= 0;
+	auto pattern = patternService.GetPattern(); //load the pattern to play
+
 
 	// ppqPosition is only changing when the transport is playing.
 	if (positionInfo.isPlaying)

@@ -1,8 +1,7 @@
 #include "NoteHandler.h"
-#include "ParameterIds.h"
 #include "ParameterDictionary.h"
 
-NoteHandler::NoteHandler()
+NoteHandler::NoteHandler(std::vector<int>& notes) : notes(notes)
 {
 }
 

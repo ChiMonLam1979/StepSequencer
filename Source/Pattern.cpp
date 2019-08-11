@@ -6,10 +6,12 @@ Pattern::Pattern(int trackLength, int channel) : trackLength(trackLength), chann
 	notes.reserve(trackLength);
 	noteLengths.reserve(trackLength);
 	velocities.reserve(trackLength);
+	gates.reserve(trackLength);
 
 	notes		= std::vector<int>(trackLength);
 	noteLengths	= std::vector<int>(trackLength);
 	velocities	= std::vector<uint8>(trackLength);
+	gates		= std::vector<bool>(trackLength);
 }
 
 Pattern::~Pattern()

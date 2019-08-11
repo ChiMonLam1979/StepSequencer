@@ -5,8 +5,10 @@ class StepHandler : public AudioProcessorValueTreeState::Listener
 {
 public:
 
-	StepHandler();
+	StepHandler(std::vector<bool>& gates);
 	~StepHandler();
+
+	std::vector<bool>& gates;
 
 private:
 
