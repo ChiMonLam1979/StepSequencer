@@ -15,6 +15,6 @@ public:
 
 private:
 
-	Image OnImage { ImageCache::getFromMemory(BinaryData::LEDOn_png, BinaryData::LEDOn_pngSize) };
+	Image OnImage { ImageCache::getFromMemory(BinaryData::LEDOnRed_png, BinaryData::LEDOnRed_pngSize) };
 	Image OffImage{ ImageCache::getFromMemory(BinaryData::LEDOff_png, BinaryData::LEDOff_pngSize) };
 };
