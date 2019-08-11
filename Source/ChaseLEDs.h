@@ -1,7 +1,7 @@
  #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "StepSequencerEngine.h"
-#include "ChaseLED.h"
+#include "LED.h"
 
 class ChaseLEDs : public Component, public Timer
 {
@@ -10,7 +10,7 @@ public:
 	ChaseLEDs(StepSequencerEngine& processor);
 	~ChaseLEDs();
 
-	OwnedArray<ChaseLED> leds;
+	OwnedArray<LED> leds;
 
 	void resized() override;
 

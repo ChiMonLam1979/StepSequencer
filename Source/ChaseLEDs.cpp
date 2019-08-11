@@ -6,7 +6,7 @@ ChaseLEDs::ChaseLEDs(StepSequencerEngine& processor) : processor(processor)
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		leds.add(new ChaseLED);
+		leds.add(new LED);
 	}
 
 	for(auto led : leds)
@@ -44,12 +44,12 @@ void ChaseLEDs::timerCallback()
 
 	if(shouldFlash)
 	{
-		leds[index]->toggle(true);
+		leds[index]->setState(Enums::LEDRed);
 	}
 
 	if(lastIndex != index)
 	{
-		leds[lastIndex]->toggle(false);
+		leds[lastIndex]->setState(Enums::LEDOff);
 		lastIndex = index;
 	}
 
@@ -57,7 +57,7 @@ void ChaseLEDs::timerCallback()
 	{
 		for (auto led : leds)
 		{
-		led->toggle(false);
+		led->setState(Enums::LEDOff);
 		}
 	}
 }

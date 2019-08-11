@@ -12,7 +12,7 @@ public:
 	EncoderLookAndFeel		encoderLookAndFeel;
 
 	OwnedArray<Encoder>		encoders;
-	OwnedArray<EncoderLED>	encoderLeds;
+	OwnedArray<LED>			encoderLeds;
 
 	void resized() override;
 

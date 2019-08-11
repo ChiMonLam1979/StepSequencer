@@ -109,12 +109,10 @@
           <FILE id="OCSLKv" name="FlexFactory.h" compile="0" resource="0" file="Source/FlexFactory.h"/>
         </GROUP>
         <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
-          <FILE id="aj6Jd7" name="ChaseLED.cpp" compile="1" resource="0" file="Source/ChaseLED.cpp"/>
-          <FILE id="XIh7DF" name="ChaseLED.h" compile="0" resource="0" file="Source/ChaseLED.h"/>
           <FILE id="PnNs1B" name="ChaseLEDs.cpp" compile="1" resource="0" file="Source/ChaseLEDs.cpp"/>
           <FILE id="r71fHL" name="ChaseLEDs.h" compile="0" resource="0" file="Source/ChaseLEDs.h"/>
-          <FILE id="IBsaq4" name="EncoderLED.cpp" compile="1" resource="0" file="Source/EncoderLED.cpp"/>
-          <FILE id="J8qXDl" name="EncoderLED.h" compile="0" resource="0" file="Source/EncoderLED.h"/>
+          <FILE id="VdoYwr" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
+          <FILE id="nSNM43" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>
         </GROUP>
         <GROUP id="{A26856D1-6B78-FA63-0A04-778AD4843476}" name="PanelComponents">
           <FILE id="Ku7HLH" name="BlankPanel.h" compile="0" resource="0" file="Source/BlankPanel.h"/>

@@ -6,7 +6,7 @@ StepEncoders::StepEncoders()
 {
 	for(auto i = 0; i < 16; i++)
 	{
-		encoderLeds.add(new EncoderLED);
+		encoderLeds.add(new LED);
 		encoders.add(new Encoder(ParameterNames::StepEncoderNames[i], *encoderLeds[i], encoderLookAndFeel));
 	}
 

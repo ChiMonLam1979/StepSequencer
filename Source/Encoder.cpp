@@ -1,7 +1,7 @@
 #include "Encoder.h"
 #include "EncoderLookAndFeel.h"
 
-Encoder::Encoder(const String& name, EncoderLED& led, EncoderLookAndFeel& encoderLookAndFeel) : Slider(name), led(led), encoderLookAndFeel(encoderLookAndFeel)
+Encoder::Encoder(const String& name, LED& led, EncoderLookAndFeel& encoderLookAndFeel) : Slider(name), led(led), encoderLookAndFeel(encoderLookAndFeel)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setRange(0, 127, 1);
@@ -16,10 +16,10 @@ Encoder::~Encoder()
 
 void Encoder::mouseEnter(const MouseEvent& event)
 {
-	led.toggle(true);
+	led.setState(Enums::LEDGreen);
 }
 
 void Encoder::mouseExit(const MouseEvent& event)
 {
-	led.toggle(false);
+	led.setState(Enums::LEDOff);
 }
