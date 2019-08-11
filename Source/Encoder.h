@@ -14,6 +14,8 @@ public:
 
 	void mouseExit(const MouseEvent& event) override;
 
+	void mouseUp(const MouseEvent& event) override;
+
 	EncoderLookAndFeel& encoderLookAndFeel;
 
 	LED& led;

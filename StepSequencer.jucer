@@ -92,10 +92,18 @@
                 file="Source/DrawablesCache.h"/>
         </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
-          <FILE id="FHA8Ct" name="StepChoicesAttachment.cpp" compile="1" resource="0"
-                file="Source/StepChoicesAttachment.cpp"/>
-          <FILE id="dRqmfE" name="StepChoicesAttachment.h" compile="0" resource="0"
-                file="Source/StepChoicesAttachment.h"/>
+          <FILE id="nyXkvW" name="ChoiceUpdaterService.cpp" compile="1" resource="0"
+                file="Source/ChoiceUpdaterService.cpp"/>
+          <FILE id="hf7efA" name="ChoiceUpdaterService.h" compile="0" resource="0"
+                file="Source/ChoiceUpdaterService.h"/>
+          <FILE id="uv80be" name="SliderAttachmentUpdaterService.cpp" compile="1"
+                resource="0" file="Source/SliderAttachmentUpdaterService.cpp"/>
+          <FILE id="kDy9b5" name="SliderAttachmentUpdaterService.h" compile="0"
+                resource="0" file="Source/SliderAttachmentUpdaterService.h"/>
+          <FILE id="FHA8Ct" name="RadioButtonChoiceAttachment.cpp" compile="1"
+                resource="0" file="Source/RadioButtonChoiceAttachment.cpp"/>
+          <FILE id="dRqmfE" name="RadioButtonChoiceAttachment.h" compile="0"
+                resource="0" file="Source/RadioButtonChoiceAttachment.h"/>
         </GROUP>
         <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
           <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
