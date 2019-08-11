@@ -37,6 +37,8 @@
         <FILE id="Kq9j7f" name="Extensions.h" compile="0" resource="0" file="Source/Extensions.h"/>
         <FILE id="lNvVHf" name="ParameterChoices.h" compile="0" resource="0"
               file="Source/ParameterChoices.h"/>
+        <FILE id="MgVXpP" name="ParameterDictionary.cpp" compile="1" resource="0"
+              file="Source/ParameterDictionary.cpp"/>
         <FILE id="pK32FE" name="ParameterDictionary.h" compile="0" resource="0"
               file="Source/ParameterDictionary.h"/>
         <FILE id="a3ExJZ" name="ParameterIds.h" compile="0" resource="0" file="Source/ParameterIds.h"/>

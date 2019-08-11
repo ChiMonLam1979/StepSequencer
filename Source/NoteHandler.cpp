@@ -13,7 +13,7 @@ NoteHandler::~NoteHandler()
 void NoteHandler::parameterChanged(const String& parameterID, float newValue)
 {
 	auto note	= static_cast<int>(newValue);
-	auto index	= ParameterDictionaries::pitchDictionary[parameterID];
+	auto index	= pitchDictionary.find(parameterID);
 
-	notes[index] = note;
+	notes[index->second] = note;
 }

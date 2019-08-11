@@ -8,4 +8,11 @@ namespace Enums
 		Red,
 		Green
 	};
+
+	static enum LEDState
+	{
+		LEDOff,
+		LEDGreen,
+		LEDRed
+	};
 }

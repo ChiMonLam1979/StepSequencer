@@ -151,7 +151,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 				samplesSinceNoteOn = numSamples - offset;
 			}
 
-			if (samplesSinceNoteOn >= noteLength)		// check if note-off should occur within this buffer
+			if (samplesSinceNoteOn >= noteLength && lastNoteValue > 0)		// check if note-off should occur within this buffer
 			{
 				auto OffsetForNoteOff = jmin((offset + noteLength), numSamples - 1);
 

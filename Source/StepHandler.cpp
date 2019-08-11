@@ -14,7 +14,7 @@ StepHandler::~StepHandler()
 void StepHandler::parameterChanged(const String& parameterID, float newValue)
 {
 	auto gate = static_cast<bool>(newValue);
-	auto index = ParameterDictionaries::gateDictionary[parameterID];
+	auto index = gateDictionary.find(parameterID);
 
-	gates[index] = gate;
+	gates[index->second] = gate;
 }

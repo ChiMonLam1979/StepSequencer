@@ -15,7 +15,7 @@ public:
     ~StepSequencerEditor();
 
     void paint (Graphics&) override;
-	void resized() override;\
+	void resized() override;
 
 	SharedResourcePointer<DrawablesCache>	svgCache;
 
