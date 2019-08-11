@@ -15,6 +15,8 @@ public:
 	std::vector<uint8>	velocities;
 	std::vector<bool>	gates;
 
+	//void initialize();
+
 private:
 
 };

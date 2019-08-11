@@ -12,8 +12,18 @@ Pattern::Pattern(int trackLength, int channel) : trackLength(trackLength), chann
 	noteLengths	= std::vector<int>(trackLength);
 	velocities	= std::vector<uint8>(trackLength);
 	gates		= std::vector<bool>(trackLength);
+
+	//initialize();
 }
 
 Pattern::~Pattern()
 {
 }
+
+//void Pattern::initialize()
+//{
+//	for(auto i = 0; i < trackLength; i++)
+//	{
+//		notes[i] = 
+//	}
+//}
