@@ -135,13 +135,13 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 		// for each note transition in the buffer...
 		for (int i = ippqBegin; i <= ippqEnd; ++i)
 		{
+		 	 index = std::fmod(i, pattern.notes.size());
+
 			 int offset = (int)samplesPerNoteDivision * (i - ppqBegin);
 
-			if (!pattern.notes.empty()) // if there are notes in the track
+			if (!pattern.notes.empty() && pattern.gates[index]) // if there are notes in the track
 			{
-				index = std::fmod(i, pattern.notes.size());
-
-				lastNoteValue = pattern.notes[index];  // set flag that last note was a note-on
+				lastNoteValue = pattern.notes[index];  // set flag that last note was a note-on or not
 				auto velocity = pattern.velocities[index];
 
 				currentNoteIndex = (currentNoteIndex + 1) % pattern.notes.size();  // advance to next note in track
