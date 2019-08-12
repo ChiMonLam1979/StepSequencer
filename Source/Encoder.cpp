@@ -23,8 +23,3 @@ void Encoder::mouseExit(const MouseEvent& event)
 {
 	led.setState(Enums::LEDOff);
 }
-
-void Encoder::mouseUp(const MouseEvent& event)
-{
-	led.setState(Enums::LEDOff);
-}

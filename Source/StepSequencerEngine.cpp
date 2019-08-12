@@ -5,6 +5,7 @@
 #include "ParameterIds.h"
 #include "ParameterNames.h"
 #include "ParameterChoices.h"
+#include "DefaulValues.h"
 
 StepSequencerEngine::StepSequencerEngine() : AudioProcessor (BusesProperties().withInput("Input",  AudioChannelSet::stereo(), true)),
 treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
@@ -40,19 +41,19 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 	for(auto i = 0; i < 16; i++)
 	{
-		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, 0);
+		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, DefaultValues::DefaultPitch);
 
 		parameters.push_back(std::move(stepEncoderParameter));
 
-		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], false);
+		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], DefaultValues::DefaultGate);
 
 		parameters.push_back(std::move(stepButtonParameter));
 
-		auto noteLengthEncoderParameter = std::make_unique<AudioParameterFloat>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0.0f, 1.0f, 0.5f);
+		auto noteLengthEncoderParameter = std::make_unique<AudioParameterFloat>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0.0f, 1.0f, DefaultValues::DefualtNoteLengthFactor);
 
 		parameters.push_back(std::move(noteLengthEncoderParameter));
 
-		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, 0);
+		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, DefaultValues::DefaultVelocity);
 
 		parameters.push_back(std::move(velocityEncoderParameter));
 	}

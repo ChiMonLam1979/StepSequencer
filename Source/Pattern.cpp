@@ -1,5 +1,6 @@
 
 #include "Pattern.h"
+#include "DefaulValues.h"
 
 Pattern::Pattern(int trackLength, int channel) : trackLength(trackLength), channel(channel)
 {
@@ -13,17 +14,20 @@ Pattern::Pattern(int trackLength, int channel) : trackLength(trackLength), chann
 	velocities	= std::vector<uint8>(trackLength);
 	gates		= std::vector<bool>(trackLength);
 
-	//initialize();
+	initialize();
 }
 
 Pattern::~Pattern()
 {
 }
 
-//void Pattern::initialize()
-//{
-//	for(auto i = 0; i < trackLength; i++)
-//	{
-//		notes[i] = 
-//	}
-//}
+void Pattern::initialize()
+{
+	for(auto i = 0; i < trackLength; i++)
+	{
+		notes[i]		= DefaultValues::DefaultPitch;
+		noteLengths[i]	= DefaultValues::DefualtNoteLengthFactor;
+		velocities[i]	= DefaultValues::DefaultVelocity;
+		gates[i]		= DefaultValues::DefaultGate;
+	}
+}

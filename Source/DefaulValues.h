@@ -1,11 +1,10 @@
-/*
-  ==============================================================================
-
-    DefaulValues.h
-    Created: 12 Aug 2019 1:17:05am
-    Author:  cmnl
-
-  ==============================================================================
-*/
-
 #pragma once
+#include "../JuceLibraryCode/JuceHeader.h"
+
+namespace DefaultValues
+{
+	const int		DefaultPitch			{ 36 };
+	const uint8		DefaultVelocity			{ 100 };
+	const double	DefualtNoteLengthFactor	{ 0.5 };
+	const bool		DefaultGate				{ false };
+}
