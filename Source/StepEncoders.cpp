@@ -19,6 +19,7 @@ StepEncoders::StepEncoders()
 	for(auto led : encoderLeds)
 	{
 		addAndMakeVisible(led);
+		led->setState(Enums::LEDOff);
 	}
 
 	setInterceptsMouseClicks(false, true);
