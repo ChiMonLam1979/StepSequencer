@@ -81,7 +81,7 @@ const std::map<String, int> gateDictionary
 	{ IDs::StepButtonSixteenID,			15	}
 };
 
-juce::Image getLedImage(Enums::LEDState state)
+Image getLedImage(Enums::LEDState state)
 {
 	static const std::map<Enums::LEDState, juce::Image> ledDictionary
 	{

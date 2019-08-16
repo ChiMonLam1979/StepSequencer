@@ -1,5 +1,6 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "DrawablesCache.h"
 
 class EncoderLookAndFeel : public LookAndFeel_V4
 {
@@ -13,6 +14,6 @@ public:
 private:
 
 	Image thumbImage{ ImageCache::getFromMemory(BinaryData::EncoderThumb_png, BinaryData::EncoderThumb_pngSize) };
-	std::unique_ptr<XmlElement> encoderBodySvg;
-	std::unique_ptr<Drawable> drawableEncoderBody;
+
+	SharedResourcePointer<DrawablesCache> svgCache;
 };

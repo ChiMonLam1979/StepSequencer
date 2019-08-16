@@ -20,7 +20,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	}
 
 	encoderAttachmentUpdater	= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
-	stepChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
+	stepEncoderChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
@@ -30,7 +30,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	stepButtons->MakeVisible(*this);
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(underStepButtonsPanel.get());
-	addAndMakeVisible(stepChoicesAttachment.get());
+	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -53,7 +53,7 @@ void StepSequencerEditor::resized()
 
 	stepChoicesButtonsBox.items.addArray({ 
 											FlexItemFactory::makeBlankSidePanelItem(*blankSidePanel),
-											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepChoicesAttachment, 3)
+											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepEncoderChoicesAttachment, 3)
 	});
 
 	FlexBox encoderBox = FlexBoxFactory::maketEncodersBox();

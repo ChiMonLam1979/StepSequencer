@@ -14,6 +14,8 @@ public:
 
 	void mouseExit(const MouseEvent& event) override;
 
+	bool isCourseMode{ false };
+
 	EncoderLookAndFeel& encoderLookAndFeel;
 
 	LED& led;

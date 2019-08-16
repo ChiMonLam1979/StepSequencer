@@ -31,7 +31,7 @@ public:
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
 
 	std::unique_ptr<SliderAttachmentUpdaterService> encoderAttachmentUpdater;
-	std::unique_ptr<RadioButtonChoiceAttachment>	stepChoicesAttachment;
+	std::unique_ptr<RadioButtonChoiceAttachment>	stepEncoderChoicesAttachment;
 
 private:
 
