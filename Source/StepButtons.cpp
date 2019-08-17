@@ -11,19 +11,14 @@ StepButtons::StepButtons()
 	for (auto& stepButton : stepButtons)
 	{
 		stepButton->onClick = [this, stepButton] { StepClicked(stepButton->getName()); };
+		addAndMakeVisible(stepButton);
 	}
+
+	setInterceptsMouseClicks(false, true);
 }
 
 StepButtons::~StepButtons()
 {
-}
-
-void StepButtons::MakeVisible(Component& component)
-{
-	for (auto& stepButton : stepButtons)
-	{
-		component.addAndMakeVisible(stepButton);
-	}
 }
 
 void StepButtons::StepClicked(const String& stepButtonName) const

@@ -2,7 +2,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "StepButton.h"
 
-class StepButtons
+class StepButtons : public Component
 {
 public:
 
@@ -10,7 +10,6 @@ public:
 	~StepButtons();
 
 	void StepClicked(const String& stepButtonName) const;
-	void MakeVisible(Component& component);
 
 	OwnedArray<StepButton> stepButtons;
 

@@ -3,9 +3,11 @@
 
 namespace IDs
 {
-	static String TreeStateID			{ "treeState" };
+	static String TreeStateID			{ "treeState"				};
 
-	static String StepChoicesID			{ "Step Choices " };
+	static String EncodersSelectID		{ "Encoders Select "		};
+
+	static String StepChoicesID			{ "Step Choices "			};
 
 	static String StepButtonOneID		{ "Step Button One"			};
 	static String StepButtonTwoID		{ "Step Button Two"			};

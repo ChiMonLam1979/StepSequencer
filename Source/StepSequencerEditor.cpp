@@ -24,7 +24,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 
 	addAndMakeVisible(backPlate.get());
 	addAndMakeVisible(stepEncoders.get());
-	stepButtons->MakeVisible(*this);
+	addAndMakeVisible(stepButtons.get());
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 }
@@ -42,6 +42,7 @@ void StepSequencerEditor::resized()
 {
 	transportLEDs->setBounds(ComponentBounds::ChaseLEDStripBounds);
 	stepEncoders->setBounds(getLocalBounds());
+	stepButtons->setBounds(getLocalBounds());
 
 	auto window = getLocalBounds();
 
