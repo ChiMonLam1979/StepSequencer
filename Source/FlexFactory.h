@@ -22,6 +22,10 @@ namespace  FlexBoxFactory
 
 	FlexBox makeEncodersBox();
 
+	FlexBox makeLeftColumnBox();
+
+	FlexBox makeRightColumnBox();
+
 	FlexBox makeCentralBox();
 
 	FlexBox makeMasterBox();

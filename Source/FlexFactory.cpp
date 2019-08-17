@@ -75,6 +75,23 @@ namespace  FlexBoxFactory
 		return box;
 	}
 
+	FlexBox makeLeftColumnBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::column;
+
+		return box;
+	}
+
+	FlexBox makeRightColumnBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::column;
+
+		return box;
+	}
+
+
 	FlexBox makeCentralBox()
 	{
 		FlexBox box;

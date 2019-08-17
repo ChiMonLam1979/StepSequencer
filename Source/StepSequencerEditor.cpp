@@ -69,18 +69,23 @@ void StepSequencerEditor::resized()
 
 	FlexItem underStepButtonsPanelItem	= FlexItemFactory::makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
 
+	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
+	leftColumnBox.items.addArray({
+								FlexItemFactory::makeBlankSidePanelItem()
+		});
+
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();
 	centralBox.items.addArray({
 								FlexItem(stepChoicesButtonsBox).withFlex(0.71),
 								FlexItem(encoderBox).withFlex(0.3),
 								FlexItem(buttonBox).withFlex(0.18),
 								FlexItem(underStepButtonsPanelItem)
-	});
+		});
 
 	FlexBox main = FlexBoxFactory::makeMasterBox();
 	main.items.addArray({
-							FlexItemFactory::makeBlankSidePanelItem(),
-							FlexItem(centralBox)
+							FlexItem(leftColumnBox).withFlex(0.088),
+							FlexItem(centralBox).withFlex(0.912)
 		});
 
 	main.performLayout(window);
