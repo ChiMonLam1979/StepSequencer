@@ -4,15 +4,6 @@
 
 namespace FlexItemFactory
 {
-	FlexItem makeBlankSidePanelItem()
-	{
-		return FlexItem()
-			.withMinHeight	(ComponentSizes::StepButtonHeight)
-			.withMinWidth	(ComponentSizes::blankSidePanelWidth)
-			.withMaxHeight	(ComponentSizes::StepButtonHeight)
-			.withMaxWidth	(ComponentSizes::blankSidePanelWidth);
-	}
-
 	FlexItem makeStepChoicesButtonsBoxItem(Component& component, int numberOfChoices)
 	{
 		return FlexItem(component)
@@ -38,14 +29,6 @@ namespace FlexItemFactory
 			.withMinWidth	(ComponentSizes::StepEncoderWidth)
 			.withMaxHeight	(ComponentSizes::StepEncoderHeight)
 			.withMaxWidth	(ComponentSizes::StepEncoderWidth);
-	}
-
-	FlexItem makeUnderStepButtonsPanelItem(Component& component)
-	{
-		return FlexItem(component)
-			.withMinHeight	(ComponentSizes::UnderStepButtonsPanelHeight)
-			.withMaxHeight	(ComponentSizes::UnderStepButtonsPanelHeight)
-			.withAlignSelf	(FlexItem::AlignSelf::center);
 	}
 }
 
@@ -90,7 +73,6 @@ namespace  FlexBoxFactory
 
 		return box;
 	}
-
 
 	FlexBox makeCentralBox()
 	{

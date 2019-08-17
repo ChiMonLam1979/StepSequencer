@@ -9,7 +9,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	stepEncoders			= std::make_unique<StepEncoders>();
 	stepButtons				= std::make_unique<StepButtons>();
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
-	underStepButtonsPanel	= std::make_unique<BlankPanel>(ComponentSizes::windowWidth, ComponentSizes::UnderStepButtonsPanelHeight);
 
 	for(auto i = 0; i < 16; i++)
 	{
@@ -27,7 +26,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepEncoders.get());
 	stepButtons->MakeVisible(*this);
 	addAndMakeVisible(transportLEDs.get());
-	addAndMakeVisible(underStepButtonsPanel.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 }
 
@@ -67,19 +65,14 @@ void StepSequencerEditor::resized()
 		buttonBox.items.add(FlexItemFactory::makeButtonBoxItem(*stepButton));
 	}
 
-	FlexItem underStepButtonsPanelItem	= FlexItemFactory::makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
-
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
-	leftColumnBox.items.addArray({
-								FlexItemFactory::makeBlankSidePanelItem()
-		});
 
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();
 	centralBox.items.addArray({
-								FlexItem(stepChoicesButtonsBox).withFlex(0.71),
-								FlexItem(encoderBox).withFlex(0.3),
-								FlexItem(buttonBox).withFlex(0.18),
-								FlexItem(underStepButtonsPanelItem)
+								FlexItem(stepChoicesButtonsBox).withFlex(0.53),
+								FlexItem(encoderBox).withFlex(0.23),
+								FlexItem(buttonBox).withFlex(0.14),
+								FlexItem().withFlex(0.1)
 		});
 
 	FlexBox main = FlexBoxFactory::makeMasterBox();

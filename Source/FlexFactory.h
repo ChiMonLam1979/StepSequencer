@@ -3,15 +3,11 @@
 
 namespace FlexItemFactory
 {
-	FlexItem makeBlankSidePanelItem();
-
 	FlexItem makeStepChoicesButtonsBoxItem(Component& component, int numberOfChoices);
 
 	FlexItem makeButtonBoxItem(Component& component);
 
 	FlexItem makeEncoderBoxItem(Component& component);
-
-	FlexItem makeUnderStepButtonsPanelItem(Component& component);
 }
 
 namespace  FlexBoxFactory

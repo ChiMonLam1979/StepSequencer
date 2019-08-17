@@ -123,9 +123,6 @@
           <FILE id="VdoYwr" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
           <FILE id="nSNM43" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>
         </GROUP>
-        <GROUP id="{A26856D1-6B78-FA63-0A04-778AD4843476}" name="PanelComponents">
-          <FILE id="Ku7HLH" name="BlankPanel.h" compile="0" resource="0" file="Source/BlankPanel.h"/>
-        </GROUP>
         <GROUP id="{80AF34FD-4F24-F1D4-876E-021A89AB6112}" name="Buttons">
           <FILE id="StqNO3" name="StepButtons.h" compile="0" resource="0" file="Source/StepButtons.h"/>
           <FILE id="hs4eGK" name="StepButtons.cpp" compile="1" resource="0" file="Source/StepButtons.cpp"/>
