@@ -4,9 +4,9 @@
 
 namespace FlexItemFactory
 {
-	FlexItem makeBlankSidePanelItem(Component& component)
+	FlexItem makeBlankSidePanelItem()
 	{
-		return FlexItem(component)
+		return FlexItem()
 			.withMinHeight	(ComponentSizes::StepButtonHeight)
 			.withMinWidth	(ComponentSizes::blankSidePanelWidth)
 			.withMaxHeight	(ComponentSizes::StepButtonHeight)
@@ -62,23 +62,31 @@ namespace  FlexBoxFactory
 	FlexBox makeStepButtonsBox()
 	{
 		FlexBox box;
-		box.justifyContent	= FlexBox::JustifyContent::center;
+		box.justifyContent	= FlexBox::JustifyContent::flexStart;
 		box.alignContent	= FlexBox::AlignContent::flexEnd;
 		return box;
 	}
 
-	FlexBox maketEncodersBox()
+	FlexBox makeEncodersBox()
 	{
 		FlexBox box;
-		box.justifyContent	= FlexBox::JustifyContent::center;
+		box.justifyContent	= FlexBox::JustifyContent::flexStart;
 		box.alignContent	= FlexBox::AlignContent::flexEnd;
+		return box;
+	}
+
+	FlexBox makeCentralBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::column;
+
 		return box;
 	}
 
 	FlexBox makeMasterBox()
 	{
 		FlexBox box;
-		box.flexDirection = FlexBox::Direction::column;
+		box.flexDirection = FlexBox::Direction::row;
 
 		return box;
 	}

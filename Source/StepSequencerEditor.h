@@ -21,7 +21,6 @@ public:
 	SharedResourcePointer<DrawablesCache>	svgCache;
 
 	std::unique_ptr<Drawable>			backPlate;
-	std::unique_ptr<BlankPanel>			blankSidePanel;
 	std::unique_ptr<StepEncoders>		stepEncoders;
 	std::unique_ptr<StepButtons>		stepButtons;
 	std::unique_ptr<ChaseLEDs>			transportLEDs;

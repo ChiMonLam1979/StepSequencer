@@ -6,7 +6,6 @@
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
-	blankSidePanel			= std::make_unique<BlankPanel>(ComponentSizes::blankSidePanelWidth, ComponentSizes::StepButtonHeight);
 	stepEncoders			= std::make_unique<StepEncoders>();
 	stepButtons				= std::make_unique<StepButtons>();
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
@@ -25,7 +24,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
 	addAndMakeVisible(backPlate.get());
-	addAndMakeVisible(blankSidePanel.get());
 	addAndMakeVisible(stepEncoders.get());
 	stepButtons->MakeVisible(*this);
 	addAndMakeVisible(transportLEDs.get());
@@ -52,11 +50,10 @@ void StepSequencerEditor::resized()
 	FlexBox stepChoicesButtonsBox = FlexBoxFactory::makeStepChoicesButtonsBox();
 
 	stepChoicesButtonsBox.items.addArray({ 
-											FlexItemFactory::makeBlankSidePanelItem(*blankSidePanel),
 											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepEncoderChoicesAttachment, 3)
 	});
 
-	FlexBox encoderBox = FlexBoxFactory::maketEncodersBox();
+	FlexBox encoderBox = FlexBoxFactory::makeEncodersBox();
 
 	for(auto& encoder : stepEncoders->encoders)
 	{
@@ -72,13 +69,19 @@ void StepSequencerEditor::resized()
 
 	FlexItem underStepButtonsPanelItem	= FlexItemFactory::makeUnderStepButtonsPanelItem(*underStepButtonsPanel);
 
-	FlexBox main = FlexBoxFactory::makeMasterBox();
-	main.items.addArray({
+	FlexBox centralBox = FlexBoxFactory::makeCentralBox();
+	centralBox.items.addArray({
 								FlexItem(stepChoicesButtonsBox).withFlex(0.71),
 								FlexItem(encoderBox).withFlex(0.3),
 								FlexItem(buttonBox).withFlex(0.18),
 								FlexItem(underStepButtonsPanelItem)
 	});
+
+	FlexBox main = FlexBoxFactory::makeMasterBox();
+	main.items.addArray({
+							FlexItemFactory::makeBlankSidePanelItem(),
+							FlexItem(centralBox)
+		});
 
 	main.performLayout(window);
 }

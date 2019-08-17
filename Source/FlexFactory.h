@@ -3,7 +3,7 @@
 
 namespace FlexItemFactory
 {
-	FlexItem makeBlankSidePanelItem(Component& component);
+	FlexItem makeBlankSidePanelItem();
 
 	FlexItem makeStepChoicesButtonsBoxItem(Component& component, int numberOfChoices);
 
@@ -20,7 +20,9 @@ namespace  FlexBoxFactory
 
 	FlexBox makeStepButtonsBox();
 
-	FlexBox maketEncodersBox();
+	FlexBox makeEncodersBox();
+
+	FlexBox makeCentralBox();
 
 	FlexBox makeMasterBox();
 }
