@@ -7,7 +7,7 @@ class Encoder : public Slider
 {
 public:
 
-	Encoder(const String& name, LED& led, EncoderLookAndFeel& encoderLookAndFeel);
+	Encoder(const String& name, LED& led);
 	~Encoder();
 
 	void mouseEnter(const MouseEvent& event) override;
@@ -16,10 +16,10 @@ public:
 
 	bool isCourseMode{ false };
 
-	EncoderLookAndFeel& encoderLookAndFeel;
-
 	LED& led;
 
 private:
+
+	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 
 };

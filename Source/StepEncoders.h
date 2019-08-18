@@ -9,10 +9,8 @@ public:
 	StepEncoders();
 	~StepEncoders();
 
-	EncoderLookAndFeel		encoderLookAndFeel;
-
-	OwnedArray<Encoder>		encoders;
-	OwnedArray<LED>			encoderLeds;
+	std::vector<std::unique_ptr<Encoder>>	encoders;
+	std::vector<std::unique_ptr<LED>>		encoderLeds;
 
 	void resized() override;
 

@@ -58,7 +58,7 @@ void StepSequencerEditor::resized()
 
 	FlexBox encoderBox = FlexBoxFactory::makeEncodersBox();
 
-	for(auto encoder : stepEncoders->encoders)
+	for(auto& encoder : stepEncoders->encoders)
 	{
 		encoderBox.items.add(FlexItemFactory::makeEncoderItem(*encoder));
 	}

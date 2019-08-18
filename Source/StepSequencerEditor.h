@@ -19,7 +19,8 @@ public:
     void paint (Graphics&) override;
 	void resized() override;
 
-	SharedResourcePointer<DrawablesCache>	svgCache;
+	SharedResourcePointer<DrawablesCache>		svgCache;
+	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 
 	std::unique_ptr<Drawable>			backPlate;
 	std::unique_ptr<StepEncoders>		stepEncoders;
