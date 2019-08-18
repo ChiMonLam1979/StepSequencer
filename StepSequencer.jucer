@@ -9,12 +9,18 @@
         <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
               file="Source/ButtonNormal.svg"/>
         <FILE id="uhKeAK" name="ButtonOn.svg" compile="0" resource="1" file="Source/ButtonOn.svg"/>
+        <FILE id="pi4Izp" name="ButtonOnAmber.svg" compile="0" resource="1"
+              file="Source/ButtonOnAmber.svg"/>
         <FILE id="KpkS4u" name="ButtonOnDown.svg" compile="0" resource="1"
               file="Source/ButtonOnDown.svg"/>
+        <FILE id="OS31yF" name="ButtonOnDownAmber.svg" compile="0" resource="1"
+              file="Source/ButtonOnDownAmber.svg"/>
         <FILE id="NphgQv" name="ButtonOnDownRed.svg" compile="0" resource="1"
               file="Source/ButtonOnDownRed.svg"/>
         <FILE id="hKw4YO" name="ButtonOnOver.svg" compile="0" resource="1"
               file="Source/ButtonOnOver.svg"/>
+        <FILE id="zo6crG" name="ButtonOnOverAmber.svg" compile="0" resource="1"
+              file="Source/ButtonOnOverAmber.svg"/>
         <FILE id="kxEizl" name="ButtonOnOverRed.svg" compile="0" resource="1"
               file="Source/ButtonOnOverRed.svg"/>
         <FILE id="EVDcUw" name="ButtonOnRed.svg" compile="0" resource="1" file="Source/ButtonOnRed.svg"/>
@@ -60,12 +66,20 @@
                 file="Source/PatternService.h"/>
         </GROUP>
         <GROUP id="{1B06F047-A275-D2B3-1A7E-CD29B6D18F4F}" name="ParameterHandlers">
+          <FILE id="gH4KWU" name="EncodersSelectorHandler.cpp" compile="1" resource="0"
+                file="Source/EncodersSelectorHandler.cpp"/>
+          <FILE id="KYmeS3" name="EncodersSelectorHandler.h" compile="0" resource="0"
+                file="Source/EncodersSelectorHandler.h"/>
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
           <FILE id="E0hhrs" name="NoteLengthHandler.cpp" compile="1" resource="0"
                 file="Source/NoteLengthHandler.cpp"/>
           <FILE id="qDE6mW" name="NoteLengthHandler.h" compile="0" resource="0"
                 file="Source/NoteLengthHandler.h"/>
+          <FILE id="thwnI0" name="SelectedEncodersHandler.cpp" compile="1" resource="0"
+                file="Source/SelectedEncodersHandler.cpp"/>
+          <FILE id="Y7WkLt" name="SelectedEncodersHandler.h" compile="0" resource="0"
+                file="Source/SelectedEncodersHandler.h"/>
           <FILE id="xnPJfp" name="StepChoicesHandler.cpp" compile="1" resource="0"
                 file="Source/StepChoicesHandler.cpp"/>
           <FILE id="zPNbgQ" name="StepChoicesHandler.h" compile="0" resource="0"
@@ -93,6 +107,14 @@
                 file="Source/DrawablesCache.h"/>
         </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
+          <FILE id="Y7vAGm" name="ButtonAttachmentUpdaterService.cpp" compile="1"
+                resource="0" file="Source/ButtonAttachmentUpdaterService.cpp"/>
+          <FILE id="HPmkSy" name="ButtonAttachmentUpdaterService.h" compile="0"
+                resource="0" file="Source/ButtonAttachmentUpdaterService.h"/>
+          <FILE id="cqbqhv" name="BoolButtonAttachment.cpp" compile="1" resource="0"
+                file="Source/BoolButtonAttachment.cpp"/>
+          <FILE id="YXb9i8" name="BoolButtonAttachment.h" compile="0" resource="0"
+                file="Source/BoolButtonAttachment.h"/>
           <FILE id="nyXkvW" name="ChoiceUpdaterService.cpp" compile="1" resource="0"
                 file="Source/ChoiceUpdaterService.cpp"/>
           <FILE id="hf7efA" name="ChoiceUpdaterService.h" compile="0" resource="0"

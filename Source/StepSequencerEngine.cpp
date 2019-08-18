@@ -33,6 +33,8 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 	}
 
 	treeState.addParameterListener(IDs::StepChoicesID, &stepChoicesHandler);
+
+	treeState.addParameterListener(IDs::EncodersSelectID, &encodersSelectorHandler);
 }
 
 AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()
@@ -56,11 +58,19 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, DefaultValues::DefaultVelocity);
 
 		parameters.push_back(std::move(velocityEncoderParameter));
+
+		auto selectedEncodersParamter = std::make_unique<AudioParameterBool>(IDs::SelectedEncoderIDs[i], ParameterNames::SelectedEncoderNames[i], DefaultValues::DefaultEncoderSelect);
+
+		parameters.push_back(std::move(selectedEncodersParamter));
 	}
 
 	auto stepChoicesParameter = std::make_unique<AudioParameterChoice>(IDs::StepChoicesID, ParameterNames::StepChoicesName, ParameterChoices::StepChoices, 0);
 
 	parameters.push_back(std::move(stepChoicesParameter));
+
+	auto encodersSelectorParameter = std::make_unique<AudioParameterBool>(IDs::EncodersSelectID, ParameterNames::EncodersSelectName, DefaultValues::DefaultEncoderSelect);
+
+	parameters.push_back(std::move(encodersSelectorParameter));
 
 	return { parameters.begin(), parameters.end() };
 }
@@ -165,8 +175,8 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	if(!positionInfo.isPlaying)
 	{
 		//remove the hacky delay
-		auto pos	= std::floor((positionInfo.ppqPosition * 4));
-		auto index	= maths::mod(pos, 16);
+		pos	= std::floor((positionInfo.ppqPosition * 4));
+		index	= maths::mod(pos, 16);
 		playPositionIndex.store(index);
 	}
 }

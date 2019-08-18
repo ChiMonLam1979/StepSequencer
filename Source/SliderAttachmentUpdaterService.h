@@ -23,7 +23,7 @@ public:
 
 private:
 
-	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>& stepEncoderAttachments;
-	std::unique_ptr<StepEncoders>&	stepEncoders;
-	AudioProcessorValueTreeState& treeState;
+	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>&	stepEncoderAttachments;
+	std::unique_ptr<StepEncoders>&								stepEncoders;
+	AudioProcessorValueTreeState&								treeState;
 };

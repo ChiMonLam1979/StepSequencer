@@ -7,6 +7,8 @@
 #include "DrawablesCache.h"
 #include "SliderAttachmentUpdaterService.h"
 #include "RadioButtonChoiceAttachment.h"
+#include "BoolButtonAttachment.h"
+#include "ButtonAttachmentUpdaterService.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -27,8 +29,11 @@ public:
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
 
-	std::unique_ptr<SliderAttachmentUpdaterService> encoderAttachmentUpdater;
-	std::unique_ptr<RadioButtonChoiceAttachment>	stepEncoderChoicesAttachment;
+	std::unique_ptr<SliderAttachmentUpdaterService>					encoderAttachmentUpdater;
+	std::unique_ptr<RadioButtonChoiceAttachment>					stepEncoderChoicesAttachment;
+
+	std::unique_ptr<ButtonAttachmentUpdaterService>					buttonAttachmentUpdater;
+	std::unique_ptr<BoolButtonAttachment>							stepButtonSelectorAttachment;
 
 private:
 

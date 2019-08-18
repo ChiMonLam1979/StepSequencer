@@ -13,7 +13,7 @@ namespace FlexItemFactory
 			.withMaxWidth	(ComponentSizes::StepButtonWidth * numberOfChoices);
 	}
 
-	FlexItem makeButtonBoxItem(Component& component)
+	FlexItem makeButtonItem(Component& component)
 	{
 		return FlexItem(component)
 			.withMinHeight	(ComponentSizes::StepButtonHeight)
@@ -22,7 +22,7 @@ namespace FlexItemFactory
 			.withMaxWidth	(ComponentSizes::StepButtonWidth);
 	}
 
-	FlexItem makeEncoderBoxItem(Component& component)
+	FlexItem makeEncoderItem(Component& component)
 	{
 		return FlexItem(component)
 			.withMinHeight	(ComponentSizes::StepEncoderHeight)
@@ -62,6 +62,7 @@ namespace  FlexBoxFactory
 	{
 		FlexBox box;
 		box.flexDirection = FlexBox::Direction::column;
+		box.alignContent = FlexBox::AlignContent::center;
 
 		return box;
 	}

@@ -7,6 +7,7 @@
 #include "NoteLengthHandler.h"
 #include "Pattern.h"
 #include "PatternService.h"
+#include "EncodersSelectorHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -55,12 +56,13 @@ private:
 
 	Pattern	pattern				{16, 1};
 
-	NoteHandler			noteHandler			{ pattern.notes };
-	StepHandler			stepHandler			{ pattern.gates };
-	NoteLengthHandler	noteLengthHandler	{ pattern.noteLengths, samplesPerNoteDivision };
+	NoteHandler				noteHandler			{ pattern.notes };
+	StepHandler				stepHandler			{ pattern.gates };
+	NoteLengthHandler		noteLengthHandler	{ pattern.noteLengths, samplesPerNoteDivision };
 
-	VelocityHandler		velocityHandler		{ pattern.velocities };
-	StepChoicesHandler	stepChoicesHandler;
+	VelocityHandler			velocityHandler		{ pattern.velocities };
+	StepChoicesHandler		stepChoicesHandler;
+	EncodersSelectorHandler	encodersSelectorHandler;
 
 	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, stepHandler };
 

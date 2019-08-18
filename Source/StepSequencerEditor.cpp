@@ -17,8 +17,11 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 		stepButtonAttachments .add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
 	}
 
-	encoderAttachmentUpdater	= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
+	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
 	stepEncoderChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
+
+	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtonAttachments, stepButtons, processor.treeState);
+	stepButtonSelectorAttachment		= std::make_unique<BoolButtonAttachment>(*buttonAttachmentUpdater, processor.treeState, IDs::EncodersSelectID);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
@@ -27,6 +30,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepButtons.get());
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
+	addAndMakeVisible(stepButtonSelectorAttachment.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -54,19 +58,24 @@ void StepSequencerEditor::resized()
 
 	FlexBox encoderBox = FlexBoxFactory::makeEncodersBox();
 
-	for(auto& encoder : stepEncoders->encoders)
+	for(auto encoder : stepEncoders->encoders)
 	{
-		encoderBox.items.add(FlexItemFactory::makeEncoderBoxItem(*encoder));
+		encoderBox.items.add(FlexItemFactory::makeEncoderItem(*encoder));
 	}
 
 	FlexBox buttonBox = FlexBoxFactory::makeStepButtonsBox();
 
-	for (auto& stepButton : stepButtons->stepButtons)
+	for (auto stepButton : stepButtons->stepButtons)
 	{
-		buttonBox.items.add(FlexItemFactory::makeButtonBoxItem(*stepButton));
+		buttonBox.items.add(FlexItemFactory::makeButtonItem(*stepButton));
 	}
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
+	leftColumnBox.items.addArray({
+								FlexItem().withFlex(0.765),
+								FlexItemFactory::makeButtonItem(*stepButtonSelectorAttachment).withFlex(0.14),
+								FlexItem().withFlex(0.095)
+		});
 
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();
 	centralBox.items.addArray({

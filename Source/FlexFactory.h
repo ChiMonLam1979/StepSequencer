@@ -5,9 +5,9 @@ namespace FlexItemFactory
 {
 	FlexItem makeStepChoicesButtonsBoxItem(Component& component, int numberOfChoices);
 
-	FlexItem makeButtonBoxItem(Component& component);
+	FlexItem makeButtonItem(Component& component);
 
-	FlexItem makeEncoderBoxItem(Component& component);
+	FlexItem makeEncoderItem(Component& component);
 }
 
 namespace  FlexBoxFactory

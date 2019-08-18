@@ -23,7 +23,7 @@ public:
 
 private:
 
-	AudioParameterChoice* parameter = nullptr;
-	OwnedArray<StepButton> buttons;
-	ChoiceUpdaterService& updaterService;
+	AudioParameterChoice*	parameter { nullptr };
+	OwnedArray<StepButton>	buttons;
+	ChoiceUpdaterService&	updaterService;
 };

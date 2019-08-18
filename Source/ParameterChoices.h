@@ -3,14 +3,23 @@
 
 namespace ParameterChoices
 {
-	static String Pitch{ "Pitch" };
+	static String Pitch		{ "Pitch"		};
 	static String NoteLength{ "Note Length" };
-	static String Velocity{ "Velocity" };
+	static String Velocity	{ "Velocity"	};
 
 	const StringArray StepChoices
 	{
 		Pitch,
 		NoteLength,
 		Velocity
+	};
+
+	static String stepButtonsSelect	{ "StepButtons Select"	};
+	static String stepEncodersSelect{ "StepEncoders Select"	};
+
+	const StringArray stepSelectorChoices
+	{
+		stepButtonsSelect,
+		stepEncodersSelect
 	};
 }

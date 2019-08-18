@@ -191,4 +191,41 @@ namespace  ParameterNames
 		NoteLengthEncoderFifteenName,
 		NoteLengthEncoderSixteenName
 	};
+
+	static String SelectedEncoderOneName		{ "Selected Encoder One Name"		};
+	static String SelectedEncoderTwoName		{ "Selected Encoder Two Name"		};
+	static String SelectedEncoderThreeName		{ "Selected Encoder Three Name"		};
+	static String SelectedEncoderFourName		{ "Selected Encoder Four Name"		};
+	static String SelectedEncoderFiveName		{ "Selected Encoder Five Name"		};
+	static String SelectedEncoderSixName		{ "Selected Encoder Six Name"		};
+	static String SelectedEncoderSevenName		{ "Selected Encoder Seven Name"		};
+	static String SelectedEncoderEightName		{ "Selected Encoder Eight Name"		};
+	static String SelectedEncoderNineName		{ "Selected Encoder Nine Name"		};
+	static String SelectedEncoderTenName		{ "Selected Encoder Ten Name"		};
+	static String SelectedEncoderElevenName		{ "Selected Encoder Eleven Name"	};
+	static String SelectedEncoderTwelveName		{ "Selected Encoder Twelve Name"	};
+	static String SelectedEncoderThirteenName	{ "Selected Encoder Thirteen Name"	};
+	static String SelectedEncoderFourteenName	{ "Selected Encoder Fourteen Name"	};
+	static String SelectedEncoderFifteenName	{ "Selected Encoder Fifteen Name"	};
+	static String SelectedEncoderSixteenName	{ "Selected Encoder Sixteen Name"	};
+
+	const StringArray SelectedEncoderNames
+	{
+		SelectedEncoderOneName,
+		SelectedEncoderTwoName,
+		SelectedEncoderThreeName,
+		SelectedEncoderFourName,
+		SelectedEncoderFiveName,
+		SelectedEncoderSixName,
+		SelectedEncoderSevenName,
+		SelectedEncoderEightName,
+		SelectedEncoderNineName,
+		SelectedEncoderTenName,
+		SelectedEncoderElevenName,
+		SelectedEncoderTwelveName,
+		SelectedEncoderThirteenName,
+		SelectedEncoderFourteenName,
+		SelectedEncoderFifteenName,
+		SelectedEncoderSixteenName
+	};
 }

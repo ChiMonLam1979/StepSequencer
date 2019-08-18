@@ -1,12 +1,13 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
 
 namespace Enums
 {
 	static enum StepButtonStyle
 	{
 		Red,
-		Green
+		Green,
+		Amber,
+		AmberSelect
 	};
 
 	static enum LEDState
@@ -14,5 +15,12 @@ namespace Enums
 		LEDOff,
 		LEDGreen,
 		LEDRed
+	};
+
+	static enum StepButtonType
+	{
+		GateButton,
+		RadioButton,
+		SelectButton
 	};
 }

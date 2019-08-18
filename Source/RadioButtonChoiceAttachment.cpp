@@ -14,7 +14,7 @@ RadioButtonChoiceAttachment::RadioButtonChoiceAttachment
 
 	for(auto& choice: parameter->choices)
 	{
-		buttons.add(new StepButton(choice, DrawableButton::ButtonStyle::ImageFitted, true));
+		buttons.add(new StepButton(choice, DrawableButton::ButtonStyle::ImageFitted, Enums::RadioButton));
 	}
 
 	for(auto& button : buttons)

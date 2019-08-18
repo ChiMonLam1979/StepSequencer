@@ -156,4 +156,41 @@ namespace IDs
 		NoteLengthEncoderFifteenID,
 		NoteLengthEncoderSixteenID
 	};
+
+	static String SelectedEncoderOneID		{ "Selected Encoder One"		};
+	static String SelectedEncoderTwoID		{ "Selected Encoder Two"		};
+	static String SelectedEncoderThreeID	{ "Selected Encoder Three"		};
+	static String SelectedEncoderFourID		{ "Selected Encoder Four"		};
+	static String SelectedEncoderFiveID		{ "Selected Encoder Five"		};
+	static String SelectedEncoderSixID		{ "Selected Encoder Six"		};
+	static String SelectedEncoderSevenID	{ "Selected Encoder Seven"		};
+	static String SelectedEncoderEightID	{ "Selected Encoder Eight"		};
+	static String SelectedEncoderNineID		{ "Selected Encoder Nine"		};
+	static String SelectedEncoderTenID		{ "Selected Encoder Ten"		};
+	static String SelectedEncoderElevenID	{ "Selected Encoder Eleven"		};
+	static String SelectedEncoderTwelveID	{ "Selected Encoder Twelve"		};
+	static String SelectedEncoderThirteenID	{ "Selected Encoder Thirteen"	};
+	static String SelectedEncoderFourteenID	{ "Selected Encoder Fourteen"	};
+	static String SelectedEncoderFifteenID	{ "Selected Encoder Fifteen"	};
+	static String SelectedEncoderSixteenID	{ "Selected Encoder Sixteen"	};
+
+	const StringArray SelectedEncoderIDs
+	{
+		SelectedEncoderOneID,
+		SelectedEncoderTwoID,
+		SelectedEncoderThreeID,
+		SelectedEncoderFourID,
+		SelectedEncoderFiveID,
+		SelectedEncoderSixID,
+		SelectedEncoderSevenID,
+		SelectedEncoderEightID,
+		SelectedEncoderNineID,
+		SelectedEncoderTenID,
+		SelectedEncoderElevenID,
+		SelectedEncoderTwelveID,
+		SelectedEncoderThirteenID,
+		SelectedEncoderFourteenID,
+		SelectedEncoderFifteenID,
+		SelectedEncoderSixteenID
+	};
 }
