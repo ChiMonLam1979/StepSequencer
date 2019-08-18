@@ -10,7 +10,7 @@ public:
 	ChaseLEDs(StepSequencerEngine& processor);
 	~ChaseLEDs();
 
-	OwnedArray<LED> leds;
+	std::vector<std::unique_ptr<LED>> leds;
 
 	void resized() override;
 

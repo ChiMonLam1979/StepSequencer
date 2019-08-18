@@ -6,12 +6,13 @@ ChaseLEDs::ChaseLEDs(StepSequencerEngine& processor) : processor(processor)
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		leds.add(new LED);
+		auto led = std::make_unique<LED>();
+		leds.push_back(std::move(led));
 	}
 
-	for(auto led : leds)
+	for(auto& led : leds)
 	{
-		addAndMakeVisible(led);
+		addAndMakeVisible(led.get());
 	}
 
 	setInterceptsMouseClicks(false, true);
@@ -55,7 +56,7 @@ void ChaseLEDs::timerCallback()
 
 	if(!shouldFlash)
 	{
-		for (auto led : leds)
+		for (auto& led : leds)
 		{
 		led->setState(Enums::LEDOff);
 		}
