@@ -6,13 +6,14 @@ class StepButtons : public Component
 {
 public:
 
-	StepButtons();
+	StepButtons(Enums::StepButtonType buttonType);
 	~StepButtons();
 
 	void StepClicked(const String& stepButtonName) const;
 
 	std::vector<std::unique_ptr<StepButton>> stepButtons;
 
+	Enums::StepButtonType buttonType;
 
 private:
 

@@ -1,11 +1,11 @@
 #include "StepButtons.h"
 #include "ParameterNames.h"
 
-StepButtons::StepButtons()
+StepButtons::StepButtons(Enums::StepButtonType buttonType)
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		auto button = std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted, Enums::GateButton);
+		auto button = std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted, buttonType);
 		stepButtons.push_back(std::move(button));
 	}
 

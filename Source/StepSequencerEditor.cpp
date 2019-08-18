@@ -7,7 +7,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepEncoders			= std::make_unique<StepEncoders>();
-	stepButtons				= std::make_unique<StepButtons>();
+	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
 
 	for(auto i = 0; i < 16; i++)
