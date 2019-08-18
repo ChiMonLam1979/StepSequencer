@@ -3,6 +3,7 @@
 
 LED::LED()
 {
+	setState(Enums::LEDOff);
 }
 
 LED::~LED()
