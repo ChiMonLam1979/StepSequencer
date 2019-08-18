@@ -65,7 +65,7 @@ void StepSequencerEditor::resized()
 
 	FlexBox buttonBox = FlexBoxFactory::makeStepButtonsBox();
 
-	for (auto stepButton : stepButtons->stepButtons)
+	for (auto& stepButton : stepButtons->stepButtons)
 	{
 		buttonBox.items.add(FlexItemFactory::makeButtonItem(*stepButton));
 	}

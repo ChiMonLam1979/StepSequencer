@@ -5,11 +5,14 @@ StepButtons::StepButtons()
 {
 	for (auto i = 0; i < 16; i++)
 	{
-		stepButtons.add(std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted, Enums::GateButton));
+		auto button = std::make_unique<StepButton>(ParameterNames::StepButtonNames[i], DrawableButton::ButtonStyle::ImageFitted, Enums::GateButton);
+		stepButtons.push_back(std::move(button));
 	}
 
-	for (auto& stepButton : stepButtons)
+	for (auto& stepButtonItem : stepButtons)
 	{
+		auto* stepButton = stepButtonItem.get();
+
 		stepButton->onClick = [this, stepButton] { StepClicked(stepButton->getName()); };
 		addAndMakeVisible(stepButton);
 	}

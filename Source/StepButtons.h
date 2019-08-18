@@ -11,7 +11,8 @@ public:
 
 	void StepClicked(const String& stepButtonName) const;
 
-	OwnedArray<StepButton> stepButtons;
+	std::vector<std::unique_ptr<StepButton>> stepButtons;
+
 
 private:
 

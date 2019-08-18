@@ -15,8 +15,9 @@ StepEncoders::StepEncoders()
 
 	for(auto& encoderItem: encoders)
 	{
-		addAndMakeVisible(encoderItem.get());
 		auto* encoder = encoderItem.get();
+
+		addAndMakeVisible(encoder);
 		encoder->onValueChange = [this, encoder] { encoderValueChanged(encoder->getName()); };
 	}
 
