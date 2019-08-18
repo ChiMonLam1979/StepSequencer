@@ -21,6 +21,7 @@ namespace Enums
 	{
 		GateButton,
 		RadioButton,
-		SelectButton
+		SelectorButton,
+		ToggleButton
 	};
 }

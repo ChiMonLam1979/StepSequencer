@@ -37,29 +37,25 @@ void ButtonAttachmentUpdaterService::AttachButtonsToEncoderSelection()
 	for (auto i = 0; i < 16; i++)
 	{
 		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(treeState, IDs::SelectedEncoderIDs[i], *stepButtons->stepButtons[i]));
-		stepButtons->stepButtons[i]->SetStepButtonStyle(Enums::Amber);
 	}
 
-	//for (auto button : stepButtons->stepButtons)
-	//{
-	//	button->SetStepButtonStyle(Enums::Amber);
-	//}
+	for (auto& button : stepButtons->stepButtons)
+	{
+		button->SetStepButtonStyle(Enums::Amber);
+	}
 }
 
 void ButtonAttachmentUpdaterService::AttachButtonsToGates()
 {
 	stepButtonAttachments.clear();
 
-
 	for (auto i = 0; i < 16; i++)
 	{
 		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(treeState, IDs::StepButtonIDs[i], *stepButtons->stepButtons[i]));
-		stepButtons->stepButtons[i]->SetStepButtonStyle(Enums::Green);
 	}
 
-	//for(auto button: stepButtons->stepButtons)
-	//{
-	//	stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(treeState, button->getName(), *button));
-	//	button->SetStepButtonStyle(Enums::Green);
-	//}
+	for(auto& button: stepButtons->stepButtons)
+	{
+		button->SetStepButtonStyle(Enums::Green);
+	}
 }

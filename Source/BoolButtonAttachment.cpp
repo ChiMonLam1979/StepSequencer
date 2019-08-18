@@ -9,13 +9,13 @@ BoolButtonAttachment::BoolButtonAttachment(
 : 
 	updaterService(updaterService)
 {
-	parameter = dynamic_cast<AudioParameterBool*>(treeState.getParameter(parameterId));
+	parameter	= dynamic_cast<AudioParameterBool*>(treeState.getParameter(parameterId));
+	button		= std::make_unique<StepButton>(ParameterNames::EncodersSelectName, DrawableButton::ButtonStyle::ImageFitted, Enums::ToggleButton);
 
-	button = std::make_unique<StepButton>(ParameterNames::EncodersSelectName, DrawableButton::ButtonStyle::ImageFitted, Enums::SelectButton);
-	addAndMakeVisible(button.get());
-	auto boolButton = button.get();
-	button->setClickingTogglesState(true);
-	button->onClick = [this, boolButton] { Clicked(boolButton->getToggleState()); };
+	auto* boolButton = button.get();
+	addAndMakeVisible(boolButton);
+	boolButton->setClickingTogglesState(true);
+	boolButton->onClick = [this, boolButton] { Clicked(boolButton->getToggleState()); };
 
 	treeState.addParameterListener(parameterId, this);
 }
