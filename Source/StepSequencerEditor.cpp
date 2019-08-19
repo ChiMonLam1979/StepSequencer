@@ -2,12 +2,14 @@
 #include "ParameterIds.h"
 #include "FlexFactory.h"
 #include "ComponentDimensions.h"
+#include "ParameterNames.h"
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepEncoders			= std::make_unique<StepEncoders>();
-	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton);
+	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
+	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
 
 	for(auto i = 0; i < 16; i++)
@@ -15,12 +17,14 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::PitchEncoderIDs[i], *stepEncoders->encoders[i]));
 
 		stepButtonAttachments .add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
+
+		selectorButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::SelectedEncoderIDs[i], *selectorButtons->stepButtons[i]));
 	}
 
 	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
 	stepEncoderChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
 
-	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtonAttachments, stepButtons, processor.treeState);
+	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtons, selectorButtons);
 	stepButtonSelectorAttachment		= std::make_unique<BoolButtonAttachment>(*buttonAttachmentUpdater, processor.treeState, IDs::EncodersSelectID);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
@@ -28,9 +32,12 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(backPlate.get());
 	addAndMakeVisible(stepEncoders.get());
 	addAndMakeVisible(stepButtons.get());
+	addAndMakeVisible(selectorButtons.get());
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 	addAndMakeVisible(stepButtonSelectorAttachment.get());
+
+	selectorButtons->toBehind(stepButtons.get());
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -47,6 +54,14 @@ void StepSequencerEditor::resized()
 	transportLEDs->setBounds(ComponentBounds::ChaseLEDStripBounds);
 	stepEncoders->setBounds(getLocalBounds());
 	stepButtons->setBounds(getLocalBounds());
+	selectorButtons->setBounds(getLocalBounds());
+
+	auto buttonBounds = ComponentBounds::StepButtonBounds;
+
+	for(auto& button : selectorButtons->stepButtons)
+	{
+		button->setBounds(buttonBounds.removeFromLeft(ComponentSizes::StepButtonWidth));
+	}
 
 	auto window = getLocalBounds();
 

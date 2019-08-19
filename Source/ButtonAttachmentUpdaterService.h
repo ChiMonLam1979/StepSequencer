@@ -9,20 +9,20 @@ public:
 
 	ButtonAttachmentUpdaterService
 	(
-		OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>& stepButtonAttachments,
-		std::unique_ptr<StepButtons>&	stepButtons,
-		AudioProcessorValueTreeState& treeState
+		std::unique_ptr<StepButtons>& stepButtons,
+		std::unique_ptr<StepButtons>& selectorButtons
 	);
 	~ButtonAttachmentUpdaterService();
 
 	void UpdateParameters(String choice) override;
 
-	void AttachButtonsToGates();
-	void AttachButtonsToEncoderSelection();
+	void ShowGateButtons();
+	void ShowEncoderSelectButtons();
+
+	bool showingGateButtons { true };
 
 private:
 
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>&	stepButtonAttachments;
-	std::unique_ptr<StepButtons>&								stepButtons;
-	AudioProcessorValueTreeState&								treeState;
+	std::unique_ptr<StepButtons>& stepButtons;
+	std::unique_ptr<StepButtons>& selectorButtons;
 };

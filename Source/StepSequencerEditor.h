@@ -25,10 +25,12 @@ public:
 	std::unique_ptr<Drawable>			backPlate;
 	std::unique_ptr<StepEncoders>		stepEncoders;
 	std::unique_ptr<StepButtons>		stepButtons;
+	std::unique_ptr<StepButtons>		selectorButtons;
 	std::unique_ptr<ChaseLEDs>			transportLEDs;
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> selectorButtonAttachments;
 
 	std::unique_ptr<SliderAttachmentUpdaterService>					encoderAttachmentUpdater;
 	std::unique_ptr<RadioButtonChoiceAttachment>					stepEncoderChoicesAttachment;

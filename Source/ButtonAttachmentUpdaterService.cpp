@@ -1,15 +1,12 @@
 #include "ButtonAttachmentUpdaterService.h"
 #include "ParameterChoices.h"
-#include "ParameterIds.h"
 
 ButtonAttachmentUpdaterService::ButtonAttachmentUpdaterService(
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>& stepButtonAttachments,
 	std::unique_ptr<StepButtons>& stepButtons,
-	AudioProcessorValueTreeState& treeState)
+	std::unique_ptr<StepButtons>& selectorButtons)
 	:
-	stepButtonAttachments(stepButtonAttachments),
 	stepButtons(stepButtons),
-	treeState(treeState)
+	selectorButtons(selectorButtons)
 {
 }
 
@@ -21,41 +18,37 @@ void ButtonAttachmentUpdaterService::UpdateParameters(String choice)
 {
 	if (choice == ParameterChoices::stepEncodersSelect)
 	{
-		AttachButtonsToEncoderSelection();
+		ShowEncoderSelectButtons();
 	}
 
 	if (choice == ParameterChoices::stepButtonsSelect)
 	{
-		AttachButtonsToGates();
+		ShowGateButtons();
 	}
 }
 
-void ButtonAttachmentUpdaterService::AttachButtonsToEncoderSelection()
+void ButtonAttachmentUpdaterService::ShowEncoderSelectButtons()
 {
-	stepButtonAttachments.clear();
-
-	for (auto i = 0; i < 16; i++)
-	{
-		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(treeState, IDs::SelectedEncoderIDs[i], *stepButtons->stepButtons[i]));
-	}
-
-	for (auto& button : stepButtons->stepButtons)
-	{
-		button->SetStepButtonStyle(Enums::Amber);
-	}
-}
-
-void ButtonAttachmentUpdaterService::AttachButtonsToGates()
-{
-	stepButtonAttachments.clear();
-
-	for (auto i = 0; i < 16; i++)
-	{
-		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(treeState, IDs::StepButtonIDs[i], *stepButtons->stepButtons[i]));
-	}
-
 	for(auto& button: stepButtons->stepButtons)
 	{
-		button->SetStepButtonStyle(Enums::Green);
+		button->setVisible(false);
+	}
+
+	for (auto& button : selectorButtons->stepButtons)
+	{
+		button->setVisible(true);
+	}
+}
+
+void ButtonAttachmentUpdaterService::ShowGateButtons()
+{
+	for (auto& button : stepButtons->stepButtons)
+	{
+		button->setVisible(true);
+	}
+
+	for (auto& button : selectorButtons->stepButtons)
+	{
+		button->setVisible(false);
 	}
 }

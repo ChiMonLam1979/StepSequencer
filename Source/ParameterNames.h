@@ -228,4 +228,41 @@ namespace  ParameterNames
 		SelectedEncoderFifteenName,
 		SelectedEncoderSixteenName
 	};
+
+	static String EncoderSelectButtonOneName		{ "Encoder Selected Button One Name"		};
+	static String EncoderSelectButtonTwoName		{ "Encoder Selected Button Two Name"		};
+	static String EncoderSelectButtonThreeName		{ "Encoder Selected Button Three Name"		};
+	static String EncoderSelectButtonFourName		{ "Encoder Selected Button Four Name"		};
+	static String EncoderSelectButtonFiveName		{ "Encoder Selected Button Five Name"		};
+	static String EncoderSelectButtonSixName		{ "Encoder Selected Button Six Name"		};
+	static String EncoderSelectButtonSevenName		{ "Encoder Selected Button Seven Name"		};
+	static String EncoderSelectButtonEightName		{ "Encoder Selected Button Eight Name"		};
+	static String EncoderSelectButtonNineName		{ "Encoder Selected Button Nine Name"		};
+	static String EncoderSelectButtonTenName		{ "Encoder Selected Button Ten Name"		};
+	static String EncoderSelectButtonElevenName		{ "Encoder Selected Button Eleven Name"		};
+	static String EncoderSelectButtonTwelveName		{ "Encoder Selected Button Twelve Name"		};
+	static String EncoderSelectButtonThirteenName	{ "Encoder Selected Button Thirteen Name"	};
+	static String EncoderSelectButtonFourteenName	{ "Encoder Selected Button Fourteen Name"	};
+	static String EncoderSelectButtonFifteenName	{ "Encoder Selected Button Fifteen Name"	};
+	static String EncoderSelectButtonSixteenName	{ "Encoder Selected Button Sixteen Name"	};
+
+	const StringArray EncoderSelectButtonsNames
+	{
+		EncoderSelectButtonOneName,
+		EncoderSelectButtonTwoName,
+		EncoderSelectButtonThreeName,
+		EncoderSelectButtonFourName,
+		EncoderSelectButtonFiveName,
+		EncoderSelectButtonSixName,
+		EncoderSelectButtonSevenName,
+		EncoderSelectButtonEightName,
+		EncoderSelectButtonNineName,
+		EncoderSelectButtonTenName,
+		EncoderSelectButtonElevenName,
+		EncoderSelectButtonTwelveName,
+		EncoderSelectButtonThirteenName,
+		EncoderSelectButtonFourteenName,
+		EncoderSelectButtonFifteenName,
+		EncoderSelectButtonSixteenName
+	};
 }
