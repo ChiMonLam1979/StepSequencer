@@ -3,7 +3,7 @@
 #include "EncoderLookAndFeel.h"
 #include "LED.h"
 
-class Encoder : public Slider
+class Encoder : public Slider, public Button::Listener
 {
 public:
 
@@ -13,6 +13,8 @@ public:
 	void mouseEnter(const MouseEvent& event) override;
 
 	void mouseExit(const MouseEvent& event) override;
+
+	void buttonClicked(Button* button) override;
 
 	bool isCourseMode{ false };
 

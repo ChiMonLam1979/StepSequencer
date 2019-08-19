@@ -24,7 +24,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
 	stepEncoderChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
 
-	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtons, selectorButtons);
+	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtons, selectorButtons, stepEncoders);
 	stepButtonSelectorAttachment		= std::make_unique<BoolButtonAttachment>(*buttonAttachmentUpdater, processor.treeState, IDs::EncodersSelectID);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);

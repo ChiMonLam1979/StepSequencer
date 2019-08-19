@@ -23,3 +23,8 @@ void Encoder::mouseExit(const MouseEvent& event)
 {
 	led.setState(Enums::LEDOff);
 }
+
+void Encoder::buttonClicked(Button* button)
+{
+	isCourseMode = !isCourseMode;
+}
