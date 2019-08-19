@@ -29,26 +29,18 @@ void ButtonAttachmentUpdaterService::UpdateParameters(String choice)
 
 void ButtonAttachmentUpdaterService::ShowEncoderSelectButtons()
 {
-	for(auto& button: stepButtons->stepButtons)
+	for(auto i = 0; i < 16; ++i)
 	{
-		button->setVisible(false);
-	}
-
-	for (auto& button : selectorButtons->stepButtons)
-	{
-		button->setVisible(true);
+		selectorButtons->stepButtons[i]->setVisible(true);
+		stepButtons->stepButtons[i]->setVisible(false);
 	}
 }
 
 void ButtonAttachmentUpdaterService::ShowGateButtons()
 {
-	for (auto& button : stepButtons->stepButtons)
+	for (auto i = 0; i < 16; ++i)
 	{
-		button->setVisible(true);
-	}
-
-	for (auto& button : selectorButtons->stepButtons)
-	{
-		button->setVisible(false);
+		selectorButtons->stepButtons[i]->setVisible(false);
+		stepButtons->stepButtons[i]->setVisible(true);
 	}
 }
