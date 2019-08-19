@@ -8,6 +8,7 @@
 #include "Pattern.h"
 #include "PatternService.h"
 #include "EncodersSelectorHandler.h"
+#include "GroupEncoderHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -63,6 +64,7 @@ private:
 	VelocityHandler			velocityHandler		{ pattern.velocities };
 	StepChoicesHandler		stepChoicesHandler;
 	EncodersSelectorHandler	encodersSelectorHandler;
+	GroupEncoderHandler		groupEncoderHandler;
 
 	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, stepHandler };
 

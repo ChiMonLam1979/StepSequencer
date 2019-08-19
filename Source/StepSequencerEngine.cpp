@@ -35,6 +35,8 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 	treeState.addParameterListener(IDs::StepChoicesID, &stepChoicesHandler);
 
 	treeState.addParameterListener(IDs::EncodersSelectID, &encodersSelectorHandler);
+
+	treeState.addParameterListener(IDs::GroupEncoderId, &groupEncoderHandler);
 }
 
 AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()
@@ -71,6 +73,10 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 	auto encodersSelectorParameter = std::make_unique<AudioParameterBool>(IDs::EncodersSelectID, ParameterNames::EncodersSelectName, DefaultValues::DefaultEncoderSelect);
 
 	parameters.push_back(std::move(encodersSelectorParameter));
+
+	auto groupEncoderParamter = std::make_unique<AudioParameterInt>(IDs::GroupEncoderId, ParameterNames::GroupEncoderName, 0, 127, 0);
+
+	parameters.push_back(std::move(groupEncoderParamter));
 
 	return { parameters.begin(), parameters.end() };
 }

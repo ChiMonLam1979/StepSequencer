@@ -5,6 +5,8 @@ namespace IDs
 {
 	static String TreeStateID			{ "treeState"				};
 
+	static String GroupEncoderId		{ "Group Encoder"			};
+
 	static String EncodersSelectID		{ "Encoders Select "		};
 
 	static String StepChoicesID			{ "Step Choices "			};

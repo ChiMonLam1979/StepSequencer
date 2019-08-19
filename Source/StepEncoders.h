@@ -6,7 +6,7 @@ class StepEncoders : public Component
 {
 public:
 
-	StepEncoders();
+	StepEncoders(std::unique_ptr<GroupEncoder>& groupEncoder);
 	~StepEncoders();
 
 	std::vector<std::unique_ptr<Encoder>>	encoders;

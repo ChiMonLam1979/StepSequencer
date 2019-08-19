@@ -7,7 +7,9 @@
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
-	stepEncoders			= std::make_unique<StepEncoders>();
+	groupEncoderLED			= std::make_unique<LED>();
+	groupEncoder			= std::make_unique<GroupEncoder>(ParameterNames::GroupEncoderName, *groupEncoderLED);
+	stepEncoders			= std::make_unique<StepEncoders>(groupEncoder);
 	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
 	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
@@ -36,6 +38,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 	addAndMakeVisible(stepButtonSelectorAttachment.get());
+	addAndMakeVisible(groupEncoder.get());
 
 	selectorButtons->toBehind(stepButtons.get());
 }
@@ -55,6 +58,7 @@ void StepSequencerEditor::resized()
 	stepEncoders->setBounds(getLocalBounds());
 	stepButtons->setBounds(getLocalBounds());
 	selectorButtons->setBounds(getLocalBounds());
+	groupEncoder->setBounds(getLocalBounds());
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
@@ -85,11 +89,18 @@ void StepSequencerEditor::resized()
 		buttonBox.items.add(FlexItemFactory::makeButtonItem(*stepButton));
 	}
 
+	FlexBox leftEncoderBox = FlexBoxFactory::makeLeftColumnEncodersBox();
+	leftEncoderBox.items.add(FlexItemFactory::makeEncoderItem(*groupEncoder));
+
+	FlexBox leftButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
+	leftButtonBox.items.add(FlexItemFactory::makeButtonItem(*stepButtonSelectorAttachment));
+
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
-								FlexItem().withFlex(0.765),
-								FlexItemFactory::makeButtonItem(*stepButtonSelectorAttachment).withFlex(0.14),
-								FlexItem().withFlex(0.095)
+								FlexItem().withFlex(0.53),
+								FlexItem(leftEncoderBox).withFlex(0.23),
+								FlexItem(leftButtonBox).withFlex(0.14),
+								FlexItem().withFlex(0.1)
 		});
 
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();

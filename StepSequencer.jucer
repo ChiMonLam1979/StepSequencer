@@ -70,6 +70,10 @@
                 file="Source/EncodersSelectorHandler.cpp"/>
           <FILE id="KYmeS3" name="EncodersSelectorHandler.h" compile="0" resource="0"
                 file="Source/EncodersSelectorHandler.h"/>
+          <FILE id="tad2LY" name="GroupEncoderHandler.cpp" compile="1" resource="0"
+                file="Source/GroupEncoderHandler.cpp"/>
+          <FILE id="OqpuFe" name="GroupEncoderHandler.h" compile="0" resource="0"
+                file="Source/GroupEncoderHandler.h"/>
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
           <FILE id="E0hhrs" name="NoteLengthHandler.cpp" compile="1" resource="0"
@@ -131,6 +135,9 @@
         <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
           <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
           <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
+          <FILE id="gfcvgr" name="GroupEncoder.cpp" compile="1" resource="0"
+                file="Source/GroupEncoder.cpp"/>
+          <FILE id="vYSv4W" name="GroupEncoder.h" compile="0" resource="0" file="Source/GroupEncoder.h"/>
           <FILE id="bOfcEN" name="StepEncoders.cpp" compile="1" resource="0"
                 file="Source/StepEncoders.cpp"/>
           <FILE id="cMSKAr" name="StepEncoders.h" compile="0" resource="0" file="Source/StepEncoders.h"/>

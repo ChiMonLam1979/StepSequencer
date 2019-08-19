@@ -58,6 +58,22 @@ namespace  FlexBoxFactory
 		return box;
 	}
 
+	FlexBox makeLeftColumnStepButtonsBox()
+	{
+		FlexBox box;
+		box.justifyContent = FlexBox::JustifyContent::center;
+		box.alignContent = FlexBox::AlignContent::flexEnd;
+		return box;
+	}
+
+	FlexBox makeLeftColumnEncodersBox()
+	{
+		FlexBox box;
+		box.justifyContent = FlexBox::JustifyContent::center;
+		box.alignContent = FlexBox::AlignContent::flexEnd;
+		return box;
+	}
+
 	FlexBox makeLeftColumnBox()
 	{
 		FlexBox box;

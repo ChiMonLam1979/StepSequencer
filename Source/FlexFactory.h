@@ -18,6 +18,10 @@ namespace  FlexBoxFactory
 
 	FlexBox makeEncodersBox();
 
+	FlexBox makeLeftColumnStepButtonsBox();
+
+	FlexBox makeLeftColumnEncodersBox();
+
 	FlexBox makeLeftColumnBox();
 
 	FlexBox makeRightColumnBox();

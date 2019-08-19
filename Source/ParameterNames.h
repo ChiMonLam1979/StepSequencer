@@ -5,6 +5,8 @@ namespace  ParameterNames
 {
 	static String StepChoicesName		{ "Step Choices Name"			};
 
+	static String GroupEncoderName		{ "Group Encoder Name"			 };
+
 	static String EncodersSelectName	{ "Encoders Select Name"		};
 
 	static String StepButtonOneName		{ "Step Button One Name"		};
