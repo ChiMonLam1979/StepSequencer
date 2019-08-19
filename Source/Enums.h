@@ -2,7 +2,7 @@
 
 namespace Enums
 {
-	static enum StepButtonStyle
+	enum StepButtonStyle
 	{
 		Red,
 		Green,
@@ -10,14 +10,14 @@ namespace Enums
 		AmberSelect
 	};
 
-	static enum LEDState
+	enum LEDState
 	{
 		LEDOff,
 		LEDGreen,
 		LEDRed
 	};
 
-	static enum StepButtonType
+	enum StepButtonType
 	{
 		GateButton,
 		RadioButton,

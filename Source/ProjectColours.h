@@ -3,5 +3,5 @@
 
 namespace ProjectColours
 {
-	static Colour backGround = Colour(200, 201, 187);
+	const Colour backGround = Colour(200, 201, 187);
 }
