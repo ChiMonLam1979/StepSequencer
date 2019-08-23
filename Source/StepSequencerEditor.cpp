@@ -39,6 +39,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 	addAndMakeVisible(stepButtonSelectorAttachment.get());
 	addAndMakeVisible(masterEncoder.get());
+	addAndMakeVisible(masterEncoderLED.get());
 
 	selectorButtons->toBehind(stepButtons.get());
 }
@@ -59,6 +60,7 @@ void StepSequencerEditor::resized()
 	stepButtons		->setBounds(getLocalBounds());
 	selectorButtons	->setBounds(getLocalBounds());
 	masterEncoder	->setBounds(getLocalBounds());
+	masterEncoderLED->setBounds(ComponentBounds::masterEncoderLEDBounds);
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 

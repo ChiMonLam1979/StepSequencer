@@ -7,20 +7,12 @@ MasterEncoder::MasterEncoder(const String& name, std::unique_ptr<StepEncoders>& 
 	setRange(0, 127, 1);
 	setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	setRotaryParameters(ComponentPositions::EncoderStartAngleRadians, ComponentPositions::EncoderEndAngleRadians, false);
-	led.setState(Enums::LEDOff);
-
 	setLookAndFeel(encoderLookAndFeel);
-	addAndMakeVisible(led);
-	addAndMakeVisible(led);
+	led.setState(Enums::LEDOff);
 }
 
 MasterEncoder::~MasterEncoder()
 {
-}
-
-void MasterEncoder::resized()
-{
-	//led.setBounds(getBoundsInParent());
 }
 
 void MasterEncoder::mouseEnter(const MouseEvent& event)
@@ -31,7 +23,6 @@ void MasterEncoder::mouseEnter(const MouseEvent& event)
 void MasterEncoder::mouseExit(const MouseEvent& event)
 {
 	led.setState(Enums::LEDOff);
-
 }
 
 void MasterEncoder::mouseDown(const MouseEvent& event)

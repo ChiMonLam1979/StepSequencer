@@ -36,6 +36,9 @@ namespace ComponentPositions
 
 	const float EncoderStartAngleRadians			{ 2.61779 };
 	const float EncoderEndAngleRadians				{ 8.90118 };
+
+	const int XPositionOfMasterEncoderLED			{ 22 };
+	const int YPostionOfMasterEncoderLED			{ 370 };
 }
 
 namespace ComponentBounds
@@ -62,5 +65,13 @@ namespace ComponentBounds
 		ComponentPositions::YPositionOfEncoderLEDs,
 		ComponentSizes::LEDWidth,
 		ComponentSizes::LEDHeight
+	};
+
+	const Rectangle<int> masterEncoderLEDBounds
+	{
+		ComponentPositions::XPositionOfMasterEncoderLED,
+		ComponentPositions::YPostionOfMasterEncoderLED,
+		ComponentSizes::LEDWidth,
+		ComponentSizes::LEDHeight 
 	};
 }

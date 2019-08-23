@@ -19,8 +19,6 @@ public:
 
 	void mouseUp(const MouseEvent& event) override;
 
-	void resized() override;
-
 	bool isCourseMode{ false };
 
 	LED& led;
