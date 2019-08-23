@@ -25,7 +25,15 @@
               file="Source/ButtonOnOverRed.svg"/>
         <FILE id="EVDcUw" name="ButtonOnRed.svg" compile="0" resource="1" file="Source/ButtonOnRed.svg"/>
         <FILE id="JPgBRY" name="ButtonOver.svg" compile="0" resource="1" file="Source/ButtonOver.svg"/>
+        <FILE id="S0UaSm" name="DecButtonDown.svg" compile="0" resource="1"
+              file="Source/DecButtonDown.svg"/>
+        <FILE id="AEPJab" name="DecButtonNormal.svg" compile="0" resource="1"
+              file="Source/DecButtonNormal.svg"/>
         <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
+        <FILE id="L5TO2E" name="IncButtonDown.svg" compile="0" resource="1"
+              file="Source/IncButtonDown.svg"/>
+        <FILE id="WwJwEC" name="IncButtonNormal.svg" compile="0" resource="1"
+              file="Source/IncButtonNormal.svg"/>
       </GROUP>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
         <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>

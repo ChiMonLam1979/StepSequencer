@@ -15,6 +15,10 @@ StepButton::StepButton(const String& name, ButtonStyle style, Enums::StepButtonT
 		break;
 	case Enums::ToggleButton: SetAmberSelectImages();
 		break;
+	case Enums::IncButton: SetIncButtonImages();
+		break;
+	case Enums::DecButton: SetDecButtonImages();
+		break;
 	default: SetGreenImages();
 		break;
 	}
@@ -98,5 +102,33 @@ void StepButton::SetAmberImages()
 		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::ButtonOnAmber_svg, BinaryData::ButtonOnAmber_svgSize),
 		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::ButtonOnOverAmber_svg, BinaryData::ButtonOnOverAmber_svgSize),
 		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::ButtonOnDownAmber_svg, BinaryData::ButtonOnDownAmber_svgSize)
+	);
+}
+
+void StepButton::SetIncButtonImages()
+{
+	setImages
+	(
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::IncButtonNormal_svg, BinaryData::IncButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::IncButtonDown_svg, BinaryData::IncButtonDown_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::IncButtonNormal_svg, BinaryData::IncButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::IncButtonDown_svg, BinaryData::IncButtonDown_svgSize)
+	);
+}
+
+void StepButton::SetDecButtonImages()
+{
+	setImages
+	(
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonNormal_svg, BinaryData::DecButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonDown_svg, BinaryData::DecButtonDown_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonNormal_svg, BinaryData::DecButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonDown_svg, BinaryData::DecButtonDown_svgSize)
 	);
 }

@@ -1,12 +1,24 @@
 #include "StepButtons.h"
 #include "ParameterNames.h"
+#include "Extensions.h"
 
-StepButtons::StepButtons(Enums::StepButtonType buttonType, const StringArray& names)
+StepButtons::StepButtons(Enums::StepButtonType buttonType, const StringArray& names, int numberOfButtons)
 {
-	for (auto i = 0; i < 16; i++)
+	if(buttonType != Enums::IncDecButtons)
 	{
-		auto button = std::make_unique<StepButton>(names[i], DrawableButton::ButtonStyle::ImageFitted, buttonType);
-		stepButtons.push_back(std::move(button));
+		for (auto i = 0; i < numberOfButtons; i++)
+		{
+			auto button = std::make_unique<StepButton>(names[i], DrawableButton::ButtonStyle::ImageFitted, buttonType);
+			stepButtons.push_back(std::move(button));
+		}
+	}
+	else
+	{
+		for (auto i = 0; i < numberOfButtons; i++)
+		{
+			auto button = std::make_unique<StepButton>(names[i],DrawableButton::ButtonStyle::ImageFitted, maths::mod(i,2) == 0 ? Enums::DecButton : Enums::IncButton);
+			stepButtons.push_back(std::move(button));
+		}
 	}
 
 	for (auto& stepButtonItem : stepButtons)

@@ -6,7 +6,7 @@ class StepButtons : public Component
 {
 public:
 
-	StepButtons(Enums::StepButtonType buttonType, const StringArray& names);
+	StepButtons(Enums::StepButtonType buttonType, const StringArray& names, int numberOfButtons = 16);
 	~StepButtons();
 
 	void StepClicked(const String& stepButtonName) const;

@@ -267,4 +267,74 @@ namespace  ParameterNames
 		EncoderSelectButtonFifteenName,
 		EncoderSelectButtonSixteenName
 	};
+
+	static String IncButtonOneName			{ "Inc Button One Name"			};
+	static String IncButtonTwoName			{ "Inc Button Two Name"			};
+	static String IncButtonThreeName		{ "Inc Button Three Name"		};
+	static String IncButtonFourName			{ "Inc Button Four Name"		};
+	static String IncButtonFiveName			{ "Inc Button Five Name"		};
+	static String IncButtonSixName			{ "Inc Button Six Name"			};
+	static String IncButtonSevenName		{ "Inc Button Seven Name"		};
+	static String IncButtonEightName		{ "Inc Button Eight Name"		};
+	static String IncButtonNineName			{ "Inc Button Nine Name"		};
+	static String IncButtonTenName			{ "Inc Button Ten Name"			};
+	static String IncButtonElevenName		{ "Inc Button Eleven Name"		};
+	static String IncButtonTwelveName		{ "Inc Button Twelve Name"		};
+	static String IncButtonThirteenName		{ "Inc Button Thirteen Name"	};
+	static String IncButtonFourteenName		{ "Inc Button Fourteen Name"	};
+	static String IncButtonFifteenName		{ "Inc Button Fifteen Name"		};
+	static String IncButtonSixteenName		{ "Inc Button Sixteen Name"		};
+
+	static String DecButtonOneName			{ "Dec Button One Name"			};
+	static String DecButtonTwoName			{ "Dec Button Two Name"			};
+	static String DecButtonThreeName		{ "Dec Button Three Name"		};
+	static String DecButtonFourName			{ "Dec Button Four Name"		};
+	static String DecButtonFiveName			{ "Dec Button Five Name"		};
+	static String DecButtonSixName			{ "Dec Button Six Name"			};
+	static String DecButtonSevenName		{ "Dec Button Seven Name"		};
+	static String DecButtonEightName		{ "Dec Button Eight Name"		};
+	static String DecButtonNineName			{ "Dec Button Nine Name"		};
+	static String DecButtonTenName			{ "Dec Button Ten Name"			};
+	static String DecButtonElevenName		{ "Dec Button Eleven Name"		};
+	static String DecButtonTwelveName		{ "Dec Button Twelve Name"		};
+	static String DecButtonThirteenName		{ "Dec Button Thirteen Name"	};
+	static String DecButtonFourteenName		{ "Dec Button Fourteen Name"	};
+	static String DecButtonFifteenName		{ "Dec Button Fifteen Name"		};
+	static String DecButtonSixteenName		{ "Dec Button Sixteen Name"		};
+
+	const StringArray IncDecButtonsNames
+	{
+		IncButtonOneName,
+		DecButtonOneName,
+		IncButtonTwoName,
+		DecButtonTwoName,
+		IncButtonThreeName,
+		DecButtonThreeName,
+		IncButtonFourName,
+		DecButtonFourName,
+		IncButtonFiveName,
+		DecButtonFiveName,
+		IncButtonSixName,
+		DecButtonSixName,
+		IncButtonSevenName,
+		DecButtonSevenName,
+		IncButtonEightName,
+		DecButtonEightName,
+		IncButtonNineName,
+		DecButtonNineName,
+		IncButtonTenName,
+		DecButtonTenName,
+		IncButtonElevenName,
+		DecButtonElevenName,
+		IncButtonTwelveName,
+		DecButtonTwelveName,
+		IncButtonThirteenName,
+		DecButtonThirteenName,
+		IncButtonFourteenName,
+		DecButtonFourteenName,
+		IncButtonFifteenName,
+		DecButtonFifteenName,
+		IncButtonSixteenName,
+		DecButtonSixteenName
+	};
 }

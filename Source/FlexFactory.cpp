@@ -30,6 +30,15 @@ namespace FlexItemFactory
 			.withMaxHeight	(ComponentSizes::StepEncoderHeight)
 			.withMaxWidth	(ComponentSizes::StepEncoderWidth);
 	}
+
+	FlexItem makeIncButtonsItem(Component& component)
+	{
+		return FlexItem(component)
+			.withMinHeight(ComponentSizes::IncButtonHeight)
+			.withMinWidth(ComponentSizes::IncButtonWidth)
+			.withMaxHeight(ComponentSizes::IncButtonHeight)
+			.withMaxWidth(ComponentSizes::IncButtonWidth);
+	}
 }
 
 namespace  FlexBoxFactory
@@ -74,6 +83,14 @@ namespace  FlexBoxFactory
 		return box;
 	}
 
+	FlexBox makeLeftColumnIncButtonsBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::row;
+
+		return box;
+	}
+
 	FlexBox makeLeftColumnBox()
 	{
 		FlexBox box;
@@ -95,6 +112,15 @@ namespace  FlexBoxFactory
 	{
 		FlexBox box;
 		box.flexDirection = FlexBox::Direction::column;
+
+		return box;
+	}
+
+	FlexBox makeCentralIncButtonsBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::row;
+		box.justifyContent = FlexBox::JustifyContent::spaceBetween;
 
 		return box;
 	}

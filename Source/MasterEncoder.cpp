@@ -29,6 +29,10 @@ void MasterEncoder::mouseDown(const MouseEvent& event)
 {
 	Slider::mouseDown(event);
 
+	auto x = getMouseDragSensitivity();
+
+	//setMouseDragSensitivity(1000);
+
 	for (auto i = 0; i < 16; ++i)
 	{
 		if (stepEncoders->encoders[i]->isGrouped)

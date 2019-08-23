@@ -8,6 +8,8 @@ namespace FlexItemFactory
 	FlexItem makeButtonItem(Component& component);
 
 	FlexItem makeEncoderItem(Component& component);
+
+	FlexItem makeIncButtonsItem(Component& component);
 }
 
 namespace  FlexBoxFactory
@@ -22,11 +24,15 @@ namespace  FlexBoxFactory
 
 	FlexBox makeLeftColumnEncodersBox();
 
+	FlexBox makeLeftColumnIncButtonsBox();
+
 	FlexBox makeLeftColumnBox();
 
 	FlexBox makeRightColumnBox();
 
 	FlexBox makeCentralBox();
+
+	FlexBox makeCentralIncButtonsBox();
 
 	FlexBox makeMasterBox();
 }

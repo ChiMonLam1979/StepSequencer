@@ -8,6 +8,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
 	stepEncoders			= std::make_unique<StepEncoders>();
+	incDecButtons			= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 32);
 	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
 	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
@@ -18,7 +19,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	{
 		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::PitchEncoderIDs[i], *stepEncoders->encoders[i]));
 
-		stepButtonAttachments .add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
+		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
 
 		selectorButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::SelectedEncoderIDs[i], *selectorButtons->stepButtons[i]));
 	}
@@ -40,6 +41,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepButtonSelectorAttachment.get());
 	addAndMakeVisible(masterEncoder.get());
 	addAndMakeVisible(masterEncoderLED.get());
+	addAndMakeVisible(incDecButtons.get());
 
 	selectorButtons->toBehind(stepButtons.get());
 }
@@ -61,6 +63,7 @@ void StepSequencerEditor::resized()
 	selectorButtons	->setBounds(getLocalBounds());
 	masterEncoder	->setBounds(getLocalBounds());
 	masterEncoderLED->setBounds(ComponentBounds::masterEncoderLEDBounds);
+	incDecButtons	->setBounds(getLocalBounds());
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
@@ -97,26 +100,42 @@ void StepSequencerEditor::resized()
 	FlexBox leftButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
 	leftButtonBox.items.add(FlexItemFactory::makeButtonItem(*stepButtonSelectorAttachment));
 
+	FlexBox leftColumnIncButtonsBox = FlexBoxFactory::makeLeftColumnIncButtonsBox();
+
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
 								FlexItem().withFlex(0.53),
-								FlexItem(leftEncoderBox).withFlex(0.23),
+								FlexItem(leftEncoderBox).withFlex(0.18),
+								FlexItem().withFlex(0.01),
+								FlexItem(leftColumnIncButtonsBox).withFlex(0.04),
 								FlexItem(leftButtonBox).withFlex(0.14),
 								FlexItem().withFlex(0.1)
 		});
 
+	FlexBox centralIncButtonsBox = FlexBoxFactory::makeCentralIncButtonsBox();
+
+	for(auto& button : incDecButtons->stepButtons)
+	{
+		centralIncButtonsBox.items.add(FlexItemFactory::makeIncButtonsItem(*button));
+	}
+
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();
 	centralBox.items.addArray({
 								FlexItem(stepChoicesButtonsBox).withFlex(0.53),
-								FlexItem(encoderBox).withFlex(0.23),
+								FlexItem(encoderBox).withFlex(0.18),
+								FlexItem().withFlex(0.01),
+								FlexItem(centralIncButtonsBox).withFlex(0.04),
 								FlexItem(buttonBox).withFlex(0.14),
 								FlexItem().withFlex(0.1)
 		});
 
+	FlexBox rightColumnBox = FlexBoxFactory::makeRightColumnBox();
+
 	FlexBox main = FlexBoxFactory::makeMasterBox();
 	main.items.addArray({
 							FlexItem(leftColumnBox).withFlex(0.088),
-							FlexItem(centralBox).withFlex(0.912)
+							FlexItem(centralBox).withFlex(0.824),
+							FlexItem(rightColumnBox).withFlex(0.088)
 		});
 
 	main.performLayout(window);

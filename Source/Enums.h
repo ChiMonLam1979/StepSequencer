@@ -22,6 +22,9 @@ namespace Enums
 		GateButton,
 		RadioButton,
 		SelectorButton,
-		ToggleButton
+		ToggleButton,
+		IncDecButtons,
+		IncButton,
+		DecButton
 	};
 }

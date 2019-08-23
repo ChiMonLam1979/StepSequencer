@@ -12,6 +12,9 @@ namespace ComponentSizes
 	const int StepEncoderHeight				{ 65 };
 	const int StepEncoderWidth				{ 65 };
 
+	const int IncButtonHeight				{ 30 };
+	const int IncButtonWidth				{ 32 };
+
 	const int UnderStepButtonsPanelHeight	{ 50 };
 	const int LEDHeight						{ 17 };
 	const int LEDWidth						{ 17 };
@@ -27,7 +30,7 @@ namespace ComponentPositions
 
 	const int PixelsFromLeftEdgeToFirstEncoderLED	{ 112 };
 	const int NumberOfPixelsBetweenEncoderLEDs		{ 65 };
-	const int YPositionOfEncoderLEDs				{ 370 };
+	const int YPositionOfEncoderLEDs				{ 345 };
 
 	const int YPositionOfStepChoiceButtons			{ 270 };
 
@@ -38,7 +41,7 @@ namespace ComponentPositions
 	const float EncoderEndAngleRadians				{ 8.90118 };
 
 	const int XPositionOfMasterEncoderLED			{ 22 };
-	const int YPostionOfMasterEncoderLED			{ 370 };
+	const int YPostionOfMasterEncoderLED			{ 345 };
 }
 
 namespace ComponentBounds
