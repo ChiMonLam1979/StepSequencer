@@ -63,3 +63,16 @@ void MasterEncoder::mouseDrag(const MouseEvent& event)
 		}
 	}
 }
+
+void MasterEncoder::mouseWheelMove(const MouseEvent& event, const MouseWheelDetails& wheel)
+{
+	Slider::mouseWheelMove(event, wheel);
+
+	for (auto i = 0; i < 16; ++i)
+	{
+		if (stepEncoders->encoders[i]->isGrouped)
+		{
+			stepEncoders->encoders[i]->mouseWheelMove(event, wheel);
+		}
+	}
+}

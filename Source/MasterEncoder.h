@@ -19,6 +19,8 @@ public:
 
 	void mouseUp(const MouseEvent& event) override;
 
+	void mouseWheelMove(const MouseEvent& event, const MouseWheelDetails& wheel) override;
+
 	bool isCourseMode{ false };
 
 	LED& led;
