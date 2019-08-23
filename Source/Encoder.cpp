@@ -31,6 +31,21 @@ void Encoder::mouseExit(const MouseEvent& event)
 
 void Encoder::buttonClicked(Button* button)
 {
-	isCourseMode = !isCourseMode;
-	isGrouped = !isGrouped;
+	int buttonType = button->getProperties().getWithDefault("type", Enums::SelectorButton);
+
+	if(buttonType == Enums::IncButton)
+	{
+		setValue(getValue() + 1);
+	}
+
+	else if(buttonType == Enums::DecButton)
+	{
+		setValue(getValue() - 1);
+	}
+
+	else
+	{
+		isCourseMode = !isCourseMode;
+		isGrouped = !isGrouped;
+	}
 }

@@ -12,6 +12,8 @@ public:
 
 	void SetStepButtonStyle(Enums::StepButtonStyle style);
 
+	Enums::StepButtonType buttonType;
+
 private:
 
 	void SetRedImages();
