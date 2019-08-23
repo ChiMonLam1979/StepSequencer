@@ -135,9 +135,6 @@
         <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
           <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
           <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
-          <FILE id="gfcvgr" name="GroupEncoder.cpp" compile="1" resource="0"
-                file="Source/GroupEncoder.cpp"/>
-          <FILE id="vYSv4W" name="GroupEncoder.h" compile="0" resource="0" file="Source/GroupEncoder.h"/>
           <FILE id="thUtcm" name="MasterEncoder.cpp" compile="1" resource="0"
                 file="Source/MasterEncoder.cpp"/>
           <FILE id="OD2aRb" name="MasterEncoder.h" compile="0" resource="0" file="Source/MasterEncoder.h"/>

@@ -33,6 +33,9 @@ namespace ComponentPositions
 
 	const int XPositionOfStepButtons				{ 110 };
 	const int YPositionOfStepButtons				{ 385 };
+
+	const float EncoderStartAngleRadians			{ 2.61779 };
+	const float EncoderEndAngleRadians				{ 8.90118 };
 }
 
 namespace ComponentBounds

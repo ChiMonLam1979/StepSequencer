@@ -1,15 +1,17 @@
 #include "MasterEncoder.h"
+#include "ComponentDimensions.h"
 
 MasterEncoder::MasterEncoder(const String& name, std::unique_ptr<StepEncoders>& stepEncoders, LED& led): Slider(name), led(led), stepEncoders(stepEncoders)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setRange(0, 127, 1);
 	setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
+	setRotaryParameters(ComponentPositions::EncoderStartAngleRadians, ComponentPositions::EncoderEndAngleRadians, false);
+	led.setState(Enums::LEDOff);
+
 	setLookAndFeel(encoderLookAndFeel);
 	addAndMakeVisible(led);
-	setRotaryParameters(2.61779, 8.90118, false);
 	addAndMakeVisible(led);
-	led.setState(Enums::LEDOff);
 }
 
 MasterEncoder::~MasterEncoder()

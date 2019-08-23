@@ -1,5 +1,5 @@
 #include "Encoder.h"
-#include "EncoderLookAndFeel.h"
+#include "ComponentDimensions.h"
 
 Encoder::Encoder(
 	const String& name, 
@@ -12,7 +12,7 @@ Encoder::Encoder(
 	setRange(0, 127, 1);
 	setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	setLookAndFeel(encoderLookAndFeel);
-	setRotaryParameters(2.61779, 8.90118, false);
+	setRotaryParameters(ComponentPositions::EncoderStartAngleRadians, ComponentPositions::EncoderEndAngleRadians, false);
 }
 
 Encoder::~Encoder()

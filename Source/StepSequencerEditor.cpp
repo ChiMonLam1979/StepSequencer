@@ -7,11 +7,11 @@
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
-	masterEncoderLED			= std::make_unique<LED>();
 	stepEncoders			= std::make_unique<StepEncoders>();
 	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
 	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
+	masterEncoderLED		= std::make_unique<LED>();
 	masterEncoder			= std::make_unique<MasterEncoder>(ParameterNames::GroupEncoderName, stepEncoders, *masterEncoderLED);
 
 	for(auto i = 0; i < 16; i++)
@@ -54,11 +54,11 @@ void StepSequencerEditor::paint (Graphics& g)
 
 void StepSequencerEditor::resized()
 {
-	transportLEDs->setBounds(ComponentBounds::ChaseLEDStripBounds);
-	stepEncoders->setBounds(getLocalBounds());
-	stepButtons->setBounds(getLocalBounds());
-	selectorButtons->setBounds(getLocalBounds());
-	masterEncoder->setBounds(getLocalBounds());
+	transportLEDs	->setBounds(ComponentBounds::ChaseLEDStripBounds);
+	stepEncoders	->setBounds(getLocalBounds());
+	stepButtons		->setBounds(getLocalBounds());
+	selectorButtons	->setBounds(getLocalBounds());
+	masterEncoder	->setBounds(getLocalBounds());
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
