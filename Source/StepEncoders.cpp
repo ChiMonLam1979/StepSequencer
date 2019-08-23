@@ -37,19 +37,14 @@ StepEncoders::~StepEncoders()
 
 void StepEncoders::resized()
 {
-	auto spaceBetweenLeds = ComponentPositions::NumberOfPixelsBetweenEncoderLEDs;
-	Rectangle<int> bounds
-	(
-		ComponentPositions::PixelsFromLeftEdgeToFirstEncoderLED,
-		ComponentPositions::YPositionOfEncoderLEDs,
-		ComponentSizes::LEDWidth,
-		ComponentSizes::LEDHeight );
+	auto spaceBetweenLeds	= ComponentPositions::NumberOfPixelsBetweenEncoderLEDs;
+	auto firstLEDBounds		= ComponentBounds::StepEncodersFirstLEDBounds;
 
 	for (auto i = 0; i < 16; i++)
 	{
-		encoderLeds[i]->setBounds(bounds);
+		encoderLeds[i]->setBounds(firstLEDBounds);
 
-		bounds.setX(bounds.getX() + spaceBetweenLeds);
+		firstLEDBounds.setX(firstLEDBounds.getX() + spaceBetweenLeds);
 	}
 }
 

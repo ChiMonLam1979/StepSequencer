@@ -20,7 +20,7 @@ MasterEncoder::~MasterEncoder()
 
 void MasterEncoder::resized()
 {
-	/*led.setBounds(getLocalBounds())*/;
+	//led.setBounds(getBoundsInParent());
 }
 
 void MasterEncoder::mouseEnter(const MouseEvent& event)

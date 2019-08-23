@@ -55,4 +55,12 @@ namespace ComponentBounds
 		ComponentSizes::StepButtonWidth * 16,
 		ComponentSizes::StepButtonHeight
 	};
+
+	const Rectangle<int> StepEncodersFirstLEDBounds
+	{
+		ComponentPositions::PixelsFromLeftEdgeToFirstEncoderLED,
+		ComponentPositions::YPositionOfEncoderLEDs,
+		ComponentSizes::LEDWidth,
+		ComponentSizes::LEDHeight
+	};
 }
