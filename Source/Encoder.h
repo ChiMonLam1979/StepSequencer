@@ -2,13 +2,12 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "EncoderLookAndFeel.h"
 #include "LED.h"
-#include "GroupEncoder.h"
 
-class Encoder : public Slider, public Button::Listener, public Slider::Listener
+class Encoder : public Slider, public Button::Listener
 {
 public:
 
-	Encoder(const String& name, LED& led, std::unique_ptr<GroupEncoder>& groupEncoder);
+	Encoder(const String& name, LED& led);
 	~Encoder();
 
 	void mouseEnter(const MouseEvent& event) override;
@@ -16,8 +15,6 @@ public:
 	void mouseExit(const MouseEvent& event) override;
 
 	void buttonClicked(Button* button) override;
-
-	void sliderValueChanged(Slider* slider) override;
 
 	bool isCourseMode{ false };
 
@@ -28,6 +25,4 @@ public:
 private:
 
 	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
-
-	std::unique_ptr<GroupEncoder>&					groupEncoder;
 };

@@ -3,22 +3,20 @@
 
 Encoder::Encoder(
 	const String& name, 
-	LED& led,
-	std::unique_ptr<GroupEncoder>& groupEncoder)
+	LED& led)
 	:
 	Slider(name),
-	led(led),
-	groupEncoder(groupEncoder)
+	led(led)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setRange(0, 127, 1);
 	setTextBoxStyle(Slider::NoTextBox, true, 0, 0);
 	setLookAndFeel(encoderLookAndFeel);
+	setRotaryParameters(2.61779, 8.90118, false);
 }
 
 Encoder::~Encoder()
 {
-	
 }
 
 void Encoder::mouseEnter(const MouseEvent& event)
@@ -34,20 +32,5 @@ void Encoder::mouseExit(const MouseEvent& event)
 void Encoder::buttonClicked(Button* button)
 {
 	isCourseMode = !isCourseMode;
-
-	if(isGrouped)
-	{
-		groupEncoder->removeListener(this);
-		isGrouped = false;
-	}
-	else
-	{
-		groupEncoder->addListener(this);
-		isGrouped = true;
-	}
-}
-
-void Encoder::sliderValueChanged(Slider* slider)
-{
-	setValue(slider->getValue());
+	isGrouped = !isGrouped;
 }

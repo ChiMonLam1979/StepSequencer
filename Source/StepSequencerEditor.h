@@ -9,6 +9,7 @@
 #include "RadioButtonChoiceAttachment.h"
 #include "BoolButtonAttachment.h"
 #include "ButtonAttachmentUpdaterService.h"
+#include "MasterEncoder.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -27,8 +28,8 @@ public:
 	std::unique_ptr<StepButtons>		stepButtons;
 	std::unique_ptr<StepButtons>		selectorButtons;
 	std::unique_ptr<ChaseLEDs>			transportLEDs;
-	std::unique_ptr<GroupEncoder>		groupEncoder;
-	std::unique_ptr<LED>				groupEncoderLED;
+	std::unique_ptr<LED>				masterEncoderLED;
+	std::unique_ptr<MasterEncoder>		masterEncoder;
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;

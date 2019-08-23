@@ -138,6 +138,9 @@
           <FILE id="gfcvgr" name="GroupEncoder.cpp" compile="1" resource="0"
                 file="Source/GroupEncoder.cpp"/>
           <FILE id="vYSv4W" name="GroupEncoder.h" compile="0" resource="0" file="Source/GroupEncoder.h"/>
+          <FILE id="thUtcm" name="MasterEncoder.cpp" compile="1" resource="0"
+                file="Source/MasterEncoder.cpp"/>
+          <FILE id="OD2aRb" name="MasterEncoder.h" compile="0" resource="0" file="Source/MasterEncoder.h"/>
           <FILE id="bOfcEN" name="StepEncoders.cpp" compile="1" resource="0"
                 file="Source/StepEncoders.cpp"/>
           <FILE id="cMSKAr" name="StepEncoders.h" compile="0" resource="0" file="Source/StepEncoders.h"/>

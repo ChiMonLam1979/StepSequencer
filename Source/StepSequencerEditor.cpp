@@ -7,12 +7,12 @@
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
 	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
-	groupEncoderLED			= std::make_unique<LED>();
-	groupEncoder			= std::make_unique<GroupEncoder>(ParameterNames::GroupEncoderName, *groupEncoderLED);
-	stepEncoders			= std::make_unique<StepEncoders>(groupEncoder);
+	masterEncoderLED			= std::make_unique<LED>();
+	stepEncoders			= std::make_unique<StepEncoders>();
 	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
 	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
+	masterEncoder			= std::make_unique<MasterEncoder>(ParameterNames::GroupEncoderName, stepEncoders, *masterEncoderLED);
 
 	for(auto i = 0; i < 16; i++)
 	{
@@ -38,7 +38,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(transportLEDs.get());
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 	addAndMakeVisible(stepButtonSelectorAttachment.get());
-	addAndMakeVisible(groupEncoder.get());
+	addAndMakeVisible(masterEncoder.get());
 
 	selectorButtons->toBehind(stepButtons.get());
 }
@@ -58,7 +58,7 @@ void StepSequencerEditor::resized()
 	stepEncoders->setBounds(getLocalBounds());
 	stepButtons->setBounds(getLocalBounds());
 	selectorButtons->setBounds(getLocalBounds());
-	groupEncoder->setBounds(getLocalBounds());
+	masterEncoder->setBounds(getLocalBounds());
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
@@ -90,7 +90,7 @@ void StepSequencerEditor::resized()
 	}
 
 	FlexBox leftEncoderBox = FlexBoxFactory::makeLeftColumnEncodersBox();
-	leftEncoderBox.items.add(FlexItemFactory::makeEncoderItem(*groupEncoder));
+	leftEncoderBox.items.add(FlexItemFactory::makeEncoderItem(*masterEncoder));
 
 	FlexBox leftButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
 	leftButtonBox.items.add(FlexItemFactory::makeButtonItem(*stepButtonSelectorAttachment));

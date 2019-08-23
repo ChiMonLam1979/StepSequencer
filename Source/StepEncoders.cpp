@@ -2,14 +2,14 @@
 #include "ComponentDimensions.h"
 #include "ParameterNames.h"
 
-StepEncoders::StepEncoders(std::unique_ptr<GroupEncoder>& groupEncoder)
+StepEncoders::StepEncoders()
 {
 	for(auto i = 0; i < 16; i++)
 	{
 		auto led = std::make_unique<LED>();
 		encoderLeds.push_back(std::move(led));
 
-		auto encoder = std::make_unique<Encoder>(ParameterNames::StepEncoderNames[i], *encoderLeds[i], groupEncoder);
+		auto encoder = std::make_unique<Encoder>(ParameterNames::StepEncoderNames[i], *encoderLeds[i]);
 		encoders.push_back(std::move(encoder));
 	}
 
