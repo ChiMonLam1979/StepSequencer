@@ -30,7 +30,8 @@ public:
 	std::unique_ptr<ChaseLEDs>			transportLEDs;
 	std::unique_ptr<LED>				masterEncoderLED;
 	std::unique_ptr<MasterEncoder>		masterEncoder;
-	std::unique_ptr<StepButtons>		incDecButtons;
+	std::unique_ptr<StepButtons>		stepIncDecButtons;
+	std::unique_ptr<StepButtons>		masterIncDecButtons;
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;

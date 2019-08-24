@@ -9,6 +9,10 @@ namespace FlexItemFactory
 
 	FlexItem makeEncoderItem(Component& component);
 
+	FlexItem makeIncDecButtonsItem(Component& component);
+
+	FlexItem makeDecButtonsItem(Component& component);
+
 	FlexItem makeIncButtonsItem(Component& component);
 }
 
@@ -31,6 +35,8 @@ namespace  FlexBoxFactory
 	FlexBox makeRightColumnBox();
 
 	FlexBox makeCentralBox();
+
+	FlexBox makeCentralColumnBox();
 
 	FlexBox makeCentralIncButtonsBox();
 

@@ -31,13 +31,31 @@ namespace FlexItemFactory
 			.withMaxWidth	(ComponentSizes::StepEncoderWidth);
 	}
 
+	FlexItem makeIncDecButtonsItem(Component& component)
+	{
+		return FlexItem(component)
+			.withMinHeight(ComponentSizes::IncButtonHeight)
+			.withMinWidth(ComponentSizes::IncButtonWidth)
+			.withMaxHeight(ComponentSizes::IncButtonHeight)
+			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({0, -4, 0, -4});
+	}
+
+	FlexItem makeDecButtonsItem(Component& component)
+	{
+		return FlexItem(component)
+			.withMinHeight(ComponentSizes::IncButtonHeight)
+			.withMinWidth(ComponentSizes::IncButtonWidth)
+			.withMaxHeight(ComponentSizes::IncButtonHeight)
+			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({0, -4, 0, 4});
+	}
+
 	FlexItem makeIncButtonsItem(Component& component)
 	{
 		return FlexItem(component)
 			.withMinHeight(ComponentSizes::IncButtonHeight)
 			.withMinWidth(ComponentSizes::IncButtonWidth)
 			.withMaxHeight(ComponentSizes::IncButtonHeight)
-			.withMaxWidth(ComponentSizes::IncButtonWidth);
+			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({0, 4, 0, -4});
 	}
 }
 
@@ -86,7 +104,7 @@ namespace  FlexBoxFactory
 	FlexBox makeLeftColumnIncButtonsBox()
 	{
 		FlexBox box;
-		box.flexDirection = FlexBox::Direction::row;
+		box.justifyContent = FlexBox::JustifyContent::center;
 
 		return box;
 	}
@@ -109,6 +127,14 @@ namespace  FlexBoxFactory
 	}
 
 	FlexBox makeCentralBox()
+	{
+		FlexBox box;
+		box.flexDirection = FlexBox::Direction::column;
+
+		return box;
+	}
+
+	FlexBox makeCentralColumnBox()
 	{
 		FlexBox box;
 		box.flexDirection = FlexBox::Direction::column;

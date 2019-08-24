@@ -2,7 +2,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "StepEncoders.h"
 
-class MasterEncoder : public Slider
+class MasterEncoder : public Slider, public Button::Listener
 {
 public:
 
@@ -20,6 +20,8 @@ public:
 	void mouseUp(const MouseEvent& event) override;
 
 	void mouseWheelMove(const MouseEvent& event, const MouseWheelDetails& wheel) override;
+
+	void buttonClicked(Button* button) override;
 
 	bool isCourseMode{ false };
 

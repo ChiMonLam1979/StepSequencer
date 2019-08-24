@@ -42,6 +42,10 @@ namespace ComponentPositions
 
 	const int XPositionOfMasterEncoderLED			{ 22 };
 	const int YPostionOfMasterEncoderLED			{ 345 };
+
+	const int YPositionOfFirstIncDecButton			{ 355 };
+	const int XPositionOfFirstIncDecButton			{ 110 };
+	const int NumberOfPixelsBetweenIncDecButtons	{ 20 };
 }
 
 namespace ComponentBounds
@@ -76,5 +80,13 @@ namespace ComponentBounds
 		ComponentPositions::YPostionOfMasterEncoderLED,
 		ComponentSizes::LEDWidth,
 		ComponentSizes::LEDHeight 
+	};
+
+	const Rectangle<int> StepEncodersFirstIncDecButtonsBounds
+	{
+		ComponentPositions::XPositionOfFirstIncDecButton,
+		ComponentPositions::YPositionOfFirstIncDecButton - 200,
+		ComponentSizes::IncButtonWidth * 32,
+		ComponentSizes::IncButtonHeight
 	};
 }

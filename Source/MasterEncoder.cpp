@@ -15,6 +15,21 @@ MasterEncoder::~MasterEncoder()
 {
 }
 
+void MasterEncoder::buttonClicked(Button* button)
+{
+	int buttonType = button->getProperties().getWithDefault("type", Enums::SelectorButton);
+
+	if (buttonType == Enums::IncButton)
+	{
+		setValue(getValue() + 1);
+	}
+
+	else if (buttonType == Enums::DecButton)
+	{
+		setValue(getValue() - 1);
+	}
+}
+
 void MasterEncoder::mouseEnter(const MouseEvent& event)
 {
 	led.setState(Enums::LEDGreen);
