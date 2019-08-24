@@ -34,7 +34,6 @@ StepButtons::StepButtons(Enums::StepButtonType buttonType, const StringArray& na
 	for (auto& stepButtonItem : stepButtons)
 	{
 		auto* stepButton = stepButtonItem.get();
-		stepButton->getProperties().set("type", stepButton->buttonType);
 		stepButton->onClick = [this, stepButton] { StepClicked(stepButton->getName()); };
 		addAndMakeVisible(stepButton);
 	}

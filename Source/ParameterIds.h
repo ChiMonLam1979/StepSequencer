@@ -5,6 +5,8 @@ namespace IDs
 {
 	static String TreeStateID			{ "treeState"				};
 
+	const String ButtonTypePropertyID	{ "ButtonType"				};
+
 	static String GroupEncoderId		{ "Group Encoder"			};
 
 	static String EncodersSelectID		{ "Encoders Select "		};

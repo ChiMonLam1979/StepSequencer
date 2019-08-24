@@ -1,8 +1,11 @@
 #include "StepButton.h"
 #include "ComponentDimensions.h"
+#include "ParameterIds.h"
 
 StepButton::StepButton(const String& name, ButtonStyle style, Enums::StepButtonType buttonType) : DrawableButton(name, style), buttonType(buttonType)
 {
+	getProperties().set(IDs::ButtonTypePropertyID, buttonType);
+
 	setSize(ComponentSizes::StepButtonWidth, ComponentSizes::StepButtonHeight);
 
 	switch (buttonType)

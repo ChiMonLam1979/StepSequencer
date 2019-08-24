@@ -30,4 +30,12 @@ namespace Enums
 		MasterIncButton,
 		MasterDecButton
 	};
+
+	enum MouseEventType
+	{
+		MouseUp,
+		MouseDown,
+		MouseDrag,
+		MouseWheelMove
+	};
 }

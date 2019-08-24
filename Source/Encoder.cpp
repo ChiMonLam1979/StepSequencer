@@ -1,5 +1,6 @@
 #include "Encoder.h"
 #include "ComponentDimensions.h"
+#include "ParameterIds.h"
 
 Encoder::Encoder(
 	const String& name, 
@@ -31,7 +32,7 @@ void Encoder::mouseExit(const MouseEvent& event)
 
 void Encoder::buttonClicked(Button* button)
 {
-	int buttonType = button->getProperties().getWithDefault("type", Enums::SelectorButton);
+	int buttonType = button->getProperties().getWithDefault(IDs::ButtonTypePropertyID, Enums::SelectorButton);
 
 	if(buttonType == Enums::IncButton)
 	{

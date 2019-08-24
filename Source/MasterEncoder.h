@@ -23,6 +23,8 @@ public:
 
 	void buttonClicked(Button* button) override;
 
+	void ForwardMouseEvent(const MouseEvent& event, Enums::MouseEventType mouseEventType, const MouseWheelDetails& wheel = MouseWheelDetails{});
+
 	bool isCourseMode{ false };
 
 	LED& led;
