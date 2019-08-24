@@ -19,12 +19,12 @@ void MasterEncoder::buttonClicked(Button* button)
 {
 	int buttonType = button->getProperties().getWithDefault("type", Enums::SelectorButton);
 
-	if (buttonType == Enums::IncButton)
+	if (buttonType == Enums::MasterIncButton)
 	{
 		setValue(getValue() + 1);
 	}
 
-	else if (buttonType == Enums::DecButton)
+	else if (buttonType == Enums::MasterDecButton)
 	{
 		setValue(getValue() - 1);
 	}
