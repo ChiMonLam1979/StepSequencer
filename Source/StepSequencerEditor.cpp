@@ -6,7 +6,7 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	backPlate				= Drawable::createFromImageData(BinaryData::BackPanel_png, BinaryData::BackPanel_pngSize);
+	backPlate				= Drawable::createFromImageData(BinaryData::BackPanelTextures_png, BinaryData::BackPanelTextures_pngSize);
 	stepEncoders			= std::make_unique<StepEncoders>();
 	stepIncDecButtons		= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 32);
 	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);

@@ -5,6 +5,8 @@
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
       <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
+        <FILE id="vDEZO7" name="BackPanelTextures.png" compile="0" resource="1"
+              file="Source/BackPanelTextures.png"/>
         <FILE id="sMyy3M" name="ButtonDown.svg" compile="0" resource="1" file="Source/ButtonDown.svg"/>
         <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
               file="Source/ButtonNormal.svg"/>
