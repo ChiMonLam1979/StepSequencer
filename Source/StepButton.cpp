@@ -14,7 +14,7 @@ StepButton::StepButton(const String& name, ButtonStyle style, Enums::StepButtonT
 		break;
 	case Enums::GateButton: SetGreenImages();
 		break;
-	case Enums::SelectorButton: SetAmberImages();
+	case Enums::EncoderGroupSelectorButton: SetAmberImages();
 		break;
 	case Enums::ToggleButton: SetAmberSelectImages();
 		break;

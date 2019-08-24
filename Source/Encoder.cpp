@@ -2,12 +2,7 @@
 #include "ComponentDimensions.h"
 #include "ParameterIds.h"
 
-Encoder::Encoder(
-	const String& name, 
-	LED& led)
-	:
-	Slider(name),
-	led(led)
+Encoder::Encoder(const String& name, LED& led): Slider(name), led(led)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setRange(0, 127, 1);
@@ -32,31 +27,41 @@ void Encoder::mouseExit(const MouseEvent& event)
 
 void Encoder::buttonClicked(Button* button)
 {
-	int buttonType = button->getProperties().getWithDefault(IDs::ButtonTypePropertyID, Enums::SelectorButton);
+	int buttonType = button->getProperties().getWithDefault(IDs::ButtonTypePropertyID, Enums::NotInUse);
 
-	if(buttonType == Enums::IncButton)
+	switch (buttonType)
 	{
-		setValue(getValue() + 1);
+	case Enums::IncButton: setValue(getValue() + 1);
+		break;
+	case Enums::DecButton: setValue(getValue() - 1);
+		break;
+	case Enums::EncoderGroupSelectorButton: SwitchGroupedState();
+		break;
 	}
 
-	else if(buttonType == Enums::DecButton)
+	if(isGrouped)
 	{
-		setValue(getValue() - 1);
+		UpdateGroupedEncoderValues((Enums::StepButtonType)buttonType);
 	}
+}
 
-	else if (buttonType == Enums::MasterIncButton && isGrouped)
+void Encoder::UpdateGroupedEncoderValues(Enums::StepButtonType buttonType)
+{
+	switch (buttonType)
 	{
-		setValue(getValue() + 1);
+	case Enums::MasterIncButton: setValue(getValue() + 1);
+		break;
+	case Enums::MasterDecButton: setValue(getValue() - 1);
+		break;
 	}
+}
 
-	else if (buttonType == Enums::MasterDecButton && isGrouped)
-	{
-		setValue(getValue() - 1);
-	}
+void Encoder::SwitchGroupedState()
+{
+	isGrouped = !isGrouped;
+}
 
-	else if (buttonType == Enums::SelectorButton)
-	{
-		isCourseMode = !isCourseMode;
-		isGrouped = !isGrouped;
-	}
+void Encoder::SwitchCoarseMode()
+{
+	isCourseMode = !isCourseMode;
 }

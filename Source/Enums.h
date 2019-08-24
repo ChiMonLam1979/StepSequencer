@@ -19,9 +19,10 @@ namespace Enums
 
 	enum StepButtonType
 	{
+		NotInUse,
 		GateButton,
 		RadioButton,
-		SelectorButton,
+		EncoderGroupSelectorButton,
 		ToggleButton,
 		IncDecButtons,
 		MasterIncDecButtons,

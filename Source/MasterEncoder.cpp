@@ -18,7 +18,7 @@ MasterEncoder::~MasterEncoder()
 
 void MasterEncoder::buttonClicked(Button* button)
 {
-	int buttonType = button->getProperties().getWithDefault(IDs::ButtonTypePropertyID, Enums::SelectorButton);
+	int buttonType = button->getProperties().getWithDefault(IDs::ButtonTypePropertyID, Enums::NotInUse);
 
 	switch(buttonType)
 	{

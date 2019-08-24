@@ -16,6 +16,12 @@ public:
 
 	void buttonClicked(Button* button) override;
 
+	void SwitchGroupedState();
+
+	void SwitchCoarseMode();
+
+	void UpdateGroupedEncoderValues(Enums::StepButtonType buttonType);
+
 	bool isCourseMode{ false };
 
 	bool isGrouped{ false };
