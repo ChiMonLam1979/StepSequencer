@@ -12,7 +12,7 @@ public:
 	(
 		ChoiceUpdaterService& updaterService,
 		AudioProcessorValueTreeState& treeState,
-		String& parameterId
+		const String& parameterId
 	);
 
 	~RadioButtonChoiceAttachment();

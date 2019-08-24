@@ -3,28 +3,28 @@
 
 namespace  ParameterNames
 {
-	static String StepChoicesName		{ "Step Choices Name"			};
+	const String StepChoicesName		{ "Step Choices Name"			};
 
-	static String GroupEncoderName		{ "Group Encoder Name"			 };
+	const String GroupEncoderName		{ "Group Encoder Name"			 };
 
-	static String EncodersSelectName	{ "Encoders Select Name"		};
+	const String EncodersSelectName		{ "Encoders Select Name"		};
 
-	static String StepButtonOneName		{ "Step Button One Name"		};
-	static String StepButtonTwoName		{ "Step Button Two Name"		};
-	static String StepButtonThreeName	{ "Step Button Three Name"		};
-	static String StepButtonFourName	{ "Step Button Four Name"		};
-	static String StepButtonFiveName	{ "Step Button Five Name"		};
-	static String StepButtonSixName		{ "Step Button Six Name"		};
-	static String StepButtonSevenName	{ "Step Button Seven Name"		};
-	static String StepButtonEightName	{ "Step Button Eight Name"		};
-	static String StepButtonNineName	{ "Step Button Nine Name"		};
-	static String StepButtonTenName		{ "Step Button Ten Name"		};
-	static String StepButtonElevenName	{ "Step Button Eleven Name"		};
-	static String StepButtonTwelveName	{ "Step Button Twelve Name"		};
-	static String StepButtonThirteenName{ "Step Button Thirteen Name"	};
-	static String StepButtonFourteenName{ "Step Button Fourteen Name"	};
-	static String StepButtonFifteenName	{ "Step Button Fifteen Name"	};
-	static String StepButtonSixteenName	{ "Step Button Sixteen Name"	};
+	const String StepButtonOneName		{ "Step Button One Name"		};
+	const String StepButtonTwoName		{ "Step Button Two Name"		};
+	const String StepButtonThreeName	{ "Step Button Three Name"		};
+	const String StepButtonFourName		{ "Step Button Four Name"		};
+	const String StepButtonFiveName		{ "Step Button Five Name"		};
+	const String StepButtonSixName		{ "Step Button Six Name"		};
+	const String StepButtonSevenName	{ "Step Button Seven Name"		};
+	const String StepButtonEightName	{ "Step Button Eight Name"		};
+	const String StepButtonNineName		{ "Step Button Nine Name"		};
+	const String StepButtonTenName		{ "Step Button Ten Name"		};
+	const String StepButtonElevenName	{ "Step Button Eleven Name"		};
+	const String StepButtonTwelveName	{ "Step Button Twelve Name"		};
+	const String StepButtonThirteenName	{ "Step Button Thirteen Name"	};
+	const String StepButtonFourteenName	{ "Step Button Fourteen Name"	};
+	const String StepButtonFifteenName	{ "Step Button Fifteen Name"	};
+	const String StepButtonSixteenName	{ "Step Button Sixteen Name"	};
 
 	const StringArray StepButtonNames
 	{
@@ -46,22 +46,22 @@ namespace  ParameterNames
 		StepButtonSixteenName,
 	};
 
-	static String StepEncoderOneName		{ "Step Encoder One Name"		};
-	static String StepEncoderTwoName		{ "Step Encoder Two Name"		};
-	static String StepEncoderThreeName		{ "Step Encoder Three Name"		};
-	static String StepEncoderFourName		{ "Step Encoder Four Name"		};
-	static String StepEncoderFiveName		{ "Step Encoder Five Name"		};
-	static String StepEncoderSixName		{ "Step Encoder Six Name"		};
-	static String StepEncoderSevenName		{ "Step Encoder Seven Name"		};
-	static String StepEncoderEightName		{ "Step Encoder Eight Name"		};
-	static String StepEncoderNineName		{ "Step Encoder Nine Name"		};
-	static String StepEncoderTenName		{ "Step Encoder Ten Name"		};
-	static String StepEncoderElevenName		{ "Step Encoder Eleven Name"	};
-	static String StepEncoderTwelveName		{ "Step Encoder Twelve Name"	};
-	static String StepEncoderThirteenName	{ "Step Encoder Thirteen Name"	};
-	static String StepEncoderFourteenName	{ "Step Encoder Fourteen Name"	};
-	static String StepEncoderFifteenName	{ "Step Encoder Fifteen Name"	};
-	static String StepEncoderSixteenName	{ "Step Encoder Sixteen Name"	};
+	const String StepEncoderOneName			{ "Step Encoder One Name"		};
+	const String StepEncoderTwoName			{ "Step Encoder Two Name"		};
+	const String StepEncoderThreeName		{ "Step Encoder Three Name"		};
+	const String StepEncoderFourName		{ "Step Encoder Four Name"		};
+	const String StepEncoderFiveName		{ "Step Encoder Five Name"		};
+	const String StepEncoderSixName			{ "Step Encoder Six Name"		};
+	const String StepEncoderSevenName		{ "Step Encoder Seven Name"		};
+	const String StepEncoderEightName		{ "Step Encoder Eight Name"		};
+	const String StepEncoderNineName		{ "Step Encoder Nine Name"		};
+	const String StepEncoderTenName			{ "Step Encoder Ten Name"		};
+	const String StepEncoderElevenName		{ "Step Encoder Eleven Name"	};
+	const String StepEncoderTwelveName		{ "Step Encoder Twelve Name"	};
+	const String StepEncoderThirteenName	{ "Step Encoder Thirteen Name"	};
+	const String StepEncoderFourteenName	{ "Step Encoder Fourteen Name"	};
+	const String StepEncoderFifteenName		{ "Step Encoder Fifteen Name"	};
+	const String StepEncoderSixteenName		{ "Step Encoder Sixteen Name"	};
 
 	const StringArray StepEncoderNames
 	{
@@ -83,22 +83,22 @@ namespace  ParameterNames
 		StepEncoderSixteenName
 	};
 
-	static String PitchEncoderOneName		{ "Pitch Encoder One Name"		};
-	static String PitchEncoderTwoName		{ "Pitch Encoder Two Name"		};
-	static String PitchEncoderThreeName		{ "Pitch Encoder Three Name"	};
-	static String PitchEncoderFourName		{ "Pitch Encoder Four Name"		};
-	static String PitchEncoderFiveName		{ "Pitch Encoder Five Name"		};
-	static String PitchEncoderSixName		{ "Pitch Encoder Six Name"		};
-	static String PitchEncoderSevenName		{ "Pitch Encoder Seven Name"	};
-	static String PitchEncoderEightName		{ "Pitch Encoder Eight Name"	};
-	static String PitchEncoderNineName		{ "Pitch Encoder Nine Name"		};
-	static String PitchEncoderTenName		{ "Pitch Encoder Ten Name"		};
-	static String PitchEncoderElevenName	{ "Pitch Encoder Eleven Name"	};
-	static String PitchEncoderTwelveName	{ "Pitch Encoder Twelve Name"	};
-	static String PitchEncoderThirteenName	{ "Pitch Encoder Thirteen Name"	};
-	static String PitchEncoderFourteenName	{ "Pitch Encoder Fourteen Name"	};
-	static String PitchEncoderFifteenName	{ "Pitch Encoder Fifteen Name"	};
-	static String PitchEncoderSixteenName	{ "Pitch Encoder Sixteen Name"	};
+	const String PitchEncoderOneName		{ "Pitch Encoder One Name"		};
+	const String PitchEncoderTwoName		{ "Pitch Encoder Two Name"		};
+	const String PitchEncoderThreeName		{ "Pitch Encoder Three Name"	};
+	const String PitchEncoderFourName		{ "Pitch Encoder Four Name"		};
+	const String PitchEncoderFiveName		{ "Pitch Encoder Five Name"		};
+	const String PitchEncoderSixName		{ "Pitch Encoder Six Name"		};
+	const String PitchEncoderSevenName		{ "Pitch Encoder Seven Name"	};
+	const String PitchEncoderEightName		{ "Pitch Encoder Eight Name"	};
+	const String PitchEncoderNineName		{ "Pitch Encoder Nine Name"		};
+	const String PitchEncoderTenName		{ "Pitch Encoder Ten Name"		};
+	const String PitchEncoderElevenName		{ "Pitch Encoder Eleven Name"	};
+	const String PitchEncoderTwelveName		{ "Pitch Encoder Twelve Name"	};
+	const String PitchEncoderThirteenName	{ "Pitch Encoder Thirteen Name"	};
+	const String PitchEncoderFourteenName	{ "Pitch Encoder Fourteen Name"	};
+	const String PitchEncoderFifteenName	{ "Pitch Encoder Fifteen Name"	};
+	const String PitchEncoderSixteenName	{ "Pitch Encoder Sixteen Name"	};
 
 	const StringArray PitchEncoderNames
 	{
@@ -120,22 +120,22 @@ namespace  ParameterNames
 		PitchEncoderSixteenName
 	};
 
-	static String VelocityEncoderOneName		{ "Velocity Encoder One Name"		};
-	static String VelocityEncoderTwoName		{ "Velocity Encoder Two Name"		};
-	static String VelocityEncoderThreeName		{ "Velocity Encoder Three Name"		};
-	static String VelocityEncoderFourName		{ "Velocity Encoder Four Name"		};
-	static String VelocityEncoderFiveName		{ "Velocity Encoder Five Name"		};
-	static String VelocityEncoderSixName		{ "Velocity Encoder Six Name"		};
-	static String VelocityEncoderSevenName		{ "Velocity Encoder Seven Name"		};
-	static String VelocityEncoderEightName		{ "Velocity Encoder Eight Name"		};
-	static String VelocityEncoderNineName		{ "Velocity Encoder Nine Name"		};
-	static String VelocityEncoderTenName		{ "Velocity Encoder Ten Name"		};
-	static String VelocityEncoderElevenName		{ "Velocity Encoder Eleven Name"	};
-	static String VelocityEncoderTwelveName		{ "Velocity Encoder Twelve Name"	};
-	static String VelocityEncoderThirteenName	{ "Velocity Encoder Thirteen Name"	};
-	static String VelocityEncoderFourteenName	{ "Velocity Encoder Fourteen Name"	};
-	static String VelocityEncoderFifteenName	{ "Velocity Encoder Fifteen Name"	};
-	static String VelocityEncoderSixteenName	{ "Velocity Encoder Sixteen Name"	};
+	const String VelocityEncoderOneName			{ "Velocity Encoder One Name"		};
+	const String VelocityEncoderTwoName			{ "Velocity Encoder Two Name"		};
+	const String VelocityEncoderThreeName		{ "Velocity Encoder Three Name"		};
+	const String VelocityEncoderFourName		{ "Velocity Encoder Four Name"		};
+	const String VelocityEncoderFiveName		{ "Velocity Encoder Five Name"		};
+	const String VelocityEncoderSixName			{ "Velocity Encoder Six Name"		};
+	const String VelocityEncoderSevenName		{ "Velocity Encoder Seven Name"		};
+	const String VelocityEncoderEightName		{ "Velocity Encoder Eight Name"		};
+	const String VelocityEncoderNineName		{ "Velocity Encoder Nine Name"		};
+	const String VelocityEncoderTenName			{ "Velocity Encoder Ten Name"		};
+	const String VelocityEncoderElevenName		{ "Velocity Encoder Eleven Name"	};
+	const String VelocityEncoderTwelveName		{ "Velocity Encoder Twelve Name"	};
+	const String VelocityEncoderThirteenName	{ "Velocity Encoder Thirteen Name"	};
+	const String VelocityEncoderFourteenName	{ "Velocity Encoder Fourteen Name"	};
+	const String VelocityEncoderFifteenName		{ "Velocity Encoder Fifteen Name"	};
+	const String VelocityEncoderSixteenName		{ "Velocity Encoder Sixteen Name"	};
 
 	const StringArray VelocityEncoderNames
 	{
@@ -157,22 +157,22 @@ namespace  ParameterNames
 		VelocityEncoderSixteenName
 	};
 
-	static String NoteLengthEncoderOneName		{ "NoteLength Encoder One Name"			};
-	static String NoteLengthEncoderTwoName		{ "NoteLength Encoder Two Name"			};
-	static String NoteLengthEncoderThreeName	{ "NoteLength Encoder Three Name"		};
-	static String NoteLengthEncoderFourName		{ "NoteLength Encoder Four Name"		};
-	static String NoteLengthEncoderFiveName		{ "NoteLength Encoder Five Name"		};
-	static String NoteLengthEncoderSixName		{ "NoteLength Encoder Six Name"			};
-	static String NoteLengthEncoderSevenName	{ "NoteLength Encoder Seven Name"		};
-	static String NoteLengthEncoderEightName	{ "NoteLength Encoder Eight Name"		};
-	static String NoteLengthEncoderNineName		{ "NoteLength Encoder Nine Name"		};
-	static String NoteLengthEncoderTenName		{ "NoteLength Encoder Ten Name"			};
-	static String NoteLengthEncoderElevenName	{ "NoteLength Encoder Eleven Name"		};
-	static String NoteLengthEncoderTwelveName	{ "NoteLength Encoder Twelve Name"		};
-	static String NoteLengthEncoderThirteenName	{ "NoteLength Encoder Thirteen Name"	};
-	static String NoteLengthEncoderFourteenName	{ "NoteLength Encoder Fourteen Name"	};
-	static String NoteLengthEncoderFifteenName	{ "NoteLength Encoder Fifteen Name"		};
-	static String NoteLengthEncoderSixteenName	{ "NoteLength Encoder Sixteen Name"		};
+	const String NoteLengthEncoderOneName		{ "NoteLength Encoder One Name"			};
+	const String NoteLengthEncoderTwoName		{ "NoteLength Encoder Two Name"			};
+	const String NoteLengthEncoderThreeName		{ "NoteLength Encoder Three Name"		};
+	const String NoteLengthEncoderFourName		{ "NoteLength Encoder Four Name"		};
+	const String NoteLengthEncoderFiveName		{ "NoteLength Encoder Five Name"		};
+	const String NoteLengthEncoderSixName		{ "NoteLength Encoder Six Name"			};
+	const String NoteLengthEncoderSevenName		{ "NoteLength Encoder Seven Name"		};
+	const String NoteLengthEncoderEightName		{ "NoteLength Encoder Eight Name"		};
+	const String NoteLengthEncoderNineName		{ "NoteLength Encoder Nine Name"		};
+	const String NoteLengthEncoderTenName		{ "NoteLength Encoder Ten Name"			};
+	const String NoteLengthEncoderElevenName	{ "NoteLength Encoder Eleven Name"		};
+	const String NoteLengthEncoderTwelveName	{ "NoteLength Encoder Twelve Name"		};
+	const String NoteLengthEncoderThirteenName	{ "NoteLength Encoder Thirteen Name"	};
+	const String NoteLengthEncoderFourteenName	{ "NoteLength Encoder Fourteen Name"	};
+	const String NoteLengthEncoderFifteenName	{ "NoteLength Encoder Fifteen Name"		};
+	const String NoteLengthEncoderSixteenName	{ "NoteLength Encoder Sixteen Name"		};
 
 	const StringArray NoteLengthEncoderNames
 	{
@@ -194,22 +194,22 @@ namespace  ParameterNames
 		NoteLengthEncoderSixteenName
 	};
 
-	static String SelectedEncoderOneName		{ "Selected Encoder One Name"		};
-	static String SelectedEncoderTwoName		{ "Selected Encoder Two Name"		};
-	static String SelectedEncoderThreeName		{ "Selected Encoder Three Name"		};
-	static String SelectedEncoderFourName		{ "Selected Encoder Four Name"		};
-	static String SelectedEncoderFiveName		{ "Selected Encoder Five Name"		};
-	static String SelectedEncoderSixName		{ "Selected Encoder Six Name"		};
-	static String SelectedEncoderSevenName		{ "Selected Encoder Seven Name"		};
-	static String SelectedEncoderEightName		{ "Selected Encoder Eight Name"		};
-	static String SelectedEncoderNineName		{ "Selected Encoder Nine Name"		};
-	static String SelectedEncoderTenName		{ "Selected Encoder Ten Name"		};
-	static String SelectedEncoderElevenName		{ "Selected Encoder Eleven Name"	};
-	static String SelectedEncoderTwelveName		{ "Selected Encoder Twelve Name"	};
-	static String SelectedEncoderThirteenName	{ "Selected Encoder Thirteen Name"	};
-	static String SelectedEncoderFourteenName	{ "Selected Encoder Fourteen Name"	};
-	static String SelectedEncoderFifteenName	{ "Selected Encoder Fifteen Name"	};
-	static String SelectedEncoderSixteenName	{ "Selected Encoder Sixteen Name"	};
+	const String SelectedEncoderOneName			{ "Selected Encoder One Name"		};
+	const String SelectedEncoderTwoName			{ "Selected Encoder Two Name"		};
+	const String SelectedEncoderThreeName		{ "Selected Encoder Three Name"		};
+	const String SelectedEncoderFourName		{ "Selected Encoder Four Name"		};
+	const String SelectedEncoderFiveName		{ "Selected Encoder Five Name"		};
+	const String SelectedEncoderSixName			{ "Selected Encoder Six Name"		};
+	const String SelectedEncoderSevenName		{ "Selected Encoder Seven Name"		};
+	const String SelectedEncoderEightName		{ "Selected Encoder Eight Name"		};
+	const String SelectedEncoderNineName		{ "Selected Encoder Nine Name"		};
+	const String SelectedEncoderTenName			{ "Selected Encoder Ten Name"		};
+	const String SelectedEncoderElevenName		{ "Selected Encoder Eleven Name"	};
+	const String SelectedEncoderTwelveName		{ "Selected Encoder Twelve Name"	};
+	const String SelectedEncoderThirteenName	{ "Selected Encoder Thirteen Name"	};
+	const String SelectedEncoderFourteenName	{ "Selected Encoder Fourteen Name"	};
+	const String SelectedEncoderFifteenName		{ "Selected Encoder Fifteen Name"	};
+	const String SelectedEncoderSixteenName		{ "Selected Encoder Sixteen Name"	};
 
 	const StringArray SelectedEncoderNames
 	{
@@ -231,22 +231,22 @@ namespace  ParameterNames
 		SelectedEncoderSixteenName
 	};
 
-	static String EncoderSelectButtonOneName		{ "Encoder Selected Button One Name"		};
-	static String EncoderSelectButtonTwoName		{ "Encoder Selected Button Two Name"		};
-	static String EncoderSelectButtonThreeName		{ "Encoder Selected Button Three Name"		};
-	static String EncoderSelectButtonFourName		{ "Encoder Selected Button Four Name"		};
-	static String EncoderSelectButtonFiveName		{ "Encoder Selected Button Five Name"		};
-	static String EncoderSelectButtonSixName		{ "Encoder Selected Button Six Name"		};
-	static String EncoderSelectButtonSevenName		{ "Encoder Selected Button Seven Name"		};
-	static String EncoderSelectButtonEightName		{ "Encoder Selected Button Eight Name"		};
-	static String EncoderSelectButtonNineName		{ "Encoder Selected Button Nine Name"		};
-	static String EncoderSelectButtonTenName		{ "Encoder Selected Button Ten Name"		};
-	static String EncoderSelectButtonElevenName		{ "Encoder Selected Button Eleven Name"		};
-	static String EncoderSelectButtonTwelveName		{ "Encoder Selected Button Twelve Name"		};
-	static String EncoderSelectButtonThirteenName	{ "Encoder Selected Button Thirteen Name"	};
-	static String EncoderSelectButtonFourteenName	{ "Encoder Selected Button Fourteen Name"	};
-	static String EncoderSelectButtonFifteenName	{ "Encoder Selected Button Fifteen Name"	};
-	static String EncoderSelectButtonSixteenName	{ "Encoder Selected Button Sixteen Name"	};
+	const String EncoderSelectButtonOneName			{ "Encoder Selected Button One Name"		};
+	const String EncoderSelectButtonTwoName			{ "Encoder Selected Button Two Name"		};
+	const String EncoderSelectButtonThreeName		{ "Encoder Selected Button Three Name"		};
+	const String EncoderSelectButtonFourName		{ "Encoder Selected Button Four Name"		};
+	const String EncoderSelectButtonFiveName		{ "Encoder Selected Button Five Name"		};
+	const String EncoderSelectButtonSixName			{ "Encoder Selected Button Six Name"		};
+	const String EncoderSelectButtonSevenName		{ "Encoder Selected Button Seven Name"		};
+	const String EncoderSelectButtonEightName		{ "Encoder Selected Button Eight Name"		};
+	const String EncoderSelectButtonNineName		{ "Encoder Selected Button Nine Name"		};
+	const String EncoderSelectButtonTenName			{ "Encoder Selected Button Ten Name"		};
+	const String EncoderSelectButtonElevenName		{ "Encoder Selected Button Eleven Name"		};
+	const String EncoderSelectButtonTwelveName		{ "Encoder Selected Button Twelve Name"		};
+	const String EncoderSelectButtonThirteenName	{ "Encoder Selected Button Thirteen Name"	};
+	const String EncoderSelectButtonFourteenName	{ "Encoder Selected Button Fourteen Name"	};
+	const String EncoderSelectButtonFifteenName		{ "Encoder Selected Button Fifteen Name"	};
+	const String EncoderSelectButtonSixteenName		{ "Encoder Selected Button Sixteen Name"	};
 
 	const StringArray EncoderSelectButtonsNames
 	{
@@ -268,39 +268,39 @@ namespace  ParameterNames
 		EncoderSelectButtonSixteenName
 	};
 
-	static String IncButtonOneName			{ "Inc Button One Name"			};
-	static String IncButtonTwoName			{ "Inc Button Two Name"			};
-	static String IncButtonThreeName		{ "Inc Button Three Name"		};
-	static String IncButtonFourName			{ "Inc Button Four Name"		};
-	static String IncButtonFiveName			{ "Inc Button Five Name"		};
-	static String IncButtonSixName			{ "Inc Button Six Name"			};
-	static String IncButtonSevenName		{ "Inc Button Seven Name"		};
-	static String IncButtonEightName		{ "Inc Button Eight Name"		};
-	static String IncButtonNineName			{ "Inc Button Nine Name"		};
-	static String IncButtonTenName			{ "Inc Button Ten Name"			};
-	static String IncButtonElevenName		{ "Inc Button Eleven Name"		};
-	static String IncButtonTwelveName		{ "Inc Button Twelve Name"		};
-	static String IncButtonThirteenName		{ "Inc Button Thirteen Name"	};
-	static String IncButtonFourteenName		{ "Inc Button Fourteen Name"	};
-	static String IncButtonFifteenName		{ "Inc Button Fifteen Name"		};
-	static String IncButtonSixteenName		{ "Inc Button Sixteen Name"		};
+	const String IncButtonOneName			{ "Inc Button One Name"			};
+	const String IncButtonTwoName			{ "Inc Button Two Name"			};
+	const String IncButtonThreeName			{ "Inc Button Three Name"		};
+	const String IncButtonFourName			{ "Inc Button Four Name"		};
+	const String IncButtonFiveName			{ "Inc Button Five Name"		};
+	const String IncButtonSixName			{ "Inc Button Six Name"			};
+	const String IncButtonSevenName			{ "Inc Button Seven Name"		};
+	const String IncButtonEightName			{ "Inc Button Eight Name"		};
+	const String IncButtonNineName			{ "Inc Button Nine Name"		};
+	const String IncButtonTenName			{ "Inc Button Ten Name"			};
+	const String IncButtonElevenName		{ "Inc Button Eleven Name"		};
+	const String IncButtonTwelveName		{ "Inc Button Twelve Name"		};
+	const String IncButtonThirteenName		{ "Inc Button Thirteen Name"	};
+	const String IncButtonFourteenName		{ "Inc Button Fourteen Name"	};
+	const String IncButtonFifteenName		{ "Inc Button Fifteen Name"		};
+	const String IncButtonSixteenName		{ "Inc Button Sixteen Name"		};
 
-	static String DecButtonOneName			{ "Dec Button One Name"			};
-	static String DecButtonTwoName			{ "Dec Button Two Name"			};
-	static String DecButtonThreeName		{ "Dec Button Three Name"		};
-	static String DecButtonFourName			{ "Dec Button Four Name"		};
-	static String DecButtonFiveName			{ "Dec Button Five Name"		};
-	static String DecButtonSixName			{ "Dec Button Six Name"			};
-	static String DecButtonSevenName		{ "Dec Button Seven Name"		};
-	static String DecButtonEightName		{ "Dec Button Eight Name"		};
-	static String DecButtonNineName			{ "Dec Button Nine Name"		};
-	static String DecButtonTenName			{ "Dec Button Ten Name"			};
-	static String DecButtonElevenName		{ "Dec Button Eleven Name"		};
-	static String DecButtonTwelveName		{ "Dec Button Twelve Name"		};
-	static String DecButtonThirteenName		{ "Dec Button Thirteen Name"	};
-	static String DecButtonFourteenName		{ "Dec Button Fourteen Name"	};
-	static String DecButtonFifteenName		{ "Dec Button Fifteen Name"		};
-	static String DecButtonSixteenName		{ "Dec Button Sixteen Name"		};
+	const String DecButtonOneName			{ "Dec Button One Name"			};
+	const String DecButtonTwoName			{ "Dec Button Two Name"			};
+	const String DecButtonThreeName			{ "Dec Button Three Name"		};
+	const String DecButtonFourName			{ "Dec Button Four Name"		};
+	const String DecButtonFiveName			{ "Dec Button Five Name"		};
+	const String DecButtonSixName			{ "Dec Button Six Name"			};
+	const String DecButtonSevenName			{ "Dec Button Seven Name"		};
+	const String DecButtonEightName			{ "Dec Button Eight Name"		};
+	const String DecButtonNineName			{ "Dec Button Nine Name"		};
+	const String DecButtonTenName			{ "Dec Button Ten Name"			};
+	const String DecButtonElevenName		{ "Dec Button Eleven Name"		};
+	const String DecButtonTwelveName		{ "Dec Button Twelve Name"		};
+	const String DecButtonThirteenName		{ "Dec Button Thirteen Name"	};
+	const String DecButtonFourteenName		{ "Dec Button Fourteen Name"	};
+	const String DecButtonFifteenName		{ "Dec Button Fifteen Name"		};
+	const String DecButtonSixteenName		{ "Dec Button Sixteen Name"		};
 
 	const StringArray IncDecButtonsNames
 	{

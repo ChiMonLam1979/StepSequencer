@@ -3,32 +3,32 @@
 
 namespace IDs
 {
-	static String TreeStateID			{ "treeState"				};
+	const String TreeStateID			{ "treeState"				};
 
 	const String ButtonTypePropertyID	{ "ButtonType"				};
 
-	static String GroupEncoderId		{ "Group Encoder"			};
+	const String GroupEncoderId			{ "Group Encoder"			};
 
-	static String EncodersSelectID		{ "Encoders Select "		};
+	const String EncodersSelectID		{ "Encoders Select "		};
 
-	static String StepChoicesID			{ "Step Choices "			};
+	const String StepChoicesID			{ "Step Choices "			};
 
-	static String StepButtonOneID		{ "Step Button One"			};
-	static String StepButtonTwoID		{ "Step Button Two"			};
-	static String StepButtonThreeID		{ "Step Button Three"		};
-	static String StepButtonFourID		{ "Step Button Four"		};
-	static String StepButtonFiveID		{ "Step Button Five"		};
-	static String StepButtonSixID		{ "Step Button Six"			};
-	static String StepButtonSevenID		{ "Step Button Seven"		};
-	static String StepButtonEightID		{ "Step Button Eight"		};
-	static String StepButtonNineID		{ "Step Button Nine"		};
-	static String StepButtonTenID		{ "Step Button Ten"			};
-	static String StepButtonElevenID	{ "Step Button Eleven"		};
-	static String StepButtonTwelveID	{ "Step Button Twelve"		};
-	static String StepButtonThirteenID	{ "Step Button Thirteen"	};
-	static String StepButtonFourteenID	{ "Step Button Fourteen"	};
-	static String StepButtonFifteenID	{ "Step Button Fifteen"		};
-	static String StepButtonSixteenID	{ "Step Button Sixteen"		};
+	const String StepButtonOneID		{ "Step Button One"			};
+	const String StepButtonTwoID		{ "Step Button Two"			};
+	const String StepButtonThreeID		{ "Step Button Three"		};
+	const String StepButtonFourID		{ "Step Button Four"		};
+	const String StepButtonFiveID		{ "Step Button Five"		};
+	const String StepButtonSixID		{ "Step Button Six"			};
+	const String StepButtonSevenID		{ "Step Button Seven"		};
+	const String StepButtonEightID		{ "Step Button Eight"		};
+	const String StepButtonNineID		{ "Step Button Nine"		};
+	const String StepButtonTenID		{ "Step Button Ten"			};
+	const String StepButtonElevenID		{ "Step Button Eleven"		};
+	const String StepButtonTwelveID		{ "Step Button Twelve"		};
+	const String StepButtonThirteenID	{ "Step Button Thirteen"	};
+	const String StepButtonFourteenID	{ "Step Button Fourteen"	};
+	const String StepButtonFifteenID	{ "Step Button Fifteen"		};
+	const String StepButtonSixteenID	{ "Step Button Sixteen"		};
 
 	const StringArray StepButtonIDs
 	{
@@ -50,22 +50,22 @@ namespace IDs
 		StepButtonSixteenID,
 	};
 
-	static String PitchEncoderOneID		{ "Pitch Encoder One"		};
-	static String PitchEncoderTwoID		{ "Pitch Encoder Two"		};
-	static String PitchEncoderThreeID	{ "Pitch Encoder Three"		};
-	static String PitchEncoderFourID	{ "Pitch Encoder Four"		};
-	static String PitchEncoderFiveID	{ "Pitch Encoder Five"		};
-	static String PitchEncoderSixID		{ "Pitch Encoder Six"		};
-	static String PitchEncoderSevenID	{ "Pitch Encoder Seven"		};
-	static String PitchEncoderEightID	{ "Pitch Encoder Eight"		};
-	static String PitchEncoderNineID	{ "Pitch Encoder Nine"		};
-	static String PitchEncoderTenID		{ "Pitch Encoder Ten"		};
-	static String PitchEncoderElevenID	{ "Pitch Encoder Eleven"	};
-	static String PitchEncoderTwelveID	{ "Pitch Encoder Twelve"	};
-	static String PitchEncoderThirteenID{ "Pitch Encoder Thirteen"	};
-	static String PitchEncoderFourteenID{ "Pitch Encoder Fourteen"	};
-	static String PitchEncoderFifteenID	{ "Pitch Encoder Fifteen"	};
-	static String PitchEncoderSixteenID	{ "Pitch Encoder Sixteen"	};
+	const String PitchEncoderOneID		{ "Pitch Encoder One"		};
+	const String PitchEncoderTwoID		{ "Pitch Encoder Two"		};
+	const String PitchEncoderThreeID	{ "Pitch Encoder Three"		};
+	const String PitchEncoderFourID		{ "Pitch Encoder Four"		};
+	const String PitchEncoderFiveID		{ "Pitch Encoder Five"		};
+	const String PitchEncoderSixID		{ "Pitch Encoder Six"		};
+	const String PitchEncoderSevenID	{ "Pitch Encoder Seven"		};
+	const String PitchEncoderEightID	{ "Pitch Encoder Eight"		};
+	const String PitchEncoderNineID		{ "Pitch Encoder Nine"		};
+	const String PitchEncoderTenID		{ "Pitch Encoder Ten"		};
+	const String PitchEncoderElevenID	{ "Pitch Encoder Eleven"	};
+	const String PitchEncoderTwelveID	{ "Pitch Encoder Twelve"	};
+	const String PitchEncoderThirteenID	{ "Pitch Encoder Thirteen"	};
+	const String PitchEncoderFourteenID	{ "Pitch Encoder Fourteen"	};
+	const String PitchEncoderFifteenID	{ "Pitch Encoder Fifteen"	};
+	const String PitchEncoderSixteenID	{ "Pitch Encoder Sixteen"	};
 
 	const StringArray PitchEncoderIDs
 	{
@@ -87,22 +87,22 @@ namespace IDs
 		PitchEncoderSixteenID
 	};
 
-	static String VelocityEncoderOneID		{ "Velocity Encoder One"		};
-	static String VelocityEncoderTwoID		{ "Velocity Encoder Two"		};
-	static String VelocityEncoderThreeID	{ "Velocity Encoder Three"		};
-	static String VelocityEncoderFourID		{ "Velocity Encoder Four"		};
-	static String VelocityEncoderFiveID		{ "Velocity Encoder Five"		};
-	static String VelocityEncoderSixID		{ "Velocity Encoder Six"		};
-	static String VelocityEncoderSevenID	{ "Velocity Encoder Seven"		};
-	static String VelocityEncoderEightID	{ "Velocity Encoder Eight"		};
-	static String VelocityEncoderNineID		{ "Velocity Encoder Nine"		};
-	static String VelocityEncoderTenID		{ "Velocity Encoder Ten"		};
-	static String VelocityEncoderElevenID	{ "Velocity Encoder Eleven"		};
-	static String VelocityEncoderTwelveID	{ "Velocity Encoder Twelve"		};
-	static String VelocityEncoderThirteenID	{ "Velocity Encoder Thirteen"	};
-	static String VelocityEncoderFourteenID	{ "Velocity Encoder Fourteen"	};
-	static String VelocityEncoderFifteenID	{ "Velocity Encoder Fifteen"	};
-	static String VelocityEncoderSixteenID	{ "Velocity Encoder Sixteen"	};
+	const String VelocityEncoderOneID		{ "Velocity Encoder One"		};
+	const String VelocityEncoderTwoID		{ "Velocity Encoder Two"		};
+	const String VelocityEncoderThreeID		{ "Velocity Encoder Three"		};
+	const String VelocityEncoderFourID		{ "Velocity Encoder Four"		};
+	const String VelocityEncoderFiveID		{ "Velocity Encoder Five"		};
+	const String VelocityEncoderSixID		{ "Velocity Encoder Six"		};
+	const String VelocityEncoderSevenID		{ "Velocity Encoder Seven"		};
+	const String VelocityEncoderEightID		{ "Velocity Encoder Eight"		};
+	const String VelocityEncoderNineID		{ "Velocity Encoder Nine"		};
+	const String VelocityEncoderTenID		{ "Velocity Encoder Ten"		};
+	const String VelocityEncoderElevenID	{ "Velocity Encoder Eleven"		};
+	const String VelocityEncoderTwelveID	{ "Velocity Encoder Twelve"		};
+	const String VelocityEncoderThirteenID	{ "Velocity Encoder Thirteen"	};
+	const String VelocityEncoderFourteenID	{ "Velocity Encoder Fourteen"	};
+	const String VelocityEncoderFifteenID	{ "Velocity Encoder Fifteen"	};
+	const String VelocityEncoderSixteenID	{ "Velocity Encoder Sixteen"	};
 
 	const StringArray VelocityEncoderIDs
 	{
@@ -124,22 +124,22 @@ namespace IDs
 		VelocityEncoderSixteenID
 	};
 
-	static String NoteLengthEncoderOneID		{ "NoteLength Encoder One"		};
-	static String NoteLengthEncoderTwoID		{ "NoteLength Encoder Two"		};
-	static String NoteLengthEncoderThreeID		{ "NoteLength Encoder Three"	};
-	static String NoteLengthEncoderFourID		{ "NoteLength Encoder Four"		};
-	static String NoteLengthEncoderFiveID		{ "NoteLength Encoder Five"		};
-	static String NoteLengthEncoderSixID		{ "NoteLength Encoder Six"		};
-	static String NoteLengthEncoderSevenID		{ "NoteLength Encoder Seven"	};
-	static String NoteLengthEncoderEightID		{ "NoteLength Encoder Eight"	};
-	static String NoteLengthEncoderNineID		{ "NoteLength Encoder Nine"		};
-	static String NoteLengthEncoderTenID		{ "NoteLength Encoder Ten"		};
-	static String NoteLengthEncoderElevenID		{ "NoteLength Encoder Eleven"	};
-	static String NoteLengthEncoderTwelveID		{ "NoteLength Encoder Twelve"	};
-	static String NoteLengthEncoderThirteenID	{ "NoteLength Encoder Thirteen" };
-	static String NoteLengthEncoderFourteenID	{ "NoteLength Encoder Fourteen" };
-	static String NoteLengthEncoderFifteenID	{ "NoteLength Encoder Fifteen"	};
-	static String NoteLengthEncoderSixteenID	{ "NoteLength Encoder Sixteen"	};
+	const String NoteLengthEncoderOneID			{ "NoteLength Encoder One"		};
+	const String NoteLengthEncoderTwoID			{ "NoteLength Encoder Two"		};
+	const String NoteLengthEncoderThreeID		{ "NoteLength Encoder Three"	};
+	const String NoteLengthEncoderFourID		{ "NoteLength Encoder Four"		};
+	const String NoteLengthEncoderFiveID		{ "NoteLength Encoder Five"		};
+	const String NoteLengthEncoderSixID			{ "NoteLength Encoder Six"		};
+	const String NoteLengthEncoderSevenID		{ "NoteLength Encoder Seven"	};
+	const String NoteLengthEncoderEightID		{ "NoteLength Encoder Eight"	};
+	const String NoteLengthEncoderNineID		{ "NoteLength Encoder Nine"		};
+	const String NoteLengthEncoderTenID			{ "NoteLength Encoder Ten"		};
+	const String NoteLengthEncoderElevenID		{ "NoteLength Encoder Eleven"	};
+	const String NoteLengthEncoderTwelveID		{ "NoteLength Encoder Twelve"	};
+	const String NoteLengthEncoderThirteenID	{ "NoteLength Encoder Thirteen" };
+	const String NoteLengthEncoderFourteenID	{ "NoteLength Encoder Fourteen" };
+	const String NoteLengthEncoderFifteenID		{ "NoteLength Encoder Fifteen"	};
+	const String NoteLengthEncoderSixteenID		{ "NoteLength Encoder Sixteen"	};
 
 	const StringArray NoteLengthEncoderIDs
 	{
@@ -161,22 +161,22 @@ namespace IDs
 		NoteLengthEncoderSixteenID
 	};
 
-	static String SelectedEncoderOneID		{ "Selected Encoder One"		};
-	static String SelectedEncoderTwoID		{ "Selected Encoder Two"		};
-	static String SelectedEncoderThreeID	{ "Selected Encoder Three"		};
-	static String SelectedEncoderFourID		{ "Selected Encoder Four"		};
-	static String SelectedEncoderFiveID		{ "Selected Encoder Five"		};
-	static String SelectedEncoderSixID		{ "Selected Encoder Six"		};
-	static String SelectedEncoderSevenID	{ "Selected Encoder Seven"		};
-	static String SelectedEncoderEightID	{ "Selected Encoder Eight"		};
-	static String SelectedEncoderNineID		{ "Selected Encoder Nine"		};
-	static String SelectedEncoderTenID		{ "Selected Encoder Ten"		};
-	static String SelectedEncoderElevenID	{ "Selected Encoder Eleven"		};
-	static String SelectedEncoderTwelveID	{ "Selected Encoder Twelve"		};
-	static String SelectedEncoderThirteenID	{ "Selected Encoder Thirteen"	};
-	static String SelectedEncoderFourteenID	{ "Selected Encoder Fourteen"	};
-	static String SelectedEncoderFifteenID	{ "Selected Encoder Fifteen"	};
-	static String SelectedEncoderSixteenID	{ "Selected Encoder Sixteen"	};
+	const String SelectedEncoderOneID		{ "Selected Encoder One"		};
+	const String SelectedEncoderTwoID		{ "Selected Encoder Two"		};
+	const String SelectedEncoderThreeID		{ "Selected Encoder Three"		};
+	const String SelectedEncoderFourID		{ "Selected Encoder Four"		};
+	const String SelectedEncoderFiveID		{ "Selected Encoder Five"		};
+	const String SelectedEncoderSixID		{ "Selected Encoder Six"		};
+	const String SelectedEncoderSevenID		{ "Selected Encoder Seven"		};
+	const String SelectedEncoderEightID		{ "Selected Encoder Eight"		};
+	const String SelectedEncoderNineID		{ "Selected Encoder Nine"		};
+	const String SelectedEncoderTenID		{ "Selected Encoder Ten"		};
+	const String SelectedEncoderElevenID	{ "Selected Encoder Eleven"		};
+	const String SelectedEncoderTwelveID	{ "Selected Encoder Twelve"		};
+	const String SelectedEncoderThirteenID	{ "Selected Encoder Thirteen"	};
+	const String SelectedEncoderFourteenID	{ "Selected Encoder Fourteen"	};
+	const String SelectedEncoderFifteenID	{ "Selected Encoder Fifteen"	};
+	const String SelectedEncoderSixteenID	{ "Selected Encoder Sixteen"	};
 
 	const StringArray SelectedEncoderIDs
 	{
