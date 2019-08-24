@@ -10,6 +10,7 @@
 #include "BoolButtonAttachment.h"
 #include "ButtonAttachmentUpdaterService.h"
 #include "MasterEncoder.h"
+#include "IncDecButtonListenerService.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -23,19 +24,20 @@ public:
 	SharedResourcePointer<DrawablesCache>		svgCache;
 	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 
-	std::unique_ptr<Drawable>			backPlate;
-	std::unique_ptr<StepEncoders>		stepEncoders;
-	std::unique_ptr<StepButtons>		stepButtons;
-	std::unique_ptr<StepButtons>		selectorButtons;
-	std::unique_ptr<ChaseLEDs>			transportLEDs;
-	std::unique_ptr<LED>				masterEncoderLED;
-	std::unique_ptr<MasterEncoder>		masterEncoder;
-	std::unique_ptr<StepButtons>		stepIncDecButtons;
-	std::unique_ptr<StepButtons>		masterIncDecButtons;
+	std::unique_ptr<Drawable>						backPlate;
+	std::unique_ptr<StepEncoders>					stepEncoders;
+	std::unique_ptr<StepButtons>					stepButtons;
+	std::unique_ptr<StepButtons>					selectorButtons;
+	std::unique_ptr<ChaseLEDs>						transportLEDs;
+	std::unique_ptr<LED>							masterEncoderLED;
+	std::unique_ptr<MasterEncoder>					masterEncoder;
+	std::unique_ptr<StepButtons>					stepIncDecButtons;
+	std::unique_ptr<StepButtons>					masterIncDecButtons;
+	std::unique_ptr<IncDecButtonListenerService>	incDecButtonListenerService;
 
-	OwnedArray<AudioProcessorValueTreeState::SliderAttachment> stepEncoderAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> stepButtonAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> selectorButtonAttachments;
+	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	stepButtonAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	selectorButtonAttachments;
 
 	std::unique_ptr<SliderAttachmentUpdaterService>					encoderAttachmentUpdater;
 	std::unique_ptr<RadioButtonChoiceAttachment>					stepEncoderChoicesAttachment;

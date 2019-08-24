@@ -6,15 +6,16 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	backPlate				= Drawable::createFromImageData(BinaryData::BackPanelTextures_png, BinaryData::BackPanelTextures_pngSize);
-	stepEncoders			= std::make_unique<StepEncoders>();
-	stepIncDecButtons		= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 32);
-	stepButtons				= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
-	selectorButtons			= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
-	transportLEDs			= std::make_unique<ChaseLEDs>(p);
-	masterEncoderLED		= std::make_unique<LED>();
-	masterEncoder			= std::make_unique<MasterEncoder>(ParameterNames::GroupEncoderName, stepEncoders, *masterEncoderLED);
-	masterIncDecButtons		= std::make_unique<StepButtons>(Enums::MasterIncDecButtons, ParameterNames::IncDecButtonsNames, 2);
+	backPlate					= Drawable::createFromImageData(BinaryData::BackPanelTextures_png, BinaryData::BackPanelTextures_pngSize);
+	stepEncoders				= std::make_unique<StepEncoders>();
+	stepIncDecButtons			= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 32);
+	stepButtons					= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
+	selectorButtons				= std::make_unique<StepButtons>(Enums::SelectorButton,	ParameterNames::EncoderSelectButtonsNames);
+	transportLEDs				= std::make_unique<ChaseLEDs>(p);
+	masterEncoderLED			= std::make_unique<LED>();
+	masterEncoder				= std::make_unique<MasterEncoder>(ParameterNames::GroupEncoderName, stepEncoders, *masterEncoderLED);
+	masterIncDecButtons			= std::make_unique<StepButtons>(Enums::MasterIncDecButtons, ParameterNames::IncDecButtonsNames, 2);
+	incDecButtonListenerService = std::make_unique<IncDecButtonListenerService>(stepEncoders, masterEncoder, stepIncDecButtons, masterIncDecButtons);
 
 	for(auto i = 0; i < 16; i++)
 	{
@@ -23,24 +24,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 		stepButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::StepButtonIDs[i],  *stepButtons->stepButtons[i]));
 
 		selectorButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::SelectedEncoderIDs[i], *selectorButtons->stepButtons[i]));
-	}
-
-	for(auto i = 0; i < 32; i += 2)
-	{
-		stepIncDecButtons->stepButtons[i]->addListener(stepEncoders->encoders[i / 2].get());
-		stepIncDecButtons->stepButtons[i + 1]->addListener(stepEncoders->encoders[i / 2].get());
-	}
-
-	for(auto i = 0; i < 2; i+= 2)
-	{
-		masterIncDecButtons->stepButtons[i]->addListener(masterEncoder.get());
-		masterIncDecButtons->stepButtons[i + 1]->addListener(masterEncoder.get());
-	}
-
-	for(auto i = 0; i < 16; ++i)
-	{
-		masterIncDecButtons->stepButtons[0]->addListener(stepEncoders->encoders[i].get());
-		masterIncDecButtons->stepButtons[1]->addListener(stepEncoders->encoders[i].get());
 	}
 
 	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);

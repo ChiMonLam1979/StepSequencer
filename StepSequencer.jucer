@@ -38,6 +38,34 @@
               file="Source/IncButtonNormal.svg"/>
       </GROUP>
       <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
+        <FILE id="bdWAeH" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
+        <FILE id="hxOA5w" name="ButtonNormal.png" compile="0" resource="1"
+              file="Source/ButtonNormal.png"/>
+        <FILE id="m7gQqV" name="ButtonOn.png" compile="0" resource="1" file="Source/ButtonOn.png"/>
+        <FILE id="yz4ngb" name="ButtonOnAmber.png" compile="0" resource="1"
+              file="Source/ButtonOnAmber.png"/>
+        <FILE id="g0toA9" name="ButtonOnDown.png" compile="0" resource="1"
+              file="Source/ButtonOnDown.png"/>
+        <FILE id="LPvLc6" name="ButtonOnDownAmber.png" compile="0" resource="1"
+              file="Source/ButtonOnDownAmber.png"/>
+        <FILE id="qJymW4" name="ButtonOnDownRed.png" compile="0" resource="1"
+              file="Source/ButtonOnDownRed.png"/>
+        <FILE id="yvOQ81" name="ButtonOnOver.png" compile="0" resource="1"
+              file="Source/ButtonOnOver.png"/>
+        <FILE id="er2yZI" name="ButtonOnOverAmber.png" compile="0" resource="1"
+              file="Source/ButtonOnOverAmber.png"/>
+        <FILE id="lOlEmB" name="ButtonOnOverRed.png" compile="0" resource="1"
+              file="Source/ButtonOnOverRed.png"/>
+        <FILE id="lR8KlK" name="ButtonOnRed.png" compile="0" resource="1" file="Source/ButtonOnRed.png"/>
+        <FILE id="InUtBw" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
+        <FILE id="n6DBal" name="DecButtonDown.png" compile="0" resource="1"
+              file="Source/DecButtonDown.png"/>
+        <FILE id="TazP8G" name="DecButtonNormal.png" compile="0" resource="1"
+              file="Source/DecButtonNormal.png"/>
+        <FILE id="fQczqv" name="IncButtonDown.png" compile="0" resource="1"
+              file="Source/IncButtonDown.png"/>
+        <FILE id="zfIskV" name="IncButtonNormal.png" compile="0" resource="1"
+              file="Source/IncButtonNormal.png"/>
         <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
         <FILE id="ub1afL" name="EncoderThumb.png" compile="0" resource="1"
               file="Source/EncoderThumb.png"/>
@@ -114,6 +142,12 @@
         </GROUP>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{74523AE0-32CF-3D0A-2BD3-A994BA6E4FC3}" name="Services">
+          <FILE id="PJpxpR" name="IncDecButtonListenerService.cpp" compile="1"
+                resource="0" file="Source/IncDecButtonListenerService.cpp"/>
+          <FILE id="omYx20" name="IncDecButtonListenerService.h" compile="0"
+                resource="0" file="Source/IncDecButtonListenerService.h"/>
+        </GROUP>
         <GROUP id="{493F81B9-17D0-2625-A063-FEDC8D110C18}" name="Drawables">
           <FILE id="fOmdXe" name="DrawablesCache.cpp" compile="1" resource="0"
                 file="Source/DrawablesCache.cpp"/>
