@@ -53,7 +53,7 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 		parameters.push_back(std::move(stepButtonParameter));
 
-		auto noteLengthEncoderParameter = std::make_unique<AudioParameterFloat>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0.0f, 1.0f, DefaultValues::DefualtNoteLengthFactor);
+		auto noteLengthEncoderParameter = std::make_unique<AudioParameterInt>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0, 127, DefaultValues::DefaultNoteLengthValue);
 
 		parameters.push_back(std::move(noteLengthEncoderParameter));
 

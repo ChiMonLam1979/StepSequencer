@@ -16,7 +16,7 @@ NoteLengthHandler::~NoteLengthHandler()
 
 void NoteLengthHandler::parameterChanged(const String& parameterID, float newValue)
 {
-	auto length = static_cast<float>(newValue);
+	auto length = static_cast<float>(newValue) / 127;
 	auto index = noteLengthDictionary.find(parameterID);
 
 	noteLengths[index->second] = std::ceil(length *samplesPerNoteDivision);
