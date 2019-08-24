@@ -14,7 +14,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	transportLEDs			= std::make_unique<ChaseLEDs>(p);
 	masterEncoderLED		= std::make_unique<LED>();
 	masterEncoder			= std::make_unique<MasterEncoder>(ParameterNames::GroupEncoderName, stepEncoders, *masterEncoderLED);
-	masterIncDecButtons		= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 2);
+	masterIncDecButtons		= std::make_unique<StepButtons>(Enums::MasterIncDecButtons, ParameterNames::IncDecButtonsNames, 2);
 
 	for(auto i = 0; i < 16; i++)
 	{
@@ -35,6 +35,12 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	{
 		masterIncDecButtons->stepButtons[i]->addListener(masterEncoder.get());
 		masterIncDecButtons->stepButtons[i + 1]->addListener(masterEncoder.get());
+	}
+
+	for(auto i = 0; i < 16; ++i)
+	{
+		masterIncDecButtons->stepButtons[0]->addListener(stepEncoders->encoders[i].get());
+		masterIncDecButtons->stepButtons[1]->addListener(stepEncoders->encoders[i].get());
 	}
 
 	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);

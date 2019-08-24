@@ -43,7 +43,17 @@ void Encoder::buttonClicked(Button* button)
 		setValue(getValue() - 1);
 	}
 
-	else
+	else if (buttonType == Enums::MasterIncButton && isGrouped)
+	{
+		setValue(getValue() + 1);
+	}
+
+	else if (buttonType == Enums::MasterDecButton && isGrouped)
+	{
+		setValue(getValue() - 1);
+	}
+
+	else if (buttonType == Enums::SelectorButton)
 	{
 		isCourseMode = !isCourseMode;
 		isGrouped = !isGrouped;

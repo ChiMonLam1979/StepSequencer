@@ -24,7 +24,10 @@ namespace Enums
 		SelectorButton,
 		ToggleButton,
 		IncDecButtons,
+		MasterIncDecButtons,
 		IncButton,
-		DecButton
+		DecButton,
+		MasterIncButton,
+		MasterDecButton
 	};
 }

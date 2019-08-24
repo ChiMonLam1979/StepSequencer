@@ -13,6 +13,15 @@ StepButtons::StepButtons(Enums::StepButtonType buttonType, const StringArray& na
 			stepButtons.push_back(std::move(button));
 		}
 	}
+	else if(buttonType == Enums::MasterIncDecButtons)
+	{
+		for (auto i = 0; i < numberOfButtons; i++)
+		{
+			auto isEven = maths::mod(i, 2) == 0;
+			auto button = std::make_unique<StepButton>(names[i], DrawableButton::ButtonStyle::ImageFitted, isEven ? Enums::MasterDecButton : Enums::MasterIncButton);
+			stepButtons.push_back(std::move(button));
+		}
+	}
 	else
 	{
 		for (auto i = 0; i < numberOfButtons; i++)
