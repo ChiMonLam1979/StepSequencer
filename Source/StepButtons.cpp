@@ -8,7 +8,7 @@ StepButtons::StepButtons(Enums::StepButtonType buttonType, const StringArray& na
 	{
 	case Enums::IncDecButtons: CreateIncDecButtons(numberOfButtons, names);
 		break;
-	case Enums::MasterIncDecButtons: CreateIncDecButtons(numberOfButtons, names);
+	case Enums::MasterIncDecButtons: CreateMasterIncDecButtons(numberOfButtons, names);
 		break;
 	default: CreateButtons(numberOfButtons, names, buttonType);
 	}
