@@ -197,4 +197,77 @@ namespace IDs
 		SelectedEncoderFifteenID,
 		SelectedEncoderSixteenID
 	};
+
+	const String IncButtonOneID			{ "Inc Button One ID"		};
+	const String IncButtonTwoID			{ "Inc Button Two ID"		};
+	const String IncButtonThreeID		{ "Inc Button Three ID"		};
+	const String IncButtonFourID		{ "Inc Button Four ID"		};
+	const String IncButtonFiveID		{ "Inc Button Five ID"		};
+	const String IncButtonSixID			{ "Inc Button Six ID"		};
+	const String IncButtonSevenID		{ "Inc Button Seven ID"		};
+	const String IncButtonEightID		{ "Inc Button Eight ID"		};
+	const String IncButtonNineID		{ "Inc Button Nine ID"		};
+	const String IncButtonTenID			{ "Inc Button Ten ID"		};
+	const String IncButtonElevenID		{ "Inc Button Eleven ID"	};
+	const String IncButtonTwelveID		{ "Inc Button Twelve ID"	};
+	const String IncButtonThirteenID	{ "Inc Button Thirteen ID"	};
+	const String IncButtonFourteenID	{ "Inc Button Fourteen ID"	};
+	const String IncButtonFifteenID		{ "Inc Button Fifteen ID"	};
+	const String IncButtonSixteenID		{ "Inc Button Sixteen ID"	};
+
+	const String DecButtonOneID			{ "Dec Button One ID"		};
+	const String DecButtonTwoID			{ "Dec Button Two ID"		};
+	const String DecButtonThreeID		{ "Dec Button Three ID"		};
+	const String DecButtonFourID		{ "Dec Button Four ID"		};
+	const String DecButtonFiveID		{ "Dec Button Five ID"		};
+	const String DecButtonSixID			{ "Dec Button Six ID"		};
+	const String DecButtonSevenID		{ "Dec Button Seven ID"		};
+	const String DecButtonEightID		{ "Dec Button Eight ID"		};
+	const String DecButtonNineID		{ "Dec Button Nine ID"		};
+	const String DecButtonTenID			{ "Dec Button Ten ID"		};
+	const String DecButtonElevenID		{ "Dec Button Eleven ID"	};
+	const String DecButtonTwelveID		{ "Dec Button Twelve ID"	};
+	const String DecButtonThirteenID	{ "Dec Button Thirteen ID"	};
+	const String DecButtonFourteenID	{ "Dec Button Fourteen ID"	};
+	const String DecButtonFifteenID		{ "Dec Button Fifteen ID"	};
+	const String DecButtonSixteenID		{ "Dec Button Sixteen ID"	};
+
+	const StringArray IncDecButtonsIDs
+	{
+		IncButtonOneID,
+		DecButtonOneID,
+		IncButtonTwoID,
+		DecButtonTwoID,
+		IncButtonThreeID,
+		DecButtonThreeID,
+		IncButtonFourID,
+		DecButtonFourID,
+		IncButtonFiveID,
+		DecButtonFiveID,
+		IncButtonSixID,
+		DecButtonSixID,
+		IncButtonSevenID,
+		DecButtonSevenID,
+		IncButtonEightID,
+		DecButtonEightID,
+		IncButtonNineID,
+		DecButtonNineID,
+		IncButtonTenID,
+		DecButtonTenID,
+		IncButtonElevenID,
+		DecButtonElevenID,
+		IncButtonTwelveID,
+		DecButtonTwelveID,
+		IncButtonThirteenID,
+		DecButtonThirteenID,
+		IncButtonFourteenID,
+		DecButtonFourteenID,
+		IncButtonFifteenID,
+		DecButtonFifteenID,
+		IncButtonSixteenID,
+		DecButtonSixteenID
+	};
+
+	const String MasterIncButtonID{ "MasterInc Button ID" };
+	const String MasterDecButtonID{ "MasterDec Button ID" };
 }

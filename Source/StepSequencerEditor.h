@@ -38,12 +38,14 @@ public:
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	stepButtonAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	selectorButtonAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	incDecButtonAttachments;
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	masterIncDecButtonAttachments;
 
-	std::unique_ptr<SliderAttachmentUpdaterService>					encoderAttachmentUpdater;
-	std::unique_ptr<RadioButtonChoiceAttachment>					stepEncoderChoicesAttachment;
+	std::unique_ptr<SliderAttachmentUpdaterService>				encoderAttachmentUpdater;
+	std::unique_ptr<RadioButtonChoiceAttachment>				stepEncoderChoicesAttachment;
 
-	std::unique_ptr<ButtonAttachmentUpdaterService>					buttonAttachmentUpdater;
-	std::unique_ptr<BoolButtonAttachment>							stepButtonSelectorAttachment;
+	std::unique_ptr<ButtonAttachmentUpdaterService>				buttonAttachmentUpdater;
+	std::unique_ptr<BoolButtonAttachment>						stepButtonSelectorAttachment;
 
 private:
 

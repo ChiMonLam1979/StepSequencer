@@ -66,6 +66,25 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 		parameters.push_back(std::move(selectedEncodersParamter));
 	}
 
+	for(auto i = 0; i < 16; i++)
+	{
+		auto incButtonParameter = std::make_unique<AudioParameterBool>(IDs::IncDecButtonsIDs[(i * 2) + 1], ParameterNames::IncDecButtonsNames[(i * 2) + 1], false);
+
+		parameters.push_back(std::move(incButtonParameter));
+
+		auto decButtonParameter = std::make_unique<AudioParameterBool>(IDs::IncDecButtonsIDs[(i * 2)], ParameterNames::IncDecButtonsNames[(i * 2)], false);
+
+		parameters.push_back(std::move(decButtonParameter));
+	}
+
+	auto masterIncButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterIncButtonID, ParameterNames::MasterIncButtonName, false);
+
+	parameters.push_back(std::move(masterIncButtonParameter));
+
+	auto masterDecButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterDecButtonID, ParameterNames::MasterDecButtonName, false);
+
+	parameters.push_back(std::move(masterDecButtonParameter));
+
 	auto stepChoicesParameter = std::make_unique<AudioParameterChoice>(IDs::StepChoicesID, ParameterNames::StepChoicesName, ParameterChoices::StepChoices, 0);
 
 	parameters.push_back(std::move(stepChoicesParameter));

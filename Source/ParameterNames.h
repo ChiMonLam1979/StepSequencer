@@ -337,4 +337,7 @@ namespace  ParameterNames
 		IncButtonSixteenName,
 		DecButtonSixteenName
 	};
+
+	const String MasterIncButtonName{ "MasterInc Button Name" };
+	const String MasterDecButtonName{ "MasterDec Button Name" };
 }
