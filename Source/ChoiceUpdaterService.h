@@ -8,7 +8,7 @@ public:
 	ChoiceUpdaterService();
 	virtual ~ChoiceUpdaterService();
 
-	virtual void UpdateParameters(String choice) = 0;
+	virtual void UpdateParameters(int value) = 0;
 
 private:
 

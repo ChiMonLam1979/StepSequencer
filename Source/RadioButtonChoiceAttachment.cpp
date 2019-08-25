@@ -53,7 +53,7 @@ void RadioButtonChoiceAttachment::Clicked(const String& choice)
 
 void RadioButtonChoiceAttachment::parameterChanged(const String& parameterID, float newValue)
 {
-	const auto choice = ParameterChoices::StepChoices[newValue];
+	const auto value = static_cast<int>(newValue);
 
-	updaterService.UpdateParameters(choice);
+	updaterService.UpdateParameters(value);
 }

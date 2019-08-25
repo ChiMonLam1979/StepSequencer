@@ -22,6 +22,7 @@ private:
 	void SetAmberSelectImages();
 	void SetIncButtonImages();
 	void SetDecButtonImages();
+	void SetSelectAllButtonImages();
 
 	SharedResourcePointer<DrawablesCache> svgCache;
 };

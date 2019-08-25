@@ -5,7 +5,9 @@ namespace  ParameterNames
 {
 	const String StepChoicesName		{ "Step Choices Name"			};
 
-	const String GroupEncoderName		{ "Group Encoder Name"			 };
+	const String GroupEncoderName		{ "Group Encoder Name"			};
+
+	const String SelectAllButtonName	{ "Select All Button Name"		};
 
 	const String EncodersSelectName		{ "Encoders Select Name"		};
 

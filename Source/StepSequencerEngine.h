@@ -9,6 +9,7 @@
 #include "PatternService.h"
 #include "EncodersSelectorHandler.h"
 #include "GroupEncoderHandler.h"
+#include "SelectAllButtonHandler.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -65,6 +66,7 @@ private:
 	StepChoicesHandler		stepChoicesHandler;
 	EncodersSelectorHandler	encodersSelectorHandler;
 	GroupEncoderHandler		groupEncoderHandler;
+	SelectAllButtonHandler	selectAllButtonHandler;
 
 	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, stepHandler };
 

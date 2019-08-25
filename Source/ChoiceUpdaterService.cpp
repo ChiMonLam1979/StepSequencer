@@ -2,10 +2,8 @@
 
 ChoiceUpdaterService::ChoiceUpdaterService()
 {
-	
 }
 
 ChoiceUpdaterService::~ChoiceUpdaterService()
 {
-	
 }

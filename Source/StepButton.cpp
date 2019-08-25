@@ -26,6 +26,8 @@ StepButton::StepButton(const String& name, ButtonStyle style, Enums::StepButtonT
 		break;
 	case Enums::MasterDecButton: SetDecButtonImages();
 		break;
+	case Enums::SelectAllToggleButton: SetSelectAllButtonImages();
+		break;
 	default: SetGreenImages();
 		break;
 	}
@@ -137,5 +139,19 @@ void StepButton::SetDecButtonImages()
 		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonNormal_svg, BinaryData::DecButtonNormal_svgSize),
 		nullptr,
 		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::DecButtonDown_svg, BinaryData::DecButtonDown_svgSize)
+	);
+}
+
+void StepButton::SetSelectAllButtonImages()
+{
+	setImages
+	(
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::BlankButtonNormal_svg, BinaryData::BlankButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::BlankButtonDown_svg, BinaryData::BlankButtonDown_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::BlankButtonNormal_svg, BinaryData::BlankButtonNormal_svgSize),
+		nullptr,
+		svgCache->GetOrUpdateDrawableFromCache((void*)BinaryData::BlankButtonDown_svg, BinaryData::BlankButtonDown_svgSize)
 	);
 }

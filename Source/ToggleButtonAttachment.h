@@ -3,19 +3,21 @@
 #include "ChoiceUpdaterService.h"
 #include "StepButton.h"
 
-class BoolButtonAttachment : public Component,
+class ToggleButtonAttachment : public Component,
 							 public AudioProcessorValueTreeState::Listener
 {
 public:
 
-	BoolButtonAttachment
+	ToggleButtonAttachment
 	(
 		ChoiceUpdaterService& updaterService,
 		AudioProcessorValueTreeState& treeState,
-		const String& parameterId
+		const String& parameterId,
+		const String& paramterName,
+		Enums::StepButtonType buttonType
 	);
 
-	~BoolButtonAttachment();
+	~ToggleButtonAttachment();
 
 	void Clicked(bool value);
 	void parameterChanged(const String& parameterID, float newValue) override;

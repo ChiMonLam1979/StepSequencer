@@ -15,7 +15,7 @@ public:
 
 	~SliderAttachmentUpdaterService();
 
-	void UpdateParameters(String choice) override;
+	void UpdateParameters(int value) override;
 
 	void AttachEncodersToPitch();
 	void AttachEncodersToNoteLength();

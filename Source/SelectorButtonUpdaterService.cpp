@@ -1,7 +1,7 @@
-#include "ButtonAttachmentUpdaterService.h"
+#include "SelectorButtonUpdaterService.h"
 #include "ParameterChoices.h"
 
-ButtonAttachmentUpdaterService::ButtonAttachmentUpdaterService(
+SelectorButtonUpdaterService::SelectorButtonUpdaterService(
 	std::unique_ptr<StepButtons>& stepButtons,
 	std::unique_ptr<StepButtons>& selectorButtons,
 	std::unique_ptr<StepEncoders>&	stepEncoders)
@@ -12,12 +12,14 @@ ButtonAttachmentUpdaterService::ButtonAttachmentUpdaterService(
 {
 }
 
-ButtonAttachmentUpdaterService::~ButtonAttachmentUpdaterService()
+SelectorButtonUpdaterService::~SelectorButtonUpdaterService()
 {
 }
 
-void ButtonAttachmentUpdaterService::UpdateParameters(String choice)
+void SelectorButtonUpdaterService::UpdateParameters(int value)
 {
+	const auto choice = ParameterChoices::stepSelectorChoices[value];
+
 	if (choice == ParameterChoices::stepEncodersSelect)
 	{
 		ShowEncoderSelectButtons();
@@ -29,7 +31,7 @@ void ButtonAttachmentUpdaterService::UpdateParameters(String choice)
 	}
 }
 
-void ButtonAttachmentUpdaterService::ShowEncoderSelectButtons()
+void SelectorButtonUpdaterService::ShowEncoderSelectButtons()
 {
 	for(auto i = 0; i < 16; ++i)
 	{
@@ -39,7 +41,7 @@ void ButtonAttachmentUpdaterService::ShowEncoderSelectButtons()
 	}
 }
 
-void ButtonAttachmentUpdaterService::ShowGateButtons()
+void SelectorButtonUpdaterService::ShowGateButtons()
 {
 	for (auto i = 0; i < 16; ++i)
 	{

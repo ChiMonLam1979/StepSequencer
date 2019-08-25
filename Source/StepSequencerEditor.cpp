@@ -37,8 +37,11 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	encoderAttachmentUpdater			= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
 	stepEncoderChoicesAttachment		= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
 
-	buttonAttachmentUpdater				= std::make_unique<ButtonAttachmentUpdaterService>(stepButtons, selectorButtons, stepEncoders);
-	stepButtonSelectorAttachment		= std::make_unique<BoolButtonAttachment>(*buttonAttachmentUpdater, processor.treeState, IDs::EncodersSelectID);
+	selectorButtonAttachmentUpdater				= std::make_unique<SelectorButtonUpdaterService>(stepButtons, selectorButtons, stepEncoders);
+	stepButtonSelectorAttachment		= std::make_unique<ToggleButtonAttachment>(*selectorButtonAttachmentUpdater, processor.treeState, IDs::EncodersSelectID, ParameterNames::EncodersSelectName, Enums::ToggleButton);
+
+	selectAllButtonAttachmentUpdater = std::make_unique<SelectAllButtonsUpdaterService>(stepButtons, selectorButtons);
+	selectAllButtonAttachment = std::make_unique<ToggleButtonAttachment>(*selectAllButtonAttachmentUpdater, processor.treeState, IDs::SelectAllButtonID, ParameterNames::SelectAllButtonName, Enums::SelectAllToggleButton);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
@@ -53,6 +56,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(masterEncoderLED.get());
 	addAndMakeVisible(stepIncDecButtons.get());
 	addAndMakeVisible(masterIncDecButtons.get());
+	addAndMakeVisible(selectAllButtonAttachment.get());
 
 	selectorButtons->toBehind(stepButtons.get());
 }
@@ -106,6 +110,9 @@ void StepSequencerEditor::resized()
 		buttonBox.items.add(FlexItemFactory::makeButtonItem(*stepButton));
 	}
 
+	FlexBox leftMiddleButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
+	leftMiddleButtonBox.items.add(FlexItemFactory::makeButtonItem(*selectAllButtonAttachment));
+
 	FlexBox leftEncoderBox = FlexBoxFactory::makeLeftColumnEncodersBox();
 	leftEncoderBox.items.add(FlexItemFactory::makeEncoderItem(*masterEncoder));
 
@@ -121,7 +128,7 @@ void StepSequencerEditor::resized()
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
-								FlexItem().withFlex(0.53),
+								FlexItem(leftMiddleButtonBox).withFlex(0.53),
 								FlexItem(leftEncoderBox).withFlex(0.18),
 								FlexItem().withFlex(0.01),
 								FlexItem(leftColumnIncButtonsBox).withFlex(0.04),

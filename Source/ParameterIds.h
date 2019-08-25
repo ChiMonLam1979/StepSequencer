@@ -7,11 +7,13 @@ namespace IDs
 
 	const String ButtonTypePropertyID	{ "ButtonType"				};
 
+	const String SelectAllButtonID		{ "Select All Button"		};
+
 	const String GroupEncoderId			{ "Group Encoder"			};
 
-	const String EncodersSelectID		{ "Encoders Select "		};
+	const String EncodersSelectID		{ "Encoders Select"			};
 
-	const String StepChoicesID			{ "Step Choices "			};
+	const String StepChoicesID			{ "Step Choices"			};
 
 	const String StepButtonOneID		{ "Step Button One"			};
 	const String StepButtonTwoID		{ "Step Button Two"			};

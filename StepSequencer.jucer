@@ -18,6 +18,10 @@
           <FILE id="OEyK9k" name="LEDOnGreen.png" compile="0" resource="1" file="Source/LEDOnGreen.png"/>
         </GROUP>
         <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
+          <FILE id="HNpDUR" name="BlankButtonDown.svg" compile="0" resource="1"
+                file="Source/BlankButtonDown.svg"/>
+          <FILE id="dOur7B" name="BlankButtonNormal.svg" compile="0" resource="1"
+                file="Source/BlankButtonNormal.svg"/>
           <FILE id="sMyy3M" name="ButtonDown.svg" compile="0" resource="1" file="Source/ButtonDown.svg"/>
           <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
                 file="Source/ButtonNormal.svg"/>
@@ -94,6 +98,10 @@
                 file="Source/NoteLengthHandler.cpp"/>
           <FILE id="qDE6mW" name="NoteLengthHandler.h" compile="0" resource="0"
                 file="Source/NoteLengthHandler.h"/>
+          <FILE id="dOQoqL" name="SelectAllButtonHandler.cpp" compile="1" resource="0"
+                file="Source/SelectAllButtonHandler.cpp"/>
+          <FILE id="mi0F1m" name="SelectAllButtonHandler.h" compile="0" resource="0"
+                file="Source/SelectAllButtonHandler.h"/>
           <FILE id="thwnI0" name="SelectedEncodersHandler.cpp" compile="1" resource="0"
                 file="Source/SelectedEncodersHandler.cpp"/>
           <FILE id="Y7WkLt" name="SelectedEncodersHandler.h" compile="0" resource="0"
@@ -161,14 +169,18 @@
                 file="Source/DrawablesCache.h"/>
         </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
-          <FILE id="Y7vAGm" name="ButtonAttachmentUpdaterService.cpp" compile="1"
-                resource="0" file="Source/ButtonAttachmentUpdaterService.cpp"/>
-          <FILE id="HPmkSy" name="ButtonAttachmentUpdaterService.h" compile="0"
-                resource="0" file="Source/ButtonAttachmentUpdaterService.h"/>
-          <FILE id="cqbqhv" name="BoolButtonAttachment.cpp" compile="1" resource="0"
-                file="Source/BoolButtonAttachment.cpp"/>
-          <FILE id="YXb9i8" name="BoolButtonAttachment.h" compile="0" resource="0"
-                file="Source/BoolButtonAttachment.h"/>
+          <FILE id="QYSaTd" name="SelectAllButtonsUpdaterService.cpp" compile="1"
+                resource="0" file="Source/SelectAllButtonsUpdaterService.cpp"/>
+          <FILE id="G2Z1x4" name="SelectAllButtonsUpdaterService.h" compile="0"
+                resource="0" file="Source/SelectAllButtonsUpdaterService.h"/>
+          <FILE id="Y7vAGm" name="SelectorButtonUpdaterService.cpp" compile="1"
+                resource="0" file="Source/SelectorButtonUpdaterService.cpp"/>
+          <FILE id="HPmkSy" name="SelectorButtonUpdaterService.h" compile="0"
+                resource="0" file="Source/SelectorButtonUpdaterService.h"/>
+          <FILE id="cqbqhv" name="ToggleButtonAttachment.cpp" compile="1" resource="0"
+                file="Source/ToggleButtonAttachment.cpp"/>
+          <FILE id="YXb9i8" name="ToggleButtonAttachment.h" compile="0" resource="0"
+                file="Source/ToggleButtonAttachment.h"/>
           <FILE id="nyXkvW" name="ChoiceUpdaterService.cpp" compile="1" resource="0"
                 file="Source/ChoiceUpdaterService.cpp"/>
           <FILE id="hf7efA" name="ChoiceUpdaterService.h" compile="0" resource="0"

@@ -4,20 +4,20 @@
 #include "StepButtons.h"
 #include "StepEncoders.h"
 
-class ButtonAttachmentUpdaterService: public ChoiceUpdaterService
+class SelectorButtonUpdaterService: public ChoiceUpdaterService
 {
 public:
 
-	ButtonAttachmentUpdaterService
+	SelectorButtonUpdaterService
 	(
 		std::unique_ptr<StepButtons>& stepButtons,
 		std::unique_ptr<StepButtons>& selectorButtons,
 		std::unique_ptr<StepEncoders>&	stepEncoders
 	);
 
-	~ButtonAttachmentUpdaterService();
+	~SelectorButtonUpdaterService();
 
-	void UpdateParameters(String choice) override;
+	void UpdateParameters(int value) override;
 
 	void ShowGateButtons();
 	void ShowEncoderSelectButtons();

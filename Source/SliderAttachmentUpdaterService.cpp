@@ -18,8 +18,10 @@ SliderAttachmentUpdaterService::~SliderAttachmentUpdaterService()
 {
 }
 
-void SliderAttachmentUpdaterService::UpdateParameters(String choice)
+void SliderAttachmentUpdaterService::UpdateParameters(int value)
 {
+	const auto choice = ParameterChoices::StepChoices[value];
+
 	if (choice == ParameterChoices::Pitch)
 	{
 		AttachEncodersToPitch();
