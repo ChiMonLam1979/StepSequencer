@@ -6,6 +6,8 @@
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
       <GROUP id="{DDECB730-73BF-E3D4-D418-A882ADBB52F1}" name="Images">
         <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
+          <FILE id="K2id20" name="BackPanelTextured.png" compile="0" resource="1"
+                file="Source/BackPanelTextured.png"/>
           <FILE id="vDEZO7" name="BackPanelTextures.png" compile="0" resource="1"
                 file="Source/BackPanelTextures.png"/>
           <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
