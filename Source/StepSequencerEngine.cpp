@@ -45,23 +45,23 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 	for(auto i = 0; i < 16; i++)
 	{
-		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, DefaultValues::DefaultPitch);
+		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, DefaultValues::Pitch);
 
 		parameters.push_back(std::move(stepEncoderParameter));
 
-		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], DefaultValues::DefaultGate);
+		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], DefaultValues::Gate);
 
 		parameters.push_back(std::move(stepButtonParameter));
 
-		auto noteLengthEncoderParameter = std::make_unique<AudioParameterInt>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0, 127, DefaultValues::DefaultNoteLengthValue);
+		auto noteLengthEncoderParameter = std::make_unique<AudioParameterInt>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0, 127, DefaultValues::NoteLengthValue);
 
 		parameters.push_back(std::move(noteLengthEncoderParameter));
 
-		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, DefaultValues::DefaultVelocity);
+		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, DefaultValues::Velocity);
 
 		parameters.push_back(std::move(velocityEncoderParameter));
 
-		auto selectedEncodersParamter = std::make_unique<AudioParameterBool>(IDs::SelectedEncoderIDs[i], ParameterNames::SelectedEncoderNames[i], DefaultValues::DefaultEncoderSelect);
+		auto selectedEncodersParamter = std::make_unique<AudioParameterBool>(IDs::SelectedEncoderIDs[i], ParameterNames::SelectedEncoderNames[i], DefaultValues::EncoderSelectState);
 
 		parameters.push_back(std::move(selectedEncodersParamter));
 	}
@@ -70,13 +70,13 @@ AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParamet
 
 	parameters.push_back(std::move(stepChoicesParameter));
 
-	auto encodersSelectorParameter = std::make_unique<AudioParameterBool>(IDs::EncodersSelectID, ParameterNames::EncodersSelectName, DefaultValues::DefaultEncoderSelect);
+	auto encodersSelectorParameter = std::make_unique<AudioParameterBool>(IDs::EncodersSelectID, ParameterNames::EncodersSelectName, DefaultValues::EncoderSelectState);
 
 	parameters.push_back(std::move(encodersSelectorParameter));
 
-	auto groupEncoderParamter = std::make_unique<AudioParameterInt>(IDs::GroupEncoderId, ParameterNames::GroupEncoderName, 0, 127, 0);
+	auto groupEncoderParameter = std::make_unique<AudioParameterInt>(IDs::GroupEncoderId, ParameterNames::GroupEncoderName, 0, 127, 0);
 
-	parameters.push_back(std::move(groupEncoderParamter));
+	parameters.push_back(std::move(groupEncoderParameter));
 
 	return { parameters.begin(), parameters.end() };
 }

@@ -4,74 +4,48 @@
               pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut,pluginWantsMidiIn">
   <MAINGROUP id="GTxK4S" name="StepSequencer">
     <GROUP id="{E55A7DE1-6925-92B9-B27E-AA92AA4B6AF0}" name="Source">
-      <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
-        <FILE id="vDEZO7" name="BackPanelTextures.png" compile="0" resource="1"
-              file="Source/BackPanelTextures.png"/>
-        <FILE id="sMyy3M" name="ButtonDown.svg" compile="0" resource="1" file="Source/ButtonDown.svg"/>
-        <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
-              file="Source/ButtonNormal.svg"/>
-        <FILE id="uhKeAK" name="ButtonOn.svg" compile="0" resource="1" file="Source/ButtonOn.svg"/>
-        <FILE id="pi4Izp" name="ButtonOnAmber.svg" compile="0" resource="1"
-              file="Source/ButtonOnAmber.svg"/>
-        <FILE id="KpkS4u" name="ButtonOnDown.svg" compile="0" resource="1"
-              file="Source/ButtonOnDown.svg"/>
-        <FILE id="OS31yF" name="ButtonOnDownAmber.svg" compile="0" resource="1"
-              file="Source/ButtonOnDownAmber.svg"/>
-        <FILE id="NphgQv" name="ButtonOnDownRed.svg" compile="0" resource="1"
-              file="Source/ButtonOnDownRed.svg"/>
-        <FILE id="hKw4YO" name="ButtonOnOver.svg" compile="0" resource="1"
-              file="Source/ButtonOnOver.svg"/>
-        <FILE id="zo6crG" name="ButtonOnOverAmber.svg" compile="0" resource="1"
-              file="Source/ButtonOnOverAmber.svg"/>
-        <FILE id="kxEizl" name="ButtonOnOverRed.svg" compile="0" resource="1"
-              file="Source/ButtonOnOverRed.svg"/>
-        <FILE id="EVDcUw" name="ButtonOnRed.svg" compile="0" resource="1" file="Source/ButtonOnRed.svg"/>
-        <FILE id="JPgBRY" name="ButtonOver.svg" compile="0" resource="1" file="Source/ButtonOver.svg"/>
-        <FILE id="S0UaSm" name="DecButtonDown.svg" compile="0" resource="1"
-              file="Source/DecButtonDown.svg"/>
-        <FILE id="AEPJab" name="DecButtonNormal.svg" compile="0" resource="1"
-              file="Source/DecButtonNormal.svg"/>
-        <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
-        <FILE id="L5TO2E" name="IncButtonDown.svg" compile="0" resource="1"
-              file="Source/IncButtonDown.svg"/>
-        <FILE id="WwJwEC" name="IncButtonNormal.svg" compile="0" resource="1"
-              file="Source/IncButtonNormal.svg"/>
-      </GROUP>
-      <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
-        <FILE id="bdWAeH" name="ButtonDown.png" compile="0" resource="1" file="Source/ButtonDown.png"/>
-        <FILE id="hxOA5w" name="ButtonNormal.png" compile="0" resource="1"
-              file="Source/ButtonNormal.png"/>
-        <FILE id="m7gQqV" name="ButtonOn.png" compile="0" resource="1" file="Source/ButtonOn.png"/>
-        <FILE id="yz4ngb" name="ButtonOnAmber.png" compile="0" resource="1"
-              file="Source/ButtonOnAmber.png"/>
-        <FILE id="g0toA9" name="ButtonOnDown.png" compile="0" resource="1"
-              file="Source/ButtonOnDown.png"/>
-        <FILE id="LPvLc6" name="ButtonOnDownAmber.png" compile="0" resource="1"
-              file="Source/ButtonOnDownAmber.png"/>
-        <FILE id="qJymW4" name="ButtonOnDownRed.png" compile="0" resource="1"
-              file="Source/ButtonOnDownRed.png"/>
-        <FILE id="yvOQ81" name="ButtonOnOver.png" compile="0" resource="1"
-              file="Source/ButtonOnOver.png"/>
-        <FILE id="er2yZI" name="ButtonOnOverAmber.png" compile="0" resource="1"
-              file="Source/ButtonOnOverAmber.png"/>
-        <FILE id="lOlEmB" name="ButtonOnOverRed.png" compile="0" resource="1"
-              file="Source/ButtonOnOverRed.png"/>
-        <FILE id="lR8KlK" name="ButtonOnRed.png" compile="0" resource="1" file="Source/ButtonOnRed.png"/>
-        <FILE id="InUtBw" name="ButtonOver.png" compile="0" resource="1" file="Source/ButtonOver.png"/>
-        <FILE id="n6DBal" name="DecButtonDown.png" compile="0" resource="1"
-              file="Source/DecButtonDown.png"/>
-        <FILE id="TazP8G" name="DecButtonNormal.png" compile="0" resource="1"
-              file="Source/DecButtonNormal.png"/>
-        <FILE id="fQczqv" name="IncButtonDown.png" compile="0" resource="1"
-              file="Source/IncButtonDown.png"/>
-        <FILE id="zfIskV" name="IncButtonNormal.png" compile="0" resource="1"
-              file="Source/IncButtonNormal.png"/>
-        <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
-        <FILE id="ub1afL" name="EncoderThumb.png" compile="0" resource="1"
-              file="Source/EncoderThumb.png"/>
-        <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
-        <FILE id="j7C4Uz" name="LEDOnRed.png" compile="0" resource="1" file="Source/LEDOnRed.png"/>
-        <FILE id="OEyK9k" name="LEDOnGreen.png" compile="0" resource="1" file="Source/LEDOnGreen.png"/>
+      <GROUP id="{DDECB730-73BF-E3D4-D418-A882ADBB52F1}" name="Images">
+        <GROUP id="{9287D473-3CAC-A947-4990-20112985470C}" name="PNGs">
+          <FILE id="vDEZO7" name="BackPanelTextures.png" compile="0" resource="1"
+                file="Source/BackPanelTextures.png"/>
+          <FILE id="TPFKH1" name="BackPanel.png" compile="0" resource="1" file="Source/BackPanel.png"/>
+          <FILE id="ub1afL" name="EncoderThumb.png" compile="0" resource="1"
+                file="Source/EncoderThumb.png"/>
+          <FILE id="BJJ1Mt" name="LEDOff.png" compile="0" resource="1" file="Source/LEDOff.png"/>
+          <FILE id="j7C4Uz" name="LEDOnRed.png" compile="0" resource="1" file="Source/LEDOnRed.png"/>
+          <FILE id="OEyK9k" name="LEDOnGreen.png" compile="0" resource="1" file="Source/LEDOnGreen.png"/>
+        </GROUP>
+        <GROUP id="{8DAD9DFA-5E5D-A5D9-4B3F-BD9956AA48A7}" name="SVGs">
+          <FILE id="sMyy3M" name="ButtonDown.svg" compile="0" resource="1" file="Source/ButtonDown.svg"/>
+          <FILE id="oKvEAy" name="ButtonNormal.svg" compile="0" resource="1"
+                file="Source/ButtonNormal.svg"/>
+          <FILE id="uhKeAK" name="ButtonOn.svg" compile="0" resource="1" file="Source/ButtonOn.svg"/>
+          <FILE id="pi4Izp" name="ButtonOnAmber.svg" compile="0" resource="1"
+                file="Source/ButtonOnAmber.svg"/>
+          <FILE id="KpkS4u" name="ButtonOnDown.svg" compile="0" resource="1"
+                file="Source/ButtonOnDown.svg"/>
+          <FILE id="OS31yF" name="ButtonOnDownAmber.svg" compile="0" resource="1"
+                file="Source/ButtonOnDownAmber.svg"/>
+          <FILE id="NphgQv" name="ButtonOnDownRed.svg" compile="0" resource="1"
+                file="Source/ButtonOnDownRed.svg"/>
+          <FILE id="hKw4YO" name="ButtonOnOver.svg" compile="0" resource="1"
+                file="Source/ButtonOnOver.svg"/>
+          <FILE id="zo6crG" name="ButtonOnOverAmber.svg" compile="0" resource="1"
+                file="Source/ButtonOnOverAmber.svg"/>
+          <FILE id="kxEizl" name="ButtonOnOverRed.svg" compile="0" resource="1"
+                file="Source/ButtonOnOverRed.svg"/>
+          <FILE id="EVDcUw" name="ButtonOnRed.svg" compile="0" resource="1" file="Source/ButtonOnRed.svg"/>
+          <FILE id="JPgBRY" name="ButtonOver.svg" compile="0" resource="1" file="Source/ButtonOver.svg"/>
+          <FILE id="S0UaSm" name="DecButtonDown.svg" compile="0" resource="1"
+                file="Source/DecButtonDown.svg"/>
+          <FILE id="AEPJab" name="DecButtonNormal.svg" compile="0" resource="1"
+                file="Source/DecButtonNormal.svg"/>
+          <FILE id="HZx8fy" name="EncoderBody.svg" compile="0" resource="1" file="Source/EncoderBody.svg"/>
+          <FILE id="L5TO2E" name="IncButtonDown.svg" compile="0" resource="1"
+                file="Source/IncButtonDown.svg"/>
+          <FILE id="WwJwEC" name="IncButtonNormal.svg" compile="0" resource="1"
+                file="Source/IncButtonNormal.svg"/>
+        </GROUP>
       </GROUP>
       <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
         <FILE id="c0DPHT" name="ComponentDimensions.h" compile="0" resource="0"
@@ -142,6 +116,36 @@
         </GROUP>
       </GROUP>
       <GROUP id="{120681CF-DBF0-EF37-7D16-3C20151B52BA}" name="UI">
+        <GROUP id="{C54C12AF-3735-A7C9-EACF-E21CE63CA90F}" name="Components">
+          <GROUP id="{80AF34FD-4F24-F1D4-876E-021A89AB6112}" name="Buttons">
+            <FILE id="StqNO3" name="StepButtons.h" compile="0" resource="0" file="Source/StepButtons.h"/>
+            <FILE id="hs4eGK" name="StepButtons.cpp" compile="1" resource="0" file="Source/StepButtons.cpp"/>
+            <FILE id="sj3YOI" name="StepButton.cpp" compile="1" resource="0" file="Source/StepButton.cpp"/>
+            <FILE id="KMN9Um" name="StepButton.h" compile="0" resource="0" file="Source/StepButton.h"/>
+          </GROUP>
+          <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
+            <FILE id="PnNs1B" name="ChaseLEDs.cpp" compile="1" resource="0" file="Source/ChaseLEDs.cpp"/>
+            <FILE id="r71fHL" name="ChaseLEDs.h" compile="0" resource="0" file="Source/ChaseLEDs.h"/>
+            <FILE id="VdoYwr" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
+            <FILE id="nSNM43" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>
+          </GROUP>
+          <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
+            <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
+            <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
+            <FILE id="thUtcm" name="MasterEncoder.cpp" compile="1" resource="0"
+                  file="Source/MasterEncoder.cpp"/>
+            <FILE id="OD2aRb" name="MasterEncoder.h" compile="0" resource="0" file="Source/MasterEncoder.h"/>
+            <FILE id="bOfcEN" name="StepEncoders.cpp" compile="1" resource="0"
+                  file="Source/StepEncoders.cpp"/>
+            <FILE id="cMSKAr" name="StepEncoders.h" compile="0" resource="0" file="Source/StepEncoders.h"/>
+          </GROUP>
+        </GROUP>
+        <GROUP id="{F0F0C6FF-6299-9969-0465-18B037FA9847}" name="Factories">
+          <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="Flex">
+            <FILE id="bYhoey" name="FlexFactory.cpp" compile="1" resource="0" file="Source/FlexFactory.cpp"/>
+            <FILE id="OCSLKv" name="FlexFactory.h" compile="0" resource="0" file="Source/FlexFactory.h"/>
+          </GROUP>
+        </GROUP>
         <GROUP id="{74523AE0-32CF-3D0A-2BD3-A994BA6E4FC3}" name="Services">
           <FILE id="PJpxpR" name="IncDecButtonListenerService.cpp" compile="1"
                 resource="0" file="Source/IncDecButtonListenerService.cpp"/>
@@ -175,32 +179,6 @@
                 resource="0" file="Source/RadioButtonChoiceAttachment.cpp"/>
           <FILE id="dRqmfE" name="RadioButtonChoiceAttachment.h" compile="0"
                 resource="0" file="Source/RadioButtonChoiceAttachment.h"/>
-        </GROUP>
-        <GROUP id="{EEA0251A-3F3A-F2DB-87D5-36FB015089B3}" name="Encoders">
-          <FILE id="L3WD1Q" name="Encoder.cpp" compile="1" resource="0" file="Source/Encoder.cpp"/>
-          <FILE id="SQXtjT" name="Encoder.h" compile="0" resource="0" file="Source/Encoder.h"/>
-          <FILE id="thUtcm" name="MasterEncoder.cpp" compile="1" resource="0"
-                file="Source/MasterEncoder.cpp"/>
-          <FILE id="OD2aRb" name="MasterEncoder.h" compile="0" resource="0" file="Source/MasterEncoder.h"/>
-          <FILE id="bOfcEN" name="StepEncoders.cpp" compile="1" resource="0"
-                file="Source/StepEncoders.cpp"/>
-          <FILE id="cMSKAr" name="StepEncoders.h" compile="0" resource="0" file="Source/StepEncoders.h"/>
-        </GROUP>
-        <GROUP id="{91484D2A-962C-D293-7CF6-B979E279F116}" name="Flex">
-          <FILE id="bYhoey" name="FlexFactory.cpp" compile="1" resource="0" file="Source/FlexFactory.cpp"/>
-          <FILE id="OCSLKv" name="FlexFactory.h" compile="0" resource="0" file="Source/FlexFactory.h"/>
-        </GROUP>
-        <GROUP id="{1C93575C-6DB6-B029-B4FD-F902978742AC}" name="LEDs">
-          <FILE id="PnNs1B" name="ChaseLEDs.cpp" compile="1" resource="0" file="Source/ChaseLEDs.cpp"/>
-          <FILE id="r71fHL" name="ChaseLEDs.h" compile="0" resource="0" file="Source/ChaseLEDs.h"/>
-          <FILE id="VdoYwr" name="LED.cpp" compile="1" resource="0" file="Source/LED.cpp"/>
-          <FILE id="nSNM43" name="LED.h" compile="0" resource="0" file="Source/LED.h"/>
-        </GROUP>
-        <GROUP id="{80AF34FD-4F24-F1D4-876E-021A89AB6112}" name="Buttons">
-          <FILE id="StqNO3" name="StepButtons.h" compile="0" resource="0" file="Source/StepButtons.h"/>
-          <FILE id="hs4eGK" name="StepButtons.cpp" compile="1" resource="0" file="Source/StepButtons.cpp"/>
-          <FILE id="sj3YOI" name="StepButton.cpp" compile="1" resource="0" file="Source/StepButton.cpp"/>
-          <FILE id="KMN9Um" name="StepButton.h" compile="0" resource="0" file="Source/StepButton.h"/>
         </GROUP>
         <GROUP id="{F2073612-86B4-F15F-AE71-CCEA1BA00680}" name="LookAndFeel">
           <FILE id="QPMh1F" name="EncoderLookAndFeel.cpp" compile="1" resource="0"

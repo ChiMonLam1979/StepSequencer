@@ -8,8 +8,8 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 {
 	backPlate					= Drawable::createFromImageData(BinaryData::BackPanelTextures_png, BinaryData::BackPanelTextures_pngSize);
 	stepEncoders				= std::make_unique<StepEncoders>();
-	stepIncDecButtons			= std::make_unique<StepButtons>(Enums::IncDecButtons, ParameterNames::IncDecButtonsNames, 32);
-	stepButtons					= std::make_unique<StepButtons>(Enums::GateButton,		ParameterNames::StepButtonNames);
+	stepIncDecButtons			= std::make_unique<StepButtons>(Enums::IncDecButtons,				ParameterNames::IncDecButtonsNames, 32);
+	stepButtons					= std::make_unique<StepButtons>(Enums::GateButton,					ParameterNames::StepButtonNames);
 	selectorButtons				= std::make_unique<StepButtons>(Enums::EncoderGroupSelectorButton,	ParameterNames::EncoderSelectButtonsNames);
 	transportLEDs				= std::make_unique<ChaseLEDs>(p);
 	masterEncoderLED			= std::make_unique<LED>();

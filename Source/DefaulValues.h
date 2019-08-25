@@ -3,10 +3,11 @@
 
 namespace DefaultValues
 {
-	const int		DefaultPitch			{ 36 };
-	const uint8		DefaultVelocity			{ 100 };
-	const double	DefaultNoteLengthValue	{ 63 };
-	const double	DefaultNoteLength		{ 2756 };
-	const bool		DefaultGate				{ false };
-	const bool		DefaultEncoderSelect	{ false };
+	const int		Pitch				{ 36	};
+	const uint8		Velocity			{ 100	};
+	const double	NoteLengthValue		{ 63	};
+	const double	NoteLength			{ 2756	};
+	const int		MidiUppperRangeValue{ 127	};
+	const bool		Gate				{ false };
+	const bool		EncoderSelectState	{ false };
 }

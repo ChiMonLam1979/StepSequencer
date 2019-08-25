@@ -25,9 +25,9 @@ void Pattern::initialize()
 {
 	for(auto i = 0; i < trackLength; i++)
 	{
-		notes[i]		= DefaultValues::DefaultPitch;
-		noteLengths[i]	= DefaultValues::DefaultNoteLength;
-		velocities[i]	= DefaultValues::DefaultVelocity;
-		gates[i]		= DefaultValues::DefaultGate;
+		notes[i]		= DefaultValues::Pitch;
+		noteLengths[i]	= DefaultValues::NoteLength;
+		velocities[i]	= DefaultValues::Velocity;
+		gates[i]		= DefaultValues::Gate;
 	}
 }
