@@ -22,8 +22,9 @@ public:
 	void parameterChanged(const String& parameterID, float newValue) override;
 
 private:
-
-	AudioParameterChoice*	parameter { nullptr };
-	OwnedArray<StepButton>	buttons;
-	ChoiceUpdaterService&	updaterService;
+	AudioProcessorValueTreeState&	treeState;
+	const String&					parameterId;
+	AudioParameterChoice*			parameter { nullptr };
+	OwnedArray<StepButton>			buttons;
+	ChoiceUpdaterService&			updaterService;
 };

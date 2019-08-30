@@ -7,7 +7,9 @@ RadioButtonChoiceAttachment::RadioButtonChoiceAttachment
 	ChoiceUpdaterService& updaterService,
 	AudioProcessorValueTreeState& treeState,
 	const String& parameterId
-): 
+):
+	treeState(treeState),
+	parameterId(parameterId),
 	updaterService(updaterService)
 {
 	parameter = dynamic_cast<AudioParameterChoice*>(treeState.getParameter(parameterId));
@@ -31,6 +33,7 @@ RadioButtonChoiceAttachment::RadioButtonChoiceAttachment
 
 RadioButtonChoiceAttachment::~RadioButtonChoiceAttachment()
 {
+	treeState.removeParameterListener(parameterId, this);
 }
 
 void RadioButtonChoiceAttachment::resized()

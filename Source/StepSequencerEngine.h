@@ -1,15 +1,12 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "NoteHandler.h"
-#include "StepHandler.h"
+#include "GateHandler.h"
 #include "VelocityHandler.h"
-#include "StepChoicesHandler.h"
 #include "NoteLengthHandler.h"
 #include "Pattern.h"
 #include "PatternService.h"
-#include "EncodersSelectorHandler.h"
-#include "GroupEncoderHandler.h"
-#include "SelectAllButtonHandler.h"
+#include "ParametersFactory.h"
 
 class StepSequencerEngine  : public AudioProcessor
 {
@@ -59,16 +56,13 @@ private:
 	Pattern	pattern				{16, 1};
 
 	NoteHandler				noteHandler			{ pattern.notes };
-	StepHandler				stepHandler			{ pattern.gates };
+	GateHandler				gateHandler			{ pattern.gates };
 	NoteLengthHandler		noteLengthHandler	{ pattern.noteLengths, samplesPerNoteDivision };
-
 	VelocityHandler			velocityHandler		{ pattern.velocities };
-	StepChoicesHandler		stepChoicesHandler;
-	EncodersSelectorHandler	encodersSelectorHandler;
-	GroupEncoderHandler		groupEncoderHandler;
-	SelectAllButtonHandler	selectAllButtonHandler;
 
-	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, stepHandler };
+	PatternService patternService{ pattern, noteHandler, noteLengthHandler, velocityHandler, gateHandler };
+
+	ParametersFactory parametersFactory;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEngine)
 };

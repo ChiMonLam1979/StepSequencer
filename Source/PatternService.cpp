@@ -6,18 +6,18 @@ PatternService::PatternService
 	NoteHandler& noteHandler,
 	NoteLengthHandler& noteLengthHandler,
 	VelocityHandler& velocityHandler,
-	StepHandler& stephandler
+	GateHandler& gatehandler
 ):
 	pattern(pattern),
 	noteHandler(noteHandler),
 	noteLengthHandler(noteLengthHandler),
 	velocityHandler(velocityHandler),
-	stepHandler(stephandler)
+	gateHandler(gatehandler)
 {
 	noteHandler.notes				= pattern.notes;
 	noteLengthHandler.noteLengths	= pattern.noteLengths;
 	velocityHandler.velocities		= pattern.velocities;
-	stephandler.gates				= pattern.gates;
+	gatehandler.gates				= pattern.gates;
 }
 
 PatternService::~PatternService()

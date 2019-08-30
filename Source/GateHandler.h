@@ -1,12 +1,14 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
 
-class GroupEncoderHandler : public AudioProcessorValueTreeState::Listener
+class GateHandler : public AudioProcessorValueTreeState::Listener
 {
 public:
 
-	GroupEncoderHandler();
-	~GroupEncoderHandler();	
+	GateHandler(std::vector<bool>& gates);
+	~GateHandler();
+
+	std::vector<bool>& gates;
 
 private:
 

@@ -9,9 +9,8 @@
 #include "RadioButtonChoiceAttachment.h"
 #include "MasterEncoder.h"
 #include "IncDecButtonListenerService.h"
-#include "ToggleButtonAttachment.h"
-#include "SelectorButtonUpdaterService.h"
-#include "SelectAllButtonsUpdaterService.h"
+#include "EncodersSelectorHandler.h"
+#include "SelectAllButtonHandler.h"
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
@@ -45,11 +44,13 @@ public:
 	std::unique_ptr<SliderAttachmentUpdaterService>				encoderAttachmentUpdater;
 	std::unique_ptr<RadioButtonChoiceAttachment>				stepEncoderChoicesAttachment;
 
-	std::unique_ptr<SelectorButtonUpdaterService>				selectorButtonAttachmentUpdater;
-	std::unique_ptr<ToggleButtonAttachment>						stepButtonSelectorAttachment;
+	std::unique_ptr<StepButton>										stepButtonSelectorToggleButton;
+	std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> stepButtonSelectorToggleButtonAttachment;
+	std::unique_ptr<EncodersSelectorHandler>						encodersSelectorHandler;
 
-	std::unique_ptr<SelectAllButtonsUpdaterService>				selectAllButtonAttachmentUpdater;
-	std::unique_ptr<ToggleButtonAttachment>						selectAllButtonAttachment;
+	std::unique_ptr<StepButton>										selectAllButtonsToggleButton;
+	std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> selectAllButtonsToggleButtonAttachment;
+	std::unique_ptr<SelectAllButtonHandler>							selectAllButtonsHandler;
 
 private:
 

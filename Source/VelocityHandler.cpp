@@ -4,12 +4,10 @@
 
 VelocityHandler::VelocityHandler(std::vector<uint8>& velocities) : velocities(velocities)
 {
-	
 }
 
 VelocityHandler::~VelocityHandler()
 {
-	
 }
 
 void VelocityHandler::parameterChanged(const String& parameterID, float newValue)

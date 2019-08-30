@@ -73,6 +73,12 @@
               file="Source/ProjectColours.h"/>
       </GROUP>
       <GROUP id="{2BCEC8F9-9953-6817-A649-D5BE53F16626}" name="Engine">
+        <GROUP id="{E9AB5471-F966-989A-E04E-34D89CC7488F}" name="Factories">
+          <FILE id="Sytv8U" name="ParametersFactory.cpp" compile="1" resource="0"
+                file="Source/ParametersFactory.cpp"/>
+          <FILE id="mKx2q2" name="ParametersFactory.h" compile="0" resource="0"
+                file="Source/ParametersFactory.h"/>
+        </GROUP>
         <GROUP id="{6685447A-091A-16F8-16EF-3FC12F292FD8}" name="Models">
           <FILE id="vSlWsD" name="Pattern.h" compile="0" resource="0" file="Source/Pattern.h"/>
           <FILE id="k8RO7A" name="Pattern.cpp" compile="1" resource="0" file="Source/Pattern.cpp"/>
@@ -88,10 +94,6 @@
                 file="Source/EncodersSelectorHandler.cpp"/>
           <FILE id="KYmeS3" name="EncodersSelectorHandler.h" compile="0" resource="0"
                 file="Source/EncodersSelectorHandler.h"/>
-          <FILE id="tad2LY" name="GroupEncoderHandler.cpp" compile="1" resource="0"
-                file="Source/GroupEncoderHandler.cpp"/>
-          <FILE id="OqpuFe" name="GroupEncoderHandler.h" compile="0" resource="0"
-                file="Source/GroupEncoderHandler.h"/>
           <FILE id="hN8dBk" name="NoteHandler.cpp" compile="1" resource="0" file="Source/NoteHandler.cpp"/>
           <FILE id="Li8p3K" name="NoteHandler.h" compile="0" resource="0" file="Source/NoteHandler.h"/>
           <FILE id="E0hhrs" name="NoteLengthHandler.cpp" compile="1" resource="0"
@@ -102,16 +104,8 @@
                 file="Source/SelectAllButtonHandler.cpp"/>
           <FILE id="mi0F1m" name="SelectAllButtonHandler.h" compile="0" resource="0"
                 file="Source/SelectAllButtonHandler.h"/>
-          <FILE id="thwnI0" name="SelectedEncodersHandler.cpp" compile="1" resource="0"
-                file="Source/SelectedEncodersHandler.cpp"/>
-          <FILE id="Y7WkLt" name="SelectedEncodersHandler.h" compile="0" resource="0"
-                file="Source/SelectedEncodersHandler.h"/>
-          <FILE id="xnPJfp" name="StepChoicesHandler.cpp" compile="1" resource="0"
-                file="Source/StepChoicesHandler.cpp"/>
-          <FILE id="zPNbgQ" name="StepChoicesHandler.h" compile="0" resource="0"
-                file="Source/StepChoicesHandler.h"/>
-          <FILE id="kDqbyq" name="StepHandler.cpp" compile="1" resource="0" file="Source/StepHandler.cpp"/>
-          <FILE id="qRrmmC" name="StepHandler.h" compile="0" resource="0" file="Source/StepHandler.h"/>
+          <FILE id="kDqbyq" name="GateHandler.cpp" compile="1" resource="0" file="Source/GateHandler.cpp"/>
+          <FILE id="qRrmmC" name="GateHandler.h" compile="0" resource="0" file="Source/GateHandler.h"/>
           <FILE id="GKdn2S" name="VelocityHandler.cpp" compile="1" resource="0"
                 file="Source/VelocityHandler.cpp"/>
           <FILE id="XgDbxC" name="VelocityHandler.h" compile="0" resource="0"
@@ -169,18 +163,6 @@
                 file="Source/DrawablesCache.h"/>
         </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
-          <FILE id="QYSaTd" name="SelectAllButtonsUpdaterService.cpp" compile="1"
-                resource="0" file="Source/SelectAllButtonsUpdaterService.cpp"/>
-          <FILE id="G2Z1x4" name="SelectAllButtonsUpdaterService.h" compile="0"
-                resource="0" file="Source/SelectAllButtonsUpdaterService.h"/>
-          <FILE id="Y7vAGm" name="SelectorButtonUpdaterService.cpp" compile="1"
-                resource="0" file="Source/SelectorButtonUpdaterService.cpp"/>
-          <FILE id="HPmkSy" name="SelectorButtonUpdaterService.h" compile="0"
-                resource="0" file="Source/SelectorButtonUpdaterService.h"/>
-          <FILE id="cqbqhv" name="ToggleButtonAttachment.cpp" compile="1" resource="0"
-                file="Source/ToggleButtonAttachment.cpp"/>
-          <FILE id="YXb9i8" name="ToggleButtonAttachment.h" compile="0" resource="0"
-                file="Source/ToggleButtonAttachment.h"/>
           <FILE id="nyXkvW" name="ChoiceUpdaterService.cpp" compile="1" resource="0"
                 file="Source/ChoiceUpdaterService.cpp"/>
           <FILE id="hf7efA" name="ChoiceUpdaterService.h" compile="0" resource="0"

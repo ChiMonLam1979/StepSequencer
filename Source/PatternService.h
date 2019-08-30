@@ -3,7 +3,8 @@
 #include "NoteHandler.h"
 #include "NoteLengthHandler.h"
 #include "VelocityHandler.h"
-#include "StepHandler.h"
+#include "GateHandler.h"
+
 
 class PatternService
 {
@@ -15,7 +16,7 @@ public:
 		NoteHandler& noteHandler,
 		NoteLengthHandler& noteLengthHandler,
 		VelocityHandler& velocityHandler,
-		StepHandler& stepHandler
+		GateHandler& gateHandler
 	);
 
 	~PatternService();
@@ -28,5 +29,5 @@ private:
 	NoteHandler&		noteHandler;
 	NoteLengthHandler&	noteLengthHandler;
 	VelocityHandler&	velocityHandler;
-	StepHandler&		stepHandler;
+	GateHandler&		gateHandler;
 };
