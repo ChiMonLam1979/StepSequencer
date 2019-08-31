@@ -6,8 +6,6 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	transportLEDs					= std::make_unique<ChaseLEDs>(p);
-
 	for(auto i = 0; i < DefaultValues::NumberOfSteps; i++)
 	{
 		auto number = String(i);
@@ -18,13 +16,15 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 
 		selectorButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::SelectedEncoderID + number, *selectorButtons.stepButtons[i]));
 
-		incDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::IncButtonID + number, *stepIncDecButtons.stepButtons[(i * 2) + 1]));
+		incDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::IncButtonID + number, *stepIncButtons.stepButtons[i]));
 
-		incDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::DecButtonID + number, *stepIncDecButtons.stepButtons[(i * 2)]));
+		incDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::DecButtonID + number, *stepDecButtons.stepButtons[i]));
 	}
 
-	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterDecButtonID, *masterIncDecButtons.stepButtons[0]));
-	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterIncButtonID, *masterIncDecButtons.stepButtons[1]));
+	//masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterDecButtonID, *masterIncDecButtons.stepButtons[0]));
+	//masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterIncButtonID, *masterIncDecButtons.stepButtons[1]));
+	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterDecButtonID, masterIncButton));
+	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterIncButtonID, masterDecButton));
 
 	encoderAttachmentUpdater					= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
 
@@ -45,13 +45,19 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepEncoders);
 	addAndMakeVisible(stepButtons);
 	addAndMakeVisible(selectorButtons);
-	addAndMakeVisible(transportLEDs.get());
+	addAndMakeVisible(transportLEDs);
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
 	addAndMakeVisible(stepButtonSelectorToggleButton);
 	addAndMakeVisible(masterEncoder);
 	addAndMakeVisible(masterEncoderLED);
-	addAndMakeVisible(stepIncDecButtons);
-	addAndMakeVisible(masterIncDecButtons);
+	addAndMakeVisible(stepIncButtons);
+	addAndMakeVisible(stepDecButtons);
+
+
+	//addAndMakeVisible(masterIncDecButtons);
+	addAndMakeVisible(masterIncButton);
+	addAndMakeVisible(masterDecButton);
+
 	addAndMakeVisible(selectAllButtonsToggleButton);
 
 	selectorButtons.toBehind(&stepButtons);
@@ -68,14 +74,20 @@ void StepSequencerEditor::paint (Graphics& g)
 
 void StepSequencerEditor::resized()
 {
-	transportLEDs		->setBounds(ComponentBounds::ChaseLEDStripBounds);
+	transportLEDs		.setBounds(ComponentBounds::ChaseLEDStripBounds);
 	stepEncoders		.setBounds(getLocalBounds());
 	stepButtons			.setBounds(getLocalBounds());
 	selectorButtons		.setBounds(getLocalBounds());
 	masterEncoder		.setBounds(getLocalBounds());
 	masterEncoderLED	.setBounds(ComponentBounds::masterEncoderLEDBounds);
-	stepIncDecButtons	.setBounds(getLocalBounds());
-	masterIncDecButtons	.setBounds(getLocalBounds());
+	stepIncButtons.setBounds(getLocalBounds());
+	stepDecButtons.setBounds(getLocalBounds());
+
+
+	//masterIncDecButtons	.setBounds(getLocalBounds());
+	masterIncButton.setBounds(getLocalBounds());
+	masterDecButton.setBounds(getLocalBounds());
+
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
@@ -118,11 +130,15 @@ void StepSequencerEditor::resized()
 
 
 	FlexBox leftColumnIncButtonsBox = FlexBoxFactory::makeLeftColumnIncButtonsBox();
+	leftColumnIncButtonsBox.items.addArray({ 
+								FlexItemFactory::makeIncDecButtonsItem(masterIncButton),
+								FlexItemFactory::makeIncDecButtonsItem(masterDecButton)
+		});
 
-	for(auto& button: masterIncDecButtons.stepButtons)
-	{
-		leftColumnIncButtonsBox.items.add(FlexItemFactory::makeIncDecButtonsItem(*button));
-	}
+	//for(auto& button: masterIncDecButtons.stepButtons)
+	//{
+	//	leftColumnIncButtonsBox.items.add(FlexItemFactory::makeIncDecButtonsItem(*button));
+	//}
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
@@ -138,8 +154,8 @@ void StepSequencerEditor::resized()
 
 	for (auto i = 0; i < 16; ++i)
 	{
-		centralIncButtonsBox.items.add(FlexItemFactory::makeDecButtonsItem(*stepIncDecButtons.stepButtons[i * 2]));
-		centralIncButtonsBox.items.add(FlexItemFactory::makeIncButtonsItem(*stepIncDecButtons.stepButtons[(i * 2) + 1]));
+		centralIncButtonsBox.items.add(FlexItemFactory::makeDecButtonsItem(*stepIncButtons.stepButtons[i]));
+		centralIncButtonsBox.items.add(FlexItemFactory::makeIncButtonsItem(*stepDecButtons.stepButtons[i]));
 	}
 
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();

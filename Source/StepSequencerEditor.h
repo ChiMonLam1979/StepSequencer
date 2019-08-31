@@ -32,17 +32,23 @@ private:
 	StepSequencerEngine& processor;
 
 	std::unique_ptr<Drawable>	backPlate { Drawable::createFromImageData(BinaryData::BackPanelTextured_png, BinaryData::BackPanelTextured_pngSize) };
-	std::unique_ptr<ChaseLEDs>	transportLEDs;
 
+	ChaseLEDs					transportLEDs				{ processor };
 	StepEncoders				stepEncoders;
 	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName };
 	StepButtons					selectorButtons				{ Enums::EncoderGroupSelectorButton, ParameterNames::EncoderSelectButtonName };
-	StepButtons					stepIncDecButtons			{ Enums::IncDecButtons, ParameterNames::ButtonName, 32 };
-	StepButtons					masterIncDecButtons			{ Enums::MasterIncDecButtons, ParameterNames::ButtonName, 2 };
+
+	StepButtons					stepIncButtons{ Enums::IncButton, ParameterNames::ButtonName, 16 }; 
+	StepButtons					stepDecButtons{ Enums::DecButton, ParameterNames::ButtonName, 16 };
+
+	StepButton					masterIncButton{ ParameterNames::ButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterIncButton };
+	StepButton					masterDecButton{ ParameterNames::ButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterDecButton };
+
 	LED							masterEncoderLED;
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
-	IncDecButtonListenerService	incDecButtonListenerService	{ stepEncoders, masterEncoder, stepIncDecButtons, masterIncDecButtons };
+	IncDecButtonListenerService	incDecButtonListenerService{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButton, masterDecButton };
+
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	stepButtonAttachments;

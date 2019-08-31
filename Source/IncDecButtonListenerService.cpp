@@ -1,27 +1,24 @@
 #include "IncDecButtonListenerService.h"
+#include "DefaulValues.h"
 
 IncDecButtonListenerService::IncDecButtonListenerService(
 	StepEncoders& stepEncoders,
 	MasterEncoder& masterEncoder,
-	StepButtons& stepIncDecButtons,
-	StepButtons& masterIncDecButtons)
+	StepButtons& stepIncButtons,
+	StepButtons& stepDecButtons,
+	StepButton& masterIncButton,
+	StepButton& masterDecButton)
 {
-	for (auto i = 0; i < 32; i += 2)
-	{
-		stepIncDecButtons.stepButtons[i]->addListener(stepEncoders.encoders[i / 2].get());
-		stepIncDecButtons.stepButtons[i + 1]->addListener(stepEncoders.encoders[i / 2].get());
-	}
+	masterIncButton.addListener(&masterEncoder);
+	masterDecButton.addListener(&masterEncoder);
 
-	for (auto i = 0; i < 2; i += 2)
+	for (auto i = 0; i < DefaultValues::NumberOfSteps; ++i)
 	{
-		masterIncDecButtons.stepButtons[i]->addListener(&masterEncoder);
-		masterIncDecButtons.stepButtons[i + 1]->addListener(&masterEncoder);
-	}
+		masterIncButton.addListener(stepEncoders.encoders[i].get());
+		masterDecButton.addListener(stepEncoders.encoders[i].get());
 
-	for (auto i = 0; i < 16; ++i)
-	{
-		masterIncDecButtons.stepButtons[0]->addListener(stepEncoders.encoders[i].get());
-		masterIncDecButtons.stepButtons[1]->addListener(stepEncoders.encoders[i].get());
+		stepIncButtons.stepButtons[i]->addListener(stepEncoders.encoders[i].get());
+		stepDecButtons.stepButtons[i]->addListener(stepEncoders.encoders[i].get());
 	}
 }
 

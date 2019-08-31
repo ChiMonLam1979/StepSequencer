@@ -10,9 +10,6 @@ public:
 	~StepButtons();
 
 	void StepClicked(const String& stepButtonName) const;
-	void CreateIncDecButtons(int numberOfButtons, const String& names);
-	void CreateMasterIncDecButtons(int numberOfButtons, const String& names);
-	void CreateButtons(int numberOfButtons, const String& names, Enums::StepButtonType buttonType);
 
 	std::vector<std::unique_ptr<StepButton>> stepButtons;
 

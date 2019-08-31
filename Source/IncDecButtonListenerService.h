@@ -11,8 +11,10 @@ public:
 	IncDecButtonListenerService(
 		StepEncoders& stepEncoders,
 		MasterEncoder& masterEncoder,
-		StepButtons& stepIncDecButtons,
-		StepButtons& masterIncDecButtons);
+		StepButtons& stepIncButtons,
+		StepButtons& stepDecButtons,
+		StepButton& masterIncButton,
+		StepButton& masterDecButton);
 	~IncDecButtonListenerService();
 
 private:
