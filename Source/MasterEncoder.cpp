@@ -2,7 +2,7 @@
 #include "ComponentDimensions.h"
 #include "ParameterIds.h"
 
-MasterEncoder::MasterEncoder(const String& name, std::unique_ptr<StepEncoders>& stepEncoders, LED& led): Slider(name), led(led), stepEncoders(stepEncoders)
+MasterEncoder::MasterEncoder(const String& name, StepEncoders& stepEncoders, LED& led): Slider(name), led(led), stepEncoders(stepEncoders)
 {
 	setSliderStyle(SliderStyle::RotaryHorizontalVerticalDrag);
 	setRange(0, 127, 1);
@@ -71,17 +71,17 @@ void MasterEncoder::ForwardMouseEvent(const MouseEvent& event, Enums::MouseEvent
 {
 	for (auto i = 0; i < 16; ++i)
 	{
-		if (stepEncoders->encoders[i]->isGrouped)
+		if (stepEncoders.encoders[i]->isGrouped)
 		{
 			switch(mouseEventType)
 			{
-			case Enums::MouseDown:		stepEncoders->encoders[i]->mouseDown(event);
+			case Enums::MouseDown:		stepEncoders.encoders[i]->mouseDown(event);
 				break;
-			case Enums::MouseUp:		stepEncoders->encoders[i]->mouseUp(event);
+			case Enums::MouseUp:		stepEncoders.encoders[i]->mouseUp(event);
 				break;
-			case Enums::MouseDrag:		stepEncoders->encoders[i]->mouseDrag(event);
+			case Enums::MouseDrag:		stepEncoders.encoders[i]->mouseDrag(event);
 				break;
-			case Enums::MouseWheelMove:	stepEncoders->encoders[i]->mouseWheelMove(event, wheel);
+			case Enums::MouseWheelMove:	stepEncoders.encoders[i]->mouseWheelMove(event, wheel);
 				break;
 			}
 		}

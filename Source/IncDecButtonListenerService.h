@@ -9,10 +9,10 @@ class IncDecButtonListenerService
 public:
 
 	IncDecButtonListenerService(
-		std::unique_ptr<StepEncoders>& stepEncoders,
-		std::unique_ptr<MasterEncoder>& masterEncoder,
-		std::unique_ptr<StepButtons>& stepIncDecButtons,
-		std::unique_ptr<StepButtons>& masterIncDecButtons);
+		StepEncoders& stepEncoders,
+		MasterEncoder& masterEncoder,
+		StepButtons& stepIncDecButtons,
+		StepButtons& masterIncDecButtons);
 	~IncDecButtonListenerService();
 
 private:

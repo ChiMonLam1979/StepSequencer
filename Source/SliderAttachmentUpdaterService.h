@@ -9,7 +9,7 @@ public:
 	SliderAttachmentUpdaterService
 	(
 		OwnedArray<AudioProcessorValueTreeState::SliderAttachment>& stepEncoderAttachments,
-		std::unique_ptr<StepEncoders>&	stepEncoders,
+		StepEncoders&	stepEncoders,
 		AudioProcessorValueTreeState& treeState
 	);
 
@@ -24,6 +24,6 @@ public:
 private:
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>&	stepEncoderAttachments;
-	std::unique_ptr<StepEncoders>&								stepEncoders;
+	StepEncoders&												stepEncoders;
 	AudioProcessorValueTreeState&								treeState;
 };

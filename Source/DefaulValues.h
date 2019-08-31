@@ -10,4 +10,6 @@ namespace DefaultValues
 	const int		MidiUppperRangeValue{ 127	};
 	const bool		Gate				{ false };
 	const bool		EncoderSelectState	{ false };
+
+	const int		NumberOfSteps		{ 16	};
 }

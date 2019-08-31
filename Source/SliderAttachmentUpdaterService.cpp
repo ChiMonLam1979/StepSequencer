@@ -5,7 +5,7 @@
 SliderAttachmentUpdaterService::SliderAttachmentUpdaterService
 (
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>& stepEncoderAttachments,
-	std::unique_ptr<StepEncoders>&	stepEncoders,
+	StepEncoders&	stepEncoders,
 	AudioProcessorValueTreeState& treeState
 ) :
 	stepEncoderAttachments(stepEncoderAttachments),
@@ -44,7 +44,8 @@ void SliderAttachmentUpdaterService::AttachEncodersToPitch()
 
 	for (auto i = 0; i < 16; i++)
 	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::PitchEncoderIDs[i], *stepEncoders->encoders[i]));
+		auto number = String(i);
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::PitchEncoderID + number, *stepEncoders.encoders[i]));
 	}
 }
 
@@ -54,7 +55,8 @@ void SliderAttachmentUpdaterService::AttachEncodersToNoteLength()
 
 	for (auto i = 0; i < 16; i++)
 	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::NoteLengthEncoderIDs[i], *stepEncoders->encoders[i]));
+		auto number = String(i);
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::NoteLengthEncoderID + number, *stepEncoders.encoders[i]));
 	}
 }
 
@@ -64,6 +66,7 @@ void SliderAttachmentUpdaterService::AttachEncodersToVelocity()
 
 	for (auto i = 0; i < 16; i++)
 	{
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::VelocityEncoderIDs[i], *stepEncoders->encoders[i]));
+		auto number = String(i);
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(treeState, IDs::VelocityEncoderID + number, *stepEncoders.encoders[i]));
 	}
 }

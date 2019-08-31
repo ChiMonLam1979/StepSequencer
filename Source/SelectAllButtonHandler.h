@@ -8,8 +8,8 @@ public:
 
 	SelectAllButtonHandler
 	(
-		std::unique_ptr<StepButtons>& stepButtons,
-		std::unique_ptr<StepButtons>& selectorButtons
+		StepButtons& stepButtons,
+		StepButtons& selectorButtons
 	);
 
 	~SelectAllButtonHandler();
@@ -27,6 +27,6 @@ private:
 
 	void parameterChanged(const String& parameterID, float newValue) override;
 
-	std::unique_ptr<StepButtons>&	gateButtons;
-	std::unique_ptr<StepButtons>&	encoderSelectButtons;
+	StepButtons&	gateButtons;
+	StepButtons&	encoderSelectButtons;
 };

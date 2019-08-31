@@ -9,24 +9,13 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 {
 	treeState.state = ValueTree(IDs::TreeStateID);
 
-	for(auto& ID: IDs::PitchEncoderIDs)
+	for (auto i = 0; i < DefaultValues::NumberOfSteps; ++i)
 	{
-		treeState.addParameterListener(ID, &noteHandler);
-	}
-
-	for(auto& ID: IDs::StepButtonIDs)
-	{
-		treeState.addParameterListener(ID, &gateHandler);
-	}
-
-	for (auto& ID : IDs::NoteLengthEncoderIDs)
-	{
-		treeState.addParameterListener(ID, &noteLengthHandler);
-	}
-
-	for(auto& ID: IDs::VelocityEncoderIDs)
-	{
-		treeState.addParameterListener(ID, &velocityHandler);
+		auto number = String(i);
+		treeState.addParameterListener(IDs::StepButtonID + number, &gateHandler);
+		treeState.addParameterListener(IDs::PitchEncoderID + number, &noteHandler);
+		treeState.addParameterListener(IDs::NoteLengthEncoderID + number, &noteLengthHandler);
+		treeState.addParameterListener(IDs::VelocityEncoderID + number, &velocityHandler);
 	}
 }
 

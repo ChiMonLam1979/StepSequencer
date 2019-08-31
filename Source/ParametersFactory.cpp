@@ -12,46 +12,48 @@ ParametersFactory::~ParametersFactory()
 {
 }
 
-std::vector<std::unique_ptr<RangedAudioParameter>> ParametersFactory::CreateParameters()
+std::vector<std::unique_ptr<RangedAudioParameter>> ParametersFactory::CreateParameters(int numberOfSteps)
 {
 	std::vector<std::unique_ptr<RangedAudioParameter>> parameters;
 
-	for (auto i = 0; i < 16; i++)
+	for (auto i = 0; i < numberOfSteps; i++)
 	{
-		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderIDs[i], ParameterNames::PitchEncoderNames[i], 0, 127, DefaultValues::Pitch);
+		auto number = String(i);
+
+		auto stepEncoderParameter = std::make_unique<AudioParameterInt>(IDs::PitchEncoderID + number, ParameterNames::PitchEncoderName + number, 0, 127, DefaultValues::Pitch);
 
 		parameters.push_back(std::move(stepEncoderParameter));
 
-		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonIDs[i], ParameterNames::StepButtonNames[i], DefaultValues::Gate);
+		auto stepButtonParameter = std::make_unique<AudioParameterBool>(IDs::StepButtonID + number, ParameterNames::StepButtonName + number, DefaultValues::Gate);
 
 		parameters.push_back(std::move(stepButtonParameter));
 
-		auto noteLengthEncoderParameter = std::make_unique<AudioParameterInt>(IDs::NoteLengthEncoderIDs[i], ParameterNames::NoteLengthEncoderNames[i], 0, 127, DefaultValues::NoteLengthValue);
+		auto noteLengthEncoderParameter = std::make_unique<AudioParameterInt>(IDs::NoteLengthEncoderID + number, ParameterNames::NoteLengthEncoderName + number, 0, 127, DefaultValues::NoteLengthValue);
 
 		parameters.push_back(std::move(noteLengthEncoderParameter));
 
-		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderIDs[i], ParameterNames::VelocityEncoderNames[i], 0, 127, DefaultValues::Velocity);
+		auto velocityEncoderParameter = std::make_unique<AudioParameterInt>(IDs::VelocityEncoderID + number, ParameterNames::VelocityEncoderName + number, 0, 127, DefaultValues::Velocity);
 
 		parameters.push_back(std::move(velocityEncoderParameter));
 
-		auto selectedEncodersParameter = std::make_unique<AudioParameterBool>(IDs::SelectedEncoderIDs[i], ParameterNames::SelectedEncoderNames[i], DefaultValues::EncoderSelectState);
+		auto selectedEncodersParameter = std::make_unique<AudioParameterBool>(IDs::SelectedEncoderID + number, ParameterNames::SelectedEncoderName + number, DefaultValues::EncoderSelectState);
 
 		parameters.push_back(std::move(selectedEncodersParameter));
 
-		auto incButtonParameter = std::make_unique<AudioParameterBool>(IDs::IncDecButtonsIDs[(i * 2) + 1], ParameterNames::IncDecButtonsNames[(i * 2) + 1], false);
+		auto incButtonParameter = std::make_unique<AudioParameterBool>(IDs::IncButtonID + number, ParameterNames::IncButtonName + number, false);
 
 		parameters.push_back(std::move(incButtonParameter));
 
-		auto decButtonParameter = std::make_unique<AudioParameterBool>(IDs::IncDecButtonsIDs[(i * 2)], ParameterNames::IncDecButtonsNames[(i * 2)], false);
+		auto decButtonParameter = std::make_unique<AudioParameterBool>(IDs::DecButtonID + number, ParameterNames::DecButtonName + number, false);
 
 		parameters.push_back(std::move(decButtonParameter));
 	}
 
-	auto masterIncButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterIncButtonID, ParameterNames::MasterIncButtonName, false);
+	auto masterIncButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterIncButtonID + "1", ParameterNames::MasterIncButtonName, false);
 
 	parameters.push_back(std::move(masterIncButtonParameter));
 
-	auto masterDecButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterDecButtonID, ParameterNames::MasterDecButtonName, false);
+	auto masterDecButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterDecButtonID + "0", ParameterNames::MasterDecButtonName, false);
 
 	parameters.push_back(std::move(masterDecButtonParameter));
 
@@ -63,7 +65,7 @@ std::vector<std::unique_ptr<RangedAudioParameter>> ParametersFactory::CreatePara
 
 	parameters.push_back(std::move(encodersSelectorParameter));
 
-	auto groupEncoderParameter = std::make_unique<AudioParameterInt>(IDs::GroupEncoderId, ParameterNames::GroupEncoderName, 0, 127, 0);
+	auto groupEncoderParameter = std::make_unique<AudioParameterInt>(IDs::GroupEncoderId, ParameterNames::MasterEncoderName, 0, 127, 0);
 
 	parameters.push_back(std::move(groupEncoderParameter));
 

@@ -45,15 +45,16 @@ public:
 	std::atomic<bool>	shouldFlash			{ false };
 	std::atomic<int>	playPositionIndex	{ 0 };
 
+	Pattern	pattern{ 16, 1 };
+
+	double	samplesPerNoteDivision{ 0 };
+
 private:
 
 	double	rate					{ 0	};
 	int		samplesSinceNoteOn		{ 0	};
 	int		currentNoteIndex		{ 0	};
 	int		lastNoteValue			{ -1 };
-	double	samplesPerNoteDivision	{ 0 };
-
-	Pattern	pattern				{16, 1};
 
 	NoteHandler				noteHandler			{ pattern.notes };
 	GateHandler				gateHandler			{ pattern.gates };

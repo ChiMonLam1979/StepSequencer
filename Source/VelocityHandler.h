@@ -1,5 +1,6 @@
 #pragma once
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "ParameterIds.h"
 
 class VelocityHandler : public AudioProcessorValueTreeState::Listener
 {
@@ -13,5 +14,7 @@ public:
 private:
 
 	void parameterChanged(const String& parameterID, float newValue) override;
+
+	const String& genericParameterID{ IDs::VelocityEncoderID };
 
 };

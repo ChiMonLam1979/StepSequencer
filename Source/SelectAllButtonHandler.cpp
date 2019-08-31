@@ -1,8 +1,8 @@
 #include "SelectAllButtonHandler.h"
 #include "ParameterChoices.h"
 
-SelectAllButtonHandler::SelectAllButtonHandler(std::unique_ptr<StepButtons>& stepButtons,
-	std::unique_ptr<StepButtons>& selectorButtons)
+SelectAllButtonHandler::SelectAllButtonHandler(StepButtons& stepButtons,
+	StepButtons& selectorButtons)
 	:
 	gateButtons(stepButtons),
 	encoderSelectButtons(selectorButtons)
@@ -16,12 +16,12 @@ SelectAllButtonHandler::~SelectAllButtonHandler()
 
 void SelectAllButtonHandler::parameterChanged(const String& parameterID, float newValue)
 {
-	gateButtons->stepButtons[0]->isVisible() ? ToggleGateButtons() : ToggleEncoderSelectButtons();
+	gateButtons.stepButtons[0]->isVisible() ? ToggleGateButtons() : ToggleEncoderSelectButtons();
 }
 
 void SelectAllButtonHandler::ToggleGateButtons()
 {
-	for (auto& stepButton : gateButtons->stepButtons)
+	for (auto& stepButton : gateButtons.stepButtons)
 	{
 		GateButtonsAllSelected ? DeActivateButton(*stepButton) : ActivateButton(*stepButton);
 	}
@@ -31,7 +31,7 @@ void SelectAllButtonHandler::ToggleGateButtons()
 
 void SelectAllButtonHandler::ToggleEncoderSelectButtons()
 {
-	for (auto& stepButton : encoderSelectButtons->stepButtons)
+	for (auto& stepButton : encoderSelectButtons.stepButtons)
 	{
 		EncoderSelectButtonsAllSelected ? DeActivateButton(*stepButton) : ActivateButton(*stepButton);
 	}

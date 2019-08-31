@@ -6,7 +6,7 @@ class MasterEncoder : public Slider, public Button::Listener
 {
 public:
 
-	MasterEncoder(const String& name, std::unique_ptr<StepEncoders>& stepEncoders, LED& led);
+	MasterEncoder(const String& name, StepEncoders& stepEncoders, LED& led);
 	~MasterEncoder();
 
 	void mouseEnter(const MouseEvent& event) override;
@@ -33,5 +33,5 @@ private:
 
 	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 
-	std::unique_ptr<StepEncoders>& stepEncoders;
+	StepEncoders& stepEncoders;
 };

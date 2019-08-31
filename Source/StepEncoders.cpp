@@ -9,7 +9,8 @@ StepEncoders::StepEncoders()
 		auto led = std::make_unique<LED>();
 		encoderLeds.push_back(std::move(led));
 
-		auto encoder = std::make_unique<Encoder>(ParameterNames::StepEncoderNames[i], *encoderLeds[i]);
+		auto number = String(i);
+		auto encoder = std::make_unique<Encoder>(ParameterNames::StepEncoderName + number, *encoderLeds[i]);
 		encoders.push_back(std::move(encoder));
 	}
 
