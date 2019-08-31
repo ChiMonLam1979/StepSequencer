@@ -2,7 +2,7 @@
 #include "ComponentDimensions.h"
 #include "ParameterNames.h"
 
-StepEncoders::StepEncoders()
+StepEncoders::StepEncoders(StepSequencerEngine& processor) : processor(processor)
 {
 	for(auto i = 0; i < 16; i++)
 	{
@@ -29,11 +29,22 @@ StepEncoders::StepEncoders()
 	}
 
 	setInterceptsMouseClicks(false, true);
+
+	AttachToParameters();
 }
 
 StepEncoders::~StepEncoders()
 {
-	
+}
+
+void StepEncoders::AttachToParameters()
+{
+	for (auto i = 0; i < DefaultValues::NumberOfSteps; i++)
+	{
+		auto number = String(i);
+
+		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::PitchEncoderID + number, *this->encoders[i]));
+	}
 }
 
 void StepEncoders::resized()

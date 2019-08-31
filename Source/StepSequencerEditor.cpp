@@ -5,26 +5,11 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	for(auto i = 0; i < DefaultValues::NumberOfSteps; i++)
-	{
-		auto number = String(i);
+	encoderAttachmentUpdater		= std::make_unique<SliderAttachmentUpdaterService>(stepEncoders.stepEncoderAttachments, stepEncoders, processor.treeState);
+	stepEncoderChoicesAttachment	= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
 
-		stepEncoderAttachments.add(new AudioProcessorValueTreeState::SliderAttachment(processor.treeState, IDs::PitchEncoderID + number, *stepEncoders.encoders[i]));
-	}
-
-	encoderAttachmentUpdater					= std::make_unique<SliderAttachmentUpdaterService>(stepEncoderAttachments, stepEncoders, processor.treeState);
-
-
-	stepEncoderChoicesAttachment				= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
-
-	stepButtonSelectorToggleButtonAttachment	= std::make_unique<AudioProcessorValueTreeState::ButtonAttachment>(processor.treeState, IDs::EncodersSelectID, stepButtonSelectorToggleButton);
-	encodersSelectorHandler						= std::make_unique<EncodersSelectorHandler>(stepButtons, selectorButtons, stepEncoders);
-
-	selectAllButtonsToggleButtonAttachment		= std::make_unique<AudioProcessorValueTreeState::ButtonAttachment>(processor.treeState, IDs::SelectAllButtonID, selectAllButtonsToggleButton);
-	selectAllButtonsHandler						= std::make_unique<SelectAllButtonHandler>(stepButtons, selectorButtons);
-
-	processor.treeState.addParameterListener(IDs::EncodersSelectID, encodersSelectorHandler.get());
-	processor.treeState.addParameterListener(IDs::SelectAllButtonID, selectAllButtonsHandler.get());
+	processor.treeState.addParameterListener(IDs::EncodersSelectID, &encodersSelectorHandler);
+	processor.treeState.addParameterListener(IDs::SelectAllButtonID, &selectAllButtonsHandler);
 
     setSize (ComponentSizes::windowWidth, ComponentSizes::windowHeight);
 
@@ -33,9 +18,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepButtons);
 	addAndMakeVisible(selectorButtons);
 	addAndMakeVisible(transportLEDs);
-
 	addAndMakeVisible(stepEncoderChoicesAttachment.get());
-
 	addAndMakeVisible(stepButtonSelectorToggleButton);
 	addAndMakeVisible(masterEncoder);
 	addAndMakeVisible(masterEncoderLED);

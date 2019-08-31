@@ -15,7 +15,6 @@
 
 class StepSequencerEditor : public AudioProcessorEditor
 {
-
 public:
 
 	StepSequencerEditor(StepSequencerEngine& p);
@@ -29,12 +28,12 @@ public:
 
 private:
 
-	StepSequencerEngine& processor;
+	StepSequencerEngine&		processor;
 
 	std::unique_ptr<Drawable>	backPlate					{ Drawable::createFromImageData(BinaryData::BackPanelTextured_png, BinaryData::BackPanelTextured_pngSize) };
 
 	ChaseLEDs					transportLEDs				{ processor };
-	StepEncoders				stepEncoders;
+	StepEncoders				stepEncoders				{ processor };
 	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName, processor };
 	StepButtons					selectorButtons				{ Enums::EncoderSelectorButton, ParameterNames::EncoderSelectButtonName, processor };
 	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName, processor }; 
@@ -44,23 +43,19 @@ private:
 	LED							masterEncoderLED;
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
-	IncDecButtonListenerService	incDecButtonListenerService{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButtons, masterDecButtons };
+	IncDecButtonListenerService						incDecButtonListenerService					{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButtons, masterDecButtons };
 
-	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
+	std::unique_ptr<SliderAttachmentUpdaterService>	encoderAttachmentUpdater;
+	std::unique_ptr<RadioButtonChoiceAttachment>	stepEncoderChoicesAttachment;
 
-	std::unique_ptr<SliderAttachmentUpdaterService>				encoderAttachmentUpdater;
+	StepButton										stepButtonSelectorToggleButton				{ ParameterNames::EncodersSelectName, DrawableButton::ImageFitted, Enums::ToggleButton };
+	AudioProcessorValueTreeState::ButtonAttachment	stepButtonSelectorToggleButtonAttachment	{ processor.treeState, IDs::EncodersSelectID, stepButtonSelectorToggleButton };
 
-	std::unique_ptr<RadioButtonChoiceAttachment>				stepEncoderChoicesAttachment;
+	StepButton										selectAllButtonsToggleButton				{ ParameterNames::SelectAllButtonName, DrawableButton::ImageFitted, Enums::SelectAllToggleButton };
+	AudioProcessorValueTreeState::ButtonAttachment	selectAllButtonsToggleButtonAttachment		{ processor.treeState, IDs::SelectAllButtonID, selectAllButtonsToggleButton };
 
-	StepButton stepButtonSelectorToggleButton { ParameterNames::EncodersSelectName, DrawableButton::ButtonStyle::ImageFitted, Enums::StepButtonType::ToggleButton };
-
-	std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> stepButtonSelectorToggleButtonAttachment;
-	std::unique_ptr<EncodersSelectorHandler>						encodersSelectorHandler;
-
-	StepButton selectAllButtonsToggleButton{ ParameterNames::SelectAllButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::StepButtonType::SelectAllToggleButton };
-
-	std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> selectAllButtonsToggleButtonAttachment;
-	std::unique_ptr<SelectAllButtonHandler>							selectAllButtonsHandler;
+	EncodersSelectorHandler							encodersSelectorHandler						{ stepButtons, selectorButtons, stepEncoders };
+	SelectAllButtonHandler							selectAllButtonsHandler						{ stepButtons, selectorButtons };
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEditor)
 };
