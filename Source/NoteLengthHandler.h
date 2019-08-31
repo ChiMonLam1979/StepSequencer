@@ -7,6 +7,7 @@ class NoteLengthHandler : public AudioProcessorValueTreeState::Listener
 public:
 
 	NoteLengthHandler(std::vector<int>& noteLengths, double& samplesPerNoteDivision);
+
 	~NoteLengthHandler();
 
 	std::vector<int>& noteLengths;

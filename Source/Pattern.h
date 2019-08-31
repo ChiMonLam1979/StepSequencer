@@ -6,6 +6,7 @@ class Pattern
 public:
 
 	Pattern(int trackLength, int channel);
+
 	~Pattern();
 
 	int					trackLength;

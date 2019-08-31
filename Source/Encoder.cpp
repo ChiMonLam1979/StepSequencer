@@ -35,7 +35,7 @@ void Encoder::buttonClicked(Button* button)
 		break;
 	case Enums::DecButton: setValue(getValue() - 1);
 		break;
-	case Enums::EncoderGroupSelectorButton: SwitchGroupedState();
+	case Enums::EncoderSelectorButton: SwitchGroupedState();
 		break;
 	}
 

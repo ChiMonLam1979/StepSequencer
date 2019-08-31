@@ -7,6 +7,7 @@ class MasterEncoder : public Slider, public Button::Listener
 public:
 
 	MasterEncoder(const String& name, StepEncoders& stepEncoders, LED& led);
+
 	~MasterEncoder();
 
 	void mouseEnter(const MouseEvent& event) override;

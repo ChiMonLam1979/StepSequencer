@@ -1,7 +1,8 @@
 #include "StepButtons.h"
 #include "ParameterNames.h"
 
-StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, int numberOfButtons)
+StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, StepSequencerEngine& processor, int numberOfButtons)
+	: processor(processor), numberOfButtons(numberOfButtons), name(name)
 {
 	for (auto i = 0; i < numberOfButtons; i++)
 	{
@@ -18,10 +19,36 @@ StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, i
 	}
 
 	setInterceptsMouseClicks(false, true);
+
+	switch(buttonType)
+	{
+	case Enums::IncButton: AttachToParameters(incAttachments);
+		break;
+	case Enums::DecButton: AttachToParameters(decAttachments);
+		break;
+	case Enums::GateButton: AttachToParameters(gateAttachments);
+		break;
+	case Enums::MasterIncButton: AttachToParameters(masterIncAttachments);
+		break;
+	case Enums::MasterDecButton: AttachToParameters(masterDecAttachments);
+		break;
+	case Enums::EncoderSelectorButton: AttachToParameters(encoderSelectorAttachments);
+		break;
+	default: break;
+	}
 }
 
 StepButtons::~StepButtons()
 {
+}
+
+void StepButtons::AttachToParameters(OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>& attachments)
+{
+	for (auto i = 0; i < numberOfButtons; ++i)
+	{
+		auto number = String(i);
+		attachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, name + number, *this->stepButtons[i]));
+	}
 }
 
 void StepButtons::StepClicked(const String& stepButtonName) const

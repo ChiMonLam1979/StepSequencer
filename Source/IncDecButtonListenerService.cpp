@@ -6,16 +6,16 @@ IncDecButtonListenerService::IncDecButtonListenerService(
 	MasterEncoder& masterEncoder,
 	StepButtons& stepIncButtons,
 	StepButtons& stepDecButtons,
-	StepButton& masterIncButton,
-	StepButton& masterDecButton)
+	StepButtons& masterIncButtons,
+	StepButtons& masterDecButtons)
 {
-	masterIncButton.addListener(&masterEncoder);
-	masterDecButton.addListener(&masterEncoder);
+	masterIncButtons.stepButtons[0]->addListener(&masterEncoder);
+	masterDecButtons.stepButtons[0]->addListener(&masterEncoder);
 
 	for (auto i = 0; i < DefaultValues::NumberOfSteps; ++i)
 	{
-		masterIncButton.addListener(stepEncoders.encoders[i].get());
-		masterDecButton.addListener(stepEncoders.encoders[i].get());
+		masterIncButtons.stepButtons[0]->addListener(stepEncoders.encoders[i].get());
+		masterDecButtons.stepButtons[0]->addListener(stepEncoders.encoders[i].get());
 
 		stepIncButtons.stepButtons[i]->addListener(stepEncoders.encoders[i].get());
 		stepDecButtons.stepButtons[i]->addListener(stepEncoders.encoders[i].get());

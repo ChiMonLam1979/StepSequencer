@@ -7,6 +7,7 @@ class NoteHandler : public AudioProcessorValueTreeState::Listener
 public:
 
 	NoteHandler(std::vector<int>& notes);
+
 	~NoteHandler();
 
 	std::vector<int>& notes;

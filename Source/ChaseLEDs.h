@@ -8,6 +8,7 @@ class ChaseLEDs : public Component, public Timer
 public:
 
 	ChaseLEDs(StepSequencerEngine& processor);
+
 	~ChaseLEDs();
 
 	std::vector<std::unique_ptr<LED>> leds;

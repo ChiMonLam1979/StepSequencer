@@ -22,7 +22,7 @@ namespace Enums
 		NotInUse,
 		GateButton,
 		RadioButton,
-		EncoderGroupSelectorButton,
+		EncoderSelectorButton,
 		ToggleButton,
 		IncButton,
 		DecButton,

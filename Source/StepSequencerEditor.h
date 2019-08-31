@@ -16,9 +16,9 @@
 class StepSequencerEditor : public AudioProcessorEditor
 {
 
-
 public:
-	StepSequencerEditor(StepSequencerEngine& processor);
+
+	StepSequencerEditor(StepSequencerEngine& p);
     ~StepSequencerEditor();
 
     void paint (Graphics&) override;
@@ -31,28 +31,25 @@ private:
 
 	StepSequencerEngine& processor;
 
-	std::unique_ptr<Drawable>	backPlate { Drawable::createFromImageData(BinaryData::BackPanelTextured_png, BinaryData::BackPanelTextured_pngSize) };
+	std::unique_ptr<Drawable>	backPlate					{ Drawable::createFromImageData(BinaryData::BackPanelTextured_png, BinaryData::BackPanelTextured_pngSize) };
 
 	ChaseLEDs					transportLEDs				{ processor };
 	StepEncoders				stepEncoders;
-	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName };
-	StepButtons					selectorButtons				{ Enums::EncoderGroupSelectorButton, ParameterNames::EncoderSelectButtonName };
-	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName }; 
-	StepButtons					stepDecButtons				{ Enums::DecButton, ParameterNames::DecButtonName };
-	StepButton					masterIncButton				{ ParameterNames::MasterIncButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterIncButton };
-	StepButton					masterDecButton				{ ParameterNames::MasterDecButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterDecButton };
+	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName, processor };
+	StepButtons					selectorButtons				{ Enums::EncoderSelectorButton, ParameterNames::EncoderSelectButtonName, processor };
+	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName, processor }; 
+	StepButtons					stepDecButtons				{ Enums::DecButton, ParameterNames::DecButtonName, processor };
+	StepButtons					masterIncButtons			{ Enums::MasterIncButton, ParameterNames::MasterIncButtonName, processor, 1 };
+	StepButtons					masterDecButtons			{ Enums::MasterDecButton, ParameterNames::MasterDecButtonName, processor, 1 };
 	LED							masterEncoderLED;
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
-	IncDecButtonListenerService	incDecButtonListenerService{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButton, masterDecButton };
+	IncDecButtonListenerService	incDecButtonListenerService{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButtons, masterDecButtons };
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	stepButtonAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	selectorButtonAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	incDecButtonAttachments;
-	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	masterIncDecButtonAttachments;
 
 	std::unique_ptr<SliderAttachmentUpdaterService>				encoderAttachmentUpdater;
+
 	std::unique_ptr<RadioButtonChoiceAttachment>				stepEncoderChoicesAttachment;
 
 	StepButton stepButtonSelectorToggleButton { ParameterNames::EncodersSelectName, DrawableButton::ButtonStyle::ImageFitted, Enums::StepButtonType::ToggleButton };
@@ -64,8 +61,6 @@ private:
 
 	std::unique_ptr<AudioProcessorValueTreeState::ButtonAttachment> selectAllButtonsToggleButtonAttachment;
 	std::unique_ptr<SelectAllButtonHandler>							selectAllButtonsHandler;
-
-private:
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEditor)
 };

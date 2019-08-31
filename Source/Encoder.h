@@ -8,6 +8,7 @@ class Encoder : public Slider, public Button::Listener
 public:
 
 	Encoder(const String& name, LED& led);
+
 	~Encoder();
 
 	void mouseEnter(const MouseEvent& event) override;

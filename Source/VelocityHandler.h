@@ -7,6 +7,7 @@ class VelocityHandler : public AudioProcessorValueTreeState::Listener
 public:
 
 	VelocityHandler(std::vector<uint8>& velocities);
+
 	~VelocityHandler();
 
 	std::vector<uint8>& velocities;

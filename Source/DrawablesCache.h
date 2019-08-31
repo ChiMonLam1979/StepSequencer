@@ -6,6 +6,7 @@ class DrawablesCache
 public:
 
 	DrawablesCache();
+
 	~DrawablesCache();
 
 	Drawable* GetOrUpdateDrawableFromCache(void* cacheKey, int size);

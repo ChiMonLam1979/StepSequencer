@@ -13,6 +13,7 @@ class StepSequencerEngine  : public AudioProcessor
 public:
 
 	StepSequencerEngine();
+
     ~StepSequencerEngine();
 
 	void prepareToPlay(double sampleRate, int) override;

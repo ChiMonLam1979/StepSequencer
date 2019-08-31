@@ -26,11 +26,10 @@ namespace IDs
 	const String SelectedEncoderID		{ "Selected Encoder " };
 
 	const String IncButtonID			{ "Inc Button " };
+
 	const String DecButtonID			{ "Dec Button " };
 
-	const String MasterDecButtonID		{ "Master Dec Button" };
-	const String MasterIncButtonID		{ "Master Inc Button" };
+	const String MasterDecButtonID		{ "Master Dec Button 0" };
 
-	//const String MasterDecButtonID{ "Master Dec Button 0" };
-	//const String MasterIncButtonID{ "Master Inc Button 1" };
+	const String MasterIncButtonID		{ "Master Inc Button 0" };
 }

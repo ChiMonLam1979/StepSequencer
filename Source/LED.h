@@ -7,6 +7,7 @@ class LED : public Component
 public:
 
 	LED();
+
 	~LED();
 
 	void paint(Graphics& g) override;

@@ -8,6 +8,7 @@ class StepButton : public DrawableButton
 public:
 
 	StepButton(const String& name, ButtonStyle style, Enums::StepButtonType buttonType);
+
 	~StepButton();
 
 	void SetStepButtonStyle(Enums::StepButtonStyle style);

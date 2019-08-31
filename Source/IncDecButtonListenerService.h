@@ -1,5 +1,4 @@
 #pragma once
-#include "../JuceLibraryCode/JuceHeader.h"
 #include "StepEncoders.h"
 #include "MasterEncoder.h"
 #include "StepButtons.h"
@@ -13,8 +12,9 @@ public:
 		MasterEncoder& masterEncoder,
 		StepButtons& stepIncButtons,
 		StepButtons& stepDecButtons,
-		StepButton& masterIncButton,
-		StepButton& masterDecButton);
+		StepButtons& masterIncButtons,
+		StepButtons& masterDecButtons);
+
 	~IncDecButtonListenerService();
 
 private:
