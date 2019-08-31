@@ -11,13 +11,12 @@ public:
 
 	~StepButtons();
 
-	void StepClicked(const String& stepButtonName) const;
-
-	void AttachToParameters(OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>& attachments);
-
 	std::vector<std::unique_ptr<StepButton>> stepButtons;
 
 private:
+
+	void AttachToParameters(OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>& attachments);
+	void StepClicked(const String& stepButtonName) const;
 
 	StepSequencerEngine& processor;
 

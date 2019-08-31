@@ -17,11 +17,11 @@ public:
 
 	void UpdateParameters(int value) override;
 
+private:
+
 	void AttachEncodersToPitch();
 	void AttachEncodersToNoteLength();
 	void AttachEncodersToVelocity();
-
-private:
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>&	stepEncoderAttachments;
 	StepEncoders&												stepEncoders;

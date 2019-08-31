@@ -11,6 +11,14 @@ public:
 
 	~Encoder();
 
+	bool isCourseMode{ false };
+
+	bool isGrouped{ false };
+
+	LED& led;
+
+private:
+
 	void mouseEnter(const MouseEvent& event) override;
 
 	void mouseExit(const MouseEvent& event) override;
@@ -22,14 +30,6 @@ public:
 	void SwitchCoarseMode();
 
 	void UpdateGroupedEncoderValues(Enums::StepButtonType buttonType);
-
-	bool isCourseMode{ false };
-
-	bool isGrouped{ false };
-
-	LED& led;
-
-private:
 
 	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 };

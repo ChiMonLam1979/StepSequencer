@@ -16,11 +16,10 @@ public:
 
 	void resized() override;
 
-	void AttachToParameters();
-
 private:
 
 	void encoderValueChanged(const String& encoderName) const;
+	void AttachToParameters();
 
 	StepSequencerEngine& processor;
 

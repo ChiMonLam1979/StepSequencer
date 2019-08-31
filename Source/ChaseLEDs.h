@@ -15,14 +15,13 @@ public:
 
 	void resized() override;
 
-	void timerCallback() override;
+private:
 
-	bool shouldFlash{ false };
-	int	 lastIndex	{ 0 };
-	int	 index		{ 0 };
+	void timerCallback() override;
 
 	StepSequencerEngine& processor;
 
-private:
-
+	bool shouldFlash{ false };
+	int	 lastIndex{ 0 };
+	int	 index{ 0 };
 };

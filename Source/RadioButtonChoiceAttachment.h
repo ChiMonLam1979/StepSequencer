@@ -17,11 +17,13 @@ public:
 
 	~RadioButtonChoiceAttachment();
 
-	void Clicked(const String& choice);
 	void resized() override;
-	void parameterChanged(const String& parameterID, float newValue) override;
 
 private:
+
+	void parameterChanged(const String& parameterID, float newValue) override;
+	void Clicked(const String& choice);
+
 	AudioProcessorValueTreeState&	treeState;
 	const String&					parameterId;
 	AudioParameterChoice*			parameter { nullptr };

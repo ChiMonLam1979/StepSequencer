@@ -28,9 +28,9 @@ StepEncoders::StepEncoders(StepSequencerEngine& processor) : processor(processor
 		ledItem->setState(Enums::LEDOff);
 	}
 
-	setInterceptsMouseClicks(false, true);
-
 	AttachToParameters();
+
+	setInterceptsMouseClicks(false, true);
 }
 
 StepEncoders::~StepEncoders()

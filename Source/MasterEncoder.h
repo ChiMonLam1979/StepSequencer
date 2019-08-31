@@ -10,6 +10,12 @@ public:
 
 	~MasterEncoder();
 
+	bool isCourseMode{ false };
+
+	LED& led;
+
+private:
+
 	void mouseEnter(const MouseEvent& event) override;
 
 	void mouseExit(const MouseEvent& event) override;
@@ -25,12 +31,6 @@ public:
 	void buttonClicked(Button* button) override;
 
 	void ForwardMouseEvent(const MouseEvent& event, Enums::MouseEventType mouseEventType, const MouseWheelDetails& wheel = MouseWheelDetails{});
-
-	bool isCourseMode{ false };
-
-	LED& led;
-
-private:
 
 	SharedResourcePointer<EncoderLookAndFeel>	encoderLookAndFeel;
 
