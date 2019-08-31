@@ -24,8 +24,6 @@ namespace Enums
 		RadioButton,
 		EncoderGroupSelectorButton,
 		ToggleButton,
-		IncDecButtons,
-		MasterIncDecButtons,
 		IncButton,
 		DecButton,
 		MasterIncButton,

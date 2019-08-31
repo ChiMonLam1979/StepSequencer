@@ -2,7 +2,6 @@
 #include "ParameterIds.h"
 #include "FlexFactory.h"
 #include "ComponentDimensions.h"
-#include "ParameterNames.h"
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
@@ -21,8 +20,6 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 		incDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::DecButtonID + number, *stepDecButtons.stepButtons[i]));
 	}
 
-	//masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterDecButtonID, *masterIncDecButtons.stepButtons[0]));
-	//masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterIncButtonID, *masterIncDecButtons.stepButtons[1]));
 	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterDecButtonID, masterIncButton));
 	masterIncDecButtonAttachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, IDs::MasterIncButtonID, masterDecButton));
 
@@ -52,12 +49,8 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(masterEncoderLED);
 	addAndMakeVisible(stepIncButtons);
 	addAndMakeVisible(stepDecButtons);
-
-
-	//addAndMakeVisible(masterIncDecButtons);
 	addAndMakeVisible(masterIncButton);
 	addAndMakeVisible(masterDecButton);
-
 	addAndMakeVisible(selectAllButtonsToggleButton);
 
 	selectorButtons.toBehind(&stepButtons);
@@ -80,13 +73,10 @@ void StepSequencerEditor::resized()
 	selectorButtons		.setBounds(getLocalBounds());
 	masterEncoder		.setBounds(getLocalBounds());
 	masterEncoderLED	.setBounds(ComponentBounds::masterEncoderLEDBounds);
-	stepIncButtons.setBounds(getLocalBounds());
-	stepDecButtons.setBounds(getLocalBounds());
-
-
-	//masterIncDecButtons	.setBounds(getLocalBounds());
-	masterIncButton.setBounds(getLocalBounds());
-	masterDecButton.setBounds(getLocalBounds());
+	stepIncButtons		.setBounds(getLocalBounds());
+	stepDecButtons		.setBounds(getLocalBounds());
+	masterIncButton		.setBounds(getLocalBounds());
+	masterDecButton		.setBounds(getLocalBounds());
 
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
@@ -134,11 +124,6 @@ void StepSequencerEditor::resized()
 								FlexItemFactory::makeIncDecButtonsItem(masterIncButton),
 								FlexItemFactory::makeIncDecButtonsItem(masterDecButton)
 		});
-
-	//for(auto& button: masterIncDecButtons.stepButtons)
-	//{
-	//	leftColumnIncButtonsBox.items.add(FlexItemFactory::makeIncDecButtonsItem(*button));
-	//}
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
