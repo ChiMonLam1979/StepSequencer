@@ -121,8 +121,8 @@ void StepSequencerEditor::resized()
 
 	FlexBox leftColumnIncButtonsBox = FlexBoxFactory::makeLeftColumnIncButtonsBox();
 	leftColumnIncButtonsBox.items.addArray({ 
-								FlexItemFactory::makeIncDecButtonsItem(masterIncButton),
-								FlexItemFactory::makeIncDecButtonsItem(masterDecButton)
+								FlexItemFactory::makeIncDecButtonsItem(masterDecButton),
+								FlexItemFactory::makeIncDecButtonsItem(masterIncButton)
 		});
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
@@ -139,8 +139,8 @@ void StepSequencerEditor::resized()
 
 	for (auto i = 0; i < 16; ++i)
 	{
-		centralIncButtonsBox.items.add(FlexItemFactory::makeDecButtonsItem(*stepIncButtons.stepButtons[i]));
 		centralIncButtonsBox.items.add(FlexItemFactory::makeIncButtonsItem(*stepDecButtons.stepButtons[i]));
+		centralIncButtonsBox.items.add(FlexItemFactory::makeDecButtonsItem(*stepIncButtons.stepButtons[i]));
 	}
 
 	FlexBox centralBox = FlexBoxFactory::makeCentralBox();

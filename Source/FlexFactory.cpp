@@ -46,7 +46,7 @@ namespace FlexItemFactory
 			.withMinHeight(ComponentSizes::IncButtonHeight)
 			.withMinWidth(ComponentSizes::IncButtonWidth)
 			.withMaxHeight(ComponentSizes::IncButtonHeight)
-			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({0, -4, 0, 4});
+			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({ 0, 4, 0, -4 });
 	}
 
 	FlexItem makeIncButtonsItem(Component& component)
@@ -55,7 +55,7 @@ namespace FlexItemFactory
 			.withMinHeight(ComponentSizes::IncButtonHeight)
 			.withMinWidth(ComponentSizes::IncButtonWidth)
 			.withMaxHeight(ComponentSizes::IncButtonHeight)
-			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({0, 4, 0, -4});
+			.withMaxWidth(ComponentSizes::IncButtonWidth).withMargin({ 0, -4, 0, 4 });
 	}
 }
 

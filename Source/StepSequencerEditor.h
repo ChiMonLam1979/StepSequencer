@@ -37,18 +37,14 @@ private:
 	StepEncoders				stepEncoders;
 	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName };
 	StepButtons					selectorButtons				{ Enums::EncoderGroupSelectorButton, ParameterNames::EncoderSelectButtonName };
-
-	StepButtons					stepIncButtons{ Enums::IncButton, ParameterNames::ButtonName, 16 }; 
-	StepButtons					stepDecButtons{ Enums::DecButton, ParameterNames::ButtonName, 16 };
-
-	StepButton					masterIncButton{ ParameterNames::ButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterIncButton };
-	StepButton					masterDecButton{ ParameterNames::ButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterDecButton };
-
+	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName }; 
+	StepButtons					stepDecButtons				{ Enums::DecButton, ParameterNames::DecButtonName };
+	StepButton					masterIncButton				{ ParameterNames::MasterIncButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterIncButton };
+	StepButton					masterDecButton				{ ParameterNames::MasterDecButtonName, DrawableButton::ButtonStyle::ImageFitted, Enums::MasterDecButton };
 	LED							masterEncoderLED;
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
 	IncDecButtonListenerService	incDecButtonListenerService{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButton, masterDecButton };
-
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment>	stepButtonAttachments;

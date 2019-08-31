@@ -49,11 +49,11 @@ std::vector<std::unique_ptr<RangedAudioParameter>> ParametersFactory::CreatePara
 		parameters.push_back(std::move(decButtonParameter));
 	}
 
-	auto masterIncButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterIncButtonID + "1", ParameterNames::MasterIncButtonName, false);
+	auto masterIncButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterIncButtonID, ParameterNames::MasterIncButtonName, false);
 
 	parameters.push_back(std::move(masterIncButtonParameter));
 
-	auto masterDecButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterDecButtonID + "0", ParameterNames::MasterDecButtonName, false);
+	auto masterDecButtonParameter = std::make_unique<AudioParameterBool>(IDs::MasterDecButtonID, ParameterNames::MasterDecButtonName, false);
 
 	parameters.push_back(std::move(masterDecButtonParameter));
 
