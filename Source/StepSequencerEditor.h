@@ -5,7 +5,6 @@
 #include "StepEncoders.h"
 #include "ChaseLEDs.h"
 #include "DrawablesCache.h"
-#include "SliderAttachmentUpdaterService.h"
 #include "RadioButtonChoiceAttachment.h"
 #include "MasterEncoder.h"
 #include "IncDecButtonListenerService.h"
@@ -44,9 +43,6 @@ private:
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
 	IncDecButtonListenerService						incDecButtonListenerService					{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButtons, masterDecButtons };
-
-	std::unique_ptr<SliderAttachmentUpdaterService>	encoderAttachmentUpdater;
-	std::unique_ptr<RadioButtonChoiceAttachment>	stepEncoderChoicesAttachment;
 
 	StepButton										stepButtonSelectorToggleButton				{ ParameterNames::EncodersSelectName, DrawableButton::ImageFitted, Enums::ToggleButton };
 	AudioProcessorValueTreeState::ButtonAttachment	stepButtonSelectorToggleButtonAttachment	{ processor.treeState, IDs::EncodersSelectID, stepButtonSelectorToggleButton };

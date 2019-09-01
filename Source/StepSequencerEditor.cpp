@@ -5,9 +5,6 @@
 
 StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcessorEditor (&p), processor (p)
 {
-	encoderAttachmentUpdater		= std::make_unique<SliderAttachmentUpdaterService>(stepEncoders.stepEncoderAttachments, stepEncoders, processor.treeState);
-	stepEncoderChoicesAttachment	= std::make_unique<RadioButtonChoiceAttachment>(*encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID);
-
 	processor.treeState.addParameterListener(IDs::EncodersSelectID, &encodersSelectorHandler);
 	processor.treeState.addParameterListener(IDs::SelectAllButtonID, &selectAllButtonsHandler);
 
@@ -18,7 +15,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(stepButtons);
 	addAndMakeVisible(selectorButtons);
 	addAndMakeVisible(transportLEDs);
-	addAndMakeVisible(stepEncoderChoicesAttachment.get());
+	addAndMakeVisible(stepEncoders.stepEncoderChoicesAttachment);
 	addAndMakeVisible(stepButtonSelectorToggleButton);
 	addAndMakeVisible(masterEncoder);
 	addAndMakeVisible(masterEncoderLED);
@@ -53,7 +50,6 @@ void StepSequencerEditor::resized()
 	masterIncButtons	.setBounds(getLocalBounds());
 	masterDecButtons	.setBounds(getLocalBounds());
 
-
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
 	for(auto& button : selectorButtons.stepButtons)
@@ -66,7 +62,7 @@ void StepSequencerEditor::resized()
 	FlexBox stepChoicesButtonsBox = FlexBoxFactory::makeStepChoicesButtonsBox();
 
 	stepChoicesButtonsBox.items.addArray({ 
-											FlexItemFactory::makeStepChoicesButtonsBoxItem(*stepEncoderChoicesAttachment, 3)
+										FlexItemFactory::makeStepChoicesButtonsBoxItem(stepEncoders.stepEncoderChoicesAttachment, 3)
 	});
 
 	FlexBox encoderBox = FlexBoxFactory::makeEncodersBox();

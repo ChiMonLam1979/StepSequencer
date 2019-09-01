@@ -163,14 +163,14 @@
                 file="Source/DrawablesCache.h"/>
         </GROUP>
         <GROUP id="{EE61BB75-8117-5401-6AF9-87032A042687}" name="APVTS Extensions">
+          <FILE id="qLHour" name="EncoderAttachmentUpdater.cpp" compile="1" resource="0"
+                file="Source/EncoderAttachmentUpdater.cpp"/>
+          <FILE id="f6mBmN" name="EncoderAttachmentUpdater.h" compile="0" resource="0"
+                file="Source/EncoderAttachmentUpdater.h"/>
           <FILE id="nyXkvW" name="ChoiceUpdaterService.cpp" compile="1" resource="0"
                 file="Source/ChoiceUpdaterService.cpp"/>
           <FILE id="hf7efA" name="ChoiceUpdaterService.h" compile="0" resource="0"
                 file="Source/ChoiceUpdaterService.h"/>
-          <FILE id="uv80be" name="SliderAttachmentUpdaterService.cpp" compile="1"
-                resource="0" file="Source/SliderAttachmentUpdaterService.cpp"/>
-          <FILE id="kDy9b5" name="SliderAttachmentUpdaterService.h" compile="0"
-                resource="0" file="Source/SliderAttachmentUpdaterService.h"/>
           <FILE id="FHA8Ct" name="RadioButtonChoiceAttachment.cpp" compile="1"
                 resource="0" file="Source/RadioButtonChoiceAttachment.cpp"/>
           <FILE id="dRqmfE" name="RadioButtonChoiceAttachment.h" compile="0"

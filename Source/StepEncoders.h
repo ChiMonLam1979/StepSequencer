@@ -2,9 +2,12 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "Encoder.h"
 #include "StepSequencerEngine.h"
+#include "EncoderAttachmentUpdater.h"
+#include "RadioButtonChoiceAttachment.h"
 
 class StepEncoders : public Component
 {
+
 public:
 
 	StepEncoders(StepSequencerEngine& processor);
@@ -26,4 +29,8 @@ private:
 public:
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
+
+	EncoderAttachmentUpdater encoderAttachmentUpdater { stepEncoderAttachments, encoders, processor.treeState };
+
+	RadioButtonChoiceAttachment stepEncoderChoicesAttachment{ encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID };
 };
