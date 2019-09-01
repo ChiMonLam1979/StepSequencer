@@ -34,6 +34,10 @@ StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, S
 		break;
 	case Enums::EncoderSelectorButton: AttachToParameters(encoderSelectorAttachments);
 		break;
+	case Enums::PatternLengthIncButton: AttachToParameters(patternLengthIncAttachments);
+		break;
+	case Enums::PatternLengthDecButton: AttachToParameters(patternLengthDecAttachments);
+		break;
 	default: break;
 	}
 }

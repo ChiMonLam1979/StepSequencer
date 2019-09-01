@@ -30,4 +30,6 @@ private:
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> masterIncAttachments{};
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> masterDecAttachments{};
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> encoderSelectorAttachments{};
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> patternLengthIncAttachments{};
+	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> patternLengthDecAttachments{};
 };

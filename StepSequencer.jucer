@@ -94,6 +94,14 @@
                 file="Source/PatternService.h"/>
         </GROUP>
         <GROUP id="{1B06F047-A275-D2B3-1A7E-CD29B6D18F4F}" name="ParameterHandlers">
+          <FILE id="l618xG" name="PatternLengthDecHandler.cpp" compile="1" resource="0"
+                file="Source/PatternLengthDecHandler.cpp"/>
+          <FILE id="ovgSNB" name="PatternLengthDecHandler.h" compile="0" resource="0"
+                file="Source/PatternLengthDecHandler.h"/>
+          <FILE id="KzVNde" name="PatternLengthIncHandler.cpp" compile="1" resource="0"
+                file="Source/PatternLengthIncHandler.cpp"/>
+          <FILE id="SoVQi6" name="PatternLengthIncHandler.h" compile="0" resource="0"
+                file="Source/PatternLengthIncHandler.h"/>
           <FILE id="gH4KWU" name="EncodersSelectorHandler.cpp" compile="1" resource="0"
                 file="Source/EncodersSelectorHandler.cpp"/>
           <FILE id="KYmeS3" name="EncodersSelectorHandler.h" compile="0" resource="0"

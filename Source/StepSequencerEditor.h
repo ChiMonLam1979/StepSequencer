@@ -53,5 +53,8 @@ private:
 	EncodersSelectorHandler							encodersSelectorHandler						{ stepButtons, selectorButtons, stepEncoders };
 	SelectAllButtonHandler							selectAllButtonsHandler						{ stepButtons, selectorButtons };
 
+	StepButtons		patternLengthIncButtons{ Enums::PatternLengthIncButton, ParameterNames::PatternLengthIncButtonName, processor, IDs::PatternLengthIncID, 1 };
+	StepButtons		patternLengthDecButtons{ Enums::PatternLengthDecButton, ParameterNames::PatternLengthDecButtonName, processor, IDs::PatternLengthDecID, 1 };
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StepSequencerEditor)
 };

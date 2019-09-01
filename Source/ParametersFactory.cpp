@@ -73,5 +73,13 @@ std::vector<std::unique_ptr<RangedAudioParameter>> ParametersFactory::CreatePara
 
 	parameters.push_back(std::move(selectAllButtonParamter));
 
+	auto patternLengthIncParameter = std::make_unique<AudioParameterBool>(IDs::PatternLengthIncID + "0", ParameterNames::PatternLengthIncName, false);
+
+	parameters.push_back(std::move(patternLengthIncParameter));
+
+	auto patternLengthDecParameter = std::make_unique<AudioParameterBool>(IDs::PatternLengthDecID + "0", ParameterNames::PatternLengthDecName, false);
+
+	parameters.push_back(std::move(patternLengthDecParameter));
+
 	return parameters;
 }

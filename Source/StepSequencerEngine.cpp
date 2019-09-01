@@ -17,6 +17,9 @@ treeState(*this, nullptr, "PARAMETERS", createParameterLayout())
 		treeState.addParameterListener(IDs::NoteLengthEncoderID + number, &noteLengthHandler);
 		treeState.addParameterListener(IDs::VelocityEncoderID + number, &velocityHandler);
 	}
+
+	treeState.addParameterListener(IDs::PatternLengthIncID + "0", &patternLengthIncHandler);
+	treeState.addParameterListener(IDs::PatternLengthDecID + "0", &patternLengthDecHandler);
 }
 
 AudioProcessorValueTreeState::ParameterLayout StepSequencerEngine::createParameterLayout()
@@ -56,7 +59,7 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	// set led index - delay is added because UI is not in sync - just reaper?
 	auto delay	= 1;
 	auto pos	= std::floor((positionInfo.ppqPosition * 4 ) - delay);
-	auto index	= maths::mod(pos, 16);
+	auto index	= maths::mod(pos, pattern.trackLength);
 	playPositionIndex.store(index);
 
 	auto bpm			= positionInfo.bpm;													// bpm is quarterNotesPerMinute
@@ -78,7 +81,8 @@ void StepSequencerEngine::processBlock (AudioBuffer<float>& buffer, MidiBuffer& 
 	int				ippqEnd		= std::floor(ppqEnd);
 					ippqEnd		= positionInfo.isLooping ? maths::mod(ippqEnd, noteDivisionFactor * 4) : ippqEnd;
 
-	auto pattern = patternService.GetPattern(); //load the pattern to play
+
+	//auto pattern = patternService.GetPattern(); //load the pattern to play
 
 
 	// ppqPosition is only changing when the transport is playing.

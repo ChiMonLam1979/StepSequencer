@@ -26,6 +26,9 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(selectAllButtonsToggleButton);
 
 	selectorButtons.toBehind(&stepButtons);
+
+	addAndMakeVisible(patternLengthDecButtons);
+	addAndMakeVisible(patternLengthIncButtons);
 }
 
 StepSequencerEditor::~StepSequencerEditor()
@@ -49,6 +52,9 @@ void StepSequencerEditor::resized()
 	stepDecButtons		.setBounds(getLocalBounds());
 	masterIncButtons	.setBounds(getLocalBounds());
 	masterDecButtons	.setBounds(getLocalBounds());
+
+	patternLengthIncButtons.setBounds(getLocalBounds());
+	patternLengthDecButtons.setBounds(getLocalBounds());
 
 	auto buttonBounds = ComponentBounds::StepButtonBounds;
 
@@ -79,6 +85,12 @@ void StepSequencerEditor::resized()
 		buttonBox.items.add(FlexItemFactory::makeButtonItem(*stepButton));
 	}
 
+	FlexBox leftColumnPatternLengthButtonsBox = FlexBoxFactory::makeLeftColumnIncButtonsBox();
+	leftColumnPatternLengthButtonsBox.items.addArray({
+								FlexItemFactory::makeIncDecButtonsItem(*patternLengthDecButtons.stepButtons[0]),
+								FlexItemFactory::makeIncDecButtonsItem(*patternLengthIncButtons.stepButtons[0])
+		});
+
 	FlexBox leftColumnMiddleButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
 	leftColumnMiddleButtonBox.items.add(FlexItemFactory::makeButtonItem(selectAllButtonsToggleButton));
 
@@ -98,7 +110,9 @@ void StepSequencerEditor::resized()
 
 	FlexBox leftColumnBox = FlexBoxFactory::makeLeftColumnBox();
 	leftColumnBox.items.addArray({
-								FlexItem(leftColumnMiddleButtonBox).withFlex(0.53),
+								FlexItem().withFlex(0.35),
+								FlexItem(leftColumnPatternLengthButtonsBox).withFlex(0.04),
+								FlexItem(leftColumnMiddleButtonBox).withFlex(0.14),
 								FlexItem(leftColumnEncoderBox).withFlex(0.18),
 								FlexItem().withFlex(0.01),
 								FlexItem(leftColumnIncButtonsBox).withFlex(0.04),

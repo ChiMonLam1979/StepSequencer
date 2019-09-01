@@ -28,7 +28,9 @@ namespace Enums
 		DecButton,
 		MasterIncButton,
 		MasterDecButton,
-		SelectAllToggleButton
+		SelectAllToggleButton,
+		PatternLengthIncButton,
+		PatternLengthDecButton
 	};
 
 	enum MouseEventType

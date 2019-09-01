@@ -25,11 +25,19 @@ namespace ParameterNames
 
 	const String EncoderSelectButtonName	{ "Encoder Selected Button " };
 
-	const String IncButtonName				{ "Inc button " };
+	const String IncButtonName				{ "Inc Button " };
 
-	const String DecButtonName				{ "Dec button " };
+	const String DecButtonName				{ "Dec Button " };
 
-	const String MasterIncButtonName		{ "Master Inc button " };
+	const String MasterIncButtonName		{ "Master Inc Button " };
 
-	const String MasterDecButtonName		{ "Master Dec button " };
+	const String MasterDecButtonName		{ "Master Dec Button " };
+
+	const String PatternLengthIncName		{ "Pattern Length Inc" };
+
+	const String PatternLengthDecName		{ "Pattern Length Dec" };
+
+	const String PatternLengthIncButtonName	{ "Pattern Length Inc Button" };
+
+	const String PatternLengthDecButtonName	{ "Pattern Length Dec Button" };
 }

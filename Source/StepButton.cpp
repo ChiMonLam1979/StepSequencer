@@ -26,6 +26,10 @@ StepButton::StepButton(const String& name, ButtonStyle style, Enums::StepButtonT
 		break;
 	case Enums::MasterDecButton: SetDecButtonImages();
 		break;
+	case Enums::PatternLengthIncButton: SetIncButtonImages();
+		break;
+	case Enums::PatternLengthDecButton: SetDecButtonImages();
+		break;
 	case Enums::SelectAllToggleButton: SetSelectAllButtonImages();
 		break;
 	default: SetGreenImages();

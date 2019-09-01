@@ -32,4 +32,8 @@ namespace IDs
 	const String MasterDecButtonID		{ "Master Dec Button: 0" };
 
 	const String MasterIncButtonID		{ "Master Inc Button: 0" };
+
+	const String PatternLengthIncID		{ "Pattern Length Inc: " };
+
+	const String PatternLengthDecID		{ "Pattern Length Dec: " };
 }
