@@ -108,7 +108,7 @@ void StepSequencerEditor::resized()
 
 	FlexBox centralIncButtonsBox = FlexBoxFactory::makeCentralIncButtonsBox();
 
-	for (auto i = 0; i < 16; ++i)
+	for (auto i = 0; i < DefaultValues::NumberOfSteps; ++i)
 	{
 		centralIncButtonsBox.items.add(FlexItemFactory::makeIncButtonsItem(*stepDecButtons.stepButtons[i]));
 		centralIncButtonsBox.items.add(FlexItemFactory::makeDecButtonsItem(*stepIncButtons.stepButtons[i]));

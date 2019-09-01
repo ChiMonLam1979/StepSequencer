@@ -21,7 +21,7 @@ private:
 	StepSequencerEngine& processor;
 
 	int numberOfButtons { 0 };
-	//const String& name;
+
 	const String& ID;
 
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> incAttachments{};
