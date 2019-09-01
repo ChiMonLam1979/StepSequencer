@@ -1,4 +1,4 @@
-#include "ParameterDictionary.h"
+#include "ImageUtilities.h"
 #include "ParameterIds.h"
 
 Image getLedImage(Enums::LEDState state)
@@ -12,19 +12,4 @@ Image getLedImage(Enums::LEDState state)
 
 	const auto it = ledDictionary.find(state);
 	return it != ledDictionary.cend() ? it->second : Image{};
-}
-
-int getParameterIndex(const String& genericParameterID, const String& IDToFind, int numberOfParameters)
-{
-	std::map<String, int> parameterDictionary;
-
-	for(auto i = 0; i < numberOfParameters; ++i)
-	{
-		auto index = String(i);
-		auto key = genericParameterID + index;
-		parameterDictionary[key] = i;
-	}
-
-	const auto it = parameterDictionary.find(IDToFind);
-	return it != parameterDictionary.cend() ? it->second : 0;
 }

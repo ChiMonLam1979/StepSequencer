@@ -12,4 +12,7 @@ namespace DefaultValues
 	const bool		EncoderSelectState	{ false };
 
 	const int		NumberOfSteps		{ 16	};
+
+	const StringRef	ParameterDelimiter	{ ":"	};
+	const StringRef QuoteCharacters     { ""	};
 }

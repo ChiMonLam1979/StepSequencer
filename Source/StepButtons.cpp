@@ -1,8 +1,8 @@
 #include "StepButtons.h"
 #include "ParameterNames.h"
 
-StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, StepSequencerEngine& processor, int numberOfButtons)
-	: processor(processor), numberOfButtons(numberOfButtons), name(name)
+StepButtons::StepButtons(Enums::StepButtonType buttonType, const String& name, StepSequencerEngine& processor, const String& ID, int numberOfButtons)
+	: processor(processor), numberOfButtons(numberOfButtons), ID(ID)
 {
 	for (auto i = 0; i < numberOfButtons; i++)
 	{
@@ -47,7 +47,7 @@ void StepButtons::AttachToParameters(OwnedArray<AudioProcessorValueTreeState::Bu
 	for (auto i = 0; i < numberOfButtons; ++i)
 	{
 		auto number = String(i);
-		attachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, name + number, *this->stepButtons[i]));
+		attachments.add(new AudioProcessorValueTreeState::ButtonAttachment(processor.treeState, ID + number, *this->stepButtons[i]));
 	}
 }
 

@@ -7,7 +7,7 @@ class StepButtons : public Component
 {
 public:
 
-	StepButtons(Enums::StepButtonType buttonType, const String& names, StepSequencerEngine& processor, int numberOfButtons = 16);
+	StepButtons(Enums::StepButtonType buttonType, const String& names, StepSequencerEngine& processor, const String& ID, int numberOfButtons = 16);
 
 	~StepButtons();
 
@@ -21,7 +21,8 @@ private:
 	StepSequencerEngine& processor;
 
 	int numberOfButtons { 0 };
-	const String& name;
+	//const String& name;
+	const String& ID;
 
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> incAttachments{};
 	OwnedArray<AudioProcessorValueTreeState::ButtonAttachment> decAttachments{};

@@ -33,19 +33,19 @@ private:
 
 	ChaseLEDs					transportLEDs				{ processor };
 	StepEncoders				stepEncoders				{ processor };
-	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName, processor };
-	StepButtons					selectorButtons				{ Enums::EncoderSelectorButton, ParameterNames::EncoderSelectButtonName, processor };
-	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName, processor }; 
-	StepButtons					stepDecButtons				{ Enums::DecButton, ParameterNames::DecButtonName, processor };
-	StepButtons					masterIncButtons			{ Enums::MasterIncButton, ParameterNames::MasterIncButtonName, processor, 1 };
-	StepButtons					masterDecButtons			{ Enums::MasterDecButton, ParameterNames::MasterDecButtonName, processor, 1 };
+	StepButtons					stepButtons					{ Enums::GateButton, ParameterNames::StepButtonName, processor, IDs::StepButtonID };
+	StepButtons					selectorButtons				{ Enums::EncoderSelectorButton, ParameterNames::EncoderSelectButtonName, processor, IDs::SelectedEncoderID };
+	StepButtons					stepIncButtons				{ Enums::IncButton, ParameterNames::IncButtonName, processor, IDs::IncButtonID }; 
+	StepButtons					stepDecButtons				{ Enums::DecButton, ParameterNames::DecButtonName, processor, IDs::DecButtonID };
+	StepButtons					masterIncButtons			{ Enums::MasterIncButton, ParameterNames::MasterIncButtonName, processor, IDs::MasterIncButtonID, 1 };
+	StepButtons					masterDecButtons			{ Enums::MasterDecButton, ParameterNames::MasterDecButtonName, processor, IDs::MasterDecButtonID, 1 };
 	LED							masterEncoderLED;
 	MasterEncoder				masterEncoder				{ ParameterNames::MasterEncoderName, stepEncoders, masterEncoderLED };
 
 	IncDecButtonListenerService						incDecButtonListenerService					{ stepEncoders, masterEncoder, stepIncButtons, stepDecButtons, masterIncButtons, masterDecButtons };
 
-	StepButton										stepButtonSelectorToggleButton				{ ParameterNames::EncodersSelectName, DrawableButton::ImageFitted, Enums::ToggleButton };
-	AudioProcessorValueTreeState::ButtonAttachment	stepButtonSelectorToggleButtonAttachment	{ processor.treeState, IDs::EncodersSelectID, stepButtonSelectorToggleButton };
+	StepButton										encoderSelectorToggleButton					{ ParameterNames::EncodersSelectName, DrawableButton::ImageFitted, Enums::ToggleButton };
+	AudioProcessorValueTreeState::ButtonAttachment	encoderSelectorToggleButtonAttachment		{ processor.treeState, IDs::EncodersSelectID, encoderSelectorToggleButton };
 
 	StepButton										selectAllButtonsToggleButton				{ ParameterNames::SelectAllButtonName, DrawableButton::ImageFitted, Enums::SelectAllToggleButton };
 	AudioProcessorValueTreeState::ButtonAttachment	selectAllButtonsToggleButtonAttachment		{ processor.treeState, IDs::SelectAllButtonID, selectAllButtonsToggleButton };

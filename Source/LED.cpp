@@ -1,5 +1,5 @@
 #include "LED.h"
-#include "ParameterDictionary.h"
+#include "ImageUtilities.h"
 
 LED::LED()
 {

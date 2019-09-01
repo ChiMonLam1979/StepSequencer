@@ -15,6 +15,4 @@ public:
 private:
 
 	void parameterChanged(const String& parameterID, float newValue) override;
-
-	const String& genericParameterID{ IDs::StepButtonID };
 };

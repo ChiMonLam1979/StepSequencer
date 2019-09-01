@@ -16,7 +16,7 @@ StepSequencerEditor::StepSequencerEditor(StepSequencerEngine& p) : AudioProcesso
 	addAndMakeVisible(selectorButtons);
 	addAndMakeVisible(transportLEDs);
 	addAndMakeVisible(stepEncoders.stepEncoderChoicesAttachment);
-	addAndMakeVisible(stepButtonSelectorToggleButton);
+	addAndMakeVisible(encoderSelectorToggleButton);
 	addAndMakeVisible(masterEncoder);
 	addAndMakeVisible(masterEncoderLED);
 	addAndMakeVisible(stepIncButtons);
@@ -87,7 +87,7 @@ void StepSequencerEditor::resized()
 	leftColumnEncoderBox.items.add(FlexItemFactory::makeEncoderItem(masterEncoder));
 
 	FlexBox leftColumnLowerButtonBox = FlexBoxFactory::makeLeftColumnStepButtonsBox();
-	leftColumnLowerButtonBox.items.add(FlexItemFactory::makeButtonItem(stepButtonSelectorToggleButton));
+	leftColumnLowerButtonBox.items.add(FlexItemFactory::makeButtonItem(encoderSelectorToggleButton));
 
 
 	FlexBox leftColumnIncButtonsBox = FlexBoxFactory::makeLeftColumnIncButtonsBox();

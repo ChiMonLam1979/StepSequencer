@@ -30,7 +30,7 @@ public:
 
 	OwnedArray<AudioProcessorValueTreeState::SliderAttachment>	stepEncoderAttachments;
 
-	EncoderAttachmentUpdater encoderAttachmentUpdater { stepEncoderAttachments, encoders, processor.treeState };
+	EncoderAttachmentUpdater	encoderAttachmentUpdater	{ stepEncoderAttachments, encoders, processor.treeState };
 
 	RadioButtonChoiceAttachment stepEncoderChoicesAttachment{ encoderAttachmentUpdater, processor.treeState, IDs::StepChoicesID };
 };

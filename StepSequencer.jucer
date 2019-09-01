@@ -54,6 +54,10 @@
         </GROUP>
       </GROUP>
       <GROUP id="{10C6E67B-95C5-5200-F79E-F851D76C5BF3}" name="Common">
+        <FILE id="rIUd9C" name="ParameterUtilities.cpp" compile="1" resource="0"
+              file="Source/ParameterUtilities.cpp"/>
+        <FILE id="bn7FEj" name="ParameterUtilities.h" compile="0" resource="0"
+              file="Source/ParameterUtilities.h"/>
         <FILE id="c0DPHT" name="ComponentDimensions.h" compile="0" resource="0"
               file="Source/ComponentDimensions.h"/>
         <FILE id="ctn9Wf" name="DefaulValues.h" compile="0" resource="0" file="Source/DefaulValues.h"/>
@@ -62,10 +66,10 @@
         <FILE id="Kq9j7f" name="Extensions.h" compile="0" resource="0" file="Source/Extensions.h"/>
         <FILE id="lNvVHf" name="ParameterChoices.h" compile="0" resource="0"
               file="Source/ParameterChoices.h"/>
-        <FILE id="MgVXpP" name="ParameterDictionary.cpp" compile="1" resource="0"
-              file="Source/ParameterDictionary.cpp"/>
-        <FILE id="pK32FE" name="ParameterDictionary.h" compile="0" resource="0"
-              file="Source/ParameterDictionary.h"/>
+        <FILE id="MgVXpP" name="ImageUtilities.cpp" compile="1" resource="0"
+              file="Source/ImageUtilities.cpp"/>
+        <FILE id="pK32FE" name="ImageUtilities.h" compile="0" resource="0"
+              file="Source/ImageUtilities.h"/>
         <FILE id="a3ExJZ" name="ParameterIds.h" compile="0" resource="0" file="Source/ParameterIds.h"/>
         <FILE id="OGBpDi" name="ParameterNames.h" compile="0" resource="0"
               file="Source/ParameterNames.h"/>
